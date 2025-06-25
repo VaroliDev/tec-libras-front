@@ -1,0 +1,158 @@
+:host-context(body.modo-escuro) {
+    & .container_entrar {
+        background-color: #181818;
+        border: solid 2px rgb(31, 31, 31);
+    }
+
+    & .input_entrar {
+        background-color: #181818; 
+        color: #f9f9f9;
+    }
+    
+    & .input_entrar:focus {
+        background-color: #2f2f2f;
+        color: #f9f9f9;
+    }
+
+    & .alert-danger {
+        background-color: #cb4a4a;
+        color: #f9f9f9;
+        border-color: #e37575;
+    } 
+}
+
+:host-context(body.modo-contraste) {
+    & .container_entrar {
+        background-color: #000000;
+        border: solid 2px rgb(0, 255, 221);
+    }
+
+    & .input_entrar {
+        background-color: #000000; 
+        color: #ffffff;
+        border-bottom: solid 2px aqua;
+    }
+    
+    & .input_entrar:focus {
+        background-color: #0d0d0d;
+        color: #ffffff;
+        border-bottom: solid 2px aqua;
+        caret-color: aqua;
+    }
+
+    & .help_senha {
+        color: aqua;
+    }
+
+    & .alert-danger {
+        background-color: #ffcc00;
+        color: #000000;
+        border-color: #e37575;
+    } 
+}
+
+.container_entrar {
+    max-width: 90%;
+    margin: 0 5%;
+    display: flex; 
+    flex-wrap: wrap; 
+    border-radius: 5px; 
+    border: solid 2px rgb(234, 234, 234);
+}
+
+.form_entrar{
+    flex: 1; 
+    margin: 8% 6%; 
+    border-radius: 5px 0 0 5px;
+
+    & h1 {
+        width: 90%; 
+        font-weight: bold; 
+        line-height: 30px; 
+        font-family: 'Rawline Bold', sans-serif ;
+    }
+}
+
+.input_entrar {
+    background-color: #f9f9f9; 
+    width: 100%; 
+    border: none; 
+    border-bottom: solid 2px #F86400;
+}
+
+.input_entrar:focus {
+    border-color: #F86400;
+    background-color: #eeddff;
+    outline: none;
+    caret-color: #F86400;
+    border-radius: 10px 10px 0 0;
+}
+
+.btn-entrar {
+    background-color: #9E3FFA; 
+    color: #f9f9f9;
+    border-radius: 50px;
+    margin: 0 5px;
+    padding: 8px 20px;
+}
+.btn-entrar:hover {
+    background-color: #7927cb; 
+    color: #f9f9f9;
+}
+
+.help_cadastro {
+    font-size: 15px ; 
+    color: #F86400; 
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.help_senha {
+    font-size: 10px ;
+     color: #7927cb ; 
+    font-weight: bold;
+}
+
+.abs_entrar {
+    flex: 1; 
+    padding: 10px;
+    background-color: #F86400; 
+    border-radius: 0 5px 5px 0;
+}
+
+.alert-danger {
+    background-color: #ff9d9d;
+    border-color: #e37575;
+    font-size: 13px;
+} 
+
+@media (max-width: 220px) {
+    .form_entrar{
+        flex: 1; 
+        margin: 11%; 
+        border-radius: 5px 0 0 5px;
+    }
+    .abs_entrar {
+        border-radius: 0 0 5px 5px;
+    }
+}
+@media (min-width: 221px) and (max-width: 330px){
+    .form_entrar{
+        flex: 1; 
+        margin: 21%; 
+        border-radius: 5px 0 0 5px;
+    }
+    .abs_entrar {
+        border-radius: 0 0 5px 5px;
+    }
+}
+@media (min-width: 330px) and (max-width: 450px){
+    .form_entrar{
+        flex: 1; 
+        margin: 28%; 
+        border-radius: 5px 0 0 5px;
+    }
+    .abs_entrar {
+        border-radius: 0 0 5px 5px;
+    }
+}

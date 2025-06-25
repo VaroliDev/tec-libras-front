@@ -1,0 +1,19 @@
+:host-context(body.modo-escuro) {
+    .modal-content{
+        background-color: #292929;
+        color: #f9f9f9;
+    }
+}
+
+:host-context(body.modo-contraste) {
+    .modal-content{
+        background-color: #121212;
+        color: #f9f9f9;
+        fill: #f9f9f9;
+
+        & .btn-close {
+            color: #f9f9f9;
+            fill: #f9f9f9;
+        }
+    }
+}

@@ -1,0 +1,25 @@
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { ThemeService } from './services/theme.service';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [RouterOutlet],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.scss'
+})
+export class AppComponent {
+  title = 'teclibras';
+
+  constructor(private themeService: ThemeService) {}
+
+  onThemeChange(theme: string): void {
+    this.themeService.applyTheme(theme);
+  }
+  
+  isCurrentTheme(theme: string): boolean {
+    return this.themeService.getCurrentTheme() === theme;
+  }  
+}
+

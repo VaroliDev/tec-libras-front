@@ -1,0 +1,95 @@
+.btn-entrar {
+    background-color: #F86400; 
+    color: #f9f9f9;
+    border-radius: 50px;
+    margin: 0 5px;
+    padding: 8px 20px;
+}
+.btn-entrar:hover {
+    background-color: #db5901; 
+    color: #f9f9f9;
+}
+
+.btn-cadastrar {
+    background-color: #9E3FFA; 
+    color: #f9f9f9;
+    border-radius: 50px;
+    margin: 0 5px;
+    padding: 8px 20px;
+}
+.btn-cadastrar:hover {
+    background-color: #8431d8; 
+    color: #f9f9f9;
+}
+
+/*CARROSSEL DE IMAGENS HOME*/
+#carrossel {
+    max-width: 98%; 
+    margin: 0 auto; 
+    height: 90%; 
+    display: flex; 
+    top: 12px;
+}
+
+@media (max-width: 100px) {
+    .carousel-inner img {
+        width: 100%; /* Imagem ocupa toda a largura do carrossel */
+        height: 150px; /* Altura fixa para todas as imagens */
+        object-fit: cover; /* Corta as imagens para se ajustarem ao tamanho definido */
+        border-radius: 10px; /* Cantos arredondados */
+    }
+}
+
+@media (min-width: 100px) and (max-width: 415px) {
+    .carousel-inner img {
+        width: 100%; /* Imagem ocupa toda a largura do carrossel */
+        height: 200px; /* Altura fixa para todas as imagens */
+        object-fit: cover; /* Corta as imagens para se ajustarem ao tamanho definido */
+        border-radius: 10px; /* Cantos arredondados */
+    }
+}
+
+@media (min-width: 415px) and (max-width: 604px) {
+    .carousel-inner img {
+        width: 100%; /* Imagem ocupa toda a largura do carrossel */
+        height: 250px; /* Altura fixa para todas as imagens */
+        object-fit: cover; /* Corta as imagens para se ajustarem ao tamanho definido */
+        border-radius: 10px; /* Cantos arredondados */
+    }
+}
+
+@media (min-width: 605px) and (max-width: 800px) {
+    .carousel-inner img {
+        width: 100%; /* Imagem ocupa toda a largura do carrossel */
+        height: 350px; /* Altura fixa para todas as imagens */
+        object-fit: cover; /* Corta as imagens para se ajustarem ao tamanho definido */
+        border-radius: 10px; /* Cantos arredondados */
+    }
+}
+
+@media (min-width: 801px) and (max-width: 995px) {
+    .carousel-inner img {
+        width: 100%; /* Imagem ocupa toda a largura do carrossel */
+        height: 450px; /* Altura fixa para todas as imagens */
+        object-fit: cover; /* Corta as imagens para se ajustarem ao tamanho definido */
+        border-radius: 10px; /* Cantos arredondados */
+    }
+}
+
+@media (min-width: 996px) and (max-width: 1180px) {
+    .carousel-inner img {
+        width: 100%; /* Imagem ocupa toda a largura do carrossel */
+        height: 550px; /* Altura fixa para todas as imagens */
+        object-fit: cover; /* Corta as imagens para se ajustarem ao tamanho definido */
+        border-radius: 10px; /* Cantos arredondados */
+    }
+}
+
+@media (min-width: 1181px) {
+    .carousel-inner img {
+        width: 100%; /* Imagem ocupa toda a largura do carrossel */
+        height: 650px; /* Altura fixa para todas as imagens */
+        object-fit: cover; /* Corta as imagens para se ajustarem ao tamanho definido */
+        border-radius: 10px; /* Cantos arredondados */
+    }
+}

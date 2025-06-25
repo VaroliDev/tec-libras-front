@@ -1,0 +1,238 @@
+:host-context(body.modo-escuro)  {
+    & #nome_usuario {
+        color: #F9F9F9;
+    }
+
+    & .balaofala {
+        background-color: #f9f9f9; 
+        color: #292929;
+    }
+
+    & .seta {
+        border-left-color: #f9f9f9;
+    }
+}
+
+:host-context(body.modo-contraste)  {
+    & #nome_usuario {
+        color: #ffffff;
+    }
+
+    & .balaofala {
+        background-color: #00E6FF; 
+        color: #000000;
+    }
+
+    & .seta {
+        border-left-color: #00E6FF;
+    }
+
+    & .niveis {
+        & .circulonivel1 {
+            & p {
+                color: #00E6FF;
+            }
+            
+        }
+        & .circulonivel2 {
+            & p {
+                color: #00E6FF;
+            }
+            
+        }
+    }
+
+}
+
+/*Nome Usuário Pág inicial*/
+#nome_usuario {
+    font-family: "Rawline Bold", sans-serif;
+    text-align: center;
+    color: #292929;
+    margin-top: 50px;
+    font-weight: 700;
+}
+
+/*Balão de Fala Lisi*/
+.balao_lisi {
+    display: flex;
+    justify-content: center;
+
+    & img {
+        width: 200px;
+    }
+}
+
+.balaofala {
+    background-color: #292929; 
+    color: #F9F9F9;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 39px 50px 50px 50px;
+    margin: 65px 20px 0 0;
+    height: 120px;
+    width: 280px;
+    letter-spacing: 1px;
+    border-radius: 10px;
+}
+.seta {
+    margin-top: 105px;
+    margin-left: -21px;
+    width: 0;
+    height: 0;
+    border: 20px solid transparent;
+    border-left-color: #292929;
+}
+
+
+/*NÍVEIS*/
+.niveis{
+    margin-left: 15%;
+    max-width: 70%;
+
+    & a {
+        text-decoration: none;
+        color: #292929;
+    }
+
+    & .circulonivel1 {
+        background-color: #BA73FF; 
+        border-radius: 50%; 
+        width: 200px; 
+        height: 200px;
+
+        & p {
+            font-family: "Rawline Bold", sans-serif;
+            text-align: center;
+            position: relative;
+            bottom: 40px;
+            font-weight: bolder;
+            font-size: 20px;
+            color: #9E3FFA;
+        }
+    }
+
+    & .circulonivel2 {
+        background-color: #FF9221 ; 
+        border-radius: 50%; 
+        width: 200px; 
+        height: 200px;
+
+        & p {
+            font-family: "Rawline Bold", sans-serif;
+            text-align: center;
+            position: relative;
+            bottom: 40px;
+            font-weight: bolder;
+            font-size: 20px;
+            color: #F86400;
+        }
+    }
+
+
+/*ANEL DE PROGRESSO*/
+    & .progress-ring {
+        position: relative;
+        width: 150px;
+        height: 150px;
+        background-color: #e6e6e6;
+        border-radius: 50%;
+        bottom: 20px;
+        left: 25px;
+    }
+
+    & .progress-ring circle {
+        fill: none;
+        stroke-width: 10;
+        transform: rotate(-90deg);
+        transform-origin: 50% 50%;
+    }
+
+    & .progress-ring .progress-bg {
+        stroke: #F9F9F9;
+    }
+
+    & .progress-ring .progress-bar {
+        stroke: #57C29B;
+        stroke-linecap: round;
+    }
+
+    & .progress-text {
+        position: relative;
+        bottom: 110px;
+        left: 75px;
+        font-family: "Rawline Bold", sans-serif;
+        font-size: 24px;
+        color: #333;
+    }
+}
+
+
+/*AJUSTE PARA DIFERENTES TAMANHOS DE TELA - RESPONSIVO*/
+
+@media (min-width: 320px) and (max-width: 411px) {
+    /*Balão de Fala Lisi*/
+    .balao_lisi {
+        & img {
+            width: 150px;
+        }
+    }
+    
+    .balaofala {
+        font-size: 12px;
+        padding: 20px 15px 20px 15px;
+        margin: 50px 20px 0 10px;
+        height: 90px;
+        width: 200px;
+        letter-spacing: 1px;
+        border-radius: 10px;
+    }
+    .seta {
+        margin-top: 83px;
+        margin-left: -21px;
+        width: 0;
+        height: 0;
+        border: 20px solid transparent;
+        border-left-color: #292929;
+    }
+    
+}
+
+@media (min-width: 412px) and (max-width: 496px) {
+    /*Balão de Fala Lisi*/
+    .balao_lisi {
+        & img {
+            width: 150px;
+        }
+    }
+    
+    .balaofala {
+        font-size: 12px;
+        padding: 28px 20px 20px 20px;
+        margin: 50px 20px 0 10px;
+        height: 90px;
+        width: 200px;
+        letter-spacing: 1px;
+        border-radius: 10px;
+    }
+    .seta {
+        margin-top: 83px;
+        margin-left: -21px;
+        width: 0;
+        height: 0;
+        border: 20px solid transparent;
+        border-left-color: #292929;
+    }
+}
+
+@media (min-width: 700px) and (max-width: 890px) {
+    .niveis .col {
+        margin: 10%;
+    }
+}
+
+@media (min-width: 890px) and (max-width: 1376px) {
+    .niveis .col {
+        margin: 5%;
+    }
+}

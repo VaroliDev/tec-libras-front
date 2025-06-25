@@ -1,0 +1,153 @@
+h1 {
+    font-family: 'Rawline Bold', sans-serif;
+}
+
+.username {
+    color: #707070;
+}
+
+.points {
+    color: #707070;
+}
+
+.progress {
+    height: 6px; 
+    border-radius: 10px; 
+    background-color: #e0e0e0;
+
+    & .progress-bar {
+        width: 80%; 
+        background-color: #3AC1A8;
+    }
+}
+
+.btn-edit {
+    background-color: #B95EFF; 
+    color: #f9f9f9; 
+    border-radius: 20px;
+}
+
+.quadrado1 {
+    background-color: #F77E00;
+    width: 80px; 
+    border-radius: 8px;
+}
+
+.quadrado2 {
+    background-color: #9E3FFA; 
+    width: 80px; 
+    border-radius: 8px;
+}
+
+.desc {
+    color: #707070; 
+    font-weight: 700;
+    
+    h1 {
+        font-family: 'Rawline Bold', sans-serif; 
+        color: #292929; font-weight: bolder;
+    }
+}
+
+.descAtividade {
+    min-width: 223px;
+}
+
+.estatisticas {
+    background-color: #f1f1f1; 
+    border-radius: 10px;
+}
+
+.conquistas {
+    background-color: #f1f1f1; 
+    border-radius: 10px; 
+    padding: 20px;
+    
+    & img {
+        margin: 12px 0;
+        width: 100px; 
+    }
+    
+}
+
+:host-context(body.modo-escuro) {
+    .username {
+        color: #c3c3c3;
+    }
+    .points {
+        color: #c3c3c3;
+    }
+    .estatisticas {
+        background-color: #333333; 
+        border-radius: 10px;
+    }
+    .desc {
+        color: #c3c3c3; 
+        font-weight: 700;
+
+        h1 {
+            font-family: 'Rawline Bold', sans-serif; 
+            color: #f9f9f9; font-weight: bolder;
+        }
+    }
+    .conquistas {
+        background-color: #333333; 
+        border-radius: 10px; 
+        padding: 20px;
+    }
+}
+
+:host-context(body.modo-contraste) {
+    .username {
+        color: #ffffff;
+    }
+    .points {
+        color: #ffffff;
+    }
+    .estatisticas {
+        background-color: #111111; 
+        border-radius: 10px;
+    }
+    .desc {
+        color: #ffffff; 
+        font-weight: 700;
+        h1 {
+            font-family: 'Rawline Bold', sans-serif; 
+            color: #ffffff; font-weight: bolder;
+        }
+    }
+    .conquistas {
+        background-color: #111111; 
+        border-radius: 10px; 
+        padding: 20px;
+    }
+}
+@media (max-width: 391px) {
+
+}
+
+@media (min-width: 392px) and (max-width: 767px){
+
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+
+}
+
+@media (min-width: 992px) and (max-width: 1199px){
+
+}
+
+@media (min-width: 1200px) and (max-width: 1399px){
+    .conquistas {
+        & img {
+            margin: 12px 0;
+            width: 86.5px; 
+        }
+    }
+
+    .descAtividade {
+        width: 5000px !important;
+        min-width: 100vh; 
+    }
+}

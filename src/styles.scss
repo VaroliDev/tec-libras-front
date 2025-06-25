@@ -1,0 +1,405 @@
+/*MODO ESCURO*/
+body.modo-escuro {
+    background-color: #292929; 
+    color: #F9F9F9;
+}
+
+.modo-escuro {
+    & nav {
+        background-color: #292929;
+
+        & .nav-link {
+            color: #F9F9F9;
+        }
+        & .nav-link:hover {
+            color: #d3d3d3;
+        }
+    }
+
+    & footer{
+        background-color: #F86400;
+        margin-top: auto;
+        & b, a, p, hr, h6 {
+            color: #292929;
+            text-decoration: none;
+        }
+        & p:hover, a:hover {
+            color: #4d1992;
+            text-decoration:underline;
+        }
+    }
+
+    & .navbar-toggler svg{
+        fill: #F9F9F9;
+    }
+
+    & .dropdown-menu {
+        background-color: #343434;
+
+        & li, a, p {
+            color: #F9F9F9;
+        }
+        & li:hover, a:hover, p:hover {
+            color: #F9F9F9;
+            background-color: #292929;
+        }
+    }
+
+    & .cardPalavraSom {
+        background-color:#343434;
+        color: #F9F9F9;
+        fill: #F9F9F9;
+    }
+}
+
+/*MODO ALTO-CONTRASTE*/
+body.modo-contraste {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.modo-contraste {
+    & nav {
+        background-color: #000000;
+
+        & .nav-link {
+            color: #ffffff;
+        }
+        & .nav-link:hover {
+            color: #d3d3d3;
+        }
+    }
+
+    & footer{
+        background-color: #F86400;
+        margin-top: auto;
+        & b, a, p, hr, h6 {
+            color: #000000;
+            text-decoration: none;
+        }
+        & p:hover, a:hover {
+            color: #4d1992;
+            text-decoration:underline;
+        }
+    }
+    & .navbar-toggler svg{
+        fill: #ffffff;
+    }
+
+    & .dropdown-menu {
+        background-color: #141414;
+
+        & li, a, p {
+            color: #ffffff;
+        }
+        & li:hover, a:hover, p:hover {
+            color: #F9F9F9;
+            background-color: #0b0b0b;
+        }
+    }
+
+    & .cardPalavraSom {
+        background-color:#0b0b0b;
+        color: #ffffff;
+        fill: #ffffff;
+    }
+
+    & .pararDeFalar {
+        background-color:aqua;
+        color: #000000;
+        font-weight: bold ;
+    }
+}
+
+/*FONTE RAWLINE*/
+@font-face {
+    font-family: 'Rawline';
+    src: url(/fonts/rawline-500.ttf) format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Rawline Bold';
+    src: url(/fonts/rawline-800.ttf) format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*GERAL BODY*/
+body {
+    background-color: #F9F9F9;
+    font-family: "Rawline", sans-serif;
+}
+
+a {
+    cursor: pointer;
+}
+
+/*BARRA DE ROLAGEM*/
+::-webkit-scrollbar { width: 5px; height: 5px;}
+::-webkit-scrollbar-track { background: rgb(215, 215, 215); border-radius: 5px; }
+::-webkit-scrollbar-thumb { background: rgb(149, 139, 160); border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: rgb(121, 115, 126);}
+
+/*NAVEGADOR*/
+nav {
+    background-color: #F9F9F9;
+
+    & #logo_teclibras {
+        width: 150px;
+        margin-right: 20%;
+    }
+}
+
+/*dropdowns confirgurações/opções*/
+.dropdown-toggle::after {
+    color: #FF5733; /* Cor da seta */
+}
+
+#modo-claro, #modo-escuro, #modo-contraste{
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+.label_modo {
+    font-size: 13px;
+} 
+
+#foto_perfil {
+    width:27px; 
+    height:27px; 
+    border-radius: 50%; 
+    margin: 10px 0 0 30px;
+}
+
+/*RODAPÉ*/
+footer{
+    background-color: #9E3FFA;
+    margin-top: auto;
+    & b, a, p, hr, h6 {
+        color: #F9F9F9;
+        text-decoration: none;
+
+    }
+}
+
+
+/*BOTÃO VLIBRAS E PALAVRASOM ACESSIBILIDADE*/
+@media (max-width: 100px) {
+    /*Card do botão PalavraSom*/
+    .cardPalavraSom {
+        width: 300px;
+        height: 450px;
+        transition: opacity 0.3s ease;
+        position: fixed;
+        right: 20px;    
+        top: 50%;       
+        transform: translateY(-50%); 
+        z-index: 9999;
+    }
+        
+    /*Conteúdo do Card PalavraSom*/
+    .contPalavraSom {
+        width: 300px; 
+        overflow: auto; 
+        padding: 10px;
+    
+        & h5 {
+            font-size: 18px;
+            text-align: center; 
+            font-weight: 600;
+        }
+    }
+    
+    .PalavraSomhidden {
+        display: none;
+    }
+    
+    /*Botão para fechar o Card do botão PalavraSom*/
+    .closeCardPalavraSom {
+        padding: 5px 7px;
+        margin-top: 10px;
+        cursor: pointer;
+        border: none;
+    }
+    
+    .pararDeFalar {
+        font-size: 16px;
+        padding: 5px 25px;
+        margin-top: 10px;
+        background-color: blueviolet;
+        color: aliceblue;
+    }
+    .pararDeFalar:hover {
+        background-color: rgb(98, 31, 161);
+        color: aliceblue;
+    }
+    
+    /*Video Palavra Som*/
+    .videoPalavraSom {
+        width: 280px;
+    }
+    }
+    
+    @media (min-width: 100px) and (max-width: 450px){
+    /*Card do botão PalavraSom*/
+    .cardPalavraSom {
+        width: 220px;
+        height: 320px;
+        transition: opacity 0.3s ease;
+        position: fixed;
+        right: 20px;    
+        top: 50%;       
+        transform: translateY(-50%); 
+        z-index: 9999;
+    }
+        
+    /*Conteúdo do Card PalavraSom*/
+    .contPalavraSom {
+        width: 210px; 
+        overflow: auto; 
+        padding: 10px;
+    
+        & h5 {
+            font-size: 16px;
+            text-align: center; 
+            font-weight: 600;
+        }
+    
+        & p {
+            font-size: 14px;
+        }
+    }
+    
+    .PalavraSomhidden {
+        display: none;
+    }
+    
+    /*Botão para fechar o Card do botão PalavraSom*/
+    .closeCardPalavraSom {
+        padding: 5px 7px;
+        margin-top: 10px;
+        cursor: pointer;
+        border: none;
+    }
+    
+    .pararDeFalar {
+        font-size: 14px;
+        padding: 5px 25px;
+        margin-top: 10px;
+        background-color: blueviolet;
+        color: aliceblue;
+    }
+    .pararDeFalar:hover {
+        background-color: rgb(98, 31, 161);
+        color: aliceblue;
+    }
+    
+    /*Video Palavra Som*/
+    .videoPalavraSom {
+        width: 190px;
+    }
+    }
+    
+    @media (min-width: 450px) {
+        /*Card do botão PalavraSom*/
+        .cardPalavraSom {
+            width: 300px;
+            height: 450px;
+            transition: opacity 0.3s ease;
+            position: fixed;
+            right: 20px;    
+            top: 50%;       
+            transform: translateY(-50%); 
+            z-index: 9999;
+        }
+            
+        /*Conteúdo do Card PalavraSom*/
+        .contPalavraSom {
+            width: 300px; 
+            overflow: auto; 
+            padding: 10px;
+    
+            & h5 {
+                font-size: 18px;
+                text-align: center; 
+                font-weight: 600;
+            }
+        }
+    
+        .PalavraSomhidden {
+            display: none;
+        }
+    
+        /*Botão para fechar o Card do botão PalavraSom*/
+        .closeCardPalavraSom {
+            padding: 5px 7px;
+            margin-top: 10px;
+            cursor: pointer;
+            border: none;
+        }
+    
+        .pararDeFalar {
+            font-size: 16px;
+            padding: 5px 25px;
+            margin-top: 10px;
+            background-color: blueviolet;
+            color: aliceblue;
+        }
+        .pararDeFalar:hover {
+            background-color: rgb(98, 31, 161);
+            color: aliceblue;
+        }
+    
+        /*Video Palavra Som*/
+        .videoPalavraSom {
+            width: 280px;
+        }
+    }
+
+.acessbtn { 
+    position: fixed; 
+    right: 20px;   
+    top: 50%;        
+    transform: translateY(-50%); 
+    display: grid; 
+    grid-template-columns: 1fr; 
+    gap: 110%; 
+    align-items: center; 
+    z-index: 9999;
+}
+    
+/*Botão Palavra Som*/
+.btnPalavraSom {
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: blueviolet;
+    border: none;
+    padding: 7px 10px;
+    margin-right: 10px;
+}
+.btnPalavraSom:hover {
+    background-color: rgb(98, 31, 161);
+}
+
+/*PALAVRA SOM*/
+.selected-text {
+    background-color: rgb(137, 43, 226); /* Altere para a cor que preferir */
+    color: #e6e6e6;
+}
+
+.selected-text:hover {
+    background-color: rgb(137, 43, 226); /* Altere para a cor que preferir */
+    color: #e6e6e6;
+    
+}
+
+.clickable:hover {
+    cursor: pointer; /* Define o cursor como mão ao passar o mouse */
+    text-decoration: underline;
+}
+
+.word-select-enabled {
+    cursor: auto ; /* Altera o cursor quando a seleção de texto está habilitada */
+}
