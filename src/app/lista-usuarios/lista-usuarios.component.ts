@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { ThemeService } from '../../services/theme.service';
+import { ThemeService } from '../services/theme.service';
 import { Router } from '@angular/router';
-import { UserService } from '../../services/user.service';
+import { UserService } from '../services/user.service';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';  // Importar o HttpClient
 import { Modal } from 'bootstrap';  // Importação direta do modal (se você precisar de algo específico)

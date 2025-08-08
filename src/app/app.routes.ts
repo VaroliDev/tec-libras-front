@@ -1,12 +1,12 @@
 import { Routes } from '@angular/router';
-import { CadastroComponent } from './Usuário/cadastro/cadastro.component';
-import { LoginComponent } from './Usuário/login/login.component';
-import { InicioComponent } from './Usuário/inicio/inicio.component';
-import { IntroducaoComponent } from './Usuário/introducao/introducao.component';
-import { BibliotecaSinaisComponent } from './Usuário/biblioteca-sinais/biblioteca-sinais.component';
-import { SobreNosComponent } from './Usuário/sobre-nos/sobre-nos.component';
-import { ListaUsuariosComponent } from './Gerenciamento/lista-usuarios/lista-usuarios.component';
-import { ContaComponent } from './Usuário/conta/conta.component';
+import { CadastroComponent } from './tec-libras-client/cadastro/cadastro.component';
+import { LoginComponent } from './tec-libras-client/login/login.component';
+import { InicioComponent } from './tec-libras-client/inicio/inicio.component';
+import { IntroducaoComponent } from './tec-libras-client/introducao/introducao.component';
+import { BibliotecaSinaisComponent } from './tec-libras-client/biblioteca-sinais/biblioteca-sinais.component';
+import { SobreNosComponent } from './tec-libras-client/sobre-nos/sobre-nos.component';
+import { ListaUsuariosComponent } from './lista-usuarios/lista-usuarios.component';
+import { ContaComponent } from './tec-libras-client/conta/conta.component';
 
 
 export const routes: Routes = [
