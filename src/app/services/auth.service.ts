@@ -32,6 +32,7 @@ export class AuthService {
     return signOut(this.auth).then(() => {
       localStorage.removeItem(this.TOKEN_KEY);
       localStorage.removeItem('firstName');
+      localStorage.removeItem('userData');
       this.router.navigate(['/login']);
     });
   }

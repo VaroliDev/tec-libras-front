@@ -84,6 +84,27 @@ export class LoginComponent {
 
   loginWithGoogle(): void {
     this.authService.loginWithGoogle()
+    .then(() => {
+      const userDataString = localStorage.getItem('userData') || '{}';
+      const userData = JSON.parse(userDataString);
+
+      this.userService.getUserByEmail(userData.user_name).subscribe({
+        next: (user) => {
+          if (user && user.id) {
+            this.router.navigate(['/home']);
+          } else {
+            this.router.navigate(['/cadastro']);
+          }
+        },
+        error: (err) => {
+          console.error('Erro ao buscar usuário:', err);
+          this.router.navigate(['/cadastro']);
+        }
+      });
+    })
+    .catch(err => {
+      console.error('Erro no login com Google:', err);
+    });
   }
 
   setUserToLocalStorage(response: LoginResponse, firstName: string, fullName: string): void {
