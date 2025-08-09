@@ -82,6 +82,10 @@ export class LoginComponent {
     );
   }
 
+  loginWithGoogle(): void {
+    this.authService.loginWithGoogle()
+  }
+
   setUserToLocalStorage(response: LoginResponse, firstName: string, fullName: string): void {
     const userData = {
       first_name: firstName,

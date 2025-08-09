@@ -27,6 +27,10 @@ export const routes: Routes = [
     },
 
     {
+        path: 'home', redirectTo: 'inicio', pathMatch: 'full'
+    },
+
+    {
         path: '',
         component: IntroducaoComponent
     },
