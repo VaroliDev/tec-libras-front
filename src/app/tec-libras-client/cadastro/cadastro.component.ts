@@ -5,12 +5,12 @@ import { UserService } from '../../services/user.service';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { provideHttpClient } from '@angular/common/http'; 
-import { CommonModule } from '@angular/common';
+
 
 
 @Component({
   selector: 'app-cadastro',
-  imports: [FormsModule, CommonModule],   
+  imports: [FormsModule],   
   templateUrl: './cadastro.component.html',
   styleUrls: ['./cadastro.component.scss']
 })

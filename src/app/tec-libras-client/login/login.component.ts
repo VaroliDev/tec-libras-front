@@ -4,7 +4,7 @@ import { ThemeService } from '../../services/theme.service';
 import { Router } from '@angular/router';
 import { UserService } from '../../services/user.service';
 import { AuthService } from '../../services/auth.service';
-import { CommonModule } from '@angular/common';
+
 
 
 interface LoginResponse {
@@ -18,7 +18,7 @@ interface LoginResponse {
 
 @Component({
   selector: 'app-login',
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
