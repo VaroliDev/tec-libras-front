@@ -45,7 +45,10 @@ export class ContaComponent {
     this.firstName = userData.first_name;
     this.fullName = userData.full_name;
     this.userName = userData.user_name;
+
+    if(this.firstName == null || this.fullName == null || this.userName == null) {
+      this.router.navigate(['/login']);
+    } 
   }
-  
 }
   
