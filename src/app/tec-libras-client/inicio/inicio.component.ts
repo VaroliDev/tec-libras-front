@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { ThemeService } from '../../services/theme.service';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import { Auth } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-inicio',
@@ -43,15 +44,17 @@ export class InicioComponent {
 
   firstName: string | null = null;
   fullName: string | null = null;
-  username: string | null = null;
+  userName: string | null = null;
 
   ngOnInit(): void {
     // Recuperando o primeiro nome do localStorage
-    const userData = JSON.parse(localStorage.getItem('token') || '{}');
-    this.firstName = userData.first_name; // Pegando apenas o primeiro nome
-    this.fullName = userData.full_name;
-    this.username = userData.user_name; 
 
+    const userDataString = localStorage.getItem('userData') || '{}';
+    const userData = JSON.parse(userDataString);
+
+    this.firstName = userData.first_name || 'Usuário'; // Pegando apenas o primeiro nome
+    this.fullName = userData.full_name || '';
+    this.userName = userData.user_name || ''; 
     if(this.firstName == null || this.fullName == null || this.username == null) {
       this.router.navigate(['/login']);
     } 

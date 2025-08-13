@@ -41,14 +41,18 @@ export class ContaComponent {
 
   ngOnInit(): void {
     // Recuperando o primeiro nome do localStorage
-    const userData = JSON.parse(localStorage.getItem('token') || '{}');
-    this.firstName = userData.first_name;
-    this.fullName = userData.full_name;
-    this.userName = userData.user_name;
+
+    const userDataString = localStorage.getItem('userData') || '{}';
+    const userData = JSON.parse(userDataString);
+
+    this.firstName = userData.first_name || 'Usuário'; // Pegando apenas o primeiro nome
+    this.fullName = userData.full_name || '';
+    this.userName = userData.user_name || ''; 
 
     if(this.firstName == null || this.fullName == null || this.userName == null) {
       this.router.navigate(['/login']);
     } 
+
   }
 }
   

@@ -3,7 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { ThemeService } from '../services/theme.service';
 import { Router } from '@angular/router';
 import { UserService } from '../services/user.service';
-import { CommonModule } from '@angular/common';
+
 import { HttpClient } from '@angular/common/http';  // Importar o HttpClient
 import { Modal } from 'bootstrap';  // Importação direta do modal (se você precisar de algo específico)
 
@@ -12,7 +12,7 @@ import { Modal } from 'bootstrap';  // Importação direta do modal (se você pr
 @Component({
   selector: 'app-lista-usuarios',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule],
   templateUrl: './lista-usuarios.component.html',
   styleUrls: ['./lista-usuarios.component.scss']  // Corrigido para 'styleUrls' ao invés de 'styleUrl'
 })

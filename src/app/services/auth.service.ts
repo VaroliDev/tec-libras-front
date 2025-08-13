@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { Auth, signOut, signInWithPopup, GoogleAuthProvider } from '@angular/fire/auth'; 
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ export class AuthService {
 
   private readonly TOKEN_KEY = 'token';
 
-  constructor(private router: Router) {}
+  constructor(private auth: Auth, private router: Router) {}
 
   // Armazena o token no localStorage
   setToken(token: string): void {
@@ -27,11 +28,14 @@ export class AuthService {
   }
 
   // Remove o token do localStorage e faz logout
-  logout(): void {
-    localStorage.removeItem(this.TOKEN_KEY);
-    this.router.navigate(['/login']); // Redireciona para a página de login
+  logout(): Promise<void> {
+    return signOut(this.auth).then(() => {
+      localStorage.removeItem(this.TOKEN_KEY);
+      localStorage.removeItem('firstName');
+      localStorage.removeItem('userData');
+      this.router.navigate(['/login']);
+    });
   }
-
   // Retorna o nome do usuário do token armazenado (se necessário)
   getUserName(): string | null {
     const token = this.getToken();
@@ -44,5 +48,30 @@ export class AuthService {
   setFirstName(fullName: string): void {
   const firstName = fullName.split(' ')[0];  // Pegando o primeiro nome
   localStorage.setItem('firstName', firstName);
+  }
+  //Metodo de login com Google
+  loginWithGoogle(): Promise<void> {
+    const provider = new GoogleAuthProvider();
+    return signInWithPopup(this.auth, provider)
+      .then((result) => {
+        const user = result.user;
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential?.accessToken || '';
+
+        this.setToken(token);
+        this.setFirstName(user.displayName || 'Usuário');
+
+        // Salva o objeto do usuário em localStorage como JSON string
+        localStorage.setItem('userData', JSON.stringify({
+          first_name: user.displayName?.split(' ')[0] || 'Usuário',
+          full_name: user.displayName || '',
+          user_name: user.email || ''
+        }));
+
+        this.router.navigate(['/home']);
+      })
+      .catch((error) => {
+        console.error('Erro no login com Google:', error);
+      });
 }
-}
+  }

@@ -15,6 +15,10 @@ export class UserService {
     return this.http.get(`${this.API_URL}users`);
   }
 
+  getUserByEmail(email: string): Observable<any> {
+  return this.http.get(`${this.API_URL}user/email/${email}`);
+  }
+
   createUser(user: any): Observable<any> {
     return this.http.post(`${this.API_URL}user`, user);
   }

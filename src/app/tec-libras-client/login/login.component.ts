@@ -4,7 +4,7 @@ import { ThemeService } from '../../services/theme.service';
 import { Router } from '@angular/router';
 import { UserService } from '../../services/user.service';
 import { AuthService } from '../../services/auth.service';
-import { CommonModule } from '@angular/common';
+
 
 
 interface LoginResponse {
@@ -18,7 +18,7 @@ interface LoginResponse {
 
 @Component({
   selector: 'app-login',
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
@@ -80,6 +80,31 @@ export class LoginComponent {
         this.alertCredenciaisInvalidas = true;
       }
     );
+  }
+
+  loginWithGoogle(): void {
+    this.authService.loginWithGoogle()
+    .then(() => {
+      const userDataString = localStorage.getItem('userData') || '{}';
+      const userData = JSON.parse(userDataString);
+
+      this.userService.getUserByEmail(userData.user_name).subscribe({
+        next: (user) => {
+          if (user && user.id) {
+            this.router.navigate(['/home']);
+          } else {
+            this.router.navigate(['/cadastro']);
+          }
+        },
+        error: (err) => {
+          console.error('Erro ao buscar usuário:', err);
+          this.router.navigate(['/cadastro']);
+        }
+      });
+    })
+    .catch(err => {
+      console.error('Erro no login com Google:', err);
+    });
   }
 
   setUserToLocalStorage(response: LoginResponse, firstName: string, fullName: string): void {
