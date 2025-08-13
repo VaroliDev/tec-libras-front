@@ -24,7 +24,7 @@ export class GoogleSigninComponent {
   loginWithGoogle(): void {
     this.authService.loginWithGoogle()
     .then(() => {
-      const userDataString = localStorage.getItem('userData') || '{}';
+      const userDataString = localStorage.getItem('token') || '{}';
       const userData = JSON.parse(userDataString);
 
       this.user.full_name = userData.full_name || '';

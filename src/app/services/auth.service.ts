@@ -59,10 +59,9 @@ export class AuthService {
         const token = credential?.accessToken || '';
 
         this.setToken(token);
-        this.setFirstName(user.displayName || 'Usuário');
 
         // Salva o objeto do usuário em localStorage como JSON string
-        localStorage.setItem('userData', JSON.stringify({
+        localStorage.setItem('token', JSON.stringify({
           first_name: user.displayName?.split(' ')[0] || '',
           full_name: user.displayName || '',
           user_name: user.email?.split('@')[0] || ''

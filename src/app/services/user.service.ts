@@ -19,13 +19,17 @@ export class UserService {
   return this.http.get(`${this.API_URL}user/email/${email}`);
   }
 
+  getUserByToken(token: string): Observable<any> {
+    return this.http.post(`${this.API_URL}user/token`, { token });
+  }
+
   createUser(user: any): Observable<any> {
     return this.http.post(`${this.API_URL}user`, user);
   }
 
   deleteUser(userId: number): Observable<any> {
   return this.http.delete(`${this.API_URL}user/${userId}`);
-}
+  }
 
   login(user: any): Observable<any> {
     return this.http.post(`${this.API_URL}login`, user);
@@ -33,6 +37,5 @@ export class UserService {
 
   updateUser(userId: number, updatedUser: any): Observable<any> {
   return this.http.put(`${this.API_URL}user/${userId}`, updatedUser);
-}
-
+  }
 }
