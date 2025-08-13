@@ -7,18 +7,24 @@ import { BibliotecaSinaisComponent } from './tec-libras-client/biblioteca-sinais
 import { SobreNosComponent } from './tec-libras-client/sobre-nos/sobre-nos.component';
 import { ListaUsuariosComponent } from './lista-usuarios/lista-usuarios.component';
 import { ContaComponent } from './tec-libras-client/conta/conta.component';
+import { ComunidadeComponent } from './tec-libras-client/comunidade/comunidade.component';
 
 
 export const routes: Routes = [
     {
-        path: 'cadastro',
-        component: CadastroComponent
-        
+        path: '',
+        component: IntroducaoComponent
     },
-    
+
     {
         path: 'login',
         component: LoginComponent
+    },
+
+    {
+        path: 'cadastro',
+        component: CadastroComponent
+        
     },
 
     {
@@ -29,15 +35,15 @@ export const routes: Routes = [
     {
         path: 'home', redirectTo: 'inicio', pathMatch: 'full'
     },
-
-    {
-        path: '',
-        component: IntroducaoComponent
-    },
-
+    
     {
         path: 'biblioteca-sinais',
         component: BibliotecaSinaisComponent
+    },
+
+    {
+        path: 'comunidade',
+        component: ComunidadeComponent
     },
 
     {
