@@ -37,17 +37,26 @@ export class InicioComponent {
   pagconta(){
     this.router.navigate(['/conta']);
   }
+  
+  logout() {
+    this.authService.logout()
+  }
+
   firstName: string | null = null;
   fullName: string | null = null;
   userName: string | null = null;
 
   ngOnInit(): void {
     // Recuperando o primeiro nome do localStorage
+
     const userDataString = localStorage.getItem('userData') || '{}';
     const userData = JSON.parse(userDataString);
 
     this.firstName = userData.first_name || 'Usuário'; // Pegando apenas o primeiro nome
     this.fullName = userData.full_name || '';
     this.userName = userData.user_name || ''; 
+    if(this.firstName == null || this.fullName == null || this.username == null) {
+      this.router.navigate(['/login']);
+    } 
   }
 }
