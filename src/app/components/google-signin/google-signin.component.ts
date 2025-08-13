@@ -34,7 +34,7 @@ export class GoogleSigninComponent {
       this.UserService.createUser(this.user).subscribe({
         next: (response) => {
           console.log('Usuário criado com sucesso:', response);
-          this.router.navigate(['/login']);
+          this.router.navigate(['/inicio']);
         },
         error: (error) => {
           console.error('Erro ao criar usuário:', error);

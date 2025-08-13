@@ -6,9 +6,6 @@ import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { GoogleSigninComponent } from '../../components/google-signin/google-signin.component';
 
-
-
-
 @Component({
   selector: 'app-cadastro',
   imports: [FormsModule, GoogleSigninComponent],   
