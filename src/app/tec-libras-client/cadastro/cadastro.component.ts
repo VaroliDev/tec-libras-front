@@ -3,9 +3,8 @@ import { FormsModule } from '@angular/forms';
 import { ThemeService } from '../../services/theme.service';
 import { UserService } from '../../services/user.service';
 import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
-import { provideHttpClient } from '@angular/common/http'; 
 import { AuthService } from '../../services/auth.service';
+import { generate } from 'generate-password-ts';
 
 
 
@@ -59,10 +58,8 @@ export class CadastroComponent {
   alertSenhaInvalida: boolean = false;
   isGoogleLogin: boolean = false;
   isSending: boolean = false;
-  //oginGoogle: boolean = false; 
 
   loginWithGoogle(): void {
-    //this.loginGoogle = true;
     this.authService.loginWithGoogle()
      
     .then(() => {
@@ -72,7 +69,7 @@ export class CadastroComponent {
       this.user.full_name = userData.full_name || '';
       this.user.user_name = userData.user_name ? userData.user_name.split('@')[0] : '';
       this.user.email = userData.user_name || '';
-      this.user.password = 'login with google';
+      this.user.password = generate({length: 10,numbers: true,});
 
       this.isGoogleLogin = true;
       this.cadastrar();

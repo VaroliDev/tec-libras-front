@@ -63,7 +63,7 @@ export class AuthService {
 
         // Salva o objeto do usuário em localStorage como JSON string
         localStorage.setItem('userData', JSON.stringify({
-          first_name: user.displayName?.split(' ')[0] || 'Usuário',
+          first_name: user.displayName?.split(' ')[0] || '',
           full_name: user.displayName || '',
           user_name: user.email?.split('@')[0] || ''
         }));

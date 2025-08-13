@@ -2,10 +2,12 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ThemeService } from '../../services/theme.service';
 import { Router } from '@angular/router';
+import { HeaderComponent } from "../../components/header/header.component";
+import { FooterComponent } from "../../components/footer/footer.component";
 
 @Component({
   selector: 'app-biblioteca-sinais',
-  imports: [FormsModule],
+  imports: [FormsModule, HeaderComponent, FooterComponent],
   templateUrl: './biblioteca-sinais.component.html',
   styleUrl: './biblioteca-sinais.component.scss'
 })
