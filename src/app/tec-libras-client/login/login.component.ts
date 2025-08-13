@@ -4,8 +4,7 @@ import { ThemeService } from '../../services/theme.service';
 import { Router } from '@angular/router';
 import { UserService } from '../../services/user.service';
 import { AuthService } from '../../services/auth.service';
-
-
+import { GoogleSigninComponent } from '../../components/google-signin/google-signin.component';
 
 interface LoginResponse {
   token: string;
@@ -18,7 +17,7 @@ interface LoginResponse {
 
 @Component({
   selector: 'app-login',
-  imports: [FormsModule],
+  imports: [FormsModule, GoogleSigninComponent],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })

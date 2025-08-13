@@ -3,11 +3,12 @@ import { FormsModule } from '@angular/forms';
 import { ThemeService } from '../../services/theme.service';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
-import { Auth } from '@angular/fire/auth';
+import { HeaderComponent } from '../../components/header/header.component';
+import { FooterComponent } from "../../components/footer/footer.component";
 
 @Component({
   selector: 'app-inicio',
-  imports: [FormsModule],
+  imports: [FormsModule, HeaderComponent, FooterComponent] ,
   templateUrl: './inicio.component.html',
   styleUrl: './inicio.component.scss'
 })

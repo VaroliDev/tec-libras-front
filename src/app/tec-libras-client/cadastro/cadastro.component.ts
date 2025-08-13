@@ -3,16 +3,15 @@ import { FormsModule } from '@angular/forms';
 import { ThemeService } from '../../services/theme.service';
 import { UserService } from '../../services/user.service';
 import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
-import { provideHttpClient } from '@angular/common/http'; 
 import { AuthService } from '../../services/auth.service';
+import { GoogleSigninComponent } from '../../components/google-signin/google-signin.component';
 
 
 
 
 @Component({
   selector: 'app-cadastro',
-  imports: [FormsModule],   
+  imports: [FormsModule, GoogleSigninComponent],   
   templateUrl: './cadastro.component.html',
   styleUrls: ['./cadastro.component.scss']
 })
@@ -59,32 +58,8 @@ export class CadastroComponent {
   alertSenhaInvalida: boolean = false;
   isGoogleLogin: boolean = false;
   isSending: boolean = false;
-  //oginGoogle: boolean = false; 
 
-  loginWithGoogle(): void {
-    //this.loginGoogle = true;
-    this.authService.loginWithGoogle()
-     
-    .then(() => {
-      const userDataString = localStorage.getItem('userData') || '{}';
-      const userData = JSON.parse(userDataString);
-
-      this.user.full_name = userData.full_name || '';
-      this.user.user_name = userData.user_name ? userData.user_name.split('@')[0] : '';
-      this.user.email = userData.user_name || '';
-      this.user.password = 'login with google';
-
-      this.isGoogleLogin = true;
-      this.cadastrar();
-    })
-    .catch(err => {
-      console.error('Erro no login com Google:', err);
-    });
-  }
-  
-
-    cadastrar(): void {
-
+  cadastrar(): void {
       if (this.isSending) return;
       if (!this.isGoogleLogin) {
         
@@ -120,7 +95,6 @@ export class CadastroComponent {
       this.UserService.createUser(this.user).subscribe({
         next: (response: any) => {
           console.log(response);
-         
         },
 
         /* erros de validação do backend */
