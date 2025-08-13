@@ -1,18 +1,13 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { OnInit } from '@angular/core';
+import { HeaderComponent } from '../../components/header/header.component';
+import { FooterComponent } from '../../components/footer/footer.component';
 
 @Component({
   selector: 'app-comunidade',
-  imports: [],
+  imports: [HeaderComponent, FooterComponent],
   templateUrl: './comunidade.component.html',
   styleUrl: './comunidade.component.scss'
 })
 export class ComunidadeComponent {
 
-  constructor(private routes: Router) {}
-
-  ngOnInit(): void {
-    this.routes.navigate(['/inicio']);
-  }
 }
