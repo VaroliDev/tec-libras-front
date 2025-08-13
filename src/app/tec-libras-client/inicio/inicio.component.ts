@@ -55,7 +55,7 @@ export class InicioComponent {
     this.firstName = userData.first_name || 'Usuário'; // Pegando apenas o primeiro nome
     this.fullName = userData.full_name || '';
     this.userName = userData.user_name || ''; 
-    if(this.firstName == null || this.fullName == null || this.username == null) {
+    if(this.firstName == null || this.fullName == null || this.userName == null) {
       this.router.navigate(['/login']);
     } 
   }

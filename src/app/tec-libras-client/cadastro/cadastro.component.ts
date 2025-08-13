@@ -59,9 +59,12 @@ export class CadastroComponent {
   alertSenhaInvalida: boolean = false;
   isGoogleLogin: boolean = false;
   isSending: boolean = false;
+  //oginGoogle: boolean = false; 
 
   loginWithGoogle(): void {
+    //this.loginGoogle = true;
     this.authService.loginWithGoogle()
+     
     .then(() => {
       const userDataString = localStorage.getItem('userData') || '{}';
       const userData = JSON.parse(userDataString);
@@ -83,7 +86,8 @@ export class CadastroComponent {
     cadastrar(): void {
 
       if (this.isSending) return;
-      
+      if (!this.isGoogleLogin) {
+        
 
       /* erros de validação normais (front)*/
       if (this.user.full_name.trim().length < 5 || !this.user.full_name.includes(' ')) {
@@ -108,6 +112,7 @@ export class CadastroComponent {
         this.alertSenhaInvalida = true;
         return;
       }
+      }
 
       this.isSending = true;
 
@@ -115,9 +120,7 @@ export class CadastroComponent {
       this.UserService.createUser(this.user).subscribe({
         next: (response: any) => {
           console.log(response);
-          if(this.isGoogleLogin == false){
-            this.router.navigateByUrl('/login');
-          }
+         
         },
 
         /* erros de validação do backend */

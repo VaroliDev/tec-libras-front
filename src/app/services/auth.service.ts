@@ -65,7 +65,7 @@ export class AuthService {
         localStorage.setItem('userData', JSON.stringify({
           first_name: user.displayName?.split(' ')[0] || 'Usuário',
           full_name: user.displayName || '',
-          user_name: user.email || ''
+          user_name: user.email?.split('@')[0] || ''
         }));
 
         this.router.navigate(['/home']);
