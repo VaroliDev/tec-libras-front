@@ -6,12 +6,23 @@ import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { GoogleSigninComponent } from '../../components/google-signin/google-signin.component';
 
+interface LoginResponse {
+  token: string;
+  user: {
+    id: number;
+    user_name: string;
+    fullName:string;
+  };
+}
+
 @Component({
   selector: 'app-cadastro',
   imports: [FormsModule, GoogleSigninComponent],   
   templateUrl: './cadastro.component.html',
   styleUrls: ['./cadastro.component.scss']
 })
+
+
 export class CadastroComponent {
   
   protected nome: string = ''
@@ -45,7 +56,6 @@ export class CadastroComponent {
     email:'',
     password: ''
   };
-  
   
   alertNomeInvalido: boolean = false;
   alertUserUso: boolean = false;
@@ -92,9 +102,17 @@ export class CadastroComponent {
       this.UserService.createUser(this.user).subscribe({
         next: (response: any) => {
           console.log(response);
+          this.UserService.login(this.user).subscribe(
+          (response: LoginResponse) => {
+            console.log('Resposta da API:', response);  // Verifique a estrutura da resposta
+            const user = response.user;
+            const fullName = user.fullName;
+            const firstName = fullName.split(' ')[0];  // Pegando o primeiro nome
+            this.authService.setToken(response.token); // Armazenando o token com AuthService
+            this.setUserToLocalStorage(response, firstName, fullName); // Armazenando o primeiro nome
+            this.router.navigateByUrl('/inicio');
+          });
         },
-
-        /* erros de validação do backend */
         error: (error: any) => {
           if (error?.error?.message?.includes('users_email_unique')) {
             this.alertEmailUso = true;
@@ -108,8 +126,18 @@ export class CadastroComponent {
         complete: () => {
           this.isSending = false; // Libera para um novo envio
         }
-        
       });
+    }
+
+    setUserToLocalStorage(response: LoginResponse, firstName: string, fullName: string): void {
+      const userData = {
+        first_name: firstName,
+        full_name: fullName,
+        user_name: response.user.user_name,
+        id: response.user.id,
+        token: response.token
+      };
+      localStorage.setItem('token', JSON.stringify(userData));
     }
 
     /*serve p mudar o status das verificações*/
@@ -148,5 +176,4 @@ export class CadastroComponent {
         this.alertSenhaInvalida = false;
       }
     }
-
 }

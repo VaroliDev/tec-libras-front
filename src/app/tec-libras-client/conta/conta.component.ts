@@ -51,8 +51,7 @@ export class ContaComponent {
 
     if(this.firstName == null || this.fullName == null || this.userName == null) {
       this.router.navigate(['/login']);
-    } 
-
+    }
   }
 }
   

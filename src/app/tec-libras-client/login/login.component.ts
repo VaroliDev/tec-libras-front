@@ -72,7 +72,6 @@ export class LoginComponent {
         this.authService.setToken(response.token); // Armazenando o token com AuthService
         this.setUserToLocalStorage(response, firstName, fullName); // Armazenando o primeiro nome
         this.router.navigateByUrl('/inicio');
-      
       },
       (error: any) => {
         console.log('Credenciais inválidas:', error);
@@ -80,32 +79,7 @@ export class LoginComponent {
       }
     );
   }
-
-  loginWithGoogle(): void {
-    this.authService.loginWithGoogle()
-    .then(() => {
-      const userDataString = localStorage.getItem('userData') || '{}';
-      const userData = JSON.parse(userDataString);
-
-      this.userService.getUserByEmail(userData.user_name).subscribe({
-        next: (user) => {
-          if (user && user.id) {
-            this.router.navigate(['/home']);
-          } else {
-            this.router.navigate(['/cadastro']);
-          }
-        },
-        error: (err) => {
-          console.error('Erro ao buscar usuário:', err);
-          this.router.navigate(['/cadastro']);
-        }
-      });
-    })
-    .catch(err => {
-      console.error('Erro no login com Google:', err);
-    });
-  }
-
+  
   setUserToLocalStorage(response: LoginResponse, firstName: string, fullName: string): void {
     const userData = {
       first_name: firstName,
