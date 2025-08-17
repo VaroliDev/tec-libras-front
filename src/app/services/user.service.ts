@@ -23,6 +23,10 @@ export class UserService {
     return this.http.post(`${this.API_URL}user/token`, { token });
   }
 
+  refreshUserData(token:string, user_name: string): Observable<any> {
+    return this.http.post(`${this.API_URL}user/refresh`, { token, user_name });
+  }
+
   createUser(user: any): Observable<any> {
     return this.http.post(`${this.API_URL}user`, user);
   }

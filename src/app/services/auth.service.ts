@@ -45,10 +45,21 @@ export class AuthService {
     }
     return null;
   }
+
+  isLoggedIn(): boolean {
+    const userDataString = localStorage.getItem('user');
+    if (!userDataString) {
+      this.router.navigate(['/login']);
+      return false;
+    }
+    return true;
+  }
+
   setFirstName(fullName: string): void {
   const firstName = fullName.split(' ')[0];  // Pegando o primeiro nome
   localStorage.setItem('firstName', firstName);
   }
+
   //Metodo de login com Google
   loginWithGoogle(): Promise<void> {
     const provider = new GoogleAuthProvider();

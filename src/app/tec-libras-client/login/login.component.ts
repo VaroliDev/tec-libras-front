@@ -62,23 +62,18 @@ export class LoginComponent {
 
   // Método de login com tipagem do retorno
   login(): void {
-    this.userService.login(this.user).subscribe(
-      (response: LoginResponse) => {
-        console.log('Resposta da API:', response);  // Verifique a estrutura da resposta
-        this.alertCredenciaisInvalidas = false;
-        const user = response.user;
-        const fullName = user.fullName;
-        const firstName = fullName.split(' ')[0];  // Pegando o primeiro nome
-        this.authService.setToken(response.token); // Armazenando o token com AuthService
-        this.setUserToLocalStorage(response, firstName, fullName); // Armazenando o primeiro nome
-        this.router.navigateByUrl('/inicio');
-      },
-      (error: any) => {
-        console.log('Credenciais inválidas:', error);
-        this.alertCredenciaisInvalidas = true;
-      }
-    );
-  }
+  this.userService.login(this.user).subscribe(
+    (response: LoginResponse) => {
+      this.alertCredenciaisInvalidas = false;
+      this.authService.setToken(response.token);
+      localStorage.setItem('token', JSON.stringify(response.token));
+      this.router.navigateByUrl('/inicio');
+    },
+    (error: any) => {
+      this.alertCredenciaisInvalidas = true;
+    }
+  );
+}
   
   setUserToLocalStorage(response: LoginResponse, firstName: string, fullName: string): void {
     const userData = {
