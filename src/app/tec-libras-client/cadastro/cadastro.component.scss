@@ -1,20 +1,26 @@
 :host-context(body.modo-escuro) {
-    background-color: #181818;
     & .container_cadastro {
-        border: solid 2px rgb(31, 31, 31);
+        background-color: #181818;
+        border: solid 2px #373737;
+        border-radius: 6px;
+    }
+
+    & .input_cadastro {
+        background-color: #181818; 
+        color: #f9f9f9;
     }
 
     & .form_cadastro p {
         color: #eeddff;
     }
-    & .input_cadastro {
-        background-color: #292929; 
-        color: #f9f9f9;
-    }
     
     & .input_cadastro:focus {
         background-color: #1b1b1b;
         color: #f9f9f9;
+    }
+    
+    & .help_entrar {
+        color: #ac5aff;
     }
 }
 
@@ -109,7 +115,8 @@
 .abs_cadastro {
     flex: 1; 
     padding: 10px;
-    background-color:#7927cb; 
+    background: #7B27CD;
+    background: linear-gradient(0deg, rgba(123, 39, 205, 1) 0%, rgba(248, 100, 0, 1) 100%); 
     border-radius: 5px 0 0 5px;
 }
 

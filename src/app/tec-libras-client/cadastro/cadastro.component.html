@@ -103,16 +103,18 @@
                     </div>
                   }
 
+                  <div style=" text-align: center;">
+                    <a class="help_entrar" (click)="paglogin()">Já possuo uma conta</a>
+                  </div>
+                  <br>
+
                   <button class="btn btn-cadastro" (click)="cadastrar()" style="width: 100%; font-weight: bold;"> CADASTRAR-SE</button>
-                  <br><br>
+                  <br>
                 </form>
-                <p style="text-align: center;">Ou entre com:</p>
 
-                <app-google-signin></app-google-signin>
+                <div style="margin-top: 15px;"><app-google-signin></app-google-signin></div>
 
-                <div style=" text-align: center;">
-                  <a class="help_entrar" (click)="paglogin()">Já possuo uma conta</a>
-                </div>
+                
               </div>
             </div>
 

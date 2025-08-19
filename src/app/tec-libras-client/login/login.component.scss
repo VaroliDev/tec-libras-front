@@ -116,7 +116,11 @@
 .abs_entrar {
     flex: 1; 
     padding: 10px;
-    background-color: #F86400; 
+    flex: 1; 
+    padding: 10px;
+    background: #F86400;
+    background: linear-gradient(0deg, rgba(248, 100, 0, 1) 0%,  rgba(123, 39, 205, 1) 100%); 
+    border-radius: 5px 0 0 5px;
     border-radius: 0 5px 5px 0;
 }
 

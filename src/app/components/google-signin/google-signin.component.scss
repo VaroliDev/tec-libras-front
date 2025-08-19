@@ -1,0 +1,28 @@
+button {
+    margin: 100%;
+}
+.google-btn {
+    width: 100%; 
+    font-weight: bold;
+    display: flex;
+    color: #a1a1a1;
+    border-radius: 50px;
+    border: solid 2px #b1b1b1;
+    margin: 0 5px;
+    padding: 8px 20px;
+    justify-content: center;
+}
+
+:host-context(body.modo-escuro) {
+    .google-btn {
+        color: #c5c5c5;
+        border: solid 2px #c5c5c5;
+    }  
+}
+
+:host-context(body.modo-contraste) {
+    .google-btn {
+        color: #ffffff;
+        border: solid 2px #ffffff;
+    }  
+}
