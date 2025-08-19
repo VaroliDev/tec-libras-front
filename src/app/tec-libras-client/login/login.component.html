@@ -73,16 +73,17 @@
                     </div>
                   }
 
-                  <br>
-                    <button class="btn btn-entrar "(click)="login()" style="width: 100%; font-weight: bold;"> ENTRAR</button>
-                    <br><br>
-                    <p style="text-align: center;">Ou entre com:</p>
-
-                    <app-google-signin></app-google-signin>
-
-                    <div style=" text-align: center;">
+                  <div style=" text-align: center;">
                       <a class="help_cadastro" (click)="pagcadastro()">Não possuo uma conta ainda</a>
                     </div>
+                  <br>
+                    <button class="btn btn-entrar "(click)="login()" style="width: 100%; font-weight: bold;"> ENTRAR</button>
+                    <br>
+
+                    <div style="margin-top: 15px;"><app-google-signin></app-google-signin></div>
+                    
+
+                    
                   </form>
                 </div>
                 <div class="abs_entrar" ></div>
