@@ -62,7 +62,7 @@ export class LoginComponent {
 
   // Método de login com tipagem do retorno
   login(): void {
-    this.userService.login(this.user).subscribe(
+    this.userService.tokenLogin(this.user).subscribe(
       (response: LoginResponse) => {
         console.log('Resposta da API:', response);  // Verifique a estrutura da resposta
         this.alertCredenciaisInvalidas = false;

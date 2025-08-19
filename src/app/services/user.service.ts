@@ -15,12 +15,12 @@ export class UserService {
     return this.http.get(`${this.API_URL}users`);
   }
 
-  getUserByEmail(email: string): Observable<any> {
-  return this.http.get(`${this.API_URL}user/email/${email}`);
+  tokenLogin(user: any): Observable<any> {
+    return this.http.post(`${this.API_URL}tokenLogin`, user);
   }
 
-  getUserByToken(token: string): Observable<any> {
-    return this.http.post(`${this.API_URL}user/token`, { token });
+  renewData(token:string): Observable<any>{
+    return this.http.post(`${this.API_URL}renewData`, { token })
   }
 
   createUser(user: any): Observable<any> {
