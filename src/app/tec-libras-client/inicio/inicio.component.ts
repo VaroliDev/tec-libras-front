@@ -51,7 +51,7 @@ export class InicioComponent {
     if(this.authService.isLoggedIn()){
       const userDataString = localStorage.getItem('token');
       const userData = JSON.parse(userDataString || '{}');
-      this.firstName = userData.firstName || '';
+      this.firstName = userData.first_name || '';
       this.fullName = userData.full_name || '';
       this.userName = userData.user_name || '';
     }
