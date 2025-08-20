@@ -30,9 +30,7 @@ export class AuthService {
   // Remove o token do localStorage e faz logout
   logout(): Promise<void> {
     return signOut(this.auth).then(() => {
-      localStorage.removeItem(this.TOKEN_KEY);
-      localStorage.removeItem('firstName');
-      localStorage.removeItem('userData');
+      localStorage.removeItem('token');
       this.router.navigate(['/login']);
     });
   }
@@ -45,6 +43,7 @@ export class AuthService {
     }
     return null;
   }
+  
   setFirstName(fullName: string): void {
   const firstName = fullName.split(' ')[0];  // Pegando o primeiro nome
   localStorage.setItem('firstName', firstName);
@@ -72,5 +71,5 @@ export class AuthService {
       .catch((error) => {
         console.error('Erro no login com Google:', error);
       });
-}
   }
+}

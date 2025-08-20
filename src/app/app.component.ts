@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ThemeService } from './services/theme.service';
 import { UserService } from './services/user.service';
+import { Router } from '@angular/router';
 
 interface RenewResponse {
   user: {
@@ -21,7 +22,7 @@ interface RenewResponse {
 export class AppComponent {
   title = 'teclibras';
 
-  constructor(private themeService: ThemeService, private userService: UserService) {}
+  constructor(private themeService: ThemeService, private userService: UserService, private router: Router) {}
 
   onThemeChange(theme: string): void {
     this.themeService.applyTheme(theme);
@@ -37,7 +38,18 @@ export class AppComponent {
 
     this.userService.renewData(token.token).subscribe(
     (res) => {
-      console.log('Usuário encontrado:', res);
+      //redireciona caso esteja logado
+      if(this.router.url == '/login' || this.router.url == '/cadastro' || this.router.url == ''){
+        this.router.navigate(['/inicio'])
+      }
+      const userData = {
+        first_name: res.user.fullName.split(' ')[0],
+        full_name: res.user.fullName,
+        user_name: res.user.user_name,
+        id: res.user.id,
+        token: res.user.token
+      };
+      localStorage.setItem('token', JSON.stringify(userData));
     },
     (err) => {
       console.error('Erro:', err);
