@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+  import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ThemeService } from './services/theme.service';
 import { UserService } from './services/user.service';
@@ -42,11 +42,12 @@ export class AppComponent {
       if(this.router.url == '/login' || this.router.url == '/cadastro' || this.router.url == ''){
         this.router.navigate(['/inicio'])
       }
+      console.log(res.user)
       const userData = {
+        id: res.user.id,
+        user_name: res.user.user_name,
         first_name: res.user.full_name.split(' ')[0],
         full_name: res.user.full_name,
-        user_name: res.user.user_name,
-        id: res.user.id,
         token: res.user.token
       };
       localStorage.setItem('token', JSON.stringify(userData));
