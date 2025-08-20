@@ -7,11 +7,11 @@ import { AuthService } from '../../services/auth.service';
 import { GoogleSigninComponent } from '../../components/google-signin/google-signin.component';
 
 interface LoginResponse {
-  token: string;
   user: {
     id: number;
     user_name: string;
     fullName:string;
+    token: string;
   };
 }
 
@@ -69,7 +69,6 @@ export class LoginComponent {
         const user = response.user;
         const fullName = user.fullName;
         const firstName = fullName.split(' ')[0];  // Pegando o primeiro nome
-        this.authService.setToken(response.token); // Armazenando o token com AuthService
         this.setUserToLocalStorage(response, firstName, fullName); // Armazenando o primeiro nome
         this.router.navigateByUrl('/inicio');
       },
@@ -86,7 +85,7 @@ export class LoginComponent {
       full_name: fullName,
       user_name: response.user.user_name,
       id: response.user.id,
-      token: response.token
+      token: response.user.token
     };
     localStorage.setItem('token', JSON.stringify(userData));
   }
