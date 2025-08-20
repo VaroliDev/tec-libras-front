@@ -35,14 +35,14 @@ export class AppComponent {
   ngOnInit() {
     const tokenData = localStorage.getItem('token') || '';
     const token = JSON.parse(tokenData);
+    //redireciona caso esteja logado -NAO ESTA FUNCIONANDO (nseipq)-
+    if(!token.token && this.router.url == '/login' || this.router.url == '/cadastro' || this.router.url == ''){
+      console.log('ronaldo')
+      this.router.navigate(['/inicio'])
+    }
 
     this.userService.renewData(token.token).subscribe(
-    (res) => {
-      //redireciona caso esteja logado
-      if(this.router.url == '/login' || this.router.url == '/cadastro' || this.router.url == ''){
-        this.router.navigate(['/inicio'])
-      }
-      console.log(res.user)
+    (res) => {      
       const userData = {
         id: res.user.id,
         user_name: res.user.user_name,
