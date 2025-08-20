@@ -43,8 +43,8 @@ export class AppComponent {
         this.router.navigate(['/inicio'])
       }
       const userData = {
-        first_name: res.user.fullName.split(' ')[0],
-        full_name: res.user.fullName,
+        first_name: res.user.full_name.split(' ')[0],
+        full_name: res.user.full_name,
         user_name: res.user.user_name,
         id: res.user.id,
         token: res.user.token
