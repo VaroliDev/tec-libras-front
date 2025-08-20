@@ -29,7 +29,12 @@ export class AppComponent {
 
   ngOnInit() {
     const tokenData = localStorage.getItem('token') || '';
+    if(!tokenData){
+      return;
+    }
+    
     const token = JSON.parse(tokenData);
+
     //redireciona caso esteja logado -NAO ESTA FUNCIONANDO (nseipq)-
     if(!token.token && this.router.url == '/login' || this.router.url == '/cadastro' || this.router.url == ''){
       console.log('ronaldo')

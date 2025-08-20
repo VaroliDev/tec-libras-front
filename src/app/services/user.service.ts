@@ -34,4 +34,8 @@ export class UserService {
   renewData(token: string): Observable<any> {
     return this.http.post(`${this.API_URL}renewData`, { token });
   }
+
+  doesUserExists(user_name: string): Observable <any>{
+    return this.http.post(`${this.API_URL}doesExists`, { user_name });
+  }
 }

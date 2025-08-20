@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Auth, signOut, signInWithPopup, GoogleAuthProvider } from '@angular/fire/auth'; 
+import { Auth, signOut, signInWithPopup, GoogleAuthProvider } from '@angular/fire/auth';
+import { UserService } from './user.service';
+import { generate } from 'generate-password-ts';
+import { firstValueFrom } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +12,7 @@ export class AuthService {
 
   private readonly TOKEN_KEY = 'token';
 
-  constructor(private auth: Auth, private router: Router) {}
+  constructor(private auth: Auth, private router: Router, private userService: UserService) {}
 
   // Armazena o token no localStorage
   setToken(token: string): void {
@@ -58,27 +61,47 @@ export class AuthService {
   }
 
   //Metodo de login com Google
-  loginWithGoogle(): Promise<void> {
-    const provider = new GoogleAuthProvider();
-    return signInWithPopup(this.auth, provider)
-      .then((result) => {
-        const user = result.user;
-        const credential = GoogleAuthProvider.credentialFromResult(result);
-        const token = credential?.accessToken || '';
+  async loginWithGoogle() {
+  const provider = new GoogleAuthProvider();
 
-        this.setToken(token);
+  try {
+    const result = await signInWithPopup(this.auth, provider);
+    const userGoogle = result.user;
 
-        // Salva o objeto do usuário em localStorage como JSON string
-        localStorage.setItem('token', JSON.stringify({
-          first_name: user.displayName?.split(' ')[0] || '',
-          full_name: user.displayName || '',
-          user_name: user.email?.split('@')[0] || ''
-        }));
+    if (!userGoogle.email) throw new Error("Usuário do Google sem email");
 
-        this.router.navigate(['/home']);
-      })
-      .catch((error) => {
-        console.error('Erro no login com Google:', error);
-      });
+    const user = {
+      user_name: userGoogle.email.split('@')[0],
+      first_name: userGoogle.displayName?.split(' ')[0] ?? '',
+      full_name: userGoogle.displayName ?? '',
+      email: userGoogle.email,
+      password: generate({ length: 16, numbers: true }),
+      isGoogleLogin: true
+    };
+
+    const resExists = await firstValueFrom(this.userService.doesUserExists(user.user_name));
+
+    if (!resExists.exists) {
+      await firstValueFrom(this.userService.createUser(user));
+      console.log("Usuário criado");
+    }
+
+    const resLogin = await firstValueFrom(this.userService.login(user));
+
+    const userData = {
+      id: resLogin.user.id,
+      user_name: resLogin.user.user_name,
+      first_name: resLogin.user.fullName.split(' ')[0],
+      full_name: resLogin.user.fullName,
+      token: resLogin.user.token
+    };
+
+    localStorage.setItem('token', JSON.stringify(userData));
+    console.log("login finalizado");
+    this.router.navigateByUrl('/inicio');
+
+  } catch (error) {
+    console.error("Erro no login com Google:", error);
   }
+}
 }
