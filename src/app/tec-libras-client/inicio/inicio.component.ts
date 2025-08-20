@@ -48,15 +48,12 @@ export class InicioComponent {
   userName: string | null = null;
 
   ngOnInit(): void {
-    const userDataString = localStorage.getItem('token') || '{}';
-    const userData = JSON.parse(userDataString) || JSON.parse('token');
-
-    this.firstName = userData.first_name || '';
-    this.fullName = userData.full_name || '';
-    this.userName = userData.user_name || ''; 
-
-    if(this.firstName == null || this.fullName == null || this.userName == null) {
-      this.router.navigate(['/login']);
-    } 
+    if(this.authService.isLoggedIn()){
+      const userDataString = localStorage.getItem('token');
+      const userData = JSON.parse(userDataString || '{}');
+      this.firstName = userData.firstName || '';
+      this.fullName = userData.full_name || '';
+      this.userName = userData.user_name || '';
+    }
   }
 }

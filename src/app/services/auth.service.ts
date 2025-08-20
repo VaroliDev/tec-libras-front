@@ -27,6 +27,14 @@ export class AuthService {
     return token !== null;
   }
 
+  isLoggedIn(): boolean{
+    const token = localStorage.getItem('token')
+    if(!token){
+      return false;
+    }
+    return true;
+  }
+
   // Remove o token do localStorage e faz logout
   logout(): Promise<void> {
     return signOut(this.auth).then(() => {
@@ -43,11 +51,12 @@ export class AuthService {
     }
     return null;
   }
-  
+
   setFirstName(fullName: string): void {
   const firstName = fullName.split(' ')[0];  // Pegando o primeiro nome
   localStorage.setItem('firstName', firstName);
   }
+
   //Metodo de login com Google
   loginWithGoogle(): Promise<void> {
     const provider = new GoogleAuthProvider();

@@ -4,14 +4,6 @@ import { ThemeService } from './services/theme.service';
 import { UserService } from './services/user.service';
 import { Router } from '@angular/router';
 
-interface RenewResponse {
-  user: {
-    id: number;
-    user_name: string;
-    fullName:string;
-  };
-}
-
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -22,7 +14,9 @@ interface RenewResponse {
 export class AppComponent {
   title = 'teclibras';
 
+
   constructor(private themeService: ThemeService, private userService: UserService, private router: Router) {}
+
 
   onThemeChange(theme: string): void {
     this.themeService.applyTheme(theme);
@@ -30,6 +24,7 @@ export class AppComponent {
   
   isCurrentTheme(theme: string): boolean {
     return this.themeService.getCurrentTheme() === theme;
+
   } 
 
   ngOnInit() {
