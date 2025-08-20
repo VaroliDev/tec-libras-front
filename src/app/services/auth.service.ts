@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Auth, signOut, signInWithPopup, GoogleAuthProvider } from '@angular/fire/auth'; 
+import { Auth, signOut, signInWithPopup, GoogleAuthProvider } from '@angular/fire/auth';
+import { UserService } from './user.service';
+import { generate } from 'generate-password-ts';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +11,7 @@ export class AuthService {
 
   private readonly TOKEN_KEY = 'token';
 
-  constructor(private auth: Auth, private router: Router) {}
+  constructor(private auth: Auth, private router: Router, private userService: UserService) {}
 
   // Armazena o token no localStorage
   setToken(token: string): void {
@@ -62,20 +64,46 @@ export class AuthService {
     const provider = new GoogleAuthProvider();
     return signInWithPopup(this.auth, provider)
       .then((result) => {
-        const user = result.user;
-        const credential = GoogleAuthProvider.credentialFromResult(result);
-        const token = credential?.accessToken || '';
+        console.log('inicio login google')
+        const userGoogle = result.user;
 
-        this.setToken(token);
+        console.log('resultado', userGoogle)
+        const user = {
+          user_name: userGoogle.email?.split('@')[0],
+          first_name: userGoogle.displayName?.split(' ')[0],
+          full_name: userGoogle.displayName,
+          email: userGoogle.email,
+          password: generate({length: 16, numbers: true})
+        }
 
-        // Salva o objeto do usuário em localStorage como JSON string
-        localStorage.setItem('token', JSON.stringify({
-          first_name: user.displayName?.split(' ')[0] || '',
-          full_name: user.displayName || '',
-          user_name: user.email?.split('@')[0] || ''
-        }));
+        console.log('dados capturados', user)
 
-        this.router.navigate(['/home']);
+        const doesExist = this.userService.doesUserExists;
+        if(!doesExist){
+          this.userService.createUser(user).subscribe({});
+          console.log('Xereca')
+        }
+        console.log('inicio cadastro', user)
+
+            //realiza o login
+            this.userService.login(user).subscribe({
+              next: (res) => {
+                console.log('inicio login', res)
+                const userData = {
+                  id: res.user.id,
+                  user_name: res.user.user_name,
+                  first_name: res.user.fullName.split(' ')[0],
+                  full_name: res.user.fullName,
+                  token: res.user.token
+                };
+                localStorage.setItem('token', JSON.stringify(userData));
+                console.log('login finalizado');
+                this.router.navigateByUrl('/inicio' )
+              },
+              error: (err) => {
+                console.log("ASDADAS", err)
+              }
+            })
       })
       .catch((error) => {
         console.error('Erro no login com Google:', error);

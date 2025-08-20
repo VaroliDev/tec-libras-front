@@ -31,10 +31,6 @@ export const routes: Routes = [
         path: 'inicio',
         component: InicioComponent
     },
-
-    {
-        path: 'home', redirectTo: 'inicio', pathMatch: 'full'
-    },
     
     {
         path: 'biblioteca-sinais',
