@@ -7,11 +7,11 @@ import { AuthService } from '../../services/auth.service';
 import { GoogleSigninComponent } from '../../components/google-signin/google-signin.component';
 
 interface LoginResponse {
-  token: string;
   user: {
     id: number;
     user_name: string;
     fullName:string;
+    token: string;
   };
 }
 
@@ -62,18 +62,22 @@ export class LoginComponent {
 
   // Método de login com tipagem do retorno
   login(): void {
-  this.userService.login(this.user).subscribe(
-    (response: LoginResponse) => {
-      this.alertCredenciaisInvalidas = false;
-      this.authService.setToken(response.token);
-      localStorage.setItem('token', JSON.stringify(response.token));
-      this.router.navigateByUrl('/inicio');
-    },
-    (error: any) => {
-      this.alertCredenciaisInvalidas = true;
-    }
-  );
-}
+    this.userService.login(this.user).subscribe(
+      (response: LoginResponse) => {
+        console.log('Resposta da API:', response);  // Verifique a estrutura da resposta
+        this.alertCredenciaisInvalidas = false;
+        const user = response.user;
+        const fullName = user.fullName;
+        const firstName = fullName.split(' ')[0];  // Pegando o primeiro nome
+        this.setUserToLocalStorage(response, firstName, fullName); // Armazenando o primeiro nome
+        this.router.navigateByUrl('/inicio');
+      },
+      (error: any) => {
+        console.log('Credenciais inválidas:', error);
+        this.alertCredenciaisInvalidas = true;
+      }
+    );
+  }
   
   setUserToLocalStorage(response: LoginResponse, firstName: string, fullName: string): void {
     const userData = {
@@ -81,7 +85,7 @@ export class LoginComponent {
       full_name: fullName,
       user_name: response.user.user_name,
       id: response.user.id,
-      token: response.token
+      token: response.user.token
     };
     localStorage.setItem('token', JSON.stringify(userData));
   }
