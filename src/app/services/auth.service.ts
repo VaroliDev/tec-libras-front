@@ -43,11 +43,12 @@ export class AuthService {
     }
     return null;
   }
-  
+
   setFirstName(fullName: string): void {
   const firstName = fullName.split(' ')[0];  // Pegando o primeiro nome
   localStorage.setItem('firstName', firstName);
   }
+
   //Metodo de login com Google
   loginWithGoogle(): Promise<void> {
     const provider = new GoogleAuthProvider();
