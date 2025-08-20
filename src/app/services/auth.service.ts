@@ -30,9 +30,7 @@ export class AuthService {
   // Remove o token do localStorage e faz logout
   logout(): Promise<void> {
     return signOut(this.auth).then(() => {
-      localStorage.removeItem(this.TOKEN_KEY);
-      localStorage.removeItem('firstName');
-      localStorage.removeItem('userData');
+      localStorage.removeItem('token');
       this.router.navigate(['/login']);
     });
   }
@@ -44,15 +42,6 @@ export class AuthService {
       return decodedToken.user_name; // Supondo que o JWT contenha esse campo
     }
     return null;
-  }
-
-  isLoggedIn(): boolean {
-    const userDataString = localStorage.getItem('user');
-    if (!userDataString) {
-      this.router.navigate(['/login']);
-      return false;
-    }
-    return true;
   }
 
   setFirstName(fullName: string): void {
@@ -83,5 +72,5 @@ export class AuthService {
       .catch((error) => {
         console.error('Erro no login com Google:', error);
       });
-}
   }
+}
