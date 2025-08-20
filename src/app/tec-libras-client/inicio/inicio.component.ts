@@ -49,7 +49,7 @@ export class InicioComponent {
 
   ngOnInit(): void {
     if(this.authService.isLoggedIn()){
-      const userDataString = localStorage.getItem('user');
+      const userDataString = localStorage.getItem('token');
       const userData = JSON.parse(userDataString || '{}');
       this.firstName = userData.firstName || '';
       this.fullName = userData.full_name || '';

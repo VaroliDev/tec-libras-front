@@ -4,15 +4,6 @@ import { ThemeService } from './services/theme.service';
 import { UserService } from './services/user.service';
 import { Router } from '@angular/router';
 
-interface RenewResponse {
-  user: {
-    id: number;
-    user_name: string;
-    fullName:string;
-  };
-}
-
-
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -47,8 +38,8 @@ export class AppComponent {
         this.router.navigate(['/inicio'])
       }
       const userData = {
-        first_name: res.user.fullName.split(' ')[0],
-        full_name: res.user.fullName,
+        first_name: res.user.full_name.split(' ')[0],
+        full_name: res.user.full_name,
         user_name: res.user.user_name,
         id: res.user.id,
         token: res.user.token

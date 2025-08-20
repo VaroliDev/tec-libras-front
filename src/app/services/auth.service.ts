@@ -27,6 +27,14 @@ export class AuthService {
     return token !== null;
   }
 
+  isLoggedIn(): boolean{
+    const token = localStorage.getItem('token')
+    if(!token){
+      return false;
+    }
+    return true;
+  }
+
   // Remove o token do localStorage e faz logout
   logout(): Promise<void> {
     return signOut(this.auth).then(() => {
