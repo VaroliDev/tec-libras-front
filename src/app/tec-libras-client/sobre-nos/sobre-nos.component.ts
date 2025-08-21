@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ThemeService } from '../../services/theme.service';
 import { Router } from '@angular/router';
+import { FooterComponent } from "../../components/footer/footer.component";
 
 @Component({
   selector: 'app-sobre-nos',
-  imports: [FormsModule],
+  imports: [FormsModule, FooterComponent],
   templateUrl: './sobre-nos.component.html',
   styleUrl: './sobre-nos.component.scss'
 })

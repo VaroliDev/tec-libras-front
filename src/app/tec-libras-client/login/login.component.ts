@@ -6,6 +6,7 @@ import { UserService } from '../../services/user.service';
 import { AuthService } from '../../services/auth.service';
 import { GoogleSigninComponent } from '../../components/google-signin/google-signin.component';
 import { HeaderSimpleComponent } from '../../components/header-simple/header-simple.component';
+import { FooterComponent } from '../../components/footer/footer.component';
 
 interface LoginResponse {
   user: {
@@ -18,7 +19,7 @@ interface LoginResponse {
 
 @Component({
   selector: 'app-login',
-  imports: [FormsModule, GoogleSigninComponent, HeaderSimpleComponent],
+  imports: [FormsModule, GoogleSigninComponent, HeaderSimpleComponent, FooterComponent],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
