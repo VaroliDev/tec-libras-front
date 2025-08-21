@@ -1,0 +1,33 @@
+.btn-social{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 10px;
+    width: 20vw;
+    margin-bottom: 10px;
+}
+
+.logo-img{
+    width: 2.5vw;
+    margin: 15px;
+}
+
+.btn-text{
+    text-decoration: none;
+}
+
+.btn-whats {
+  background: #25D366;
+}
+
+.btn-instagram {
+  background: #E4405F;
+}
+
+.btn-x {
+  background: #383838;
+}
+
+.btn-discord {
+  background: #2b2e52;
+}

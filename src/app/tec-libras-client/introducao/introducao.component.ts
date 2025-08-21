@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ThemeService } from '../../services/theme.service';
 import { Router } from '@angular/router';
+import { HeaderSimpleComponent } from "../../components/header-simple/header-simple.component";
 
 @Component({
   selector: 'app-introducao',
-  imports: [FormsModule],
+  imports: [FormsModule, HeaderSimpleComponent],
   templateUrl: './introducao.component.html',
   styleUrl: './introducao.component.scss'
 })
@@ -20,19 +21,7 @@ export class IntroducaoComponent {
     return this.themeService.getCurrentTheme() === theme;
   } 
 
-  paglogin() {
-    this.router.navigate(['/login']); 
-  }
-
   pagcadastro() {
     this.router.navigate(['/cadastro']); 
-  }
-
-  pagintroducao() {
-    this.router.navigate(['/']); 
-  }
-
-  pagsobrenos() {
-    this.router.navigate(['/sobre-nos']); 
   }
 }
