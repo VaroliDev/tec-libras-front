@@ -3,10 +3,11 @@ import { FormsModule } from '@angular/forms';
 import { ThemeService } from '../../services/theme.service';
 import { Router } from '@angular/router';
 import { HeaderSimpleComponent } from "../../components/header-simple/header-simple.component";
+import { FooterComponent } from "../../components/footer/footer.component";
 
 @Component({
   selector: 'app-introducao',
-  imports: [FormsModule, HeaderSimpleComponent],
+  imports: [FormsModule, HeaderSimpleComponent, FooterComponent],
   templateUrl: './introducao.component.html',
   styleUrl: './introducao.component.scss'
 })
