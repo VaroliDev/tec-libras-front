@@ -198,13 +198,13 @@ nav {
 footer {
     background: #292929;
     
-    & b, a, p, hr, h6 { 
+    & b, a { 
         cursor: pointer;
         text-decoration: none;
         color: #d3d3d3;
     }
         
-    & p:hover, a:hover {
+    & a:hover {
         cursor: pointer;
         text-decoration:underline;
     }
