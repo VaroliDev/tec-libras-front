@@ -1,28 +1,61 @@
 button {
     margin: 100%;
 }
+
 .google-btn {
     width: 100%; 
     font-weight: bold;
     display: flex;
-    color: #a1a1a1;
+    color: #292929;
     border-radius: 50px;
-    border: solid 2px #b1b1b1;
     margin: 0 5px;
-    padding: 8px 20px;
+    padding: 10px 20px;
     justify-content: center;
+    position: relative;
+    border: 0;
 }
+
+.google-btn::before {
+    --a: 0turn;                
+    --w: 3px;                  
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: var(--w);
+    border-radius: inherit;
+    background: conic-gradient(from var(--a), #4285f4, #ea4335, #fbbc05, #34a853);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0) padding-box;
+    -webkit-mask-composite: xor;       /* Safari/Chrome */
+    mask-composite: exclude;   /* Firefox */
+    animation: spin-angle 4s linear infinite;
+
+    
+}
+
+/* registra a custom property para animar suavemente */
+@property --a {
+  syntax: "<angle>";
+  initial-value: 0turn;
+  inherits: false;
+}
+
+@keyframes spin-angle {
+  to { --a: 1turn; }
+}
+
+/* acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+  .google-btn::before { animation: none; }}
+
 
 :host-context(body.modo-escuro) {
     .google-btn {
         color: #c5c5c5;
-        border: solid 2px #c5c5c5;
     }  
 }
 
 :host-context(body.modo-contraste) {
     .google-btn {
         color: #ffffff;
-        border: solid 2px #ffffff;
     }  
 }
