@@ -11,13 +11,13 @@ import { Router } from '@angular/router';
 export class HeaderSimpleComponent {
   constructor(private themeService: ThemeService, private router: Router) {}
   
-    onThemeChange(theme: string): void {
-      this.themeService.applyTheme(theme);
-    }
+  onThemeChange(theme: string): void {
+    this.themeService.applyTheme(theme);
+  }
     
-    isCurrentTheme(theme: string): boolean {
-      return this.themeService.getCurrentTheme() === theme;
-    } 
+  isCurrentTheme(theme: string): boolean {
+    return this.themeService.getCurrentTheme() === theme;
+  } 
 
   paglogin() {
     this.router.navigate(['/login']); 
