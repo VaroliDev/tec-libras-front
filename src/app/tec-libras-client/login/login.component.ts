@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { UserService } from '../../services/user.service';
 import { AuthService } from '../../services/auth.service';
 import { GoogleSigninComponent } from '../../components/google-signin/google-signin.component';
+import { HeaderSimpleComponent } from '../../components/header-simple/header-simple.component';
 
 interface LoginResponse {
   user: {
@@ -17,7 +18,7 @@ interface LoginResponse {
 
 @Component({
   selector: 'app-login',
-  imports: [FormsModule, GoogleSigninComponent],
+  imports: [FormsModule, GoogleSigninComponent, HeaderSimpleComponent],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
