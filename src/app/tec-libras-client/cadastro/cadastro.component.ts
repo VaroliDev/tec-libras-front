@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { GoogleSigninComponent } from '../../components/google-signin/google-signin.component';
 import { HeaderSimpleComponent } from "../../components/header-simple/header-simple.component";
+import { FooterComponent } from "../../components/footer/footer.component";
 
 interface LoginResponse {
   token: string;
@@ -18,7 +19,7 @@ interface LoginResponse {
 
 @Component({
   selector: 'app-cadastro',
-  imports: [FormsModule, GoogleSigninComponent, HeaderSimpleComponent],   
+  imports: [FormsModule, GoogleSigninComponent, HeaderSimpleComponent, FooterComponent],   
   templateUrl: './cadastro.component.html',
   styleUrls: ['./cadastro.component.scss']
 })
