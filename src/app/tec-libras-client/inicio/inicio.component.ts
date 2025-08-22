@@ -5,10 +5,10 @@ import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { HeaderComponent } from '../../components/header/header.component';
 import { FooterComponent } from "../../components/footer/footer.component";
-
+import { LevelComponent } from '../../components/level/level.component';
 @Component({
   selector: 'app-inicio',
-  imports: [FormsModule, HeaderComponent, FooterComponent] ,
+  imports: [FormsModule, HeaderComponent, FooterComponent, LevelComponent] ,
   templateUrl: './inicio.component.html',
   styleUrl: './inicio.component.scss'
 })
@@ -46,6 +46,11 @@ export class InicioComponent {
   firstName: string | null = null;
   fullName: string | null = null;
   userName: string | null = null;
+
+  item = {
+    level: 12,
+    percent: 30
+  }
 
   ngOnInit(): void {
     if(this.authService.isLoggedIn()){
