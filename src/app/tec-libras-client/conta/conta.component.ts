@@ -4,6 +4,7 @@ import { ThemeService } from '../../services/theme.service';
 import { Router } from '@angular/router';
 import { HeaderComponent } from '../../components/header/header.component';
 import { FooterComponent } from '../../components/footer/footer.component';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-conta',
@@ -12,7 +13,7 @@ import { FooterComponent } from '../../components/footer/footer.component';
   styleUrl: './conta.component.scss'
 })
 export class ContaComponent {
-  constructor(private themeService: ThemeService, private router: Router) {}
+  constructor(private themeService: ThemeService, private router: Router, private authService: AuthService) {}
 
   onThemeChange(theme: string): void {
     this.themeService.applyTheme(theme);
@@ -42,16 +43,13 @@ export class ContaComponent {
   userName: string | null = null;
 
   ngOnInit(): void {
-    const userDataString = localStorage.getItem('token') || '{}';
-    const userData = JSON.parse(userDataString);
+    this.authService.isLogged();
+    const userDataString = localStorage.getItem('token');
+    const userData = JSON.parse(userDataString || '{}');
 
     this.firstName = userData.first_name || '';
     this.fullName = userData.full_name || '';
     this.userName = userData.user_name || ''; 
-
-    if(this.firstName == null || this.fullName == null || this.userName == null) {
-      this.router.navigate(['/login']);
-    }
   }
 }
   

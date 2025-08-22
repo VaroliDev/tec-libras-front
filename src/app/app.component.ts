@@ -32,12 +32,11 @@ export class AppComponent {
     if(!tokenData){
       return;
     }
-    
+  
     const token = JSON.parse(tokenData);
 
     //redireciona caso esteja logado -NAO ESTA FUNCIONANDO (nseipq)-
-    if(!token.token && this.router.url == '/login' || this.router.url == '/cadastro' || this.router.url == ''){
-      console.log('ronaldo')
+    if(token.token && this.router.url == '/login' || this.router.url == '/cadastro' || this.router.url == '/'){
       this.router.navigate(['/inicio'])
     }
 

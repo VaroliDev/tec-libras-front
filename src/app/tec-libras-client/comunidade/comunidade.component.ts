@@ -15,10 +15,9 @@ export class ComunidadeComponent {
   firstName: string | null = null;
 
   ngOnInit(): void{
-    if(this.authService.isLoggedIn()){
-      const userDataString = localStorage.getItem('token');
-      const userData = JSON.parse(userDataString || '{}');
-      this.firstName = userData.first_name || '';
-    }
+    this.authService.isLogged();
+    const userDataString = localStorage.getItem('token');
+    const userData = JSON.parse(userDataString || '{}');
+    this.firstName = userData.first_name || '';
   }
 }
