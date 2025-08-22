@@ -35,8 +35,10 @@ export class AppComponent {
     
     const token = JSON.parse(tokenData);
 
+    console.log(token)
+
     //redireciona caso esteja logado -NAO ESTA FUNCIONANDO (nseipq)-
-    if(!token.token && this.router.url == '/login' || this.router.url == '/cadastro' || this.router.url == ''){
+    if(token.token && this.router.url == '/login' || this.router.url == '/cadastro' || this.router.url == '/'){
       console.log('ronaldo')
       this.router.navigate(['/inicio'])
     }
