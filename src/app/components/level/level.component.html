@@ -2,7 +2,7 @@
         <div class="row row-cols-1 row-cols-md-5 g-5">
             <div class="col" [id]="'nivel' + level">
                 <a href="#">
-                    <div class="circulonivel1">
+                    <div [class]="'circulonivel'+ levelstyle">
                     <p>Nível {{ level }}</p>
                     <svg class="progress-ring" width="150" height="150">
                         <circle class="progress-bg" r="65" cx="75" cy="75"></circle>
