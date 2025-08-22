@@ -4,6 +4,7 @@ import { ThemeService } from '../../services/theme.service';
 import { Router } from '@angular/router';
 import { HeaderComponent } from "../../components/header/header.component";
 import { FooterComponent } from "../../components/footer/footer.component";
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-biblioteca-sinais',
@@ -12,7 +13,7 @@ import { FooterComponent } from "../../components/footer/footer.component";
   styleUrl: './biblioteca-sinais.component.scss'
 })
 export class BibliotecaSinaisComponent {
-  constructor(private themeService: ThemeService, private router: Router) {}
+  constructor(private themeService: ThemeService, private router: Router, private authService: AuthService) {}
 
   onThemeChange(theme: string): void {
     this.themeService.applyTheme(theme);
@@ -36,5 +37,14 @@ export class BibliotecaSinaisComponent {
 
   pagconta(){
     this.router.navigate(['/conta']);
+  }
+
+  firstName: string = ''
+
+  ngOnInit(): void{
+    this.authService.isLogged();
+    const userDataString = localStorage.getItem('token');
+    const userData = JSON.parse(userDataString || '{}');
+    this.firstName = userData.first_name || '';
   }
 }
