@@ -49,7 +49,13 @@ export class InicioComponent {
   fullName: string | null = null;
   userName: string | null = null;
 
-  item = [
+  item= [
+    { 
+      level: 1,
+      percent: 100
+    }
+  ]
+  /*item = [
     { 
       level: 1,
       percent: 100
@@ -70,7 +76,7 @@ export class InicioComponent {
       level: 5,
       percent: 0
     }
-  ]
+  ]*/
 
   ngOnInit(): void {
     if(this.authService.isLoggedIn()){
@@ -79,6 +85,13 @@ export class InicioComponent {
       this.firstName = userData.first_name || '';
       this.fullName = userData.full_name || '';
       this.userName = userData.user_name || '';
+    }
+
+    for(let i=2; i<=5; i++){
+      this.item.push({
+        level: i,
+        percent: Math.floor(Math.random() * 11) * 10
+      });
     }
   }
 }
