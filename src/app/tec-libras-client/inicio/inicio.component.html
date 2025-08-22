@@ -11,10 +11,14 @@
 
     <br>
 
-    <!--LINKS DOS NÍVEIS-->
+    <div class="container row row-cols-1 row-cols-md-5 g-5">
+        <!--LINKS DOS NÍVEIS-->
+        @for (n of item; track n.level) {
+            <app-level [level] = n.level [percent] = n.percent [levelstyle] = "n.level % 2"></app-level>     
+        }
+    </div>
 
-    <app-level></app-level>
-    
+
     <br>
     <br>
     <br>

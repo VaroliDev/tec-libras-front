@@ -6,6 +6,8 @@ import { AuthService } from '../../services/auth.service';
 import { HeaderComponent } from '../../components/header/header.component';
 import { FooterComponent } from "../../components/footer/footer.component";
 import { LevelComponent } from '../../components/level/level.component';
+import { percentage } from '@angular/fire/storage';
+
 @Component({
   selector: 'app-inicio',
   imports: [FormsModule, HeaderComponent, FooterComponent, LevelComponent] ,
@@ -47,10 +49,28 @@ export class InicioComponent {
   fullName: string | null = null;
   userName: string | null = null;
 
-  item = {
-    level: 12,
-    percent: 30
-  }
+  item = [
+    { 
+      level: 1,
+      percent: 100
+    },
+    {
+      level: 2,
+      percent: 100
+    },
+    {
+      level: 3,
+      percent: 80
+    },
+    {
+      level: 4,
+      percent: 50
+    },
+    {
+      level: 5,
+      percent: 0
+    }
+  ]
 
   ngOnInit(): void {
     if(this.authService.isLoggedIn()){
