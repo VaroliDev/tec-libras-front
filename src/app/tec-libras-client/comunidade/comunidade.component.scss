@@ -1,33 +1,88 @@
+/*TITULO DA PÁGINA*/
+h2 {
+  font-family: "Rawline Bold", sans-serif;
+  text-align: center;
+  color: #292929;
+  margin-top: 50px;
+  font-weight: 700;
+}
+
+/*Quadrado Gradiente*/
+.abs {
+  flex: 1; 
+  padding: 10px;
+  background: #7B27CD;
+  background: linear-gradient(0deg, rgba(123, 39, 205, 1) 0%, rgba(248, 100, 0, 1) 100%); 
+  border-radius: 5px;
+}
+
+/*Geral Botão*/
 .btn-social{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    border-radius: 10px;
-    width: 20vw;
-    margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  width: 90%;
+  margin: 5% 5%;
+  padding: 4%;
+  text-decoration: none;
+  color: #f9f9f9;
+  font-weight: 700;
+  font-size: 110%;
+
+  & svg {
+    margin: 5px 10px 0 0;
+  }
 }
 
-.logo-img{
-    width: 2.5vw;
-    margin: 15px;
-}
-
-.btn-text{
-    text-decoration: none;
-}
-
+/*Botões Individuais*/
 .btn-whats {
-  background: #25D366;
+  background: linear-gradient(0deg, #25D366 0%, #8fb529 100%);
 }
 
 .btn-instagram {
-  background: #E4405F;
+  background: linear-gradient(0deg, #9b26b8 0%, #E4405F 100%);
 }
 
 .btn-x {
-  background: #383838;
+  background: linear-gradient(0deg, #151515 0%, #464646 100%); 
 }
 
 .btn-discord {
-  background: #2b2e52;
+  background: linear-gradient(0deg, rgb(26, 29, 61) 0%, #5865f2 100%);
+}
+
+
+/*modo escuro*/
+
+:host-context(body.modo-escuro) {
+  h2 {
+    color: #f9f9f9;
+  }
+}
+
+:host-context(body.modo-contraste) {
+  h2 {
+    color: #ffffff;
+  }
+
+  .btn-social {
+    border: solid 2px aqua;
+    color: #000000;
+  }
+
+  .btn-whats {
+    background: linear-gradient(0deg, #00ff5e 0%, #cbff3c 100%);
+  }
+
+  .btn-instagram {
+    background: linear-gradient(0deg, #d735ff 0%, #ff2850 100%);
+  }
+
+  .btn-x {
+    background: linear-gradient(0deg, #858585 0%, #ffffff 100%); 
+  }
+
+  .btn-discord {
+    background: linear-gradient(0deg, rgb(49, 66, 245) 0%, #6e7aff 100%);
+  }
 }
