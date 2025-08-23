@@ -11,104 +11,14 @@
 
     <br>
 
-    <!--LINKS DOS NÍVEIS-->
-    <div class="niveis" >
-        <div class="row row-cols-1 row-cols-md-5 g-5">
-            <div class="col" id="nivel1">
-                <a href="">
-                    <div class="circulonivel1">
-                        <p>Nível 1</p>
-                            <svg class="progress-ring" width="150" height="150">
-                                <circle class="progress-bg" r="65" cx="75" cy="75"></circle>
-                                <circle class="progress-bar" r="65" cx="75" cy="75"
-                                    stroke-dasharray="4 08"
-                                    stroke-dashoffset="81.6">
-                                </circle>
-                            </svg>
-                            <div class="progress-text">80%</div>
-                    </div>
-                </a>
-            </div>
-            <div class="col" id="nivel2">
-                <a href="">
-                    <div class="circulonivel2">
-                        <p>Nível 2</p>
-                        <svg class="progress-ring" width="150" height="150">
-                            <circle class="progress-bg" r="65" cx="75" cy="75"></circle>
-                            <circle class="progress-bar" r="65" cx="75" cy="75"
-                                stroke-dasharray="408"
-                                stroke-dashoffset="408">
-                            </circle>
-                        </svg>
-                        <div class="progress-text">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="#848484" class="bi bi-lock-fill" viewBox="0 0 23 27">
-                            <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2"/>
-                          </svg>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col" id="nivel3">
-                <a href="">
-                    <div class="circulonivel1">
-                        <p>Nível 3</p>
-                        <svg class="progress-ring" width="150" height="150">
-                            <circle class="progress-bg" r="65" cx="75" cy="75"></circle>
-                            <circle class="progress-bar" r="65" cx="75" cy="75"
-                                stroke-dasharray="408"
-                                stroke-dashoffset="408">
-                            </circle>
-                        </svg>
-                        <div class="progress-text">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="#848484" class="bi bi-lock-fill" viewBox="0 0 23 27">
-                            <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2"/>
-                          </svg>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col" id="nivel4">
-                <a href="">
-                    <div class="circulonivel2">
-                        <p>Nível 4</p>
-                        <svg class="progress-ring" width="150" height="150">
-                            <circle class="progress-bg" r="65" cx="75" cy="75"></circle>
-                            <circle class="progress-bar" r="65" cx="75" cy="75"
-                                stroke-dasharray="408"
-                                stroke-dashoffset="408">
-                            </circle>
-                        </svg>
-                        <div class="progress-text">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="#848484" class="bi bi-lock-fill" viewBox="0 0 23 27">
-                            <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2"/>
-                          </svg>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col" id="nivel5">
-                <a href="">
-                    <div class="circulonivel1">
-                        <p>Nível 5</p>
-                        <svg class="progress-ring" width="150" height="150">
-                            <circle class="progress-bg" r="65" cx="75" cy="75"></circle>
-                            <circle class="progress-bar" r="65" cx="75" cy="75"
-                                stroke-dasharray="408"
-                                stroke-dashoffset="408">
-                            </circle>
-                        </svg>
-                        <div class="progress-text">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="#848484" class="bi bi-lock-fill" viewBox="0 0 23 27">
-                            <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2"/>
-                          </svg>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            
-        </div>
+    <div class="container row row-cols-1 row-cols-md-5 g-5">
+        <!--LINKS DOS NÍVEIS-->
+        @for (n of item; track n.level) {
+            <app-level [level] = n.level [percent] = n.percent [levelstyle] = "n.level % 2"></app-level>     
+        }
     </div>
-    
+
+
     <br>
     <br>
     <br>

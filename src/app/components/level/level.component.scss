@@ -1,0 +1,86 @@
+//
+//
+//  REMOVER CSS DO INICIO.COMPONENT DEPOIS QUE TERMINAR 
+//
+//
+
+.niveis{
+    margin-left: 15%;
+    max-width: 70%;
+
+    & a {
+        text-decoration: none;
+        color: #292929;
+    }
+
+    & .circulonivel1 {
+        background-color: #BA73FF; 
+        border-radius: 50%; 
+        width: 200px; 
+        height: 200px;
+
+        & p {
+            font-family: "Rawline Bold", sans-serif;
+            text-align: center;
+            position: relative;
+            bottom: 40px;
+            font-weight: bolder;
+            font-size: 20px;
+            color: #9E3FFA;
+        }
+    }
+
+    & .circulonivel0 {
+        background-color: #FF9221 ; 
+        border-radius: 50%; 
+        width: 200px; 
+        height: 200px;
+
+        & p {
+            font-family: "Rawline Bold", sans-serif;
+            text-align: center;
+            position: relative;
+            bottom: 40px;
+            font-weight: bolder;
+            font-size: 20px;
+            color: #F86400;
+        }
+    }
+
+
+/*ANEL DE PROGRESSO*/
+    & .progress-ring {
+        position: relative;
+        width: 150px;
+        height: 150px;
+        background-color: #e6e6e6;
+        border-radius: 50%;
+        bottom: 20px;
+        left: 25px;
+    }
+
+    & .progress-ring circle {
+        fill: none;
+        stroke-width: 10;
+        transform: rotate(-90deg);
+        transform-origin: 50% 50%;
+    }
+
+    & .progress-ring .progress-bg {
+        stroke: #F9F9F9;
+    }
+
+    & .progress-ring .progress-bar {
+        stroke: #57C29B;
+        stroke-linecap: round;
+    }
+
+    & .progress-text {
+        position: relative;
+        bottom: 110px;
+        left: 75px;
+        font-family: "Rawline Bold", sans-serif;
+        font-size: 24px;
+        color: #333;
+    }
+}
