@@ -17,23 +17,19 @@ body.modo-escuro {
     }
 
     & footer{
-        background: linear-gradient(90deg, rgba(248, 100, 0, ) 0%,  rgba(123, 39, 205, 1) 40%);
-        margin-top: auto;
-         backdrop-filter: blur(12px); /* Chrome, Safari */
-  -webkit-backdrop-filter: blur(12px); /* Safari */
-        & b, a, p, hr, h6 { 
-            cursor: pointer;
-            text-decoration: none;
-            font-weight: bold;
-            color: #d3d3d3;
+        background: #0e0e0e;
+    
+        .title-footer {
+            font-weight: bold; 
+            color: #FF5733;
         }
-        @keyframes moveGradient {
-                0% { background-position: 0% 50%; }
-                50% { background-position: 100% 50%; }
-                100% { background-position: 0% 50%; }
-            }
-
-        & p:hover, a:hover {
+        
+        & b,p, a, hr { 
+            text-decoration: none;
+            color: #f9f9f9;
+        }
+            
+        & a:hover {
             cursor: pointer;
             text-decoration:underline;
         }
@@ -83,27 +79,24 @@ body.modo-contraste {
     }
 
     & footer{
-        background: linear-gradient(90deg, rgba(248, 100, 0, ) 0%,  rgba(123, 39, 205, 1) 40%);
-        margin-top: auto;
-        backdrop-filter: blur(12px); /* Chrome, Safari */
-        -webkit-backdrop-filter: blur(12px); /* Safari */
-        & b, a, p, hr, h6 { 
-            cursor: pointer;
-            text-decoration: none;
-            font-weight: bold;
-            color: #d3d3d3;
+        background: #070707;
+    
+        .title-footer {
+            font-weight: bold; 
+            color: aqua;
         }
-        @keyframes moveGradient {
-                0% { background-position: 0% 50%; }
-                50% { background-position: 100% 50%; }
-                100% { background-position: 0% 50%; }
-            }
-
-        & p:hover, a:hover {
+        
+        & b,p, a, hr { 
+            text-decoration: none;
+            color: #ffffff;
+        }
+            
+        & a:hover {
             cursor: pointer;
             text-decoration:underline;
         }
     }
+
     & .navbar-toggler svg{
         fill: #ffffff;
     }
@@ -161,8 +154,8 @@ a {
 /*BARRA DE ROLAGEM*/
 ::-webkit-scrollbar { width: 7px; height: 5px;}
 ::-webkit-scrollbar-track { background: rgb(215, 215, 215); border-radius: 5px; }
-::-webkit-scrollbar-thumb { background: rgb(171, 92, 255); border-radius: 5px; }
-::-webkit-scrollbar-thumb:hover { background: rgb(121, 115, 126);}
+::-webkit-scrollbar-thumb { background: rgb(177, 143, 206); border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: rgb(133, 113, 148);}
 
 /*NAVEGADOR*/
 nav {
@@ -197,14 +190,19 @@ nav {
 /*RODAPÉ*/
 footer {
     background: #292929;
+    font-size: 85%;
     
-    & b, a, p, hr, h6 { 
-        cursor: pointer;
+    .title-footer {
+        font-weight: bold; 
+        color: #BA73FF;
+    }
+
+    & b,p, a, hr { 
         text-decoration: none;
         color: #d3d3d3;
     }
         
-    & p:hover, a:hover {
+    & a:hover {
         cursor: pointer;
         text-decoration:underline;
     }

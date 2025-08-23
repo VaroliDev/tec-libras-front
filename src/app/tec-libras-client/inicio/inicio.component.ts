@@ -57,13 +57,13 @@ export class InicioComponent {
   ]
 
   ngOnInit(): void {
-    if(this.authService.isLoggedIn()){
-      const userDataString = localStorage.getItem('token');
-      const userData = JSON.parse(userDataString || '{}');
-      this.firstName = userData.first_name || '';
-      this.fullName = userData.full_name || '';
-      this.userName = userData.user_name || '';
-    }
+    this.authService.isLogged();
+    
+    const userDataString = localStorage.getItem('token');
+    const userData = JSON.parse(userDataString || '{}');
+    this.firstName = userData.first_name || '';
+    this.fullName = userData.full_name || '';
+    this.userName = userData.user_name || '';
 
     //Define a quantidade de niveis que vao aparecer
     const x = 5;
@@ -73,6 +73,6 @@ export class InicioComponent {
         level: i,
         percent: Math.floor(Math.random() * 11) * 10
       });
-    }
+    }   
   }
 }
