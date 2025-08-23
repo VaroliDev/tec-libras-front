@@ -1,8 +1,7 @@
 <div class="niveis" >
-        <div>
-            <div class="col" [id]="'nivel' + level">
-                <a href="#">
-                    <div [class]="'circulonivel'+ levelstyle">
+        <div class="col" [id]="'nivel' + level">
+            <a href="#">
+                <div [class]="'circulonivel'+ levelstyle">
                     <p>Nível {{ level }}</p>
                     <svg class="progress-ring" width="150" height="150">
                         <circle class="progress-bg" r="65" cx="75" cy="75"></circle>
@@ -16,8 +15,7 @@
                         ></circle>
                     </svg>
                     <div class="progress-text">{{ percent }}%</div>
-                    </div>
-                </a>
                 </div>
-            </div>
+            </a>
         </div>
+</div>
