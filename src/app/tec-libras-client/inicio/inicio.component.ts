@@ -55,28 +55,6 @@ export class InicioComponent {
       percent: 100
     }
   ]
-  /*item = [
-    { 
-      level: 1,
-      percent: 100
-    },
-    {
-      level: 2,
-      percent: 100
-    },
-    {
-      level: 3,
-      percent: 80
-    },
-    {
-      level: 4,
-      percent: 50
-    },
-    {
-      level: 5,
-      percent: 0
-    }
-  ]*/
 
   ngOnInit(): void {
     if(this.authService.isLoggedIn()){
@@ -87,7 +65,10 @@ export class InicioComponent {
       this.userName = userData.user_name || '';
     }
 
-    for(let i=2; i<=5; i++){
+    //Define a quantidade de niveis que vao aparecer
+    const x = 5;
+
+    for(let i=2; i<=x; i++){
       this.item.push({
         level: i,
         percent: Math.floor(Math.random() * 11) * 10
