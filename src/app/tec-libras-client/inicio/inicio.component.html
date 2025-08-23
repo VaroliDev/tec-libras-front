@@ -11,7 +11,7 @@
 
     <br>
 
-    <div class="container row row-cols-1 row-cols-md-5 g-5">
+    <div class="container row row-cols-1 row-cols-md-5 g-5" style="margin:0 8%  ; max-width: 80%;">
         <!--LINKS DOS NÍVEIS-->
         @for (n of item; track n.level) {
             <app-level [level] = n.level [percent] = n.percent [levelstyle] = "n.level % 2"></app-level>     
