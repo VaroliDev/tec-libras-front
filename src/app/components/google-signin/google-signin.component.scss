@@ -43,11 +43,6 @@ button {
   to { --a: 1turn; }
 }
 
-/* acessibilidade */
-@media (prefers-reduced-motion: reduce) {
-  .google-btn::before { animation: none; }}
-
-
 :host-context(body.modo-escuro) {
     .google-btn {
         color: #c5c5c5;
