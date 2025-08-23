@@ -1,6 +1,5 @@
 .niveis{
     margin-left: 15%;
-    max-width: 70%;
 
     & a {
         text-decoration: none;
@@ -40,10 +39,16 @@
             color: #F86400;
         }
     }
+}
+
+.niveis .nivel-col {
+    margin-right: 90px !important;
+}
+
 
 
 /*ANEL DE PROGRESSO*/
-    & .progress-ring {
+     .progress-ring {
         position: relative;
         width: 150px;
         height: 150px;
@@ -53,23 +58,23 @@
         left: 25px;
     }
 
-    & .progress-ring circle {
+     .progress-ring circle {
         fill: none;
         stroke-width: 10;
         transform: rotate(-90deg);
         transform-origin: 50% 50%;
     }
 
-    & .progress-ring .progress-bg {
+     .progress-ring .progress-bg {
         stroke: #F9F9F9;
     }
 
-    & .progress-ring .progress-bar {
+     .progress-ring .progress-bar {
         stroke: #57C29B;
         stroke-linecap: round;
     }
 
-    & .progress-text {
+     .progress-text {
         position: relative;
         bottom: 110px;
         left: 75px;
@@ -77,12 +82,15 @@
         font-size: 24px;
         color: #333;
     }
-}
+
 
 @media (min-width: 700px) and (max-width: 890px) {
     .niveis .col {
         margin: 10%;
     }
+
+
+    
 }
 
 @media (min-width: 890px) and (max-width: 1376px) {
