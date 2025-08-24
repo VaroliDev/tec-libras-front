@@ -3,11 +3,15 @@ import { RouterOutlet } from '@angular/router';
 import { ThemeService } from './services/theme.service';
 import { UserService } from './services/user.service';
 import { Router } from '@angular/router';
+import { AulaPraticaComponent } from "./tec-libras-client/aula-pratica/aula-pratica.component";
+import { HeaderComponent } from "./components/header/header.component";
+import { CadastroComponent } from "./tec-libras-client/cadastro/cadastro.component";
+import { LoadingPageComponent } from './components/loading-page/loading-page.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, HeaderComponent, CadastroComponent, LoadingPageComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

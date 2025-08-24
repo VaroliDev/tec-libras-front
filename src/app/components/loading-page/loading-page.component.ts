@@ -4,7 +4,8 @@ import { Component } from '@angular/core';
   selector: 'app-loading-page',
   imports: [],
   templateUrl: './loading-page.component.html',
-  styleUrl: './loading-page.component.scss'
+  styleUrl: './loading-page.component.scss',
+  standalone: true,
 })
 export class LoadingPageComponent {
 
