@@ -1,12 +1,19 @@
 .loading{
     position: fixed;
+    scale: 1.5;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6); /* fundo escuro */
+    background: rgba(0, 0, 0, 0.6);
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1050; /* acima de tudo */
+    z-index: 1050;
+}
+
+span {
+    color: white;
+    margin-top: 10px;
+    font-size: 1em;
 }

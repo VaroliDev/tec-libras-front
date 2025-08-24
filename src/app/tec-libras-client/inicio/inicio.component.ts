@@ -6,11 +6,16 @@ import { AuthService } from '../../services/auth.service';
 import { HeaderComponent } from '../../components/header/header.component';
 import { FooterComponent } from "../../components/footer/footer.component";
 import { LevelComponent } from '../../components/level/level.component';
-import { percentage } from '@angular/fire/storage';
+import { LoadingSectionComponent } from '../../components/loading-section/loading-section.component';
+
+interface itemLevel {
+  level: number;
+  percent: number;
+}
 
 @Component({
   selector: 'app-inicio',
-  imports: [FormsModule, HeaderComponent, FooterComponent, LevelComponent] ,
+  imports: [FormsModule, HeaderComponent, FooterComponent, LevelComponent, LoadingSectionComponent] ,
   templateUrl: './inicio.component.html',
   styleUrl: './inicio.component.scss'
 })
@@ -48,16 +53,14 @@ export class InicioComponent {
   firstName: string | null = null;
   fullName: string | null = null;
   userName: string | null = null;
+  isLoading: boolean = false;
 
-  item= [
-    { 
-      level: 1,
-      percent: 100
-    }
-  ]
+  item:itemLevel[] = []
 
   ngOnInit(): void {
     this.authService.isLogged();
+
+    this.isLoading = true;
     
     const userDataString = localStorage.getItem('token');
     const userData = JSON.parse(userDataString || '{}');
@@ -68,11 +71,17 @@ export class InicioComponent {
     //Define a quantidade de niveis que vao aparecer
     const x = 5;
 
-    for(let i=2; i<=x; i++){
-      this.item.push({
-        level: i,
-        percent: Math.floor(Math.random() * 11) * 10
-      });
-    }   
+    //O setTimeout é para simular o carregamento dos niveis
+    setTimeout(() => {
+
+      for(let i=1; i<=x; i++){
+        this.item.push({
+          level: i,
+          percent: Math.floor(Math.random() * 11) * 10
+        });
+      }
+      this.isLoading = false;
+
+    },800);
   }
 }
