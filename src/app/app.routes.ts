@@ -14,53 +14,63 @@ import { TermosCondicoesComponent } from './tec-libras-client/termos-condicoes/t
 export const routes: Routes = [
     {
         path: '',
-        component: IntroducaoComponent
+        loadComponent: () =>
+        import('./tec-libras-client/introducao/introducao.component').then(m => m.IntroducaoComponent)
     },
 
     {
         path: 'login',
-        component: LoginComponent
+        loadComponent: () =>
+        import('./tec-libras-client/login/login.component').then(m => m.LoginComponent)
     },
 
     {
         path: 'cadastro',
-        component: CadastroComponent
+        loadComponent: () =>
+        import('./tec-libras-client/cadastro/cadastro.component').then(m => m.CadastroComponent)
         
     },
 
     {
         path: 'inicio',
-        component: InicioComponent
+        loadComponent: () =>
+        import('./tec-libras-client/inicio/inicio.component').then(m => m.InicioComponent)
     },
     
     {
         path: 'biblioteca-sinais',
-        component: BibliotecaSinaisComponent
+        loadComponent: () =>
+        import('./tec-libras-client/biblioteca-sinais/biblioteca-sinais.component').then(m => m.BibliotecaSinaisComponent)
     },
 
     {
         path: 'comunidade',
-        component: ComunidadeComponent
+        loadComponent: () =>
+        import('./tec-libras-client/comunidade/comunidade.component').then(m => m.ComunidadeComponent)
     },
 
     {
         path: 'sobre-nos',
-        component: SobreNosComponent
+        loadComponent: () =>
+        import('./tec-libras-client/sobre-nos/sobre-nos.component').then(m => m.SobreNosComponent)
     },
 
     {
         path: 'conta',
-        component: ContaComponent
+        loadComponent: () =>
+        import('./tec-libras-client/conta/conta.component').then(m => m.ContaComponent)
     },
 
     {
         path: 'lista-usuarios',
-        component: ListaUsuariosComponent
+        loadComponent: () =>
+        import('./lista-usuarios/lista-usuarios.component').then(m => m.ListaUsuariosComponent)
     },
 
     {
         path: 'termos-condicoes',
-        component: TermosCondicoesComponent
+        loadComponent: () =>
+        import('./tec-libras-client/termos-condicoes/termos-condicoes.component').then(m => m.TermosCondicoesComponent)
     }
    
 ];
