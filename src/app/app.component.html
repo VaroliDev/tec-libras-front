@@ -1,1 +1,9 @@
-<router-outlet></router-outlet>
+@defer (on timer(3000)) {
+  <router-outlet></router-outlet>
+} @loading {
+    <app-footer></app-footer>
+  <div class="loading-container">
+    <h2>Carregando...</h2>
+    <img src="assets/logo.svg" alt="Logo" class="logo">
+  </div>
+}
