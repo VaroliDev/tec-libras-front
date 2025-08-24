@@ -11,12 +11,16 @@
 
     <br>
 
-    <div class="container row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-5" style="margin:0 6.5%; max-width: 80%;">
-        <!--LINKS DOS NÍVEIS-->
-        @for (n of item; track n.level) {
-            <app-level [level]="n.level" [percent]="n.percent" [levelstyle]="n.level % 2"></app-level>     
-        }   
+    <div class="d-flex justify-content-center">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-5" style="max-width: 80%;">
+                <!--LINKS DOS NÍVEIS-->
+                @for (n of item; track n.level) {
+                    <app-level [level]="n.level" [percent]="n.percent" [levelstyle]="n.level % 2"></app-level>     
+                }   
+        </div>
     </div>
+
+    
 
     <br>
     <br>
