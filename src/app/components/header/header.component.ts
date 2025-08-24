@@ -3,6 +3,9 @@ import { ThemeService } from '../../services/theme.service';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { CommonModule } from '@angular/common';
+import { AfterViewInit} from '@angular/core';
+declare var bootstrap: any;
+
 
 @Component({
     selector: 'app-header',
@@ -12,7 +15,12 @@ import { CommonModule } from '@angular/common';
 })
 
 
-export class HeaderComponent {
+export class HeaderComponent implements AfterViewInit {
+
+     ngAfterViewInit() {
+    const dropdownElList = Array.from(document.querySelectorAll('.dropdown-toggle'));
+    dropdownElList.forEach(el => new bootstrap.Dropdown(el));
+  }
     constructor(private themeService: ThemeService, private router: Router, private authService: AuthService) {}
 
     onThemeChange(theme: string): void {
