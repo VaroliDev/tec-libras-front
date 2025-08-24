@@ -59,7 +59,7 @@ export const routes: Routes = [
     },
 
     {
-        path: 'termoscondicoes',
+        path: 'termos-condicoes',
         component: TermosCondicoesComponent
     }
    
