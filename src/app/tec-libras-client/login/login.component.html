@@ -1,5 +1,9 @@
 <app-header-simple></app-header-simple>
 
+@if(isLoading){
+  <app-loading></app-loading>
+}
+
     <!--FORM ENTRAR-->
     <div class="container_entrar">
       <div class="form_entrar">
@@ -33,8 +37,6 @@
                     <br>
 
                     <div style="margin-top: 15px;"><app-google-signin></app-google-signin></div>
-                    
-
                     
                   </form>
                 </div>

@@ -1,4 +1,4 @@
-  import { Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ThemeService } from './services/theme.service';
 import { UserService } from './services/user.service';
@@ -35,9 +35,9 @@ export class AppComponent {
   
     const token = JSON.parse(tokenData);
 
-    //redireciona caso esteja logado -NAO ESTA FUNCIONANDO (nseipq)-
+    //redireciona caso esteja logado
     if(token.token){
-      if(this.router.url == '/login' || this.router.url == '/cadastro'){
+      if(this.router.url === '/login' || this.router.url === '/cadastro'){
         this.router.navigate(['/inicio'])
       }
     }
