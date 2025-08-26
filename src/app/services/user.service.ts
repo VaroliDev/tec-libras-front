@@ -38,4 +38,8 @@ export class UserService {
   doesUserExists(user_name: string): Observable <any>{
     return this.http.post(`${this.API_URL}doesExists`, { user_name });
   }
+
+  getUserRole(userId: number): Observable<any> {
+    return this.http.get(`${this.API_URL}user/${userId}/role`);
+  }
 }

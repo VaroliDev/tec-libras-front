@@ -7,6 +7,7 @@ import { AuthService } from '../../services/auth.service';
 import { GoogleSigninComponent } from '../../components/google-signin/google-signin.component';
 import { HeaderSimpleComponent } from '../../components/header-simple/header-simple.component';
 import { FooterComponent } from '../../components/footer/footer.component';
+import { LoadingComponent } from '../../components/loading/loading.component';
 
 interface LoginResponse {
   user: {
@@ -19,7 +20,7 @@ interface LoginResponse {
 
 @Component({
   selector: 'app-login',
-  imports: [FormsModule, GoogleSigninComponent, HeaderSimpleComponent, FooterComponent],
+  imports: [FormsModule, GoogleSigninComponent, HeaderSimpleComponent, FooterComponent, LoadingComponent],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
@@ -61,9 +62,11 @@ export class LoginComponent {
   };
 
   alertCredenciaisInvalidas: boolean = false;
+  isLoading: boolean = false;
 
   // Método de login com tipagem do retorno
   login(): void {
+    this.isLoading = true;
     this.userService.login(this.user).subscribe(
       (response: LoginResponse) => {
         console.log('Resposta da API:', response);  // Verifique a estrutura da resposta
@@ -72,6 +75,7 @@ export class LoginComponent {
         const fullName = user.fullName;
         const firstName = fullName.split(' ')[0];  // Pegando o primeiro nome
         this.setUserToLocalStorage(response, firstName, fullName); // Armazenando o primeiro nome
+        this.isLoading = false;
         this.router.navigateByUrl('/inicio');
       },
       (error: any) => {

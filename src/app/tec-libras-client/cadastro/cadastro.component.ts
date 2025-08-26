@@ -7,6 +7,7 @@ import { AuthService } from '../../services/auth.service';
 import { GoogleSigninComponent } from '../../components/google-signin/google-signin.component';
 import { HeaderSimpleComponent } from "../../components/header-simple/header-simple.component";
 import { FooterComponent } from "../../components/footer/footer.component";
+import { LoadingComponent } from '../../components/loading/loading.component';
 
 interface LoginResponse {
   token: string;
@@ -19,7 +20,7 @@ interface LoginResponse {
 
 @Component({
   selector: 'app-cadastro',
-  imports: [FormsModule, GoogleSigninComponent, HeaderSimpleComponent, FooterComponent],   
+  imports: [FormsModule, GoogleSigninComponent, HeaderSimpleComponent, FooterComponent, LoadingComponent],   
   templateUrl: './cadastro.component.html',
   styleUrls: ['./cadastro.component.scss']
 })
@@ -112,6 +113,7 @@ export class CadastroComponent {
             const firstName = fullName.split(' ')[0];  // Pegando o primeiro nome
             this.authService.setToken(response.token); // Armazenando o token com AuthService
             this.setUserToLocalStorage(response, firstName, fullName); // Armazenando o primeiro nome
+            this.isSending = false;
             this.router.navigateByUrl('/inicio');
           });
         },
