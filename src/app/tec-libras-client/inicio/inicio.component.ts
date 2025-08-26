@@ -69,7 +69,7 @@ export class InicioComponent {
     this.userName = userData.user_name || '';
 
     //Define a quantidade de niveis que vao aparecer
-    const x = 5;
+    const x = 25;
 
     //O setTimeout é para simular o carregamento dos niveis
     setTimeout(() => {
