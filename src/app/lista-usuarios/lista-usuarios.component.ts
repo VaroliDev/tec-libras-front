@@ -51,7 +51,7 @@ export class ListaUsuariosComponent implements OnInit {
     this.loadUsers();
     this.userService.getUsers().subscribe({
       next: (data) => {
-         console.log('Dados recebidos:', data);
+        console.log('Dados recebidos:', data);
         this.users = data;
       },
       error: (err) => {
