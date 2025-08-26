@@ -35,6 +35,7 @@ export class AppComponent {
   
     const token = JSON.parse(tokenData);
 
+    //redireciona caso esteja logado
     if(token.token){
       if(this.router.url === '/login' || this.router.url === '/cadastro'){
         this.router.navigate(['/inicio'])

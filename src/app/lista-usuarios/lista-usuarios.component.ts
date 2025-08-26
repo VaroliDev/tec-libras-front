@@ -29,10 +29,29 @@ export class ListaUsuariosComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-     this.loadUsers();
+    const userDataString = localStorage.getItem('token') || '';
+    if(!userDataString){
+      this.router.navigate(['/login']);
+      return;
+    }
+    const userData = JSON.parse(userDataString);
+
+    this.userService.getUserRole(userData.id).subscribe({
+      next: (data) => {
+        if(data.role !== 'admin'){
+          this.router.navigate(['/inicio']);
+        }
+      },
+      error: (err) => {
+        console.error('Erro ao buscar papel do usuário:', err);
+        return
+      }
+    });
+
+    this.loadUsers();
     this.userService.getUsers().subscribe({
       next: (data) => {
-         console.log('Dados recebidos:', data);
+        console.log('Dados recebidos:', data);
         this.users = data;
       },
       error: (err) => {
@@ -79,7 +98,7 @@ export class ListaUsuariosComponent implements OnInit {
     }
   }
 
-  userId: number | null = null;
+userId: number | null = null;
 user_name: string = '';
 full_name: string = '';
 email: string = '';
@@ -103,12 +122,12 @@ editUser(user: any): void {
   }
 
   updateUser(userId: number) {
-     if (this.userId == null) {
+    if (this.userId == null) {
     console.error('Erro: Não há um usuário válido selecionado para atualização.');
     return;
   }
     alert("id no update user " + userId);
-  const updatedUser = {
+    const updatedUser = {
     full_name: this.full_name,
     user_name: this.user_name,
     email: this.email
@@ -123,14 +142,13 @@ editUser(user: any): void {
     error: (err) => {
       console.error('Erro ao atualizar usuário', err);
     }
-  });
-}
+    });
+  }
 
-cancelEdit(): void {
-  this.userId = null;
-  this.user_name = '';
-  this.full_name = '';
-  this.email = '';
-}
-
+  cancelEdit(): void {
+    this.userId = null;
+    this.user_name = '';
+    this.full_name = '';
+    this.email = '';
+  }
 }
