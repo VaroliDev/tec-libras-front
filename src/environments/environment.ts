@@ -1,3 +1,5 @@
+export const API_URL = "https://tec-libras-api.onrender.com"
+
 export const firebaseConfig = {
   apiKey: "AIzaSyDb-7F4uCkkAHiSAInAsHxUwKc-0UOgIxc",
   authDomain: "teclibras-ac92f.firebaseapp.com",
@@ -7,5 +9,3 @@ export const firebaseConfig = {
   appId: "1:106882879018:web:101765abf597bb9e8dfd53",
   measurementId: "G-3CYS84K603"
 };
-
-export const API_URL = "https://tec-libras-api.onrender.com"

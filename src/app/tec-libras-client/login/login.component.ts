@@ -81,6 +81,7 @@ export class LoginComponent {
       (error: any) => {
         console.log('Credenciais inválidas:', error);
         this.alertCredenciaisInvalidas = true;
+        this.isLoading = false;
       }
     );
   }
