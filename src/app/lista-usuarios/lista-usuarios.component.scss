@@ -1,8 +1,18 @@
+.btn-voltar {
+    color: #ff6f00;
+    text-decoration: none;
+    font-weight: 700;
+}
+.btn-voltar:hover {
+    color: #c95700;
+}
+
 :host-context(body.modo-escuro) {
     .modal-content{
         background-color: #292929;
         color: #f9f9f9;
     }
+    
 }
 
 :host-context(body.modo-contraste) {

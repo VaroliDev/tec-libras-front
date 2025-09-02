@@ -3,6 +3,7 @@ import { ThemeService } from '../../services/theme.service';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { CommonModule } from '@angular/common';
+import { UserService } from '../../services/user.service';
 
 @Component({
     selector: 'app-header',
@@ -11,9 +12,8 @@ import { CommonModule } from '@angular/common';
     standalone: true,
 })
 
-
 export class HeaderComponent {
-    constructor(private themeService: ThemeService, private router: Router, private authService: AuthService) {}
+    constructor(private themeService: ThemeService, private router: Router, private authService: AuthService, private userService: UserService) {}
 
     onThemeChange(theme: string): void {
         this.themeService.applyTheme(theme);
@@ -47,7 +47,30 @@ export class HeaderComponent {
         this.router.navigate(['/comunidade']);
     }
 
+    paglistausuarios() {
+        this.router.navigate(['/lista-usuarios']);
+    }
+
     logout() {
         this.authService.logout()
+    }
+
+    isLogged: boolean = false;
+
+    ngOnInit(){
+        const userDataString = localStorage.getItem('token');
+        const userData = JSON.parse(userDataString || '{}');
+
+        this.userService.getUserRole(userData.id).subscribe({
+        next: (data) => {
+            if(data.role === 'admin'){
+            this.isLogged = true;
+            }
+        },
+        error: (err) => {
+            console.error('Erro ao buscar papel do usuário:', err);
+            return
+        }
+        });
     }
 };

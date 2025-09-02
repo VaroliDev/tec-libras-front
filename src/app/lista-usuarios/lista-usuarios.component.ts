@@ -3,7 +3,8 @@ import { FormsModule } from '@angular/forms';
 import { ThemeService } from '../services/theme.service';
 import { Router } from '@angular/router';
 import { UserService } from '../services/user.service';
-
+import { HeaderComponent } from '../components/header/header.component';
+import { FooterComponent } from "../components/footer/footer.component";
 import { HttpClient } from '@angular/common/http';  // Importar o HttpClient
 import { Modal } from 'bootstrap';  // Importação direta do modal (se você precisar de algo específico)
 
@@ -12,7 +13,7 @@ import { Modal } from 'bootstrap';  // Importação direta do modal (se você pr
 @Component({
   selector: 'app-lista-usuarios',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, HeaderComponent, FooterComponent],
   templateUrl: './lista-usuarios.component.html',
   styleUrls: ['./lista-usuarios.component.scss']  // Corrigido para 'styleUrls' ao invés de 'styleUrl'
 })
@@ -98,14 +99,14 @@ export class ListaUsuariosComponent implements OnInit {
     }
   }
 
-userId: number | null = null;
-user_name: string = '';
-full_name: string = '';
-email: string = '';
+  userId: number | null = null;
+  user_name: string = '';
+  full_name: string = '';
+  email: string = '';
 
-editUser(user: any): void {
+  editUser(user: any): void {
     if (user && user.id) {  // Verifica se user está definido
-      alert("o id é" + user.id);
+    alert("o id é" + user.id);
     this.userId = user.id;
     this.full_name = user.full_name;
     this.user_name = user.user_name;
@@ -115,10 +116,9 @@ editUser(user: any): void {
     const modalElement = document.getElementById('editUserModal');
     const modal = new Modal(modalElement as HTMLElement);
     modal.show();
-  } else {
-    alert("ID indefinido");
-  }
-
+    } else {
+      alert("ID indefinido");
+    }
   }
 
   updateUser(userId: number) {
@@ -150,5 +150,12 @@ editUser(user: any): void {
     this.user_name = '';
     this.full_name = '';
     this.email = '';
+  }
+
+  changeRole(user: any){
+    console.log('ronaldo');
+    console.log(user)
+    this.userService.changeUserRole(user).subscribe()
+    location.reload()
   }
 }
