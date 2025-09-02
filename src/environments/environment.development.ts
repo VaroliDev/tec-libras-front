@@ -1,3 +1,5 @@
+export const API_URL = "http://localhost:3333"
+
 export const firebaseConfig = {
   apiKey: "AIzaSyDb-7F4uCkkAHiSAInAsHxUwKc-0UOgIxc",
   authDomain: "teclibras-ac92f.firebaseapp.com",

@@ -3,7 +3,8 @@ import { FormsModule } from '@angular/forms';
 import { ThemeService } from '../services/theme.service';
 import { Router } from '@angular/router';
 import { UserService } from '../services/user.service';
-
+import { HeaderComponent } from '../components/header/header.component';
+import { FooterComponent } from "../components/footer/footer.component";
 import { HttpClient } from '@angular/common/http';  // Importar o HttpClient
 import { Modal } from 'bootstrap';  // Importação direta do modal (se você precisar de algo específico)
 
@@ -12,7 +13,7 @@ import { Modal } from 'bootstrap';  // Importação direta do modal (se você pr
 @Component({
   selector: 'app-lista-usuarios',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, HeaderComponent, FooterComponent],
   templateUrl: './lista-usuarios.component.html',
   styleUrls: ['./lista-usuarios.component.scss']  // Corrigido para 'styleUrls' ao invés de 'styleUrl'
 })
@@ -29,10 +30,29 @@ export class ListaUsuariosComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-     this.loadUsers();
+    const userDataString = localStorage.getItem('token') || '';
+    if(!userDataString){
+      this.router.navigate(['/login']);
+      return;
+    }
+    const userData = JSON.parse(userDataString);
+
+    this.userService.getUserRole(userData.id).subscribe({
+      next: (data) => {
+        if(data.role !== 'admin'){
+          this.router.navigate(['/inicio']);
+        }
+      },
+      error: (err) => {
+        console.error('Erro ao buscar papel do usuário:', err);
+        return
+      }
+    });
+
+    this.loadUsers();
     this.userService.getUsers().subscribe({
       next: (data) => {
-         console.log('Dados recebidos:', data);
+        console.log('Dados recebidos:', data);
         this.users = data;
       },
       error: (err) => {
@@ -80,13 +100,13 @@ export class ListaUsuariosComponent implements OnInit {
   }
 
   userId: number | null = null;
-user_name: string = '';
-full_name: string = '';
-email: string = '';
+  user_name: string = '';
+  full_name: string = '';
+  email: string = '';
 
-editUser(user: any): void {
+  editUser(user: any): void {
     if (user && user.id) {  // Verifica se user está definido
-      alert("o id é" + user.id);
+    alert("o id é" + user.id);
     this.userId = user.id;
     this.full_name = user.full_name;
     this.user_name = user.user_name;
@@ -96,19 +116,18 @@ editUser(user: any): void {
     const modalElement = document.getElementById('editUserModal');
     const modal = new Modal(modalElement as HTMLElement);
     modal.show();
-  } else {
-    alert("ID indefinido");
-  }
-
+    } else {
+      alert("ID indefinido");
+    }
   }
 
   updateUser(userId: number) {
-     if (this.userId == null) {
+    if (this.userId == null) {
     console.error('Erro: Não há um usuário válido selecionado para atualização.');
     return;
   }
     alert("id no update user " + userId);
-  const updatedUser = {
+    const updatedUser = {
     full_name: this.full_name,
     user_name: this.user_name,
     email: this.email
@@ -123,14 +142,20 @@ editUser(user: any): void {
     error: (err) => {
       console.error('Erro ao atualizar usuário', err);
     }
-  });
-}
+    });
+  }
 
-cancelEdit(): void {
-  this.userId = null;
-  this.user_name = '';
-  this.full_name = '';
-  this.email = '';
-}
+  cancelEdit(): void {
+    this.userId = null;
+    this.user_name = '';
+    this.full_name = '';
+    this.email = '';
+  }
 
+  changeRole(user: any){
+    console.log('ronaldo');
+    console.log(user)
+    this.userService.changeUserRole(user).subscribe()
+    location.reload()
+  }
 }

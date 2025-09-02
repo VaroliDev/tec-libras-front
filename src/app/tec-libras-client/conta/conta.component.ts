@@ -5,15 +5,21 @@ import { Router } from '@angular/router';
 import { HeaderComponent } from '../../components/header/header.component';
 import { FooterComponent } from '../../components/footer/footer.component';
 import { AuthService } from '../../services/auth.service';
+import { LoadingComponent } from '../../components/loading/loading.component';
+import { UserService } from '../../services/user.service';
+import { HttpClient } from '@angular/common/http';
+import { Modal } from 'bootstrap';  // Importação direta do modal (se você precisar de algo específico)
+
 
 @Component({
   selector: 'app-conta',
-  imports: [FormsModule, HeaderComponent, FooterComponent],
+  imports: [FormsModule, HeaderComponent, FooterComponent, LoadingComponent],
   templateUrl: './conta.component.html',
   styleUrl: './conta.component.scss'
 })
 export class ContaComponent {
-  constructor(private themeService: ThemeService, private router: Router, private authService: AuthService) {}
+  constructor(private themeService: ThemeService, private router: Router, private authService: AuthService, private userService: UserService,
+      private http: HttpClient ) {}
 
   onThemeChange(theme: string): void {
     this.themeService.applyTheme(theme);
@@ -39,17 +45,76 @@ export class ContaComponent {
   }
   
   firstName: string | null = null;
+  userId: number | null = null;
   fullName: string | null = null;
   userName: string | null = null;
+  isLoading: boolean = false;
+
+  user_name: string = '';
+  full_name: string = '';
+  email: string = '';
 
   ngOnInit(): void {
     this.authService.isLogged();
+    this.isLoading = true;
     const userDataString = localStorage.getItem('token');
     const userData = JSON.parse(userDataString || '{}');
 
     this.firstName = userData.first_name || '';
     this.fullName = userData.full_name || '';
-    this.userName = userData.user_name || ''; 
+    this.userName = userData.user_name || '';
+    this.userId = userData.user_id || '';
+
+    this.isLoading = false;
+ 
   }
+
+   apiUrl: string = 'http://localhost:3333/user';
+    user: any;
+
+  editUser(): void {
+    this.http.get<any[]>(this.apiUrl).subscribe({  // Corrigido para 'any[]' em vez de '.user[]'
+      next: (data) => (this.user = data),
+      error: (err) => console.error('Erro ao carregar usuário', err),
+    });
+
+     const userDataString = localStorage.getItem('token');
+    const userData = JSON.parse(userDataString || '{}');
+
+    this.firstName = userData.first_name || '';
+    this.fullName = userData.full_name || '';
+    this.userName = userData.user_name || '';
+    this.userId = userData.user_id || '';
+    
+    
+    
+    const modalElement = document.getElementById('editUserModal');
+        const modal = new Modal(modalElement as HTMLElement);
+        modal.show(); 
+  }
+
+  updateUser(): void {
+
+    
+     const userDataString = localStorage.getItem('token');
+    const userData = JSON.parse(userDataString || '{}');
+
+     const updatedUser = {
+      full_name: this.full_name,
+      user_name: this.user_name,
+      email: this.email
+  };
+
+      this.userService.updateUser(userData.user_id,updatedUser).subscribe({
+    next: () => {
+      console.log('Usuário atualizado com sucesso');
+
+    },
+    error: (err) => {
+      console.error('Erro ao atualizar usuário', err);
+    }
+    });
+  }
+
 }
   

@@ -7,6 +7,7 @@ import { AuthService } from '../../services/auth.service';
 import { GoogleSigninComponent } from '../../components/google-signin/google-signin.component';
 import { HeaderSimpleComponent } from "../../components/header-simple/header-simple.component";
 import { FooterComponent } from "../../components/footer/footer.component";
+import { LoadingComponent } from '../../components/loading/loading.component';
 
 interface LoginResponse {
   token: string;
@@ -19,7 +20,7 @@ interface LoginResponse {
 
 @Component({
   selector: 'app-cadastro',
-  imports: [FormsModule, GoogleSigninComponent, HeaderSimpleComponent, FooterComponent],   
+  imports: [FormsModule, GoogleSigninComponent, HeaderSimpleComponent, FooterComponent, LoadingComponent],   
   templateUrl: './cadastro.component.html',
   styleUrls: ['./cadastro.component.scss']
 })
@@ -67,8 +68,10 @@ export class CadastroComponent {
   alertSenhaInvalida: boolean = false;
   isGoogleLogin: boolean = false;
   isSending: boolean = false;
+  isLoading: boolean = false;
 
   cadastrar(): void {
+      this.isLoading = true;
       if (this.isSending) return;
       if (!this.isGoogleLogin) {
         
@@ -76,12 +79,14 @@ export class CadastroComponent {
       /* erros de validação normais (front)*/
       if (this.user.full_name.trim().length < 5 || !this.user.full_name.includes(' ')) {
         this.alertNomeInvalido = true;
+        this.isLoading = false;
         return;
       }
 
       const userRegex = /^[a-zA-Z0-9._]+$/;
       if (this.user.user_name.length < 4 || !userRegex.test(this.user.user_name)) {
         this.alertUserInvalido = true;
+        this.isLoading = false;
         return;
       }
 
@@ -89,11 +94,13 @@ export class CadastroComponent {
 
       if (!this.user.email || !emailRegex.test(this.user.email)) {
         this.alertEmailInvalido = true;
+        this.isLoading = false;
         return;
       }
 
       if (this.user.password.length < 6) {
         this.alertSenhaInvalida = true;
+        this.isLoading = false;
         return;
       }
       }
@@ -112,14 +119,18 @@ export class CadastroComponent {
             const firstName = fullName.split(' ')[0];  // Pegando o primeiro nome
             this.authService.setToken(response.token); // Armazenando o token com AuthService
             this.setUserToLocalStorage(response, firstName, fullName); // Armazenando o primeiro nome
+            this.isSending = false;
+            this.isLoading = false;
             this.router.navigateByUrl('/inicio');
           });
         },
         error: (error: any) => {
           if (error?.error?.message?.includes('users_email_unique')) {
             this.alertEmailUso = true;
+            this.isLoading = false;
           } else if (error?.error?.message?.includes('users_user_name_unique')) {
             this.alertUserUso = true;
+            this.isLoading = false;
           }else {
             alert('Erro ao cadastrar. Tente novamente mais tarde.');
           }

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Auth, signOut, signInWithPopup, GoogleAuthProvider } from '@angular/fire/auth';
 import { UserService } from './user.service';
-import { generate } from 'generate-password-ts';
+//import { generate } from 'generate-password-ts';
 import { firstValueFrom } from 'rxjs';
 
 @Injectable({
@@ -77,7 +77,7 @@ export class AuthService {
       first_name: userGoogle.displayName?.split(' ')[0] ?? '',
       full_name: userGoogle.displayName ?? '',
       email: userGoogle.email,
-      password: generate({ length: 16, numbers: true }),
+      //password: generate({ length: 16, numbers: true }),
       isGoogleLogin: true
     };
 
