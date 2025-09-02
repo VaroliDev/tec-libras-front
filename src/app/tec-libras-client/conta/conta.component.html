@@ -141,23 +141,37 @@
     </div>
 
     <!-- Modal -->
-    <div class="modal fade " id="editarPerfil" tabindex="-1" aria-labelledby="editarPerfil" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-        <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            ...
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-        </div>
-    </div>
-    </div>
+          <div class="modal fade" id="editUserModal" tabindex="-1" aria-labelledby="editUserModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="editUserModalLabel">Editar Usuário</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <!-- Formulário de edição -->
+                  @if (userId !== null) {
+                    <form (ngSubmit)="updateUser(userId)">
+                      <div class="mb-3">
+                        <label for="full_name" class="form-label">Nome Completo</label>
+                        <input type="text" class="form-control" id="full_name" [(ngModel)]="full_name" name="full_name" required>
+                      </div>
+                      <div class="mb-3">
+                        <label for="user_name" class="form-label">Nome de Usuário</label>
+                        <input type="text" class="form-control" id="user_name" [(ngModel)]="user_name" name="user_name" required>
+                      </div>
+                      <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" [(ngModel)]="email" name="email" required>
+                      </div>
+                      <button type="submit" class="btn btn-primary">Salvar</button>
+                    </form>
+                  }
+                </div>
+              </div>
+            </div>
+          </div>
+
 
 
     <app-footer></app-footer> <!--Importa o Footer na pasta "components"-->
