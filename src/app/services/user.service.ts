@@ -31,6 +31,10 @@ export class UserService {
     return this.http.get(`${this.API_URL}/users`);
   }
 
+  getUser(userId: number): Observable<any> {
+    return this.http.get(`${this.API_URL}/user/${userId}`);
+  }
+
   renewData(token: string): Observable<any> {
     return this.http.post(`${this.API_URL}/renewData`, { token });
   }

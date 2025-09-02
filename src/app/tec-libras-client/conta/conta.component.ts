@@ -45,7 +45,6 @@ export class ContaComponent {
   }
   
   firstName: string | null = null;
-  userId: number | null = null;
   fullName: string | null = null;
   userName: string | null = null;
   isLoading: boolean = false;
@@ -53,51 +52,36 @@ export class ContaComponent {
   user_name: string = '';
   full_name: string = '';
   email: string = '';
+    userId: number | null = null;
+
 
   ngOnInit(): void {
+    
     this.authService.isLogged();
     this.isLoading = true;
     const userDataString = localStorage.getItem('token');
     const userData = JSON.parse(userDataString || '{}');
 
-    this.firstName = userData.first_name || '';
-    this.fullName = userData.full_name || '';
-    this.userName = userData.user_name || '';
-    this.userId = userData.user_id || '';
+    this.firstName = userData.first_name;
+    this.fullName = userData.full_name ;
+    this.userName = userData.user_name;
+    this.userId = userData.user_id;
 
     this.isLoading = false;
- 
+
+     this.userId = userData.id;
+    this.full_name = userData.full_name;
+    this.user_name = userData.user_name;
+    this.email = userData.email;
+    
   }
 
    apiUrl: string = 'http://localhost:3333/user';
     user: any;
 
-  editUser(): void {
-    this.http.get<any[]>(this.apiUrl).subscribe({  // Corrigido para 'any[]' em vez de '.user[]'
-      next: (data) => (this.user = data),
-      error: (err) => console.error('Erro ao carregar usuário', err),
-    });
 
-     const userDataString = localStorage.getItem('token');
-    const userData = JSON.parse(userDataString || '{}');
+  updateUser(userId:number): void {
 
-    this.firstName = userData.first_name || '';
-    this.fullName = userData.full_name || '';
-    this.userName = userData.user_name || '';
-    this.userId = userData.user_id || '';
-    
-    
-    
-    const modalElement = document.getElementById('editUserModal');
-        const modal = new Modal(modalElement as HTMLElement);
-        modal.show(); 
-  }
-
-  updateUser(): void {
-
-    
-     const userDataString = localStorage.getItem('token');
-    const userData = JSON.parse(userDataString || '{}');
 
      const updatedUser = {
       full_name: this.full_name,
@@ -105,13 +89,13 @@ export class ContaComponent {
       email: this.email
   };
 
-      this.userService.updateUser(userData.user_id,updatedUser).subscribe({
+      this.userService.updateUser(userId,updatedUser).subscribe({
     next: () => {
-      console.log('Usuário atualizado com sucesso');
+      alert('Usuário atualizado com sucesso');
 
     },
     error: (err) => {
-      console.error('Erro ao atualizar usuário', err);
+      alert('Erro ao atualizar usuário');
     }
     });
   }
