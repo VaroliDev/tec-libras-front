@@ -99,14 +99,14 @@ export class ListaUsuariosComponent implements OnInit {
     }
   }
 
-userId: number | null = null;
-user_name: string = '';
-full_name: string = '';
-email: string = '';
+  userId: number | null = null;
+  user_name: string = '';
+  full_name: string = '';
+  email: string = '';
 
-editUser(user: any): void {
+  editUser(user: any): void {
     if (user && user.id) {  // Verifica se user está definido
-      alert("o id é" + user.id);
+    alert("o id é" + user.id);
     this.userId = user.id;
     this.full_name = user.full_name;
     this.user_name = user.user_name;
@@ -116,10 +116,9 @@ editUser(user: any): void {
     const modalElement = document.getElementById('editUserModal');
     const modal = new Modal(modalElement as HTMLElement);
     modal.show();
-  } else {
-    alert("ID indefinido");
-  }
-
+    } else {
+      alert("ID indefinido");
+    }
   }
 
   updateUser(userId: number) {
@@ -151,5 +150,12 @@ editUser(user: any): void {
     this.user_name = '';
     this.full_name = '';
     this.email = '';
+  }
+
+  changeRole(user: any){
+    console.log('ronaldo');
+    console.log(user)
+    this.userService.changeUserRole(user).subscribe()
+    location.reload()
   }
 }

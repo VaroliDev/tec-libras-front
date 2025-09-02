@@ -42,4 +42,8 @@ export class UserService {
   getUserRole(userId: number): Observable<any> {
     return this.http.get(`${this.API_URL}/user/${userId}/role`);
   }
+
+  changeUserRole(userId: number): Observable<any>{
+    return this.http.get(`${this.API_URL}/user/${userId}/change`);
+  }
 }
