@@ -13,7 +13,7 @@ import { Modal } from 'bootstrap';  // Importação direta do modal (se você pr
 @Component({
   selector: 'app-lista-usuarios',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, HeaderComponent, FooterComponent],
   templateUrl: './lista-usuarios.component.html',
   styleUrls: ['./lista-usuarios.component.scss']  // Corrigido para 'styleUrls' ao invés de 'styleUrl'
 })
