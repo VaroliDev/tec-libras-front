@@ -1,50 +1,5 @@
 <!--NAVEGADOR-->
-<nav class="sticky-top navbar navbar-expand-lg" style="padding: 20px;">
-  <div class="container-fluid">
-    <!--logo-->
-    <a>
-      <img id="logo_teclibras" src="img/Logo1TecLibras.svg" alt="Logo escrito Tec Libras Plataforma de Ensino; duas mãos opostas uma a outra; cor laranja">
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span>
-        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
-          <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
-        </svg>
-      </span>
-    </button>
-
-    <!--OPÇÕES-->
-    <div class="collapse navbar-collapse" style=" justify-content: end;" id="navbarNavDropdown">
-      <ul class="navbar-nav" >
-
-        <!--CONFIGURAÇÕES-->
-        <li class="nav-item dropdown ">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#F86400" class="bi bi-gear-fill" viewBox="0 0 16 16">
-              <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"/>
-            </svg>
-          </a>
-          <ul class="dropdown-menu dropdown-menu-end">
-
-            <!--ALTERAR TEMA-->
-            <li>
-              <p class="dropdown-item">Alterar Tema</p>
-              <input type="radio" id="modo-claro" name="tema-site" value="modo-claro" (change)="onThemeChange('modo-claro')" [checked]="isCurrentTheme('modo-claro')">
-              <label class="label_modo" for="modo-claro">Claro</label>
-              <br>
-                <input type="radio" id="modo-escuro" name="tema-site" value="modo-escuro" (change)="onThemeChange('modo-escuro')" [checked]="isCurrentTheme('modo-escuro')">
-                <label class="label_modo" for="modo-escuro">Escuro</label>
-                <br>
-                  <input type="radio" id="modo-contraste" name="tema-site" value="modo-contraste" (change)="onThemeChange('modo-contraste')" [checked]="isCurrentTheme('modo-contraste')">
-                  <label class="label_modo" for="modo-contraste">Alto Contraste</label>
-                </li>
-
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+<app-header></app-header>
 
     <br>
       <br>
@@ -144,38 +99,7 @@
                       <br>
                         <br>
                           <br>
-                            <!--RODAPÉ-->
-                            <footer id="footer" class="text-center">
-                              <div class="container-fluid" style="text-align: left; padding: 3% 1% 0% 1%; overflow: hidden;">
-                                <div class="row" style="position: relative; left: 8%;">
-                                  <div class="col-md-4" >
-                                    <b>ENTRE EM CONTATO</b>
-                                    <p><a href="mailto:tecestude&#64;gmail.com" style="text-decoration: none;"> tecestude&#64;gmail.com</a></p>
-                                  </div>
-                                  <div class="col-md-4" >
-                                    <b>REDES SOCIAIS</b>
-                                    <p>
-                                      <a href="https://www.instagram.com/tecestude/">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-instagram" viewBox="0 0 18 22">
-                                        <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/></svg>
-                                        tec_libras
-                                      </a>
-                                    </p>
-                                  </div>
-                                  <div class="col-md-4">
-                                    <b> LEIA </b>
-                                    <ul class="list-unstyled">
-                                      <li><a href="termos.html">Termos e Condições de Uso</a></li>
-                                      <li><a href="termos.html">Informações de Acessibilidade</a></li>
-                                    </ul>
-                                  </div>
-                                  <div style="position: relative; right: 8%;">
-                                    <hr>
-                                      <h6 style="text-align: center;"><b>Tec Libras</b> © 2025 Todos os direitos reservados.</h6>
-                                    </div>
-                                  </div>
-                                </div>
-                              </footer>
+                            <app-footer></app-footer> 
 
                               <!--PLUGIN VLIBRAS-->
                               <div vw class="enabled">
