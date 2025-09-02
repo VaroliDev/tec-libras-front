@@ -93,8 +93,10 @@
             <li><a class="dropdown-item" (click)="pagconta()">Sua conta</a></li>
             <li><a class="dropdown-item" (click)="pagsobrenos()">Sobre nós</a></li>
 
-            <li><hr class="dropdown-divider"></li>
-            <a class="btn btn-success" style="border-radius: 10px; margin: 12px;" (click)="paglistausuarios()">Lista de usuários</a>
+            @if(isLogged){
+              <li><hr class="dropdown-divider"></li>
+              <a class="btn btn-success" style="border-radius: 10px; margin: 12px;" (click)="paglistausuarios()">Lista de usuários</a>
+            }
 
             <li><a class="dropdown-item link-danger" (click)="logout()">Sair 
               <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 23">
