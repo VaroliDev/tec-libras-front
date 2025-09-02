@@ -47,6 +47,10 @@ export class HeaderComponent {
         this.router.navigate(['/comunidade']);
     }
 
+    paglistausuarios() {
+        this.router.navigate(['/lista-usuarios']);
+    }
+
     logout() {
         this.authService.logout()
     }
