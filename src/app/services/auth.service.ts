@@ -77,6 +77,7 @@ export class AuthService {
       first_name: userGoogle.displayName?.split(' ')[0] ?? '',
       full_name: userGoogle.displayName ?? '',
       email: userGoogle.email,
+
       password: JSON.stringify(Math.floor(Math.random()*16)*196732),
       isGoogleLogin: true
     };
@@ -97,6 +98,8 @@ export class AuthService {
       full_name: resLogin.user.fullName,
       token: resLogin.user.token
     };
+  //@ts-ignore
+    this.userService.setUserInfo(userData)
 
     localStorage.setItem('token', JSON.stringify(userData));
     console.log("login finalizado");

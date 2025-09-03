@@ -49,6 +49,7 @@ export class AppComponent {
         user_name: res.user.user_name,
         first_name: res.user.full_name.split(' ')[0],
         full_name: res.user.full_name,
+        email: res.user.email,
         token: res.user.token
       };
       localStorage.setItem('token', JSON.stringify(userData));

@@ -1,3 +1,5 @@
+
+import { Component, inject } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ThemeService } from '../../services/theme.service';
@@ -6,9 +8,10 @@ import { HeaderComponent } from '../../components/header/header.component';
 import { FooterComponent } from '../../components/footer/footer.component';
 import { AuthService } from '../../services/auth.service';
 import { LoadingComponent } from '../../components/loading/loading.component';
-import { HttpClient } from '@angular/common/http';
+
 import { UserService } from '../../services/user.service';
-import { Modal } from 'bootstrap'; 
+import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-conta',
@@ -18,20 +21,15 @@ import { Modal } from 'bootstrap';
   styleUrls: ['./conta.component.scss']
 })
 
-export class ContaComponent implements OnInit {
-  users: any[] = [];
-  user: any;  
-  apiUrl: string = 'http://localhost:3333/users'; 
+export class ContaComponent {
+  constructor(private themeService: ThemeService, private router: Router, private authService: AuthService,
+      private http: HttpClient ) {}
 
-  constructor(
-    private themeService: ThemeService, 
-    private router: Router, 
-    private userService: UserService,
-    private http: HttpClient,
-    private authService: AuthService
-  ) 
-  {}
+      private userService = inject(UserService)
 
+      protected userData = this.userService.getUserInfo()
+
+export class ContaComponent impl
   onThemeChange(theme: string): void {
     this.themeService.applyTheme(theme);
   }
@@ -55,25 +53,71 @@ export class ContaComponent implements OnInit {
     this.router.navigate(['/conta']);
   }
   
+
   firstName: string | null = null;
   fullName: string | null = null;
   userName: string | null = null;
   isLoading: boolean = false;
 
-  
+
+  user_name: string = '';
+  full_name: string = '';
+  email: string = '';
+  userId: number | null = null;
+   
+
   ngOnInit(): void {
+    
     this.authService.isLogged();
     this.isLoading = true;
-    setTimeout(() => {
-      const userDataString = localStorage.getItem('token');
-      const userData = JSON.parse(userDataString || '{}');
 
-      this.firstName = userData.first_name || '';
-      this.fullName = userData.full_name || '';
-      this.userName = userData.user_name || '';
+    const userDataString = localStorage.getItem('token');
+    const userData = JSON.parse(userDataString || '{}');
 
-      this.isLoading = false;
-    }, 500);
+    this.firstName = userData.first_name;
+    this.fullName = userData.full_name ;
+    this.userName = userData.user_name;
+    this.userId = userData.user_id;
+
+    this.isLoading = false;
+
+    this.userId = userData.id;
+    this.full_name = userData.full_name;
+    this.user_name = userData.user_name;
+    this.email = userData.email;
+    
+    console.log(userData)
+  }
+
+   apiUrl: string = 'http://localhost:3333/user';
+    user: any;
+
+
+  updateUser(userId:number): void {
+     const updatedUser = {
+      full_name: this.full_name,
+      user_name: this.user_name,
+      email: this.email
+  };
+      this.userService.updateUser(userId,updatedUser).subscribe({
+    next: (response) => {
+      this.userService.setUserInfo({
+        user_name: response.userName,
+        full_name:response.fullName,
+        email: this.userData()!.email,
+        token:this.userData()!.token,
+        id: response.id, 
+        first_name:this.userData()!.first_name
+      })
+      alert('Usuário atualizado com sucesso');
+    },
+    error: (err) => {
+      alert('Erro ao atualizar usuário');
+    }
+    });
+
+    window.location.reload;
+
   }
 
   loadUsers(): void {

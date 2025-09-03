@@ -1,0 +1,34 @@
+<form [formGroup]="topicForm" (ngSubmit)="submit()">
+  <label>Level:</label>
+  <input formControlName="level_id" />
+
+  <label>Nome do Tema:</label>
+  <input formControlName="title" />
+
+  <label>Breve Descrição:</label>
+  <textarea formControlName="description"></textarea>
+
+  <label>Aula Teórica:</label>
+  <textarea formControlName="theory_content"></textarea>
+
+  <label>Prática (nomes dos sinais, separados por vírgula):</label>
+  <input formControlName="practice_signs" />
+
+  <label>Vídeo (URL):</label>
+  <input formControlName="video_url" />
+
+ <div formArrayName="questions">
+  <div *ngFor="let q of questions.controls; let i = index" [formGroupName]="i">
+    <input formControlName="question_text" placeholder="Pergunta {{i+1}}" />
+    <input formControlName="options" placeholder="Opções (JSON)" />
+    <input formControlName="correct_answer" placeholder="Resposta correta" />
+    <input formControlName="explanation" placeholder="Explicação da resposta" />
+  </div>
+</div>
+
+
+  <label>Curiosidades (máx. 3, separadas por vírgula):</label>
+  <input formControlName="curiosities" />
+
+  <button type="submit">Salvar Tema</button>
+</form>
