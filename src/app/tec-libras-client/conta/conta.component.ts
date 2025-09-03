@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ThemeService } from '../../services/theme.service';
 import { Router } from '@angular/router';
@@ -8,8 +8,6 @@ import { AuthService } from '../../services/auth.service';
 import { LoadingComponent } from '../../components/loading/loading.component';
 import { UserService } from '../../services/user.service';
 import { HttpClient } from '@angular/common/http';
-import { Modal } from 'bootstrap';  // Importação direta do modal (se você precisar de algo específico)
-
 
 @Component({
   selector: 'app-conta',
@@ -18,8 +16,12 @@ import { Modal } from 'bootstrap';  // Importação direta do modal (se você pr
   styleUrl: './conta.component.scss'
 })
 export class ContaComponent {
-  constructor(private themeService: ThemeService, private router: Router, private authService: AuthService, private userService: UserService,
+  constructor(private themeService: ThemeService, private router: Router, private authService: AuthService,
       private http: HttpClient ) {}
+
+      private userService = inject(UserService)
+
+      protected userData = this.userService.getUserInfo()
 
   onThemeChange(theme: string): void {
     this.themeService.applyTheme(theme);
@@ -44,6 +46,7 @@ export class ContaComponent {
     this.router.navigate(['/conta']);
   }
   
+
   firstName: string | null = null;
   fullName: string | null = null;
   userName: string | null = null;
@@ -52,7 +55,9 @@ export class ContaComponent {
   user_name: string = '';
   full_name: string = '';
   email: string = '';
-    userId: number | null = null;
+  userId: number | null = null;
+   
+
 
 
   ngOnInit(): void {
@@ -69,11 +74,12 @@ export class ContaComponent {
 
     this.isLoading = false;
 
-     this.userId = userData.id;
+    this.userId = userData.id;
     this.full_name = userData.full_name;
     this.user_name = userData.user_name;
     this.email = userData.email;
     
+    console.log(userData)
   }
 
    apiUrl: string = 'http://localhost:3333/user';
@@ -81,24 +87,29 @@ export class ContaComponent {
 
 
   updateUser(userId:number): void {
-
-
      const updatedUser = {
       full_name: this.full_name,
       user_name: this.user_name,
       email: this.email
   };
-
       this.userService.updateUser(userId,updatedUser).subscribe({
-    next: () => {
+    next: (response) => {
+      this.userService.setUserInfo({
+        user_name: response.userName,
+        full_name:response.fullName,
+        email: this.userData()!.email,
+        token:this.userData()!.token,
+        id: response.id, 
+        first_name:this.userData()!.first_name
+      })
       alert('Usuário atualizado com sucesso');
-
     },
     error: (err) => {
       alert('Erro ao atualizar usuário');
     }
     });
-  }
 
+    window.location.reload;
+  }
 }
   

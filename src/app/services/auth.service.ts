@@ -97,6 +97,8 @@ export class AuthService {
       full_name: resLogin.user.fullName,
       token: resLogin.user.token
     };
+  //@ts-ignore
+    this.userService.setUserInfo(userData)
 
     localStorage.setItem('token', JSON.stringify(userData));
     console.log("login finalizado");
