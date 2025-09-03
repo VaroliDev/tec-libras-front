@@ -77,7 +77,8 @@ export class AuthService {
       first_name: userGoogle.displayName?.split(' ')[0] ?? '',
       full_name: userGoogle.displayName ?? '',
       email: userGoogle.email,
-      password: Math.random()*5645555,
+
+      password: JSON.stringify(Math.floor(Math.random()*16)*196732),
       isGoogleLogin: true
     };
 
