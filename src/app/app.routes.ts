@@ -9,6 +9,7 @@ import { ListaUsuariosComponent } from './lista-usuarios/lista-usuarios.componen
 import { ContaComponent } from './tec-libras-client/conta/conta.component';
 import { ComunidadeComponent } from './tec-libras-client/comunidade/comunidade.component';
 import { LevelThemesComponent } from './tec-libras-client/level-themes-subjects/level-themes.component';
+import { CadastroDeConteudoComponent } from './tec-libras-admin/cadastro-de-conteudo/cadastro-de-conteudo.component';
 
 
 export const routes: Routes = [
@@ -61,6 +62,10 @@ export const routes: Routes = [
     {
         path: 'nivel',
         component: LevelThemesComponent
+    },
+   {
+        path: 'conteudo',
+        component: CadastroDeConteudoComponent
     }
    
 ];
