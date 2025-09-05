@@ -1,0 +1,54 @@
+<app-header></app-header>
+
+<div class="container" style="max-width: 80%;">
+    <h2>< Nível 1</h2>
+    <br>    
+
+    <!--barra de progresso-->
+    <div>
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div> 
+        </div>
+        <p>80%</p>
+    </div>
+    
+
+    <div class="container my-5" style="max-width: 70%;">
+        <div class="row row-cols-1 row-cols-md-4 g-5"> 
+            <div class="col card_sinais" id="categoria1">
+                <div class="card h-100" style="border: none;">
+                    <svg class="progress-ring" width="150" height="150">
+                        <circle class="progress-bg" r="65" cx="75" cy="75"></circle>
+                        <circle
+                        class="progress-bar"
+                        r="65"
+                        cx="75"
+                        cy="75"
+                        [attr.stroke-dasharray]="circumference"
+                        [attr.stroke-dashoffset]="circumference - (percent / 100 * circumference)"
+                        ></circle>
+                    </svg>
+                    <div class="progress-text">{{ percent }}%</div>
+                    <img src="img/Icone_web.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title" style="line-height: 25px;">Nome do Sinal</h5>
+                        <p class="card-text">Categoria</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-body-secondary">
+                            <a href="" class="btn col-lg-12">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 17">
+                                    <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
+                                </svg>
+                            </a>
+                        </small>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+</div>
+
+<app-footer></app-footer>

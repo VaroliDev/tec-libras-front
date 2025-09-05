@@ -8,10 +8,8 @@ import { HeaderComponent } from '../../components/header/header.component';
 import { FooterComponent } from '../../components/footer/footer.component';
 import { AuthService } from '../../services/auth.service';
 import { LoadingComponent } from '../../components/loading/loading.component';
-
 import { UserService } from '../../services/user.service';
 import { HttpClient } from '@angular/common/http';
-
 
 @Component({
   selector: 'app-conta',
@@ -115,4 +113,4 @@ export class ContaComponent {
     });
   }
   
-}    
+}   

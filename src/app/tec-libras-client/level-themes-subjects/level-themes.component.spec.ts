@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NivelComponent } from './nivel.component';
+import { LevelThemesComponent } from './level-themes.component';
 
-describe('NivelComponent', () => {
-  let component: NivelComponent;
-  let fixture: ComponentFixture<NivelComponent>;
+describe('LevelThemesComponent', () => {
+  let component: LevelThemesComponent;
+  let fixture: ComponentFixture<LevelThemesComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [NivelComponent]
+      imports: [LevelThemesComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(NivelComponent);
+    fixture = TestBed.createComponent(LevelThemesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
