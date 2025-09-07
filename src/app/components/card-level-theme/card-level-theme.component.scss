@@ -7,14 +7,15 @@
 }
 
 /*ANEL DE PROGRESSO*/
+
      .progress-ring {
         position: relative;
-        width: 150px;
-        height: 150px;
+        width: 100px;
+        height: 100px;
         background-color: #e6e6e6;
         border-radius: 50%;
         bottom: 20px;
-        left: 25px;
+        
     }
 
      .progress-ring circle {
@@ -26,18 +27,20 @@
 
      .progress-ring .progress-bg {
         stroke: #F9F9F9;
+        r: 40; 
     }
 
      .progress-ring .progress-bar {
         stroke: #57C29B;
         stroke-linecap: round;
+        r: 40;
     }
 
      .progress-text {
         position: relative;
-        bottom: 110px;
-        left: 75px;
+        bottom: 84px;
+        text-align: center;
         font-family: "Rawline Bold", sans-serif;
-        font-size: 24px;
+        font-size: 18px;
         color: #333;
     }
