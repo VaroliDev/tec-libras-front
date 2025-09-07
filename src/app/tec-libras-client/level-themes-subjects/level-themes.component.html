@@ -14,13 +14,13 @@
     
 
     <div class="d-flex justify-content-center">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-5" style="max-width: 80%;">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-5">
             @if(isLoading) {
                 <app-loading-section></app-loading-section>
             }
             <!--LINKS DOS NÍVEIS-->
             @for (n of item; track n.level) {
-                <app-card-level-theme [level]="n.level" [percent]="n.percent" [levelstyle]="n.level % 2"></app-card-level-theme>     
+                <app-card-level-theme  [level]="n.level" [percent]="n.percent" [levelstyle]="n.level % 2" ></app-card-level-theme>   
             }   
         </div>
     </div>
@@ -28,6 +28,6 @@
 </div>
 
 <br>
-<br><br><br>
+<br><br><br> <br><br>
 
 <app-footer></app-footer>
