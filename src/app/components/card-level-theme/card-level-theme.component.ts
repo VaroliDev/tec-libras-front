@@ -3,10 +3,10 @@ import { Component,Input, OnInit} from '@angular/core';
 @Component({
   selector: 'app-level-theme',
   imports: [],
-  templateUrl: './level-theme.component.html',
-  styleUrl: './level-theme.component.scss'
+  templateUrl: './card-level-theme.component.html',
+  styleUrl: './card-level-theme.component.scss'
 })
-export class LevelThemeComponent {
+export class CardLevelThemeComponent {
   @Input() level: number = 1;     // Número do nível
   @Input() percent: number = 70;   // Progresso em %
   @Input() levelstyle: number = this.level % 2;

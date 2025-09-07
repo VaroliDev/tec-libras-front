@@ -1,18 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { CardLevelThemeComponent } from './card-level-theme.component';
 
-import { LevelThemeComponent } from './level-theme.component';
-
-describe('LevelThemeComponent', () => {
-  let component: LevelThemeComponent;
-  let fixture: ComponentFixture<LevelThemeComponent>;
+describe('CardLevelThemeComponent', () => {
+  let component: CardLevelThemeComponent;
+  let fixture: ComponentFixture<CardLevelThemeComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [LevelThemeComponent]
+      imports: [CardLevelThemeComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(LevelThemeComponent);
+    fixture = TestBed.createComponent(CardLevelThemeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
