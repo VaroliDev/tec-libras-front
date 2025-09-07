@@ -15,7 +15,8 @@ interface itemLevel {
   templateUrl: './level-themes.component.html',
   styleUrl: './level-themes.component.scss'
 })
-export class LevelThemesComponent {
+
+export class LevelThemesComponent { 
 
   item:itemLevel[] = []
   isLoading: boolean = false;
