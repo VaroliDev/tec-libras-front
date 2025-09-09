@@ -11,6 +11,11 @@ import { ComunidadeComponent } from './tec-libras-client/comunidade/comunidade.c
 import { LevelThemesComponent } from './tec-libras-client/level-themes-subjects/level-themes/level-themes.component';
 import { CadastroDeConteudoComponent } from './tec-libras-admin/cadastro-de-conteudo/cadastro-de-conteudo.component';
 import { ThemesComponent } from './tec-libras-client/level-themes-subjects/themes/themes.component';
+import { AulaTeoricaComponent } from './tec-libras-client/level-themes-subjects/aula-teorica/aula-teorica.component';
+import { AulaPraticaComponent } from './tec-libras-client/aula-pratica/aula-pratica.component';
+import { DemonstracoesComponent } from './tec-libras-client/level-themes-subjects/demonstracoes/demonstracoes.component';
+import { QuestionarioComponent } from './tec-libras-client/questionario/questionario.component';
+import { CuriosidadesComponent } from './tec-libras-client/level-themes-subjects/curiosidades/curiosidades.component';
 
 export const routes: Routes = [
     {
@@ -67,6 +72,31 @@ export const routes: Routes = [
     {
         path: 'temas',
         component: ThemesComponent
+    },
+
+    {
+        path: 'aula-teorica',
+        component: AulaTeoricaComponent
+    },
+
+    {
+        path: 'demonstracoes',
+        component: DemonstracoesComponent
+    },
+
+    {
+        path: 'aula-pratica',
+        component: AulaPraticaComponent
+    },
+
+    {
+        path: 'questionario',
+        component: QuestionarioComponent
+    },
+
+    {
+        path: 'curiosidades',
+        component: CuriosidadesComponent
     },
 
     {
