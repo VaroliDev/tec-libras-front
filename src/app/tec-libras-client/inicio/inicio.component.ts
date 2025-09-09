@@ -7,6 +7,7 @@ import { HeaderComponent } from '../../components/header/header.component';
 import { FooterComponent } from "../../components/footer/footer.component";
 import { LevelComponent } from '../../components/level/level.component';
 import { LoadingSectionComponent } from '../../components/loading-section/loading-section.component';
+import { PhaseService } from '../../services/phase.service';
 
 interface itemLevel {
   level: number;
@@ -20,7 +21,7 @@ interface itemLevel {
   styleUrl: './inicio.component.scss'
 })
 export class InicioComponent {
-  constructor(private themeService: ThemeService, private router: Router, private authService: AuthService) {}
+  constructor(private themeService: ThemeService, private router: Router, private authService: AuthService, private phase: PhaseService) {}
 
   onThemeChange(theme: string): void {
     this.themeService.applyTheme(theme);
@@ -72,7 +73,7 @@ export class InicioComponent {
 
 
     //Define a quantidade de niveis que vao aparecer
-    const x = 10;
+    const x = 5;
 
     //O setTimeout é para simular o carregamento dos niveis
     setTimeout(() => {
@@ -88,91 +89,8 @@ export class InicioComponent {
     },800);
   }
 
-
-  frases = [
-    "Que tal começar o dia com algo diferente? Vamos nessa!",
-    "Está pronto para aprender algo novo? Vamos explorar juntos!",
-    "Que tal desafiar sua mente hoje? Vamos descobrir algo novo!",
-    "Hoje é o dia ideal para aprender! Vamos nessa!",
-    "Que tal tentar algo novo? O que você tem a perder?",
-    "Vamos tornar o dia de hoje mais interessante? Vamos aprender juntos!",
-    "Hoje é um bom dia para expandir seus horizontes. Vamos lá!",
-    "Que tal dar o primeiro passo para algo novo hoje? Vamos lá!",
-    "Vamos fazer de hoje ser inesquecível? Vamos aprender algo novo!",
-    "O que acha de fazer hoje ser um dia de descobertas? Vamos aprender juntos!",
-    "Vamos aproveitar a oportunidade de aprender algo novo hoje!",
-    "Que tal investir um tempo aprendendo algo que você sempre quis saber?",
-    "O que acha de desafiar sua curiosidade hoje? Vamos começar!",
-    "Vamos transformar hoje em um dia de aprendizado e crescimento!",
-    "Que tal abrir sua mente para novas ideias? Vamos aprender juntos!",
-    "Hoje é o dia perfeito para adquirir novos conhecimentos. Vamos lá!",
-    "O que acha de começar o dia com algo novo? Vamos aprender!",
-    "Que tal dar o primeiro passo para um novo conhecimento? Vamos juntos!",
-    "Que tal dar início a um novo aprendizado hoje? Vamos juntos!",
-    "Vamos começar a explorar novas ideias e conhecimentos hoje!",
-    "O que acha de hoje ser o dia da sua descoberta? Vamos aprender juntos!",
-    "Que tal buscar um novo conhecimento agora? Vamos lá!",
-    "Vamos deixar o dia de hoje mais interessante com algo novo? Vamos aprender!",
-    "O que acha de se aventurar em algo novo hoje? Vamos nessa!",
-    "Que tal começar o dia com um novo aprendizado? Vamos lá!",
-    "Vamos fazer do dia de hoje um marco no seu aprendizado!",
-    "Que tal abrir sua mente para algo novo hoje? Vamos aprender!",
-    "O que acha de explorar novos caminhos de aprendizado agora? Vamos lá!",
-    "Vamos fazer deste dia o começo de algo novo e excitante! Vamos aprender!",
-    "Que tal experimentar algo diferente hoje e aprender algo novo?",
-    "Vamos fazer o dia de hoje ser mais especial com um novo aprendizado!",
-    "Que tal mudar a sua rotina e aprender algo diferente hoje?",
-    "Vamos aproveitar o dia de hoje para abrir novos horizontes!",
-    "Que tal dar o primeiro passo para algo que você sempre quis aprender?",
-    "Vamos transformar hoje em um dia de aprendizado e diversão!",
-    "O que acha de expandir seus conhecimentos agora? Vamos lá!",
-    "Vamos embarcar em uma nova jornada de aprendizado hoje!",
-    "Que tal aprender algo novo agora e fazer o dia de hoje ser inesquecível?",
-    "Vamos aproveitar este momento para adquirir novos conhecimentos!",
-    "Que tal dar uma chance ao seu crescimento pessoal hoje? Vamos aprender!",
-    "Vamos explorar novos tópicos e aprender juntos hoje!",
-    "O que acha de fazer algo novo hoje? Vamos descobrir juntos!",
-    "Que tal sair da sua zona de conforto e aprender algo diferente?",
-    "Vamos tornar o dia de hoje mais produtivo com algo novo!",
-    "Que tal começar o dia de hoje com um aprendizado que vai te surpreender?",
-    "Vamos fazer do dia de hoje um dia para novos conhecimentos e descobertas!",
-    "O que acha de tentar aprender algo novo hoje? Vamos lá!",
-    "Que tal aproveitar o momento para explorar novos horizontes hoje?",
-    "Vamos dar um passo à frente na sua jornada de aprendizado!",
-    "Que tal aproveitar o dia de hoje para se desafiar com algo novo?",
-    "Vamos investir um pouco do nosso tempo em aprendizado agora!",
-    "Que tal dar uma pausa e aprender algo novo agora? Vamos lá!",
-    "Vamos fazer do dia de hoje um dia mais interessante e cheio de conhecimento!",
-    "O que acha de se envolver em algo novo e aprender hoje?",
-    "Vamos aproveitar a energia do dia de hoje para aprender e crescer!",
-    "Que tal fazer deste dia uma oportunidade para aprender algo diferente?",
-    "Vamos juntos explorar algo novo hoje? Que tal aprender mais?",
-    "Que tal colocar o aprendizado no centro do seu dia de hoje?",
-    "Vamos fazer do dia de hoje uma oportunidade para explorar novas ideias!",
-    "O que acha de começar algo novo hoje? Vamos aprender juntos!",
-    "Que tal investir um pouco do seu tempo para aprender algo diferente?",
-    "Vamos tornar o dia de hoje único com novos conhecimentos!",
-    "Que tal dar uma chance ao aprendizado e começar algo novo agora?",
-    "Vamos aproveitar o momento para dar um passo à frente no seu aprendizado!",
-    "Que tal usar o dia de hoje para buscar novos conhecimentos?",
-    "Vamos transformar o seu dia em um aprendizado incrível!",
-    "Que tal abrir a mente para novas ideias hoje? Vamos aprender!",
-    "Vamos começar o dia com uma nova perspectiva! Vamos aprender juntos!",
-    "Que tal descobrir algo novo que vai mudar sua visão? Vamos lá!",
-    "Vamos começar uma jornada de aprendizado hoje? Você topa?",
-    "Que tal dar início a uma nova descoberta hoje? Vamos nessa!",
-    "Vamos aproveitar o dia para expandir sua mente com algo novo!",
-    "Que tal experimentar aprender algo que você nunca imaginou antes? Vamos lá!",
-    "Vamos tornar o dia de hoje mais produtivo e interessante com aprendizado!",
-    "O que acha de aprender algo novo agora e transformar seu dia?",
-    "Que tal experimentar aprender algo diferente hoje? Vamos lá!",
-    "Vamos usar o dia de hoje para explorar novos conhecimentos!",
-    "Que tal dedicar alguns minutos ao aprendizado e ver como pode ser incrível?",
-    "Vamos aproveitar o dia de hoje para aprender e crescer juntos!"
-  ];
-
   getCurrentFrase(): string {
-    this.currentFrase = this.frases[Math.ceil(Math.random() * 10)]
+    this.currentFrase = this.phase.frases[Math.ceil(Math.random() * 10)]
     return this.currentFrase
   }
 }
