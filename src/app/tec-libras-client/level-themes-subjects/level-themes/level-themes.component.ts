@@ -1,8 +1,8 @@
 import { Component,Input, OnInit} from '@angular/core';
-import { FooterComponent } from "../../components/footer/footer.component";
-import { HeaderComponent } from "../../components/header/header.component";
-import { LoadingSectionComponent } from '../../components/loading-section/loading-section.component';
-import { CardLevelThemeComponent } from '../../components/card-level-theme/card-level-theme.component';
+import { FooterComponent } from "../../../components/footer/footer.component";
+import { HeaderComponent } from "../../../components/header/header.component";
+import { LoadingSectionComponent } from '../../../components/loading-section/loading-section.component';
+import { CardLevelThemeComponent } from '../../../components/card-level-theme/card-level-theme.component';
 
 interface itemLevel {
   level: number;
