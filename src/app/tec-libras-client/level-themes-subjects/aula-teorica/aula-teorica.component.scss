@@ -3,21 +3,41 @@ text-decoration: none;
 color: #FF5733;
 position: relative;
 bottom: 2.5px;
-
+font-size: 30px; 
+font-weight: bold; 
+margin-right: 15px; 
+position: relative; 
+bottom: 10px;
 }
 
 .card {
     background-color: #f1f1f1;
-        padding: 12px 12px;
+    padding: 12px 12px;
 
-        & h6 {
-            font-family: 'Rawline Bold';
-            text-transform: uppercase;
-            font-size: 12px;
-        }
-
-        & h5 {
-            font-family: 'Rawline Bold';
-            font-size: 15px;
-        }
+    & h6 {
+        font-family: 'Rawline Bold';
+        text-transform: uppercase;
+        font-size: 12px;
     }
+
+    & h5 {
+    font-family: 'Rawline Bold';
+    font-size: 15px;
+    }
+
+    & h2 {
+        font-family: 'Rawline Bold';
+        
+    }
+}
+
+.progress {
+    height: 6px; 
+    border-radius: 10px; 
+    background-color: #e0e0e0;
+
+    & .progress-bar {
+        width: 80%; 
+        background-color: #3AC1A8;
+    }
+}
