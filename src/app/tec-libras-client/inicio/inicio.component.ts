@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ThemeService } from '../../services/theme.service';
 import { Router } from '@angular/router';
@@ -8,6 +8,8 @@ import { FooterComponent } from "../../components/footer/footer.component";
 import { LevelComponent } from '../../components/level/level.component';
 import { LoadingSectionComponent } from '../../components/loading-section/loading-section.component';
 import { PhaseService } from '../../services/phase.service';
+import { UserService } from '../../services/user.service';
+import { HttpClient } from '@angular/common/http';
 
 interface itemLevel {
   level: number;
@@ -21,7 +23,12 @@ interface itemLevel {
   styleUrl: './inicio.component.scss'
 })
 export class InicioComponent {
-  constructor(private themeService: ThemeService, private router: Router, private authService: AuthService, private phase: PhaseService) {}
+  constructor(private themeService: ThemeService, private router: Router, private authService: AuthService, private phase: PhaseService,
+     private http: HttpClient) {}
+
+      private userService = inject(UserService)
+
+      protected userData = this.userService.getUserInfo()
 
   onThemeChange(theme: string): void {
     this.themeService.applyTheme(theme);
@@ -52,10 +59,12 @@ export class InicioComponent {
   }
 
   firstName: string | null = null;
-  fullName: string | null = null;
-  userName: string | null = null;
   isLoading: boolean = false;
-  currentFrase: string | undefined
+  user_name: string = '';
+  full_name: string = '';
+  email: string = '';
+  userId: number | null = null;
+  currentFrase: string | undefined;
 
   item:itemLevel[] = []
 
@@ -64,12 +73,9 @@ export class InicioComponent {
     this.authService.isLogged();
 
     this.isLoading = true;
-    
-    const userDataString = localStorage.getItem('token');
-    const userData = JSON.parse(userDataString || '{}');
-    this.firstName = userData.first_name || '';
-    this.fullName = userData.full_name || '';
-    this.userName = userData.user_name || '';
+    this.full_name = this.userData()!.full_name;
+    this.user_name = this.userData()!.user_name;
+    this.firstName = this.full_name.split(" ")[0];
 
 
     //Define a quantidade de niveis que vao aparecer
@@ -90,7 +96,7 @@ export class InicioComponent {
   }
 
   getCurrentFrase(): string {
-    this.currentFrase = this.phase.frases[Math.ceil(Math.random() * 10)]
+    this.currentFrase = this.phase.frases[Math.floor(Math.random()*(87))]
     return this.currentFrase
   }
 }
