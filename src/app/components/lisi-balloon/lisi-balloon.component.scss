@@ -1,0 +1,88 @@
+
+/*Balão de Fala Lisi*/
+.balao_lisi {
+    display: flex;
+    justify-content: center;
+
+    & img {
+        width: 200px;
+    }
+}
+
+.balaofala {
+    background-color: #292929; 
+    color: #F9F9F9;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 39px 50px 50px 50px;
+    margin: 65px 20px 0 0;
+    height: 120px;
+    width: 280px;
+    letter-spacing: 1px;
+    border-radius: 10px;
+}
+.seta {
+    margin-top: 105px;
+    margin-left: -21px;
+    width: 0;
+    height: 0;
+    border: 20px solid transparent;
+    border-left-color: #292929;
+}
+
+/*AJUSTE PARA DIFERENTES TAMANHOS DE TELA - RESPONSIVO*/
+
+@media (min-width: 320px) and (max-width: 411px) {
+    /*Balão de Fala Lisi*/
+    .balao_lisi {
+        & img {
+            width: 150px;
+        }
+    }
+    
+    .balaofala {
+        font-size: 12px;
+        padding: 20px 15px 20px 15px;
+        margin: 50px 20px 0 10px;
+        height: 90px;
+        width: 200px;
+        letter-spacing: 1px;
+        border-radius: 10px;
+    }
+    .seta {
+        margin-top: 83px;
+        margin-left: -21px;
+        width: 0;
+        height: 0;
+        border: 20px solid transparent;
+        border-left-color: #292929;
+    }
+    
+}
+
+@media (min-width: 412px) and (max-width: 496px) {
+    /*Balão de Fala Lisi*/
+    .balao_lisi {
+        & img {
+            width: 150px;
+        }
+    }
+    
+    .balaofala {
+        font-size: 12px;
+        padding: 28px 20px 20px 20px;
+        margin: 50px 20px 0 10px;
+        height: 90px;
+        width: 200px;
+        letter-spacing: 1px;
+        border-radius: 10px;
+    }
+    .seta {
+        margin-top: 83px;
+        margin-left: -21px;
+        width: 0;
+        height: 0;
+        border: 20px solid transparent;
+        border-left-color: #292929;
+    }
+}
