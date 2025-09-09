@@ -111,6 +111,7 @@ export class CadastroComponent {
       this.UserService.createUser(this.user).subscribe({
         next: (response: any) => {
           console.log(response);
+          localStorage.setItem('firstLogin', response.firstLogin);
           this.UserService.login(this.user).subscribe(
           (response: LoginResponse) => {
             console.log('Resposta da API:', response);  // Verifique a estrutura da resposta
