@@ -1,4 +1,33 @@
+:host-context(body.modo-escuro)  {
+    & #nome_usuario {
+        color: #F9F9F9;
+    }
 
+    & .balaofala {
+        background-color: #f9f9f9; 
+        color: #292929;
+    }
+
+    & .seta {
+        border-left-color: #f9f9f9;
+    }
+}
+
+:host-context(body.modo-contraste)  {
+    & #nome_usuario {
+        color: #ffffff;
+    }
+
+    & .balaofala {
+        background-color: #00E6FF; 
+        color: #000000;
+    }
+
+    & .seta {
+        border-left-color: #00E6FF;
+    }
+
+}
 /*Balão de Fala Lisi*/
 .balao_lisi {
     display: flex;
