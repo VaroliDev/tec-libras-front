@@ -1,0 +1,76 @@
+.back-arrow {
+    text-decoration: none;
+    color: #FF5733;
+    position: relative;
+    bottom: 2.5px;
+    font-size: 30px; 
+    font-weight: bold; 
+    margin-right: 15px; 
+    position: relative; 
+    bottom: 10px;
+}
+
+.card {
+    background-color: #f1f1f1;
+    padding: 12px 12px;
+
+    & h6 {
+        font-family: 'Rawline Bold';
+        text-transform: uppercase;
+        font-size: 12px;
+    }
+
+    & h5 {
+    font-family: 'Rawline Bold';
+    font-size: 15px;
+    }
+
+    & h2 {
+        font-family: 'Rawline Bold';
+        
+    }
+}
+
+.progress {
+    height: 6px; 
+    border-radius: 10px; 
+    background-color: #e0e0e0;
+
+    & .progress-bar {
+        width: 80%; 
+        background-color: #3AC1A8;
+    }
+}
+
+.btn-voltar {
+    border: 3px solid #F25C05;
+    background-color: #c13a3a00;
+    color: #F25C05;
+    font-family: 'Rawline Bold';
+    border-radius: 50PX;
+}
+
+.btn-avancar {
+    background-color: #F25C05;
+    color: #F9f9f9;
+    font-family: 'Rawline Bold'; 
+    border-radius: 50PX;
+}
+  
+.video-demonstracao {
+    max-width: 75%;
+}
+
+/*tablet*/
+@media (max-width: 1024px) and (min-width: 768px) {
+    .video-demonstracao {
+        max-width: 85%;
+    }
+}
+
+/* Celular */
+@media (max-width: 767px) {
+    .video-demonstracao {
+        max-width: 100%;
+    }
+}
