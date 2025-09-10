@@ -1,0 +1,25 @@
+h2 {
+    font-family: "Rawline Bold", sans-serif;
+    color: #292929;
+    margin-top: 50px;
+    font-weight: 700;
+}
+
+.progress {
+    height: 6px; 
+    border-radius: 10px; 
+    background-color: #e0e0e0;
+
+    & .progress-bar {
+        width: 80%; 
+        background-color: #3AC1A8;
+    }
+}
+
+.back-arrow {
+text-decoration: none;
+color: #FF5733;
+position: relative;
+bottom: 2.5px;
+
+}

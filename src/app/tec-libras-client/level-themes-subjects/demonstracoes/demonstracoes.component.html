@@ -2,15 +2,15 @@
 
 <div class="container">
     <br>
-
+    <!--Botões de Voltar e Avançar-->
     <div class="card card-subject">
         <div class="card-body">
             <!--seta para voltar (add link)-->
             <div style="display: flex;">
                 <a class="back-arrow"> < </a>
                 <div>
-                    <h6 class="card-subtitle mb-2">Aula Prática</h6>
-                    <h5 class="card-title"> Vamos praticar! </h5>
+                    <h6 class="card-subtitle mb-2">DEMONSTRAÇÕES</h6>
+                    <h5 class="card-title"> Como faz? </h5>
                 </div>
             </div>
 
@@ -26,41 +26,43 @@
                     <p style=" position: relative; bottom: 10px; margin-left: 20px; font-weight: bold;">80%</p>
                 </div>
 
-                <!--Nome do Tema-->
-                <h2>Nome do Tema</h2>
                 <br>
 
-                <!--conteúdo-->
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
+                <!--Video da demonstração -->
+                <div class="video-demonstracao ratio ratio-16x9 mx-auto p-2">
+                    @if(isLoading) {
+                        <app-loading-section style="margin-top: 25%;"></app-loading-section>
+                    }
+
+                    <iframe
+                        src="https://drive.google.com/file/d/1lIcBUHj-rY2U_6Y-NkFim_LhVg-UljjT/preview"
+                        width="40"
+                        height="60"
+                        allow="autoplay; encrypted-media"
+                        allowfullscreen
+                        frameborder="0" style="border-radius: 10px;"> 
+                    </iframe>
+                </div>
                 
                 <br>
-
-                <div>(api Media Pipe)</div>
-
                 <br>
 
-                <p>Status: <b class="correct-sign">Correto!</b></p>
 
-                <br>
-                
                 <!--Botões de Voltar e Avançar-->
                 <div class="d-flex gap-3 mt-3">
                     <!-- Botão Voltar -->
-                    <a class="btn btn-voltar flex-fill"> Voltar </a>
+                    <a class="btn btn-voltar flex-fill"> VOLTAR </a>
                     <!-- Botão Avançar -->
-                    <a class="btn btn-avancar flex-fill"> Avançar </a>
+                    <a class="btn btn-avancar flex-fill"> AVANÇAR </a>
                 </div>
 
             </div>
-
-            
         </div>
     </div>
 
-    <br>
-    <br>
-    
-</div>
 
+    <br>
+    <br>
+</div>
 
 <app-footer></app-footer>

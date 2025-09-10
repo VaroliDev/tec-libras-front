@@ -1,0 +1,43 @@
+import { Component,Input, OnInit} from '@angular/core';
+import { FooterComponent } from "../../../components/footer/footer.component";
+import { HeaderComponent } from "../../../components/header/header.component";
+import { LoadingSectionComponent } from '../../../components/loading-section/loading-section.component';
+import { CardLevelThemeComponent } from '../../../components/card-level-theme/card-level-theme.component';
+
+interface itemLevel {
+  level: number;
+  percent: number;
+}
+
+@Component({
+  selector: 'app-nivel',
+  imports: [FooterComponent, HeaderComponent, LoadingSectionComponent, CardLevelThemeComponent],
+  templateUrl: './level-themes.component.html',
+  styleUrl: './level-themes.component.scss'
+})
+
+export class LevelThemesComponent { 
+
+  item:itemLevel[] = []
+  isLoading: boolean = false;
+
+  ngOnInit(): void {
+
+    this.isLoading = true;
+
+  const x = 5;
+
+    //O setTimeout é para simular o carregamento dos niveis
+    setTimeout(() => {
+
+      for(let i=1; i<=x; i++){
+        this.item.push({
+          level: i,
+          percent: Math.floor(Math.random() * 11) * 10
+        });
+      }
+      this.isLoading = false;
+
+    },800);
+  }
+}

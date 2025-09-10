@@ -6,11 +6,6 @@
         & h6 {
             color: #c4c4c4;
         }
-
-        & h5 {
-        font-family: 'Rawline Bold';
-        font-size: 15px;
-        }
     }
 
     .btn-voltar {
@@ -21,13 +16,6 @@
         background-color: #0000008f;
     }
 
-    .correct-sign {
-        color: #5cffe1;
-    }
-
-    .incorrect-sign {
-        color: #ff8fb4;
-    }
 
 }
 
@@ -55,13 +43,6 @@
         background-color: #5353533d;
     }
 
-    .correct-sign {
-        color: #5cffe1;
-    }
-
-    .incorrect-sign {
-        color: #ff5a5a;
-    }
 }
 
 .back-arrow {
@@ -107,14 +88,6 @@ bottom: 10px;
         width: 80%; 
         background-color: #3AC1A8;
     }
-}
-
-.correct-sign {
-    color: #258d7a;
-}
-
-.incorrect-sign {
-    color: #ac063e;
 }
 
 .btn-voltar {

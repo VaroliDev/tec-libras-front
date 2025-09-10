@@ -6,11 +6,6 @@
         & h6 {
             color: #c4c4c4;
         }
-
-        & h5 {
-        font-family: 'Rawline Bold';
-        font-size: 15px;
-        }
     }
 
     .btn-voltar {
@@ -65,15 +60,15 @@
 }
 
 .back-arrow {
-text-decoration: none;
-color: #FF5733;
-position: relative;
-bottom: 2.5px;
-font-size: 30px; 
-font-weight: bold; 
-margin-right: 15px; 
-position: relative; 
-bottom: 10px;
+    text-decoration: none;
+    color: #FF5733;
+    position: relative;
+    bottom: 2.5px;
+    font-size: 30px; 
+    font-weight: bold; 
+    margin-right: 15px; 
+    position: relative; 
+    bottom: 10px;
 }
 
 .card {
@@ -109,14 +104,6 @@ bottom: 10px;
     }
 }
 
-.correct-sign {
-    color: #258d7a;
-}
-
-.incorrect-sign {
-    color: #ac063e;
-}
-
 .btn-voltar {
     border: 3px solid #F25C05;
     background-color: #c13a3a00;
@@ -138,4 +125,22 @@ bottom: 10px;
 
 .btn-avancar:hover {
     background-color: #d24d00;
+}
+  
+.video-demonstracao {
+    max-width: 75%;
+}
+
+/*tablet*/
+@media (max-width: 1024px) and (min-width: 768px) {
+    .video-demonstracao {
+        max-width: 85%;
+    }
+}
+
+/* Celular */
+@media (max-width: 767px) {
+    .video-demonstracao {
+        max-width: 100%;
+    }
 }
