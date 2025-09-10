@@ -7,6 +7,7 @@ import { HeaderComponent } from '../../components/header/header.component';
 import { FooterComponent } from "../../components/footer/footer.component";
 import { LevelComponent } from '../../components/level/level.component';
 import { LoadingSectionComponent } from '../../components/loading-section/loading-section.component';
+import { PhaseService } from '../../services/phase.service';
 
 interface itemLevel {
   level: number;
@@ -20,7 +21,7 @@ interface itemLevel {
   styleUrl: './inicio.component.scss'
 })
 export class InicioComponent {
-  constructor(private themeService: ThemeService, private router: Router, private authService: AuthService) {}
+  constructor(private themeService: ThemeService, private router: Router, private authService: AuthService, private phase: PhaseService) {}
 
   onThemeChange(theme: string): void {
     this.themeService.applyTheme(theme);
@@ -54,10 +55,12 @@ export class InicioComponent {
   fullName: string | null = null;
   userName: string | null = null;
   isLoading: boolean = false;
+  currentFrase: string | undefined
 
   item:itemLevel[] = []
 
   ngOnInit(): void {
+    this.getCurrentFrase();
     this.authService.isLogged();
 
     this.isLoading = true;
@@ -68,8 +71,9 @@ export class InicioComponent {
     this.fullName = userData.full_name || '';
     this.userName = userData.user_name || '';
 
+
     //Define a quantidade de niveis que vao aparecer
-    const x = 25;
+    const x = 5;
 
     //O setTimeout é para simular o carregamento dos niveis
     setTimeout(() => {
@@ -83,5 +87,10 @@ export class InicioComponent {
       this.isLoading = false;
 
     },800);
+  }
+
+  getCurrentFrase(): string {
+    this.currentFrase = this.phase.frases[Math.ceil(Math.random() * 10)]
+    return this.currentFrase
   }
 }
