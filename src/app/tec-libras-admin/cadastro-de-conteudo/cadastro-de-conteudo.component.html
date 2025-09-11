@@ -1,38 +1,85 @@
 <app-header></app-header>
 
-<form [formGroup]="topicForm" (ngSubmit)="submit()">
-  <label>Level:</label>
-  <input formControlName="level_id" />
+<div class="container">
+  <a class="btn btn-voltar" (click)="pagadmin()"> < Voltar</a>
+  <h2>Cadastro de Conteúdo dos Níveis </h2>
 
-  <label>Nome do Tema:</label>
-  <input formControlName="title" />
+  <br>
+  <form [formGroup]="topicForm" (ngSubmit)="submit()">
 
-  <label>Breve Descrição:</label>
-  <textarea formControlName="description"></textarea>
+    <!--Nivel e Nome do Tema-->
+    <div class="input-group mb-3">
+      <span class="input-group-text">Nível</span>
+      <input class="form-control" min="1" type="number" id="level_id" formControlName="level_id" />
+      <span class="input-group-text">Nome do Tema</span>
+      <input class="form-control" id="title" formControlName="title" />
+    </div>
 
-  <label>Aula Teórica:</label>
-  <textarea formControlName="theory_content"></textarea>
+    <br>
 
-  <label>Prática (nomes dos sinais, separados por vírgula):</label>
-  <input formControlName="practice_signs" />
+    <!--Descrição-->
+    <label class="form-label" for="description">Breve Descrição</label>
+    <textarea class="form-control" id="description" formControlName="description"></textarea>
 
-  <label>Vídeo (URL):</label>
-  <input formControlName="video_url" />
+    <br>
+    <!--Aula Teórica-->
+    <label class="form-label" for="theory_content">Aula Teórica </label>
+    <textarea class="form-control" id="theory_content" formControlName="theory_content" placeholder="Adicione com as tags HTML e suas devidas formatações, se necessário"></textarea>
 
- <div formArrayName="questions">
-  <div *ngFor="let q of questions.controls; let i = index" [formGroupName]="i">
-    <input formControlName="question_text" placeholder="Pergunta {{i+1}}" />
-    <input formControlName="options" placeholder="Opções (JSON)" />
-    <input formControlName="correct_answer" placeholder="Resposta correta" />
-    <input formControlName="explanation" placeholder="Explicação da resposta" />
-  </div>
+    <br>
+
+    <!--Prática-->
+    <label class="form-label" for="practice_signs">Prática</label>
+    <input class="form-control" id="practice_signs" formControlName="practice_signs" placeholder="Nomes dos sinais, separados por vírgula" />
+
+    <br>
+
+    <!--Demonstração-->
+    <label class="form-label" for="video_url">Vídeo Demonstração</label>
+    <input class="form-control" id="video_url" formControlName="video_url" placeholder="Somente URL" />
+
+    <br>
+
+    <!--Questões-->
+    <label class="form-label">Questões (adicione as 4 opções separadas por vírgula)</label>
+    <div formArrayName="questions">
+      <div *ngFor="let q of questions.controls; let i = index" [formGroupName]="i" class="row g-3 mb-3">
+        
+        <div class="col-md-3">
+          <input class="form-control" formControlName="question_text" placeholder="Pergunta {{i+1}}" />
+        </div>
+        
+        <div class="col-md-2">
+          <input class="form-control" formControlName="options" placeholder="Opções (JSON)" />
+        </div>
+        
+        <div class="col-md-2">
+          <input class="form-control" formControlName="correct_answer" placeholder="Resposta correta" />
+        </div>
+        
+        <div class="col-md-5">
+          <input class="form-control" formControlName="explanation" placeholder="Explicação da resposta" />
+        </div>
+      
+      </div>
+    </div>
+
+    <br>
+
+    <!--Curiosidades-->
+    <label class="form-label" for="level_id" >Curiosidades </label>
+    <input class="form-control" formControlName="curiosities" placeholder="(máx. 3, separadas por vírgula)" />
+
+    <br>
+    <!--Botão para enviar-->
+    <div class="d-flex gap-3 mt-3">
+      <button class="btn btn-cadastrar-tema flex-fill" type="submit">Cadastrar Tema </button>
+    </div>
+    
+  </form>
 </div>
 
-
-  <label>Curiosidades (máx. 3, separadas por vírgula):</label>
-  <input formControlName="curiosities" />
-
-  <button type="submit">Salvar Tema</button>
-</form>
+<br>
+<br>
 
 <app-footer></app-footer>
