@@ -16,7 +16,7 @@ export class AdminPageComponent {
     this.router.navigate(['/lista-usuarios']);
   }
 
-  pagCadastro(){
+  pagCadastroConteudo(){
     this.router.navigate(['/conteudo'])
   }
 }
