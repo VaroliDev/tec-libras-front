@@ -1,119 +1,127 @@
 <!--NAVEGADOR-->
 <app-header></app-header>
 
+<br>
+<br>
+<br>
+      
+  <!-- Modal -->
+  <div class="modal fade" id="editUserModal" tabindex="-1" aria-labelledby="editUserModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h5 class="modal-title" id="editUserModalLabel">Editar Usuário</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">
+          <!-- Formulário de edição -->
+          @if (userId !== null) {
+            <form (ngSubmit)="updateUser(userId)">
+
+              <div class="mb-3">
+                <label for="full_name" class="form-label">Nome Completo</label>
+                <input type="text" class="form-control" id="full_name" [(ngModel)]="full_name" name="full_name" required>
+              </div>
+
+              <div class="mb-3">
+                <label for="user_name" class="form-label">Nome de Usuário</label>
+                <input type="text" class="form-control" id="user_name" [(ngModel)]="user_name" name="user_name" required>
+              </div>
+
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" [(ngModel)]="email" name="email" required>
+              </div>
+
+              <div class="d-flex gap-3 mt-3">
+                <button type="submit" class="btn btn-role flex-fill">Salvar</button>
+              </div>
+              
+            </form>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <a class="btn btn-voltar" (click)="pagadmin()"> < Voltar</a>
+    <h2 style="text-align: center; font-weight: bold;">Lista de Usuários Cadastrados</h2>
+
     <br>
-      <br>
-        <br>
+    <br>
 
-          <!-- Modal -->
-          <div class="modal fade" id="editUserModal" tabindex="-1" aria-labelledby="editUserModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="editUserModalLabel">Editar Usuário</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <!-- Formulário de edição -->
-                  @if (userId !== null) {
-                    <form (ngSubmit)="updateUser(userId)">
-                      <div class="mb-3">
-                        <label for="full_name" class="form-label">Nome Completo</label>
-                        <input type="text" class="form-control" id="full_name" [(ngModel)]="full_name" name="full_name" required>
-                      </div>
-                      <div class="mb-3">
-                        <label for="user_name" class="form-label">Nome de Usuário</label>
-                        <input type="text" class="form-control" id="user_name" [(ngModel)]="user_name" name="user_name" required>
-                      </div>
-                      <div class="mb-3">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" [(ngModel)]="email" name="email" required>
-                      </div>
-                      <button type="submit" class="btn btn-primary">Salvar</button>
-                    </form>
-                  }
-                </div>
-              </div>
-            </div>
-          </div>
+    <table class="table  table-striped-columns">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Nome Completo</th>
+          <th scope="col">Nome de usuário</th>
+          <th scope="col">E-mail</th>
+          <th scope="col">Data de Ingresso</th>
+          <th scope="col">Role</th>
+          <th scope="col" colspan="3">Ações</th>
+        </tr>
+      </thead>
 
+      <tbody>
+        @for (user of users; track user) {
+          <tr>
+            <td>{{ user.id }}</td>
+            <td>{{ user.fullName }}</td>
+            <td>{{ user.userName }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.createdAt }}</td>
+            <td>{{ user.role }}</td>
 
-          <div class="container">
-            <a class="btn btn-voltar" (click)="paginicio()"> < Voltar</a>
-            <h3 style="text-align: center; font-weight: bold;">Lista de Usuários Cadastrados</h3>
+            <td>
+              <button class="btn btn-editar btn-sm" (click)="editUser(user)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 23">
+                  <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                  <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
+                </svg> Editar
+              </button>
 
-            <br>
-              <br>
+              <button class="btn btn-role btn-sm" (click)="changeRole(user.id)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-vcard-fill" viewBox="0 0 16 23">
+                  <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm9 1.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 0-1h-4a.5.5 0 0 0-.5.5M9 8a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 0-1h-4A.5.5 0 0 0 9 8m1 2.5a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 0-1h-3a.5.5 0 0 0-.5.5m-1 2C9 10.567 7.21 9 5 9c-2.086 0-3.8 1.398-3.984 3.181A1 1 0 0 0 2 13h6.96q.04-.245.04-.5M7 6a2 2 0 1 0-4 0 2 2 0 0 0 4 0"/>
+                </svg> Role 
+              </button>
 
-                <table class="table table-dark table-striped-columns">
-                  <thead>
-                    <tr>
-                      <th scope="col">ID</th>
-                      <th scope="col">Nome Completo</th>
-                      <th scope="col">Nome de usuário</th>
-                      <th scope="col">E-mail</th>
-                      <th scope="col">Data de Ingresso</th>
-                      <th scope="col">Role</th>
-                      <th scope="col" colspan="2">Ações</th>
-                    </tr>
-                  </thead>
+              <button class="btn btn-danger btn-sm" (click)="deleteUser(user.id)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 23">
+                  <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5m-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5M4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06m6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528M8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5"/>
+                </svg> Excluir
+              </button>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
 
-                  <tbody>
-                    @for (user of users; track user) {
-                      <tr>
-                        <td>{{ user.id }}</td>
-                        <td>{{ user.fullName }}</td>
-                        <td>{{ user.userName }}</td>
-                        <td>{{ user.email }}</td>
-                        <td>{{ user.createdAt }}</td>
-                        <td>{{ user.role }}</td>
-                        <td>
-                          <button class="btn btn-primary btn-sm" (click)="editUser(user)">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 23">
-                              <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-                              <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
-                            </svg>
-                            Editar
-                          </button>
-                          <button class="btn btn-primary btn-sm" (click)="changeRole(user.id)">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 23">
-                              <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-                              <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
-                            </svg>
-                            Role
-                          </button>
-                          <button class="btn btn-danger btn-sm" (click)="deleteUser(user.id)">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 23">
-                              <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5m-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5M4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06m6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528M8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5"/>
-                            </svg>
-                            Excluir
-                          </button>
-                        </td>
-                      </tr>
-                    }
-                  </tbody>
-                </table>
-              </div>
+  @if (users.length === 0) {
+    <div class="alert alert-info">
+      Nenhum usuário encontrado.
+    </div>
+  }
+        
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  
+<app-footer></app-footer> 
 
-              @if (users.length === 0) {
-                <div class="alert alert-info">
-                  Nenhum usuário encontrado.
-                </div>
-              }
-
-              <br>
-                <br>
-                  <br>
-                    <br>
-                      <br>
-                        <br>
-                          <br>
-                            <app-footer></app-footer> 
-
-                              <!--PLUGIN VLIBRAS-->
-                              <div vw class="enabled">
-                                <div vw-access-button class="active"></div>
-                                <div vw-plugin-wrapper>
-                                  <div class="vw-plugin-top-wrapper"></div>
-                                </div>
-                              </div>
+<!--PLUGIN VLIBRAS-->
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>

@@ -1,10 +1,30 @@
+ h2 {
+    font-family: "Rawline Bold", sans-serif;
+    text-align: center;
+    color: #292929;
+    font-weight: 700;
+  }
+
 .btn-voltar {
     color: #ff6f00;
     text-decoration: none;
     font-weight: 700;
+    
+    margin-top: 50px;
 }
 .btn-voltar:hover {
     color: #c95700;
+}
+
+.btn-editar {
+    background-color: #ff6f00;
+    color: #f9f9f9;
+}
+
+.btn-role {
+    background-color: #9E3FFA;
+    color: #f9f9f9;
+    margin: 0 5px;
 }
 
 :host-context(body.modo-escuro) {
@@ -13,6 +33,23 @@
         color: #f9f9f9;
     }
     
+    h2 {
+        color: #f9f9f9;
+    }
+
+    /* Colunas ímpares */
+    table.table td:nth-child(odd), table.table th:nth-child(odd) {
+        background-color: #121212; 
+        color: #f9f9f9;
+        border: 2px solid #363636;
+    }
+
+    /* Colunas pares */
+    table.table td:nth-child(even), table.table th:nth-child(even) {
+        background-color: #282828; 
+        color: #f9f9f9;
+        border: 2px solid  #363636;
+    }
 }
 
 :host-context(body.modo-contraste) {
@@ -25,5 +62,23 @@
             color: #f9f9f9;
             fill: #f9f9f9;
         }
+    }
+
+    h2 {
+        color: #ffffff;
+    }
+
+    /* Colunas ímpares */
+    table.table td:nth-child(odd), table.table th:nth-child(odd) {
+        background-color: #000000; 
+        color: #ffffff;
+        border: 2px solid aqua;
+    }
+
+    /* Colunas pares */
+    table.table td:nth-child(even), table.table th:nth-child(even) {
+        background-color: #101010; 
+        color: #ffffff;
+        border: 2px solid aqua;
     }
 }

@@ -27,6 +27,7 @@ export class ListaUsuariosComponent implements OnInit {
     private router: Router,
     private userService: UserService,
     private http: HttpClient  // Injetar o HttpClient aqui
+    
   ) {}
 
   ngOnInit(): void {
@@ -73,7 +74,7 @@ export class ListaUsuariosComponent implements OnInit {
     this.router.navigate(['/sobre-nos']);
   }
 
-  paginicio() {
+  pagadmin() {
     this.router.navigate(['/admin']);
   }
   
