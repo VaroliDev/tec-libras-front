@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { ThemeService } from '../services/theme.service';
+import { ThemeService } from '../../services/theme.service';
 import { Router } from '@angular/router';
-import { UserService } from '../services/user.service';
-import { HeaderComponent } from '../components/header/header.component';
-import { FooterComponent } from "../components/footer/footer.component";
+import { UserService } from '../../services/user.service';
+import { HeaderComponent } from '../../components/header/header.component';
+import { FooterComponent } from "../../components/footer/footer.component";
 import { HttpClient } from '@angular/common/http';  // Importar o HttpClient
 import { Modal } from 'bootstrap';  // Importação direta do modal (se você precisar de algo específico)
 
@@ -74,7 +74,7 @@ export class ListaUsuariosComponent implements OnInit {
   }
 
   paginicio() {
-    this.router.navigate(['/inicio']);
+    this.router.navigate(['/admin']);
   }
   
   loadUsers(): void {

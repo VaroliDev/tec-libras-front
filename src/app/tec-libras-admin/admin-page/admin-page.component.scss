@@ -1,0 +1,47 @@
+/*TITULO DA PÁGINA*/
+h2 {
+  font-family: "Rawline Bold", sans-serif;
+  text-align: center;
+  color: #292929;
+  margin-top: 50px;
+  font-weight: 700;
+}
+
+/*Geral Botão*/
+.btn-social{
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  width: 90%;
+  margin: 5% 5%;
+  padding: 4%;
+  text-decoration: none;
+  color: #f9f9f9;
+  font-weight: 700;
+  font-size: 110%;
+  background: #a33e27;
+}
+
+.btn-social:hover{
+    transition: 0.3s ease-in-out;
+    background: #FF5733;
+}
+
+/*modo escuro*/
+
+:host-context(body.modo-escuro) {
+  h2 {
+    color: #f9f9f9;
+  }
+}
+
+:host-context(body.modo-contraste) {
+  h2 {
+    color: #ffffff;
+  }
+
+  .btn-social {
+    border: solid 2px aqua;
+    color: #000000;
+  }
+}

@@ -1,3 +1,5 @@
+<app-header></app-header>
+
 <form [formGroup]="topicForm" (ngSubmit)="submit()">
   <label>Level:</label>
   <input formControlName="level_id" />
@@ -32,3 +34,5 @@
 
   <button type="submit">Salvar Tema</button>
 </form>
+
+<app-footer></app-footer>

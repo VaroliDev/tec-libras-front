@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core'
 import { FormBuilder, FormGroup, FormArray, ReactiveFormsModule } from '@angular/forms'
 import { CommonModule } from '@angular/common'
+import { HeaderComponent } from "../../components/header/header.component";
+import { FooterComponent } from "../../components/footer/footer.component";
 
 @Component({
   selector: 'app-cadastro-de-conteudo',
   standalone: true, // 
-  imports: [CommonModule, ReactiveFormsModule], 
+  imports: [CommonModule, ReactiveFormsModule, HeaderComponent, FooterComponent], 
   templateUrl: './cadastro-de-conteudo.component.html'
 })
 export class CadastroDeConteudoComponent implements OnInit {
