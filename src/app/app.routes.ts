@@ -5,7 +5,7 @@ import { InicioComponent } from './tec-libras-client/inicio/inicio.component';
 import { IntroducaoComponent } from './tec-libras-client/introducao/introducao.component';
 import { BibliotecaSinaisComponent } from './tec-libras-client/biblioteca-sinais/biblioteca-sinais.component';
 import { SobreNosComponent } from './tec-libras-client/sobre-nos/sobre-nos.component';
-import { ListaUsuariosComponent } from './lista-usuarios/lista-usuarios.component';
+import { ListaUsuariosComponent } from './tec-libras-admin/lista-usuarios/lista-usuarios.component';
 import { ContaComponent } from './tec-libras-client/conta/conta.component';
 import { ComunidadeComponent } from './tec-libras-client/comunidade/comunidade.component';
 import { LevelThemesComponent } from './tec-libras-client/level-themes-subjects/level-themes/level-themes.component';
@@ -16,6 +16,7 @@ import { AulaPraticaComponent } from './tec-libras-client/aula-pratica/aula-prat
 import { DemonstracoesComponent } from './tec-libras-client/level-themes-subjects/demonstracoes/demonstracoes.component';
 import { QuestionarioComponent } from './tec-libras-client/questionario/questionario.component';
 import { CuriosidadesComponent } from './tec-libras-client/level-themes-subjects/curiosidades/curiosidades.component';
+import { AdminPageComponent } from './tec-libras-admin/admin-page/admin-page.component';
 
 export const routes: Routes = [
     {
@@ -62,6 +63,11 @@ export const routes: Routes = [
     {
         path: 'lista-usuarios',
         component: ListaUsuariosComponent
+    },
+    
+    {
+        path: 'admin',
+        component: AdminPageComponent
     },
 
     {

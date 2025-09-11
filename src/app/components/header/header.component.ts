@@ -47,8 +47,8 @@ export class HeaderComponent {
         this.router.navigate(['/comunidade']);
     }
 
-    paglistausuarios() {
-        this.router.navigate(['/lista-usuarios']);
+    pagAdmin() {
+        this.router.navigate(['/admin']);
     }
 
     logout() {
