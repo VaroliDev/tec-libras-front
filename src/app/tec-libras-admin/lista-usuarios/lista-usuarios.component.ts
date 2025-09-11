@@ -27,6 +27,7 @@ export class ListaUsuariosComponent implements OnInit {
     private router: Router,
     private userService: UserService,
     private http: HttpClient  // Injetar o HttpClient aqui
+    
   ) {}
 
   ngOnInit(): void {

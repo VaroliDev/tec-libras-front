@@ -1,10 +1,30 @@
+ h2 {
+    font-family: "Rawline Bold", sans-serif;
+    text-align: center;
+    color: #292929;
+    font-weight: 700;
+  }
+
 .btn-voltar {
     color: #ff6f00;
     text-decoration: none;
     font-weight: 700;
+    
+    margin-top: 50px;
 }
 .btn-voltar:hover {
     color: #c95700;
+}
+
+.btn-editar {
+    background-color: #ff6f00;
+    color: #f9f9f9;
+}
+
+.btn-role {
+    background-color: #9E3FFA;
+    color: #f9f9f9;
+    margin: 0 5px;
 }
 
 :host-context(body.modo-escuro) {
@@ -13,6 +33,9 @@
         color: #f9f9f9;
     }
     
+    h2 {
+        color: #f9f9f9;
+    }
 }
 
 :host-context(body.modo-contraste) {
@@ -25,5 +48,9 @@
             color: #f9f9f9;
             fill: #f9f9f9;
         }
+    }
+
+    h2 {
+        color: #ffffff;
     }
 }
