@@ -73,7 +73,7 @@ export class ListaUsuariosComponent implements OnInit {
     this.router.navigate(['/sobre-nos']);
   }
 
-  paginicio() {
+  pagadmin() {
     this.router.navigate(['/admin']);
   }
   
