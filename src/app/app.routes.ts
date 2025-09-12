@@ -17,6 +17,7 @@ import { DemonstracoesComponent } from './tec-libras-client/level-themes-subject
 import { QuestionarioComponent } from './tec-libras-client/questionario/questionario.component';
 import { CuriosidadesComponent } from './tec-libras-client/level-themes-subjects/curiosidades/curiosidades.component';
 import { AdminPageComponent } from './tec-libras-admin/admin-page/admin-page.component';
+import { SinaisInfoComponent } from './tec-libras-client/biblioteca-sinais/sinais-info/sinais-info.component';
 
 export const routes: Routes = [
     {
@@ -43,6 +44,11 @@ export const routes: Routes = [
     {
         path: 'biblioteca-sinais',
         component: BibliotecaSinaisComponent
+    },
+
+    {
+        path: 'sinais-info',
+        component: SinaisInfoComponent
     },
 
     {
