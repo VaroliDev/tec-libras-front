@@ -12,9 +12,9 @@ import { LevelThemesComponent } from './tec-libras-client/level-themes-subjects/
 import { CadastroDeConteudoComponent } from './tec-libras-admin/cadastro-de-conteudo/cadastro-de-conteudo.component';
 import { ThemesComponent } from './tec-libras-client/level-themes-subjects/themes/themes.component';
 import { AulaTeoricaComponent } from './tec-libras-client/level-themes-subjects/aula-teorica/aula-teorica.component';
-import { AulaPraticaComponent } from './tec-libras-client/aula-pratica/aula-pratica.component';
+import { AulaPraticaComponent } from './tec-libras-client/level-themes-subjects/aula-pratica/aula-pratica.component';
 import { DemonstracoesComponent } from './tec-libras-client/level-themes-subjects/demonstracoes/demonstracoes.component';
-import { QuestionarioComponent } from './tec-libras-client/questionario/questionario.component';
+import { QuestionarioComponent } from './tec-libras-client/level-themes-subjects/questionario/questionario.component';
 import { CuriosidadesComponent } from './tec-libras-client/level-themes-subjects/curiosidades/curiosidades.component';
 import { AdminPageComponent } from './tec-libras-admin/admin-page/admin-page.component';
 
