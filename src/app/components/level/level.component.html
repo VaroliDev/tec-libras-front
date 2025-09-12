@@ -1,6 +1,6 @@
 <div class="niveis" >
         <div class="col" [id]="'nivel' + level">
-            <a href="#">
+            <a (click)="PagNivel()">
                 <div [class]="'circulonivel'+ levelstyle">
                     <p>Nível {{ level }}</p>
                     <svg class="progress-ring" width="150" height="150">

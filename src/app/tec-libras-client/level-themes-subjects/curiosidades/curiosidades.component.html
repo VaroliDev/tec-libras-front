@@ -7,7 +7,7 @@
         <div class="card-body">
             <!--seta para voltar (add link)-->
             <div style="display: flex;">
-                <a class="back-arrow"> < </a>
+                <a class="back-arrow" (click)="PagInicio()"> < </a>
                 <div>
                     <h6 class="card-subtitle mb-2">Curiosidades</h6>
                     <h5 class="card-title"> Sabia dessa? </h5>
@@ -35,9 +35,9 @@
                 <!--Botões de Voltar e Avançar-->
                 <div class="d-flex gap-3 mt-3">
                     <!-- Botão Voltar -->
-                    <a class="btn btn-voltar flex-fill"> Voltar </a>
+                    <a class="btn btn-voltar flex-fill" (click)="PagBack()"> Voltar </a>
                     <!-- Botão Avançar -->
-                    <a class="btn btn-avancar flex-fill"> Avançar </a>
+                    <a class="btn btn-avancar flex-fill" (click)="PagNext()"> Avançar </a>
                 </div>
 
             </div>

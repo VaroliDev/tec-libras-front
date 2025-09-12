@@ -2,14 +2,14 @@
 
     <div class="container">
         <!--N do Nivel e seta de voltar (add link)-->
-        <h2><a class="back-arrow"> < </a> Tema Escolhido </h2>
+        <h2><a class="back-arrow" (click)="PagBack()"> < </a> Tema Escolhido </h2>
         <br>    
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur eveniet quod commodi corrupti dignissimos nobis illum molestiae magni aliquid. Nulla voluptate modi quae obcaecati error deserunt perspiciatis harum laborum sint. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab fugit error voluptatibus iure dolorum cumque exercitationem dolores quisquam, itaque quos neque nulla velit dolorem adipisci sint vel cupiditate tempore voluptatem.</p>
 
         <!--Cards dos tópicos dos temas-->
 
         <!--AULA TEÓRICA-->
-        <a class="card-tema" >
+        <a class="card-tema" (click)="PagTeorica()">
             <div class="card">
                 <div class="card-body">
                     <h6 class="card-subtitle mb-2 text-body-secondary">Aula Teórica</h6>
@@ -19,7 +19,7 @@
         </a>
 
         <!--DEMONSTRAÇÕES-->
-        <a class="card-tema" >
+        <a class="card-tema" (click)="PagDemonstracao()">
             <div class="card">
                 <div class="card-body">
                     <h6 class="card-subtitle mb-2 text-body-secondary">Demonstrações</h6>
@@ -29,7 +29,7 @@
         </a>
 
         <!--AULA PRÁTICA-->
-        <a class="card-tema" >
+        <a class="card-tema" (click)="PagPratica()">
             <div class="card">
                 <div class="card-body">
                     <h6 class="card-subtitle mb-2 text-body-secondary">Aula Prática</h6>
@@ -39,7 +39,7 @@
         </a>
 
         <!--QUIZ-->
-        <a class="card-tema" >
+        <a class="card-tema" (click)="PagQuestionario()">
             <div class="card">
                 <div class="card-body">
                     <h6 class="card-subtitle mb-2 text-body-secondary">Questionário</h6>
@@ -49,7 +49,7 @@
         </a>
 
         <!--CURIOSIDADES-->
-        <a class="card-tema" >
+        <a class="card-tema" (click)="PagCuriosidades()">
             <div class="card">
                 <div class="card-body">
                     <h6 class="card-subtitle mb-2 text-body-secondary">Curiosidades</h6>

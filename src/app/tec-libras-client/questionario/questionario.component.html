@@ -7,7 +7,7 @@
         <div class="card-body">
             <!--seta para voltar (add link)-->
             <div style="display: flex;">
-                <a class="back-arrow"> < </a>
+                <a class="back-arrow" (click)="PagInicio()"> < </a>
                 <div>
                     <h6 class="card-subtitle mb-2 ">Questionário</h6>
                     <h5 class="card-title"> Teste seus conhecimentos</h5>
@@ -49,7 +49,7 @@
                 <!--Botão de Avançar-->
                 <div class="d-flex gap-3 mt-3">
                     <!-- Botão Avançar -->
-                    <a class="btn btn-avancar flex-fill"> Avançar </a>
+                    <a class="btn btn-avancar flex-fill" (click)="PagNext()"> Avançar </a>
                 </div>
 
                 <br>

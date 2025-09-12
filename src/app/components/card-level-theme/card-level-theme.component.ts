@@ -1,4 +1,5 @@
-import { Component,Input, OnInit} from '@angular/core';
+import { Component,Input, inject} from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-card-level-theme',
@@ -7,6 +8,12 @@ import { Component,Input, OnInit} from '@angular/core';
   styleUrl: './card-level-theme.component.scss'
 })
 export class CardLevelThemeComponent {
+  private router= inject(Router)
+
+  PagNext(){
+    this.router.navigate(['temas'])
+  }
+
   @Input() level: number = 1;     // Número do nível
   @Input() percent: number = 70;   // Progresso em %
   @Input() levelstyle: number = this.level % 2;
