@@ -12,15 +12,53 @@ import { HeaderComponent } from "../../../components/header/header.component";
 export class AulaTeoricaComponent {
   private router = inject(Router);
 
+  textos: string[] = [
+    'Bih',
+    'Twin',
+    'Sybau',
+    'Zamn'
+  ];
+
+  textoIndex: number = 0;
+
+  get currentText(): string {
+    return this.textos[this.textoIndex];
+  }
+
   PagInicio(){
     this.router.navigate(['temas'])
   }
 
   PagBack(){
-    this.router.navigate(['temas'])
+    const conteudo = document.getElementById('text')
+    if(!conteudo){
+      return
+    }
+    if (this.textoIndex > 0) {
+      this.textoIndex--;
+      conteudo.innerText = this.textos[this.textoIndex]
+    }
   }
 
   PagNext(){
-    this.router.navigate(['demonstracao'])
+    const conteudo = document.getElementById('text')
+    if(!conteudo){
+      return
+    }
+    if (this.textoIndex < this.textos.length - 1) {
+      this.textoIndex++;
+      conteudo.innerText = this.textos[this.textoIndex]
+    } else {
+      this.router.navigate(['inicio']);
+    }
+  }
+
+  ngOnInit(): void {
+    const conteudo = document.getElementById('text')
+    if(!conteudo){
+      return
+    }
+
+    conteudo.innerText = this.textos[this.textoIndex]
   }
 }
