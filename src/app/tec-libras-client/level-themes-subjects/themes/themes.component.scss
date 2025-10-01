@@ -1,3 +1,34 @@
+:host-context(body.modo-escuro) {
+    h2 {
+        color: #f9f9f9;
+    }
+    .card {
+        background-color: #1f1f1f;
+        color: #f9f9f9
+    }
+
+    .text-body-secondary {
+        color: #878787 !important;
+    }
+    
+}
+
+:host-context(body.modo-contraste) {
+    h2 {
+        color: #ffffff;
+    }
+    .card {
+        background-color: #000000;
+        border: 2px solid aqua;
+        color: #ffffff
+    }
+
+    .text-body-secondary {
+        color: #ffffff !important;
+    }
+    
+}
+
 h2 {
     font-family: "Rawline Bold", sans-serif;
     color: #292929;
