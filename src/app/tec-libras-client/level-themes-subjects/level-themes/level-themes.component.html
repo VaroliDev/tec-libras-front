@@ -1,0 +1,35 @@
+<app-header></app-header>
+
+<div class="container" style="max-width: 80%;">
+    <!--N do Nivel e seta de voltar (add link)-->
+    <h2><a class="back-arrow" (click)="PagBack()"> < </a> Nível 1</h2>
+    <br>    
+
+    <!--barra de progresso-->
+    <div style="display: flex;">
+        <div class="progress" style="width: 98%;">
+            <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div> 
+        </div>
+        <p style=" position: relative; bottom: 10px; margin-left: 20px; font-weight: bold;">80%</p>
+    </div>
+    
+
+    <!--Temas-->
+    <div class="d-flex justify-content-center">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-5">
+            @if(isLoading) {
+                <app-loading-section></app-loading-section>
+            }
+            <!--LINKS DOS NÍVEIS-->
+            @for (n of item; track n.level) {
+                <app-card-level-theme  [level]="n.level" [percent]="n.percent" [levelstyle]="n.level % 2" ></app-card-level-theme>   
+            }   
+        </div>
+    </div>
+    
+</div>
+
+<br>
+<br><br><br> <br><br>
+
+<app-footer></app-footer>

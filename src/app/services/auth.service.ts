@@ -83,6 +83,7 @@ export class AuthService {
     };
 
     const resExists = await firstValueFrom(this.userService.doesUserExists(user.user_name));
+    console.log(resExists)
 
     if (!resExists.exists) {
       await firstValueFrom(this.userService.createUser(user));
@@ -90,6 +91,7 @@ export class AuthService {
     }
 
     const resLogin = await firstValueFrom(this.userService.login(user));
+    console.log(resLogin)
 
     const userData = {
       id: resLogin.user.id,

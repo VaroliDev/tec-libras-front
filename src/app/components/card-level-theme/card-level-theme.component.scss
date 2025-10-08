@@ -1,0 +1,46 @@
+.card-footer {
+    & a {
+        background-color: #9E3FFA;
+        color: #f9f9f9;
+        font-weight: bold;
+    }
+}
+
+/*ANEL DE PROGRESSO*/
+
+     .progress-ring {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        background-color: #e6e6e6;
+        border-radius: 50%;
+        bottom: 20px;
+        
+    }
+
+     .progress-ring circle {
+        fill: none;
+        stroke-width: 10;
+        transform: rotate(-90deg);
+        transform-origin: 50% 50%;
+    }
+
+     .progress-ring .progress-bg {
+        stroke: #F9F9F9;
+        r: 40; 
+    }
+
+     .progress-ring .progress-bar {
+        stroke: #57C29B;
+        stroke-linecap: round;
+        r: 40;
+    }
+
+     .progress-text {
+        position: relative;
+        bottom: 84px;
+        text-align: center;
+        font-family: "Rawline Bold", sans-serif;
+        font-size: 18px;
+        color: #333;
+    }

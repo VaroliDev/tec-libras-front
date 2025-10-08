@@ -122,7 +122,7 @@ export class CadastroComponent {
             this.setUserToLocalStorage(response, firstName, fullName); // Armazenando o primeiro nome
             this.isSending = false;
             this.isLoading = false;
-            this.router.navigateByUrl('/inicio');
+            this.router.navigate(['/inicio']);
           });
         },
         error: (error: any) => {

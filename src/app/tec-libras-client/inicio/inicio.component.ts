@@ -30,6 +30,10 @@ export class InicioComponent {
 
       protected userData = this.userService.getUserInfo()
 
+
+  private userService = inject(UserService)
+  protected userData = this.userService.getUserInfo()
+  
   onThemeChange(theme: string): void {
     this.themeService.applyTheme(theme);
   }
@@ -71,6 +75,8 @@ export class InicioComponent {
   ngOnInit(): void {
     this.getCurrentFrase();
     this.authService.isLogged();
+    this.first_name = this.userData()!.full_name.split(' ')[0];
+
 
     this.isLoading = true;
     this.full_name = this.userData()!.full_name;

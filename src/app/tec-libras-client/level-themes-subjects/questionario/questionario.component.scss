@@ -1,0 +1,145 @@
+:host-context(body.modo-escuro)  {
+    .card {
+        background-color: #333333;
+        color: #f9f9f9;
+
+        & h6 {
+            color: #c4c4c4;
+        }
+
+        & h5 {
+        font-family: 'Rawline Bold';
+        font-size: 15px;
+        }
+    }
+
+    .question {
+        color:#b27cff; 
+    }
+    
+    .option {
+        background-color: #424242;
+        color: #f9f9f9;
+    }
+}
+
+:host-context(body.modo-contraste)  {
+    .card {
+        background-color: #0b0b0b;
+        color: #ffffff;
+
+        & h6 {
+            color: #ffffff;
+        }
+
+        & h5 {
+        font-family: 'Rawline Bold';
+        font-size: 15px;
+        }
+    }
+
+    .question {
+        color:aqua; 
+    }
+    
+    .option {
+        background-color: #000000;
+        border: 2px solid aqua;
+        color: #ffffff;
+        font-weight: bolder;
+    }
+}
+
+.back-arrow {
+    text-decoration: none;
+    color: #FF5733;
+    position: relative;
+    bottom: 2.5px;
+    font-size: 30px; 
+    font-weight: bold; 
+    margin-right: 15px; 
+    position: relative; 
+    bottom: 10px;
+}
+
+.card {
+    background-color: #f1f1f1;
+    padding: 12px 12px;
+
+    & h6 {
+        font-family: 'Rawline Bold';
+        text-transform: uppercase;
+        font-size: 12px;
+        color: #808080;
+    }
+
+    & h5 {
+    font-family: 'Rawline Bold';
+    font-size: 15px;
+    }
+
+    & h2 {
+        font-family: 'Rawline Bold';
+        
+    }
+}
+
+.progress {
+    height: 6px; 
+    border-radius: 10px; 
+    background-color: #e0e0e0;
+
+    & .progress-bar {
+        width: 80%; 
+        background-color: #3AC1A8;
+    }
+}
+
+.btn-avancar {
+    background-color: #F25C05;
+    color: #F9f9f9;
+    font-family: 'Rawline Bold'; 
+    border-radius: 50PX;
+}
+
+.btn-avancar:hover {
+    background-color: #d24d00;
+}
+
+.option {
+    background-color: #cccccc;
+    color: #191919;
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.question {
+    color:#8F49F2; 
+    font-family: 'Rawline Bold';
+}
+
+.main-container {
+    max-width: 80%;
+}
+
+/*tablet*/
+@media (max-width: 1024px) and (min-width: 768px) {
+    .main-container {
+        max-width: 95%;
+    }
+}
+
+/* Celular */
+@media (max-width: 767px) {
+   .main-container {
+        max-width: 100%;
+    }
+}

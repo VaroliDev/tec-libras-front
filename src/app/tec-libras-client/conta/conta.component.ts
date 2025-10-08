@@ -1,6 +1,4 @@
-
 import { Component, inject } from '@angular/core';
-import { OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ThemeService } from '../../services/theme.service';
 import { Router } from '@angular/router';
@@ -94,7 +92,7 @@ export class ContaComponent {
         email: this.userData()!.email,
         token:this.userData()!.token,
         id: response.id, 
-        first_name:this.userData()!.first_name
+        first_name:this.userData()!.full_name.split(' ')[0]
       })
       alert('Usuário atualizado com sucesso');
     },
