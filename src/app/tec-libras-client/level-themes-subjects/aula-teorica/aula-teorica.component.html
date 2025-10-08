@@ -7,7 +7,7 @@
         <div class="card-body">
             <!--seta para voltar (add link)-->
             <div style="display: flex;">
-                <a class="back-arrow"> < </a>
+                <a class="back-arrow" (click)="PagInicio()"> < </a>
                 <div>
                     <h6 class="card-subtitle mb-2">Aula Teórica</h6>
                     <h5 class="card-title"> Explorando o Tema</h5>
@@ -31,16 +31,16 @@
                 <br>
 
                 <!--conteúdo-->
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae excepturi eveniet rem exercitationem ratione. Molestiae praesentium qui, eum mollitia itaque optio corporis non rerum ab voluptas pariatur amet ut est!</p>
+                <p id="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae excepturi eveniet rem exercitationem ratione. Molestiae praesentium qui, eum mollitia itaque optio corporis non rerum ab voluptas pariatur amet ut est!</p>
                 
                 <br>
                 
                 <!--Botões de Voltar e Avançar-->
                 <div class="d-flex gap-3 mt-3">
                     <!-- Botão Voltar -->
-                    <a class="btn btn-voltar flex-fill"> Voltar </a>
+                    <a class="btn btn-voltar flex-fill" (click)="PagBack()"> Voltar </a>
                     <!-- Botão Avançar -->
-                    <a class="btn btn-avancar flex-fill"> Avançar </a>
+                    <a class="btn btn-avancar flex-fill" (click)="PagNext()"> Avançar </a>
                 </div>
 
             </div>

@@ -1,4 +1,5 @@
-import { Component,Input, OnInit} from '@angular/core';
+import { Component, inject} from '@angular/core';
+import { Router } from '@angular/router';
 import { FooterComponent } from "../../../components/footer/footer.component";
 import { HeaderComponent } from "../../../components/header/header.component";
 import { LoadingSectionComponent } from '../../../components/loading-section/loading-section.component';
@@ -17,7 +18,12 @@ interface itemLevel {
 })
 
 export class LevelThemesComponent { 
-
+  private router = inject(Router)
+  
+  PagBack(){
+    this.router.navigate(['inicio'])
+  }
+  
   item:itemLevel[] = []
   isLoading: boolean = false;
 
