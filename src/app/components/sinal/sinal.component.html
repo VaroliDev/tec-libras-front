@@ -6,6 +6,20 @@
             <h5 class="card-title" style="line-height: 25px;">Nome do Sinal</h5>
             <p class="card-text">Categoria</p>
         </div>
+
+         <div class="videoView">
+    <button (click)="enableCam()">
+      {{ enableWebcamButtonLabel }}
+    </button>
+    <div style="position: relative;">
+      <video #video autoplay playsinline></video>
+      <canvas #canvas id="output_canvas" width="1280" height="720"></canvas>
+      <p #gestureOutput class="output"></p>
+    </div>
+  </div>
+
+
+      
         <div class="card-footer">
             <small class="text-body-secondary"><a href="" class="btn col-lg-12">Ver</a></small>
         </div>

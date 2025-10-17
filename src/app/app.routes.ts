@@ -17,6 +17,7 @@ import { DemonstracoesComponent } from './tec-libras-client/level-themes-subject
 import { QuestionarioComponent } from './tec-libras-client/questionario/questionario.component';
 import { CuriosidadesComponent } from './tec-libras-client/level-themes-subjects/curiosidades/curiosidades.component';
 import { AdminPageComponent } from './tec-libras-admin/admin-page/admin-page.component';
+import { SinalComponent } from './components/sinal/sinal.component';
 
 export const routes: Routes = [
     {
@@ -108,6 +109,10 @@ export const routes: Routes = [
     {
         path: 'conteudo',
         component: CadastroDeConteudoComponent
+    },
+     {
+        path: 'sinal',
+        component: SinalComponent
     }
    
 ];

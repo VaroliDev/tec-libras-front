@@ -3,3 +3,32 @@ a {
     color: #f9f9f9;
     font-weight: bold;
 }
+
+canvas{
+    position: absolute;
+}
+
+video {
+  clear: both;
+  display: block;
+  height: 280px;
+}
+
+#output_canvas{
+  position: absolute;
+  top: 0;
+}
+
+.videoView {
+  position: relative;
+  width: 48%;
+  margin: 2% 1%;
+  cursor: pointer;
+  min-height: 500px;
+}
+
+.output {
+  display: none;
+  width: 100%;
+  font-size: calc(8px + 1.2vw);
+}
