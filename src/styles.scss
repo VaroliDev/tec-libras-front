@@ -187,6 +187,11 @@ nav {
     margin: 10px 0 0 30px;
 }
 
+/*muda a cor do radio input*/
+input[type="radio"] {
+    accent-color: #7d29d2;
+}
+
 /*RODAPÉ*/
 footer {
     background: #292929;

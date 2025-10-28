@@ -83,7 +83,6 @@ export class PhaseService {
     "Que tal experimentar aprender algo diferente hoje? Vamos lá!",
     "Vamos usar o dia de hoje para explorar novos conhecimentos!",
     "Que tal dedicar alguns minutos ao aprendizado e ver como pode ser incrível?",
-    "Vamos aproveitar o dia de hoje para aprender e crescer juntos!",
-    "Baba o beck não"
+    "Vamos aproveitar o dia de hoje para aprender e crescer juntos!"
   ];
 }

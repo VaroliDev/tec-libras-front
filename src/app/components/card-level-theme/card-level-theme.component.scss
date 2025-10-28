@@ -1,9 +1,28 @@
+:host-context(body.modo-escuro)  {
+   .card {
+    background-color: #1f1f1f;
+    color: #F9F9F9;
+   }
+}
+
+:host-context(body.modo-contraste)  {
+    .card {
+        background-color: #0b0b0b;
+        color: #ffffff;
+
+    }
+}
+
 .card-footer {
     & a {
         background-color: #9E3FFA;
         color: #f9f9f9;
         font-weight: bold;
     }
+}
+
+.card {
+    background-color: #f0f0f0;
 }
 
 /*ANEL DE PROGRESSO*/

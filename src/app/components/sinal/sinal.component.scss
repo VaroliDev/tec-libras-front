@@ -1,3 +1,17 @@
+:host-context(body.modo-escuro){
+    .card {
+        background-color: #1f1f1f;
+        color: #f9f9f9;
+    }
+}
+
+:host-context(body.modo-contraste){
+    .card {
+        background-color:  #0b0b0b;
+        color: #ffffff;
+    }
+}
+
 a {
     background-color: #9E3FFA;
     color: #f9f9f9;
