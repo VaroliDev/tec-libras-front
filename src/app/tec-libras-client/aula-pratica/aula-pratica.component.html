@@ -31,11 +31,20 @@
                 <br>
 
                 <!--conteúdo-->
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
-                
-                <br>
+                <p>Clique no botão abaixo para ativar sua câmera e realizar a aula prática. </p>
 
-                <div>(api Media Pipe)</div>
+                    <div class="container videoView">
+                        <button class="btn btn-ativar-cam" (click)="enableCam()">
+                            {{ enableWebcamButtonLabel }}
+                        </button>
+                        <br>
+                        <br>
+                            <div style="position: relative;">
+                            <video #video autoplay playsinline></video>
+                            <canvas #canvas id="output_canvas" width="1280" height="720"></canvas>
+                            <p #gestureOutput class="output"></p>
+                        </div>
+                    </div>
 
                 <br>
 

@@ -1,3 +1,44 @@
+//media pipe 
+
+canvas{
+    position: absolute;
+}
+
+video {
+  clear: both;
+  display: block;
+  height: 500px;
+  border-radius: 10px;
+  margin: 0 0 0 55% ;
+}
+
+#output_canvas{
+  position: absolute;
+  top: 0;
+  margin: 0 0 0 55%;
+}
+
+.videoView {
+  position: relative;
+  width: 48%;
+  margin: 2% 1%;
+  cursor: pointer;
+  min-height: 500px;
+}
+
+.output {
+  display: none;
+  width: 100%;
+  font-size: calc(8px + 1.2vw);
+}
+
+.btn-ativar-cam {
+    background-color: #F25C05;
+    color: #f1f1f1;
+}
+
+
+
 :host-context(body.modo-escuro)  {
     .card {
         background-color: #333333;
