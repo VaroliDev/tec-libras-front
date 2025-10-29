@@ -1,98 +1,25 @@
+@import '../../../styles/colors.scss';
+
 :host-context(body.modo-escuro) {
     & h2 {
-        color: #f9f9f9;
+        color: $white;
+    }  
+    & p {
+        color: $greylight;
     }
-    & .card {
-      background-color: #292929;
-      color: #f9f9f9;
-    }
-    & .card-footer {
-      border-color: #f9f9f9;
-    }
-  
-    & .pagination .page-item.active .page-link {
-      background-color: #6f24b9; 
-      border-color: #6f24b9; 
-    }
-    & .pagination .page-link {
-      color: #F86400; 
-      background-color: rgb(31, 31, 31); 
-      border: none  ;
-    }
-    & .pagination .page-link:hover {
-      background-color: #111111; 
-      color: #F86400;
-    }    
   }
   
   :host-context(body.modo-contraste)  {
-    & h2 {
-        color: #ffffff;
+    & h2,p {
+        color: $ultrawhite;
     }
-    & .card {
-      background-color: #000000;
-      color: #ffffff;
-    }
-    & .card a {
-      background-color: #00E6FF;
-      color: #000000;
-    }
-    & .card-footer {
-      border-color: #ffffff;
-    }
-  
-    & .pagination .page-item.active .page-link {
-      background-color: #6f24b9; 
-      border-color: #6f24b9; 
-    }
-    & .pagination .page-link {
-      color: #00E6FF; 
-      background-color: rgb(17, 17, 17); 
-      border: none  ;
-    }
-    & .pagination .page-link:hover {
-      background-color: #060606; 
-      color: #00E6FF;
-    }    
   }
   
   /*TITULO DA PÁGINA*/
   h2 {
     font-family: "Rawline Bold", sans-serif;
     text-align: center;
-    color: #292929;
+    color: $black;
     margin-top: 50px;
     font-weight: 700;
   }
-  
-  /*CARD SINAIS*/
-  .card_sinais a {
-      background-color: rgb(149, 76, 227);
-      color: aliceblue;
-      font-weight: bolder;
-      letter-spacing: 2px;
-  }
-  
-  .card_sinais a:hover {
-      background-color: rgb(117, 51, 187);
-      color: aliceblue;
-      font-weight: bolder;
-      letter-spacing: 2px;
-  }
-  
-  /*PAGINAÇÃO*/
-  .pagination .page-item.active .page-link {
-      background-color: #F86400; 
-      border-color: #F86400; 
-      color: white; 
-    }
-    .pagination .page-link {
-      color: #9E3FFA; 
-      background-color: white; 
-    }
-    
-    /* Quando passar o mouse */
-    .pagination .page-link:hover {
-      background-color: #dedede; 
-      color: #6f24b9;
-    }    

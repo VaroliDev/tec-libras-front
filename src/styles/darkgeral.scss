@@ -1,0 +1,48 @@
+@import './colors.scss';
+
+body.modo-escuro {
+    background-color: $black; 
+    color: $white;
+}
+
+.modo-escuro {
+    & nav {
+        background-color: $black;
+
+        & .nav-link {
+            color: $white;
+        }
+        & .nav-link:hover {
+            color: $greylight;
+        }
+    }
+
+    & footer{
+        background: $ultrablack;
+    
+        .title-footer { 
+            color: $ultraorange;
+        }
+        
+        & b,p, a, hr { 
+            color: $white;
+        }
+    }
+
+
+    & .navbar-toggler svg{
+        fill: $white;
+    }
+
+    & .dropdown-menu {
+        background-color: $softblack;
+
+        & li, a, p {
+            color: $white;
+        }
+        & li:hover, a:hover, p:hover {
+            color: $white;
+            background-color: $black;
+        }
+    }
+}

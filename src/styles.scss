@@ -1,165 +1,19 @@
-/*MODO ESCURO*/
-body.modo-escuro {
-    background-color: #292929; 
-    color: #F9F9F9;
-}
-
-.modo-escuro {
-    & nav {
-        background-color: #292929;
-
-        & .nav-link {
-            color: #F9F9F9;
-        }
-        & .nav-link:hover {
-            color: #d3d3d3;
-        }
-    }
-
-    & footer{
-        background: #0e0e0e;
-    
-        .title-footer {
-            font-weight: bold; 
-            color: #FF5733;
-        }
-        
-        & b,p, a, hr { 
-            text-decoration: none;
-            color: #f9f9f9;
-        }
-            
-        & a:hover {
-            cursor: pointer;
-            text-decoration:underline;
-        }
-    }
+@import './styles/colors.scss';
+@import './styles/fonts.scss';
+@import './styles/darkgeral.scss';
+@import './styles/contrastegeral.scss';
 
 
-    & .navbar-toggler svg{
-        fill: #F9F9F9;
-    }
+/*config geral e light mode*/
 
-    & .dropdown-menu {
-        background-color: #343434;
-
-        & li, a, p {
-            color: #F9F9F9;
-        }
-        & li:hover, a:hover, p:hover {
-            color: #F9F9F9;
-            background-color: #292929;
-        }
-    }
-
-    & .cardPalavraSom {
-        background-color:#343434;
-        color: #F9F9F9;
-        fill: #F9F9F9;
-    }
-}
-
-
-/*MODO ALTO-CONTRASTE*/
-body.modo-contraste {
-    background-color: #000000;
-    color: #ffffff;
-}
-
-.modo-contraste {
-    & nav {
-        background-color: #000000;
-
-        & .nav-link {
-            color: #ffffff;
-        }
-        & .nav-link:hover {
-            color: #d3d3d3;
-        }
-    }
-
-    & footer{
-        background: #070707;
-    
-        .title-footer {
-            font-weight: bold; 
-            color: aqua;
-        }
-        
-        & b,p, a, hr { 
-            text-decoration: none;
-            color: #ffffff;
-        }
-            
-        & a:hover {
-            cursor: pointer;
-            text-decoration:underline;
-        }
-    }
-
-    & .navbar-toggler svg{
-        fill: #ffffff;
-    }
-
-    & .dropdown-menu {
-        background-color: #141414;
-
-        & li, a, p {
-            color: #ffffff;
-        }
-        & li:hover, a:hover, p:hover {
-            color: #F9F9F9;
-            background-color: #0b0b0b;
-        }
-    }
-
-    & .cardPalavraSom {
-        background-color:#0b0b0b;
-        color: #ffffff;
-        fill: #ffffff;
-    }
-
-    & .pararDeFalar {
-        background-color:aqua;
-        color: #000000;
-        font-weight: bold ;
-    }
-}
-
-/*FONTE RAWLINE*/
-@font-face {
-    font-family: 'Rawline';
-    src: url(/fonts/rawline-500.ttf) format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Rawline Bold';
-    src: url(/fonts/rawline-800.ttf) format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
-
-/*GERAL BODY*/
 body {
-    background-color: #F9F9F9;
+    background-color: $white;
     font-family: "Rawline", sans-serif;
 }
 
-a {
-    cursor: pointer;
-}
-
-/*BARRA DE ROLAGEM*/
-::-webkit-scrollbar { width: 7px; height: 5px;}
-::-webkit-scrollbar-track { background: rgb(215, 215, 215); border-radius: 5px; }
-::-webkit-scrollbar-thumb { background: rgb(177, 143, 206); border-radius: 5px; }
-::-webkit-scrollbar-thumb:hover { background: rgb(133, 113, 148);}
-
-/*NAVEGADOR*/
+/*navegador*/
 nav {
-    background-color: #F9F9F9;
+    background-color: $white;
 
     & #logo_teclibras {
         width: 150px;
@@ -167,19 +21,39 @@ nav {
     }
 }
 
-/*dropdowns confirgurações/opções*/
-.dropdown-toggle::after {
-    color: #FF5733; /* Cor da seta */
+/*cursor para link*/
+a {
+    cursor: pointer;
 }
 
+/*barra de rolagem*/
+::-webkit-scrollbar { width: 7px; height: 5px;}
+::-webkit-scrollbar-track { background: $white; border-radius: 5px; }
+::-webkit-scrollbar-thumb { background: $softpurple; border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: #9c4ee1;}
+
+/*dropdowns configurações/opções*/
+.dropdown-toggle::after {
+    color: $ultraorange; /* Cor da seta */
+}
+
+/*inputs radio*/
 #modo-claro, #modo-escuro, #modo-contraste{
     margin-left: 20px;
     margin-bottom: 20px;
 }
+
+/*muda a cor do radio input*/
+input[type="radio"] {
+    accent-color: $ultrapurple;
+}
+
+/*tamanho do radio*/
 .label_modo {
     font-size: 13px;
 } 
 
+/*foto de perfil*/
 #foto_perfil {
     width:27px; 
     height:27px; 
@@ -187,24 +61,19 @@ nav {
     margin: 10px 0 0 30px;
 }
 
-/*muda a cor do radio input*/
-input[type="radio"] {
-    accent-color: #7d29d2;
-}
-
-/*RODAPÉ*/
+/*rodapé*/
 footer {
-    background: #292929;
+    background: $black;
     font-size: 85%;
     
     .title-footer {
         font-weight: bold; 
-        color: #BA73FF;
+        color: $softpurple;
     }
 
-    & b,p, a, hr { 
+    & b, p, a, hr { 
         text-decoration: none;
-        color: #d3d3d3;
+        color: $greylight;
     }
         
     & a:hover {
