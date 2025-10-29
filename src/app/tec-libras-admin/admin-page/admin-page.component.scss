@@ -1,8 +1,10 @@
+@import '../../../styles/colors.scss';
+
 /*TITULO DA PÁGINA*/
 h2 {
   font-family: "Rawline Bold", sans-serif;
   text-align: center;
-  color: #292929;
+  color: $black;
   margin-top: 50px;
   font-weight: 700;
 }
@@ -16,39 +18,39 @@ h2 {
   margin: 5% 5%;
   padding: 4%;
   text-decoration: none;
-  color: #f9f9f9;
+  color: $white;
   font-weight: 700;
   font-size: 110%;
 }
 
 .btn-lista {
-  background-color: #9E3FFA;
+  background-color: $ultrapurple;
+  transition: background-color 0.3s ease;
+}
+
+.btn-lista:hover {
+  background-color: $softpurple;
 }
 
 .btn-conteudo {
-  background-color: #FF5733;
+  background-color: $ultraorange;
+  transition: background-color 0.3s ease;
 }
 
-.btn-social:hover{
-    transition: 0.3s ease-in-out;
-    background: #FF5733;
+.btn-conteudo:hover {
+  background-color: $softorange;
 }
 
 /*modo escuro*/
 
 :host-context(body.modo-escuro) {
   h2 {
-    color: #f9f9f9;
+    color: $white;
   }
 }
 
 :host-context(body.modo-contraste) {
   h2 {
-    color: #ffffff;
-  }
-
-  .btn-social {
-    border: solid 2px aqua;
-    color: #000000;
+    color: $ultrawhite;
   }
 }

@@ -1,84 +1,90 @@
- h2 {
+@import '../../../styles/colors.scss';
+
+h2 {
     font-family: "Rawline Bold", sans-serif;
     text-align: center;
-    color: #292929;
-    font-weight: 700;
-  }
+    color: $black;
+}
 
 .btn-voltar {
-    color: #ff6f00;
+    color: $ultraorange;
     text-decoration: none;
     font-weight: 700;
     
     margin-top: 50px;
 }
-.btn-voltar:hover {
-    color: #c95700;
-}
 
 .btn-editar {
-    background-color: #ff6f00;
-    color: #f9f9f9;
+    background-color: $ultraorange;
+    color: $white;
+}
+
+.btn-editar:hover {
+    background-color: $softorange;
 }
 
 .btn-role {
-    background-color: #9E3FFA;
-    color: #f9f9f9;
+    background-color: $ultrapurple;
+    color: $white;
     margin: 0 5px;
+}
+
+.btn-role:hover {
+    background-color: $softpurple;
 }
 
 :host-context(body.modo-escuro) {
     .modal-content{
-        background-color: #292929;
-        color: #f9f9f9;
+        background-color: $black;
+        color: $white;
     }
     
     h2 {
-        color: #f9f9f9;
+        color: $white;
     }
 
     /* Colunas ímpares */
     table.table td:nth-child(odd), table.table th:nth-child(odd) {
-        background-color: #121212; 
-        color: #f9f9f9;
-        border: 2px solid #363636;
+        background-color: $softblack; 
+        color: $white;
+        border: 2px solid $greydark;
     }
 
     /* Colunas pares */
     table.table td:nth-child(even), table.table th:nth-child(even) {
-        background-color: #282828; 
-        color: #f9f9f9;
-        border: 2px solid  #363636;
+        background-color: $black; 
+        color: $white;
+        border: 2px solid  $softblack;
     }
 }
 
 :host-context(body.modo-contraste) {
     .modal-content{
-        background-color: #121212;
-        color: #f9f9f9;
-        fill: #f9f9f9;
+        background-color: $ultrablack;
+        color: $white;
+        fill: $white;
 
         & .btn-close {
-            color: #f9f9f9;
-            fill: #f9f9f9;
+            color: $white;
+            fill: $white;
         }
     }
 
     h2 {
-        color: #ffffff;
+        color: $ultrawhite;
     }
 
     /* Colunas ímpares */
     table.table td:nth-child(odd), table.table th:nth-child(odd) {
-        background-color: #000000; 
-        color: #ffffff;
-        border: 2px solid aqua;
+        background-color: $ultrablack; 
+        color: $ultrawhite;
+        border: 2px solid $aqua;
     }
 
     /* Colunas pares */
     table.table td:nth-child(even), table.table th:nth-child(even) {
-        background-color: #101010; 
-        color: #ffffff;
-        border: 2px solid aqua;
+        background-color: $black; 
+        color: $ultrawhite;
+        border: 2px solid $aqua;
     }
 }

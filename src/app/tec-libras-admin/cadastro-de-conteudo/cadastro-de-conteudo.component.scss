@@ -1,80 +1,81 @@
+@import '../../../styles/colors.scss';
+
 :host-context(body.modo-escuro) {
     h2 {
-        color: #f9f9f9;
+        color: $white;
     }
 
     & .form-control, .input-group-text{
-        background-color: #181818; 
-        border: 1px solid #474747;
-        color: #f9f9f9;
+        background-color: $greydark; 
+        border: 1px solid $greylight;
+        color: $white;
     }
 
      & .form-control::placeholder{
-        color: #9b9b9b;
+        color: $greylight;
     }
 
     & .form_cadastro p {
-        color: #eeddff;
-    }
-    
-    & .input_cadastro:focus {
-        background-color: #1b1b1b;
-        color: #f9f9f9;
+        color: $white;
     }
 }
 
 :host-context(body.modo-contraste) {
     h2 {
-        color: #ffffff;
+        color: $ultrawhite;
     }
 
     & .form-control {
-        background-color: #000000; 
-        border: 2px solid aqua;
-        color: #f9f9f9;
+        background-color: $black; 
+        border: 2px solid $aqua;
+        color: $white;
     }
 
     & .input-group-text{
-        background-color: aqua; 
-        border: 2px solid aqua;
+        background-color: $aqua; 
+        border: 2px solid $aqua;
         color: #000000;
     }
 
      & .form-control::placeholder{
-        color: #e1e1e1;
+        color: $white;
     }
 
     & .form_cadastro p {
-        color: #eeddff;
+        color: $white;
     }
     
     & .input_cadastro:focus {
-        background-color: #1b1b1b;
-        color: #f9f9f9;
+        background-color: $black;
+        color: $white;
     }
 }
 
 h2 {
     font-family: "Rawline Bold", sans-serif;
     text-align: center;
-    color: #292929;
+    color: $black;
     font-weight: 700;
   }
 
 .btn-cadastrar-tema {
-    background-color: #F86400;
-    color: #f9f9f9;
+    background-color: $ultraorange;
+    color: $white;
     border-radius: 50px;
     font-weight: bold;
     padding: 12px 0 ;
+    transition: background-color 0.3s ease;
+}
+.btn-cadastrar-tema:hover {
+    background-color: $softorange;
 }
 
 .btn-voltar {
     margin-top: 50px;
-    color: #ff6f00;
+    color: $ultraorange;
     text-decoration: none;
     font-weight: 700;
 }
 .btn-voltar:hover {
-    color: #c95700;
+    color: $ultraorange;
 }
