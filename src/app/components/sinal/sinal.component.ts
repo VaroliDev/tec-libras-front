@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-sinal',
@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './sinal.component.scss'
 })
 export class SinalComponent {
-
+  @Input() dadosSinal: any;
 }

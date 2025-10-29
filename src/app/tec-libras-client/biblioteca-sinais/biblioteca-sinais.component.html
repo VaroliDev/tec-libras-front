@@ -1,39 +1,81 @@
-    <app-header></app-header>
-    
-    <div class="container" style="max-width: 90%;">
-        <h2>Biblioteca de Sinais</h2>
-        <p style="text-align: center;">Aqui você encontra histórias, explicações e mini-atividades sobre todos os sinais disponíveis em nossa plataforma.</p>    
-    </div>
-    
-    <br>
-    <br>
-    
-    <!--LINKS DOS SINAIS-->
-    <div class="container my-5" style="max-width: 70%;">
-        <div class="row row-cols-1 row-cols-md-4 g-4">
-            @for (i of sinais; track i; let idx = $index) {
-                <app-sinal></app-sinal>
-            }
-        </div>
-    </div>
+<app-header></app-header>
 
-    <!--Páginação dos Sinais-->
+<div class="container" style="max-width: 90%;">
+    <h2>Biblioteca de Sinais</h2>
+    <p style="text-align: center;">Aqui você encontra histórias, explicações e mini-atividades sobre todos os sinais disponíveis em nossa plataforma.</p>    
+</div>
 
-    <nav aria-label="Navegação de página">
-        <ul class="pagination justify-content-center" id="paginacao">
-          
-        </ul>
-    </nav>
-    
-    <br>
-    <br>
-   
-    <app-footer></app-footer>
+<br>
 
-    <!--PLUGIN VLIBRAS-->
-    <div vw class="enabled">
-        <div vw-access-button class="active"></div>
-        <div vw-plugin-wrapper>
-          <div class="vw-plugin-top-wrapper"></div>
-        </div>
+<div class="container" style="max-width: 300px;">
+    <select class="form-select form-select-sm" aria-label="Small select example">
+        <option selected disabled>Filtrar por Tema</option>
+        <option value="1">Alfabeto</option>
+        <option value="2">Animais</option>
+        <option value="3">Cores</option>
+    </select>
+</div>
+
+
+<!--LINKS DOS SINAIS-->
+<div class="container my-5" style="max-width: 70%;">
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+        @for (sinal of sinaisPagina; track sinal.id) {
+            <app-sinal [dadosSinal]="sinal"></app-sinal>
+        }
+        @empty {
+            <div class="col-12 text-center">
+                <p>Nenhum sinal encontrado.</p>
+            </div>
+        }
     </div>
+</div>
+
+<!-- Paginação -->
+<nav aria-label="Navegação de página" class="container">
+    <ul class="pagination justify-content-center">
+        <!-- Botão Anterior -->
+        <li class="page-item" [class.disabled]="currentPage === 1">
+            <button 
+                class="page-link" 
+                (click)="paginaAnterior()"
+                [disabled]="currentPage === 1">
+                Anterior
+            </button>
+        </li>
+        
+        <!-- Números das páginas -->
+        @for (page of pages; track page) {
+            <li class="page-item" [class.active]="currentPage === page">
+                <button 
+                    class="page-link" 
+                    (click)="irParaPagina(page)">
+                    {{ page }}
+                </button>
+            </li>
+        }
+        
+        <!-- Botão Próxima -->
+        <li class="page-item" [class.disabled]="currentPage === totalPages">
+            <button 
+                class="page-link" 
+                (click)="proximaPagina()"
+                [disabled]="currentPage === totalPages">
+                Próxima
+            </button>
+        </li>
+    </ul>
+</nav>
+
+<br>
+<br>
+
+<app-footer></app-footer>
+
+<!--PLUGIN VLIBRAS-->
+<div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+</div>

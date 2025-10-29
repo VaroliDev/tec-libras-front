@@ -1,19 +1,21 @@
+@import '../../../styles/colors.scss';
+
 :host-context(body.modo-escuro){
     .card {
-        background-color: #1f1f1f;
-        color: #f9f9f9;
+        background-color: $softblack;
+        color: $white;
     }
 }
 
 :host-context(body.modo-contraste){
     .card {
-        background-color:  #0b0b0b;
-        color: #ffffff;
+        background-color:  $black;
+        color: $ultrawhite;
     }
 }
 
 a {
-    background-color: #9E3FFA;
-    color: #f9f9f9;
+    background-color: $ultrapurple;
+    color: $white;
     font-weight: bold;
 }
