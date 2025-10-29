@@ -1,0 +1,48 @@
+@import './colors.scss';
+
+body.modo-contraste {
+    background-color: $ultrablack; 
+    color: $ultrawhite;
+}
+
+.modo-contraste {
+    & nav {
+        background-color: $ultrablack;
+
+        & .nav-link {
+            color: $ultrawhite;
+        }
+        & .nav-link:hover {
+            text-decoration: underline;
+        }
+    }
+
+    & footer{
+        background: $black;
+    
+        .title-footer { 
+            color: $aqua;
+        }
+        
+        & b,p, a, hr { 
+            color: $white;
+        }
+    }
+
+
+    & .navbar-toggler svg{
+        fill: $white;
+    }
+
+    & .dropdown-menu {
+        background-color: $softblack;
+
+        & li, a, p {
+            color: $white;
+        }
+        & li:hover, a:hover, p:hover {
+            color: $white;
+            background-color: $black;
+        }
+    }
+}
