@@ -15,7 +15,12 @@
 }
 
 a {
-    background-color: $ultrapurple;
+    background-color: $purple;
     color: $white;
     font-weight: bold;
+}
+
+.btn:hover {
+    background-color: $ultrapurple;
+    color: $white;
 }

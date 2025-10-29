@@ -19,22 +19,7 @@
   h2 {
     font-family: "Rawline Bold", sans-serif;
     text-align: center;
-    color: #292929;
+    color: $black;
     margin-top: 50px;
     font-weight: 700;
-  }
-  
-  /*CARD SINAIS*/
-  .card_sinais a {
-      background-color: rgb(149, 76, 227);
-      color: aliceblue;
-      font-weight: bolder;
-      letter-spacing: 2px;
-  }
-  
-  .card_sinais a:hover {
-      background-color: rgb(117, 51, 187);
-      color: aliceblue;
-      font-weight: bolder;
-      letter-spacing: 2px;
   }

@@ -2,7 +2,7 @@
 
 <div class="container">
   <a class="btn btn-voltar" (click)="pagadmin()"> < Voltar</a>
-  <h2>Cadastro de Conteúdo dos Níveis </h2>
+  <h2>Cadastro de Conteúdo dos Temas</h2>
 
   <br>
   <form [formGroup]="topicForm" (ngSubmit)="submit()">
@@ -68,7 +68,7 @@
 
     <!--Curiosidades-->
     <label class="form-label" for="level_id" >Curiosidades </label>
-    <input class="form-control" formControlName="curiosities" placeholder="(máx. 3, separadas por vírgula)" />
+    <input class="form-control" formControlName="curiosities" placeholder="Adicione somente UMA curiosidade" />
 
     <br>
     <!--Botão para enviar-->
