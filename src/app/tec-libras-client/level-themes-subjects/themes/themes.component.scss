@@ -1,37 +1,39 @@
+@import '../../../../styles/colors.scss';
+
 :host-context(body.modo-escuro) {
     h2 {
-        color: #f9f9f9;
+        color: white;
     }
     .card {
-        background-color: #1f1f1f;
-        color: #f9f9f9
+        background-color: $blacktwo;
+        color: white
     }
 
     .text-body-secondary {
-        color: #878787 !important;
+        color: $greylight !important;
     }
     
 }
 
 :host-context(body.modo-contraste) {
     h2 {
-        color: #ffffff;
+        color: $ultrawhite;
     }
     .card {
-        background-color: #000000;
-        border: 2px solid aqua;
-        color: #ffffff
+        background-color: $ultrablack;
+        border: 2px solid $aqua;
+        color: $ultrawhite;
     }
 
     .text-body-secondary {
-        color: #ffffff !important;
+        color: $ultrawhite !important;
     }
     
 }
 
 h2 {
     font-family: "Rawline Bold", sans-serif;
-    color: #292929;
+    color: $softblack;
     margin-top: 50px;
     font-weight: 700;
 }
@@ -46,7 +48,7 @@ p {
 
 .back-arrow {
 text-decoration: none;
-color: #FF5733;
+color: $ultraorange;
 position: relative;
 bottom: 2.5px;
 
@@ -57,7 +59,7 @@ bottom: 2.5px;
     margin: 10px;
 
     & .card {
-        background-color: #E7E7E7;
+        background-color: $whitedark;
         padding: 9px 40px 3px 40px;
 
         & h6 {

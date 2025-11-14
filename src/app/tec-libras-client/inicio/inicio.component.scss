@@ -1,42 +1,44 @@
+@import '../../../styles/colors.scss';
+
 :host-context(body.modo-escuro)  {
     & #nome_usuario {
-        color: #F9F9F9;
+        color: $white;
     }
 
     & .balaofala {
-        background-color: #f9f9f9; 
-        color: #292929;
+        background-color: $white; 
+        color: $black;
     }
 
     & .seta {
-        border-left-color: #f9f9f9;
+        border-left-color: $white;
     }
 }
 
 :host-context(body.modo-contraste)  {
     & #nome_usuario {
-        color: #ffffff;
+        color: $ultrawhite;
     }
 
     & .balaofala {
-        background-color: #00E6FF; 
-        color: #000000;
+        background-color: $aqua; 
+        color: $ultrablack;
     }
 
     & .seta {
-        border-left-color: #00E6FF;
+        border-left-color: $aqua;
     }
 
     & .niveis {
         & .circulonivel1 {
             & p {
-                color: #00E6FF;
+                color: $aqua;
             }
             
         }
         & .circulonivel2 {
             & p {
-                color: #00E6FF;
+                color: $aqua;
             }
             
         }
@@ -48,7 +50,7 @@
 #nome_usuario {
     font-family: "Rawline Bold", sans-serif;
     text-align: center;
-    color: #292929;
+    color: $black;
     margin-top: 50px;
     font-weight: 700;
 }
@@ -64,8 +66,8 @@
 }
 
 .balaofala {
-    background-color: #292929; 
-    color: #F9F9F9;
+    background-color: $black; 
+    color: $white;
     font-weight: 600;
     font-size: 15px;
     padding: 21px 50px 50px 50px;
@@ -81,7 +83,7 @@
     width: 0;
     height: 0;
     border: 20px solid transparent;
-    border-left-color: #292929;
+    border-left-color: $black;
 }
 
 /*AJUSTE PARA DIFERENTES TAMANHOS DE TELA - RESPONSIVO*/
@@ -109,7 +111,7 @@
         width: 0;
         height: 0;
         border: 20px solid transparent;
-        border-left-color: #292929;
+        border-left-color: $black;
     }
     
 }
@@ -137,6 +139,6 @@
         width: 0;
         height: 0;
         border: 20px solid transparent;
-        border-left-color: #292929;
+        border-left-color: $black;
     }
 }

@@ -1,8 +1,21 @@
+@import '../../../styles/colors.scss';
+
+:host-context(body.modo-escuro) {
+  h1 {
+    color: $white;
+  }
+}
+
+:host-context(body.modo-contraste) {
+  h1 {
+    color: $ultrawhite;
+  }
+}
 
 h1 {
   font-family: "Rawline Bold", sans-serif;
   text-align: center;
-  color: #292929;
+  color: $black;
   margin-top: 50px;
   font-weight: 700;
 }
