@@ -61,7 +61,7 @@ export class InicioComponent {
   userName: string | null = null;
   isLoading: boolean = false;
   currentFrase: string | undefined
-  first_name = this.userData()!.full_name.split(' ')[0];
+  first_name = this.userData()?.full_name.split(' ')[0];
 
   item:itemLevel[] = []
 
