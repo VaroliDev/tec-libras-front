@@ -4,6 +4,7 @@ import { FooterComponent } from "../../../components/footer/footer.component";
 import { HeaderComponent } from "../../../components/header/header.component";
 import { LoadingSectionComponent } from '../../../components/loading-section/loading-section.component';
 import { CardLevelThemeComponent } from '../../../components/card-level-theme/card-level-theme.component';
+import { LevelStateService } from '../../../services/level-state.service';
 
 interface itemLevel {
   level: number;
@@ -19,6 +20,9 @@ interface itemLevel {
 
 export class LevelThemesComponent { 
   private router = inject(Router)
+  private levelState = inject(LevelStateService);
+
+  protected level_id = this.levelState.getLevel();
   
   PagBack(){
     this.router.navigate(['inicio'])
@@ -31,11 +35,10 @@ export class LevelThemesComponent {
 
     this.isLoading = true;
 
-  const x = 5;
+    const x = 5;
 
     //O setTimeout é para simular o carregamento dos niveis
     setTimeout(() => {
-
       for(let i=1; i<=x; i++){
         this.item.push({
           level: i,

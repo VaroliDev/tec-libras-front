@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { LEVEL_LIST } from '../assets/levels/level-index';
+import { map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -16,14 +17,5 @@ export class LevelService {
   //Retorna uma lista dos níveis
   getLevelList(): string[] {
     return LEVEL_LIST.map((_, i) => `level${i + 1}`);
-  }
-
-  //Carrega um nível pelo índice
-  getLevelByIndex(index: number){
-    const level = LEVEL_LIST[index];
-    if (!level) {
-      return Promise.reject(new Error('Nivel não encontrado'));
-    }
-    return level;
   }
 }

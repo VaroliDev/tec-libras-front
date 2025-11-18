@@ -10,6 +10,7 @@ import { LoadingSectionComponent } from '../../components/loading-section/loadin
 import { PhaseService } from '../../services/phase.service';
 import { UserService } from '../../services/user.service';
 import { LevelService } from '../../services/level.service';
+import { LevelStateService } from '../../services/level-state.service';
 
 interface itemLevel {
   level: number;
@@ -81,7 +82,12 @@ export class InicioComponent {
 
     
     //Define a quantidade de niveis que vao aparecer
-    const x = this.levelService.getLevelCount();
+    const x = this.levelService.getLevelCount() + 3;
+    /*
+    *
+    * REMOVER O "+ 3" NO CONST X QUANDO TERMINAR
+    * 
+    */
 
     //O setTimeout é para simular o carregamento dos niveis
     setTimeout(() => {
