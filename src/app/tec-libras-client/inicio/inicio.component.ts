@@ -10,7 +10,6 @@ import { LoadingSectionComponent } from '../../components/loading-section/loadin
 import { PhaseService } from '../../services/phase.service';
 import { UserService } from '../../services/user.service';
 import { LevelService } from '../../services/level.service';
-import { LevelStateService } from '../../services/level-state.service';
 
 interface itemLevel {
   level: number;

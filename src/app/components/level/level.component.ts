@@ -1,7 +1,7 @@
 import { Component, inject, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { LevelStateService } from '../../services/level-state.service';
+import { LevelService } from '../../services/level.service';
 
 @Component({
   selector: 'app-level',
@@ -10,7 +10,7 @@ import { LevelStateService } from '../../services/level-state.service';
   styleUrl: './level.component.scss'
 })
 export class LevelComponent implements OnInit {
-  private levelState = inject(LevelStateService);
+  private LevelService = inject(LevelService);
 
   @Input() level: number = 1;     // Número do nível
   @Input() percent: number = 70;   // Progresso em %
@@ -21,7 +21,7 @@ export class LevelComponent implements OnInit {
   circumference = 2 * Math.PI * this.radius;
 
   PagNivel(){
-    this.levelState.setLevel(this.level);
+    this.LevelService.setLevel(this.level);
     this.router.navigate(['nivel'])
   }
 

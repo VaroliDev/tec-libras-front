@@ -4,7 +4,7 @@ import { FooterComponent } from "../../../components/footer/footer.component";
 import { HeaderComponent } from "../../../components/header/header.component";
 import { LoadingSectionComponent } from '../../../components/loading-section/loading-section.component';
 import { CardLevelThemeComponent } from '../../../components/card-level-theme/card-level-theme.component';
-import { LevelStateService } from '../../../services/level-state.service';
+import { LevelService } from '../../../services/level.service';
 
 interface itemLevel {
   level: number;
@@ -20,9 +20,9 @@ interface itemLevel {
 
 export class LevelThemesComponent { 
   private router = inject(Router)
-  private levelState = inject(LevelStateService);
+  private levelService = inject(LevelService);
 
-  protected level_id = this.levelState.getLevel();
+  protected level_id = this.levelService.getLevel();
   
   PagBack(){
     this.router.navigate(['inicio'])
