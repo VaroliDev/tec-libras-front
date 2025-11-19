@@ -22,7 +22,7 @@
             }
             <!--LINKS DOS NÍVEIS-->
             @for (n of item; track n.level) {
-                <app-card-level-theme  [level]="n.level" [percent]="n.percent" [levelstyle]="n.level % 2" ></app-card-level-theme>   
+                <app-card-level-theme  [level]="n.level" [title]="n.title" [subtitle]="n.subtitle" [percent]="n.percent" [levelstyle]="n.level % 2" ></app-card-level-theme>   
             }   
         </div>
     </div>

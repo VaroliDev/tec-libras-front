@@ -11,8 +11,6 @@ import { PhaseService } from '../../services/phase.service';
 import { UserService } from '../../services/user.service';
 import { LevelService } from '../../services/level.service';
 
-import { LEVEL_LIST } from '../../../assets/levels/level-index';
-
 interface itemLevel {
   level: number;
   percent: number;

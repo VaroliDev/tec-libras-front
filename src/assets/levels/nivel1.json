@@ -1,258 +1,262 @@
 {
     "nivel": 1,
     "tema1": {
-        "title": "",
-        "subtitle": "",
-        "description": "",
-        "aula-teorica": "",
-        "demonstracao": "",
-        "aula-pratica": "",
+        "title": "Introdução à LIBRAS",
+        "subtitle": "História e importância da língua de sinais",
+        "description": "Uma visão geral sobre o surgimento da LIBRAS, sua importância cultural e reconhecimento oficial no Brasil.",
+        "aula-teorica": "A LIBRAS é a Língua Brasileira de Sinais. Ela foi reconhecida oficialmente em 2002 pela Lei 10.436. A língua possui gramática própria, estrutura visual-espacial e é fundamental para a comunicação da comunidade surda.",
+        "demonstracao": "Demonstração dos sinais de 'OLÁ', 'LIBRAS' e 'COMUNICAÇÃO'.",
+        "aula-pratica": "Pratique os sinais de saudação: 'Olá', 'Bom dia', 'Boa tarde' e 'Boa noite'.",
         "questions": {
             "q1": {
-                "question": "",
+                "question": "O que significa LIBRAS?",
                 "options": {
-                    "a": "",
-                    "b": "",
-                    "c": "",
-                    "d": ""
+                    "a": "Linguagem Internacional de Sinais",
+                    "b": "Língua Brasileira de Sinais",
+                    "c": "Língua Básica de Sons",
+                    "d": "Linguagem Brasileira Sonora"
                 },
-                "answer": ""
+                "answer": "b"
             },
             "q2": {
-                "question": "",
+                "question": "Em que ano a LIBRAS foi reconhecida oficialmente no Brasil?",
                 "options": {
-                    "a": "",
-                    "b": "",
-                    "c": "",
-                    "d": ""
+                    "a": "1994",
+                    "b": "2000",
+                    "c": "2002",
+                    "d": "2010"
                 },
-                "answer": ""
+                "answer": "c"
             },
             "q3": {
-                "question": "",
+                "question": "A LIBRAS é uma língua:",
                 "options": {
-                    "a": "",
-                    "b": "",
-                    "c": "",
-                    "d": ""
+                    "a": "Visual e espacial",
+                    "b": "Apenas sonora",
+                    "c": "Sem gramática",
+                    "d": "Universal"
                 },
-                "answer": ""
+                "answer": "a"
             },
             "q4": {
-                "question": "",
+                "question": "Qual é a importância da LIBRAS?",
                 "options": {
-                    "a": "",
-                    "b": "",
-                    "c": "",
-                    "d": ""
+                    "a": "Facilitar comunicação com estrangeiros",
+                    "b": "Substituir o português",
+                    "c": "Garantir comunicação e inclusão da comunidade surda",
+                    "d": "Ser usada apenas em escolas"
                 },
-                "answer": ""
+                "answer": "c"
             }
         },
-        "curiosidade": ""
+        "curiosidade": "Ao contrário do que muitos pensam, LIBRAS não é universal — cada país possui sua própria língua de sinais."
     },
+
     "tema2": {
-        "title": "",
-        "subtitle": "",
-        "description": "",
-        "aula-teorica": "",
-        "demonstracao": "",
-        "aula-pratica": "",
+        "title": "Saudações em LIBRAS",
+        "subtitle": "Primeiros sinais essenciais",
+        "description": "Aprenda sinais básicos para cumprimentar e iniciar conversas simples.",
+        "aula-teorica": "Saudações são fundamentais para qualquer comunicação. Em LIBRAS, elas são feitas com movimentos manuais e expressões faciais.",
+        "demonstracao": "Demonstração dos sinais de 'Olá', 'Como você está?' e 'Tudo bem?'",
+        "aula-pratica": "Treinar os sinais com um colega ou espelho, focando em expressões faciais.",
         "questions": {
             "q1": {
-                "question": "",
+                "question": "Qual elemento é essencial na comunicação em LIBRAS?",
                 "options": {
-                    "a": "",
-                    "b": "",
-                    "c": "",
-                    "d": ""
+                    "a": "Volume da voz",
+                    "b": "Expressões faciais",
+                    "c": "Acentuação",
+                    "d": "Desenhos com a mão"
                 },
-                "answer": ""
+                "answer": "b"
             },
             "q2": {
-                "question": "",
+                "question": "O sinal de 'Olá' é feito:",
                 "options": {
-                    "a": "",
-                    "b": "",
-                    "c": "",
-                    "d": ""
+                    "a": "Movendo a cabeça",
+                    "b": "Tocando os ombros",
+                    "c": "Balançando uma das mãos",
+                    "d": "Usando as duas mãos simultaneamente"
                 },
-                "answer": ""
+                "answer": "c"
             },
             "q3": {
-                "question": "",
+                "question": "As saudações em LIBRAS dependem de:",
                 "options": {
-                    "a": "",
-                    "b": "",
-                    "c": "",
-                    "d": ""
+                    "a": "Dialetos sonoros",
+                    "b": "Movimentos labiais complexos",
+                    "c": "Movimentos manuais e expressões",
+                    "d": "Som emitido simultaneamente"
                 },
-                "answer": ""
+                "answer": "c"
             },
             "q4": {
-                "question": "",
+                "question": "Para praticar LIBRAS, é importante:",
                 "options": {
-                    "a": "",
-                    "b": "",
-                    "c": "",
-                    "d": ""
+                    "a": "Ouvir músicas",
+                    "b": "Treinar frente ao espelho",
+                    "c": "Escrever textos longos",
+                    "d": "Falar mais alto"
                 },
-                "answer": ""
+                "answer": "b"
             }
         },
-        "curiosidade": ""
+        "curiosidade": "A expressão facial pode mudar completamente o significado de um sinal em LIBRAS."
     },
+
     "tema3": {
-        "title": "",
-        "subtitle": "",
-        "description": "",
-        "aula-teorica": "",
-        "demonstracao": "",
-        "aula-pratica": "",
+        "title": "Alfabeto Manual",
+        "subtitle": "Soletração e comunicação básica",
+        "description": "Aprenda o alfabeto manual usado para soletrar nomes, lugares e palavras específicas.",
+        "aula-teorica": "O alfabeto manual é usado para representar letras do português. É muito útil para nomes próprios ou palavras sem sinal correspondente.",
+        "demonstracao": "Demonstração do alfabeto de A a Z.",
+        "aula-pratica": "Tente soletrar seu nome e o nome de um amigo.",
         "questions": {
             "q1": {
-                "question": "",
+                "question": "Para que serve o alfabeto manual em LIBRAS?",
                 "options": {
-                    "a": "",
-                    "b": "",
-                    "c": "",
-                    "d": ""
+                    "a": "Para representar sons",
+                    "b": "Para soletrar palavras sem sinal",
+                    "c": "Para substituir frases longas",
+                    "d": "Para formar sinais complexos"
                 },
-                "answer": ""
+                "answer": "b"
             },
             "q2": {
-                "question": "",
+                "question": "O alfabeto manual é:",
                 "options": {
-                    "a": "",
-                    "b": "",
-                    "c": "",
-                    "d": ""
+                    "a": "Igual ao alfabeto inglês",
+                    "b": "Feito com duas mãos sempre",
+                    "c": "Uma representação visual das letras",
+                    "d": "Uma forma de escrita"
                 },
-                "answer": ""
+                "answer": "c"
             },
             "q3": {
-                "question": "",
+                "question": "Quando usar o alfabeto manual?",
                 "options": {
-                    "a": "",
-                    "b": "",
-                    "c": "",
-                    "d": ""
+                    "a": "Para palavras sem sinal conhecido",
+                    "b": "Para frases longas",
+                    "c": "Para expressões faciais",
+                    "d": "Para sinais universais"
                 },
-                "answer": ""
+                "answer": "a"
             },
             "q4": {
-                "question": "",
+                "question": "Qual dica ajuda a soletrar melhor?",
                 "options": {
-                    "a": "",
-                    "b": "",
-                    "c": "",
-                    "d": ""
+                    "a": "Fazer sinais muito rápidos",
+                    "b": "Olhar para as mãos apenas",
+                    "c": "Manter ritmo constante e claro",
+                    "d": "Usar ambas as mãos"
                 },
-                "answer": ""
+                "answer": "c"
             }
         },
-        "curiosidade": ""
+        "curiosidade": "Apesar de representar o português, o alfabeto manual é usado por várias línguas de sinais do mundo."
     },
+
     "tema4": {
-        "title": "",
-        "subtitle": "",
-        "description": "",
-        "aula-teorica": "",
-        "demonstracao": "",
-        "aula-pratica": "",
+        "title": "Expressões Faciais",
+        "subtitle": "A emoção na comunicação",
+        "description": "As expressões faciais são uma parte essencial da LIBRAS, pois ajudam a dar sentido e emoção aos sinais.",
+        "aula-teorica": "Expressões faciais funcionam como entonação na fala. Elas indicam dúvidas, afirmações, intensidade e emoções.",
+        "demonstracao": "Demonstração de expressões para perguntas, negação e surpresa.",
+        "aula-pratica": "Tente fazer sinais simples variando a expressão facial.",
         "questions": {
             "q1": {
-                "question": "",
+                "question": "Em LIBRAS, expressões faciais funcionam como:",
                 "options": {
-                    "a": "",
-                    "b": "",
-                    "c": "",
-                    "d": ""
+                    "a": "Pontuação e entonação",
+                    "b": "Sons vocais",
+                    "c": "Movimento corporal exagerado",
+                    "d": "Tradução literal"
                 },
-                "answer": ""
+                "answer": "a"
             },
             "q2": {
-                "question": "",
+                "question": "Qual expressão é comum em perguntas?",
                 "options": {
-                    "a": "",
-                    "b": "",
-                    "c": "",
-                    "d": ""
+                    "a": "Olhos fechados",
+                    "b": "Sobrancelhas levantadas",
+                    "c": "Boca fechada",
+                    "d": "Cabeça imóvel"
                 },
-                "answer": ""
+                "answer": "b"
             },
             "q3": {
-                "question": "",
+                "question": "Expressões faciais ajudam a:",
                 "options": {
-                    "a": "",
-                    "b": "",
-                    "c": "",
-                    "d": ""
+                    "a": "Deixar o sinal mais bonito",
+                    "b": "Dar sentido ao sinal",
+                    "c": "Fazer mais barulho",
+                    "d": "Evitar sinais manuais"
                 },
-                "answer": ""
+                "answer": "b"
             },
             "q4": {
-                "question": "",
+                "question": "Sem expressões, um sinal pode:",
                 "options": {
-                    "a": "",
-                    "b": "",
-                    "c": "",
-                    "d": ""
+                    "a": "Perder o significado",
+                    "b": "Se tornar universal",
+                    "c": "Ficar sonoro",
+                    "d": "Criar um novo gesto"
                 },
-                "answer": ""
+                "answer": "a"
             }
         },
-        "curiosidade": ""
+        "curiosidade": "Na LIBRAS, a expressão facial não é opcional — ela faz parte da gramática."
     },
+
     "tema5": {
-        "title": "",
-        "subtitle": "",
-        "description": "",
-        "aula-teorica": "",
-        "demonstracao": "",
-        "aula-pratica": "",
+        "title": "Vocabulário Básico",
+        "subtitle": "Objetos e ações do cotidiano",
+        "description": "Aprenda sinais simples usados no dia a dia.",
+        "aula-teorica": "Muitas palavras comuns possuem sinais específicos. Aprender esses sinais facilita diálogos simples em LIBRAS.",
+        "demonstracao": "Demonstração dos sinais de 'CASA', 'ÁGUA', 'COMER', 'AMIGO'.",
+        "aula-pratica": "Monte frases simples usando esses sinais.",
         "questions": {
             "q1": {
-                "question": "",
+                "question": "O sinal de 'água' geralmente envolve:",
                 "options": {
-                    "a": "",
-                    "b": "",
-                    "c": "",
-                    "d": ""
+                    "a": "A mão perto da boca",
+                    "b": "As duas mãos na cabeça",
+                    "c": "Um movimento nos pés",
+                    "d": "Um toque no peito"
                 },
-                "answer": ""
+                "answer": "a"
             },
             "q2": {
-                "question": "",
+                "question": "O vocabulário básico serve para:",
                 "options": {
-                    "a": "",
-                    "b": "",
-                    "c": "",
-                    "d": ""
+                    "a": "Aprender sinais raros",
+                    "b": "Compor frases do dia a dia",
+                    "c": "Comunicação avançada",
+                    "d": "Substituir o alfabeto manual"
                 },
-                "answer": ""
+                "answer": "b"
             },
             "q3": {
-                "question": "",
+                "question": "Qual palavra normalmente tem sinal próprio?",
                 "options": {
-                    "a": "",
-                    "b": "",
-                    "c": "",
-                    "d": ""
+                    "a": "Palavras técnicas complexas",
+                    "b": "Objetos comuns e ações do dia",
+                    "c": "Termos científicos",
+                    "d": "Nomes estrangeiros"
                 },
-                "answer": ""
+                "answer": "b"
             },
             "q4": {
-                "question": "",
+                "question": "Para montar frases simples, é recomendado:",
                 "options": {
-                    "a": "",
-                    "b": "",
-                    "c": "",
-                    "d": ""
+                    "a": "Evitar expressões faciais",
+                    "b": "Usar sinais básicos com clareza",
+                    "c": "Soletrar tudo",
+                    "d": "Usar sinais longos"
                 },
-                "answer": ""
+                "answer": "b"
             }
         },
-        "curiosidade": ""
+        "curiosidade": "Alguns sinais variam entre regiões do Brasil, formando 'dialetos' dentro da LIBRAS."
     }
 }

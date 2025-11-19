@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { FooterComponent } from "../../../components/footer/footer.component";
 import { HeaderComponent } from "../../../components/header/header.component";
 
+import { LevelService } from '../../../services/level.service';
+
 @Component({
   selector: 'app-aula-teorica',
   imports: [FooterComponent, HeaderComponent],
@@ -11,6 +13,9 @@ import { HeaderComponent } from "../../../components/header/header.component";
 })
 export class AulaTeoricaComponent {
   private router = inject(Router);
+  private levelService = inject(LevelService);
+
+  protected theme = this.levelService.getTheme();
 
   textos: string[] = [
     'Bih',
@@ -20,10 +25,6 @@ export class AulaTeoricaComponent {
   ];
 
   textoIndex: number = 0;
-
-  get currentText(): string {
-    return this.textos[this.textoIndex];
-  }
 
   PagInicio(){
     this.router.navigate(['temas'])
@@ -49,7 +50,7 @@ export class AulaTeoricaComponent {
       this.textoIndex++;
       conteudo.innerText = this.textos[this.textoIndex]
     } else {
-      this.router.navigate(['inicio']);
+      this.router.navigate(['temas']);
     }
   }
 

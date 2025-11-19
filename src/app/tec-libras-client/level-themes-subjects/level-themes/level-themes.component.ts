@@ -5,9 +5,12 @@ import { HeaderComponent } from "../../../components/header/header.component";
 import { LoadingSectionComponent } from '../../../components/loading-section/loading-section.component';
 import { CardLevelThemeComponent } from '../../../components/card-level-theme/card-level-theme.component';
 import { LevelService } from '../../../services/level.service';
+import { consumerPollProducersForChange } from '@angular/core/primitives/signals';
 
 interface itemLevel {
   level: number;
+  title: string;
+  subtitle: string;
   percent: number;
 }
 
@@ -31,17 +34,20 @@ export class LevelThemesComponent {
   item:itemLevel[] = []
   isLoading: boolean = false;
 
-  ngOnInit(): void {
+  async ngOnInit() {
+    const data_level = await this.levelService.getData(this.level_id as number);
 
     this.isLoading = true;
-
-    const x = 5;
-
+    
     //O setTimeout é para simular o carregamento dos niveis
     setTimeout(() => {
-      for(let i=1; i<=x; i++){
+      for(let i=1; i<=5; i++){
+        const tema = (data_level as any)[`tema${i}`];
+
         this.item.push({
           level: i,
+          title: tema.title,
+          subtitle: tema.subtitle,
           percent: Math.floor(Math.random() * 11) * 10
         });
       }
