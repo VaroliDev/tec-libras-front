@@ -4,35 +4,54 @@ import { HeaderComponent } from "../../../components/header/header.component";
 import { FooterComponent } from "../../../components/footer/footer.component";
 import { LoadingSectionComponent } from '../../../components/loading-section/loading-section.component';
 
+import { LevelService } from '../../../services/level.service';
+import { SafePipe } from '../../../pipes/safe.pipe';
+
 @Component({
   selector: 'app-demonstracoes',
-  imports: [HeaderComponent, FooterComponent, LoadingSectionComponent],
+  imports: [HeaderComponent, FooterComponent, LoadingSectionComponent, SafePipe],
   templateUrl: './demonstracoes.component.html',
   styleUrl: './demonstracoes.component.scss'
 })
 export class DemonstracoesComponent {
-  isLoading: boolean = false;
   private router = inject(Router);
+  private levelService = inject(LevelService);
+  protected theme = this.levelService.getTheme();
 
-  PagInicio(){
-    this.router.navigate(['temas'])
+  protected url: string = '';
+
+  isLoading: boolean = false;
+
+  urls: string[] = [];
+  urlIndex: number = 0;
+
+  PagInicio() {
+    this.router.navigate(['temas']);
   }
 
-  PagBack(){
-    this.router.navigate(['aula-teorica'])
+  PagBack() {
+    if (this.urlIndex > 0) {
+      this.urlIndex--;
+      this.url = this.urls[this.urlIndex];
+    }
   }
 
-  PagNext(){
-    this.router.navigate(['aula-pratica'])
+  PagNext() {
+    if (this.urlIndex < this.urls.length - 1) {
+      this.urlIndex++;
+      this.url = this.urls[this.urlIndex];
+    } else {
+      this.router.navigate(['temas']);
+    }
   }
 
-  ngOnInit(): void {
+  async ngOnInit() {
+    const data = await this.levelService.getThemeData(this.theme as number);
+
+    this.urls = data.demonstracao.split('<hr/>').map((t: string) => t.trim());
+    this.url = this.urls[this.urlIndex];
 
     this.isLoading = true;
-    setTimeout(() => {
-
-      this.isLoading = false;
-
-    },800);
+    setTimeout(() => { this.isLoading = false; }, 800);
   }
 }

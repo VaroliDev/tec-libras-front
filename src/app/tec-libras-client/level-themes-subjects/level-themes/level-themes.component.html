@@ -2,7 +2,7 @@
 
 <div class="container" style="max-width: 80%;">
     <!--N do Nivel e seta de voltar (add link)-->
-    <h2><a class="back-arrow" (click)="PagBack()"> < </a> Nível 1</h2>
+    <h2><a class="back-arrow" (click)="PagBack()"> < </a> Nível {{ level_id }}</h2>
     <br>    
 
     <!--barra de progresso-->
@@ -22,7 +22,7 @@
             }
             <!--LINKS DOS NÍVEIS-->
             @for (n of item; track n.level) {
-                <app-card-level-theme  [level]="n.level" [percent]="n.percent" [levelstyle]="n.level % 2" ></app-card-level-theme>   
+                <app-card-level-theme  [level]="n.level" [title]="n.title" [subtitle]="n.subtitle" [percent]="n.percent" [levelstyle]="n.level % 2" ></app-card-level-theme>   
             }   
         </div>
     </div>

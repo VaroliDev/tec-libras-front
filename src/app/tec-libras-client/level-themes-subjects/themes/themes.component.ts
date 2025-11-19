@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { FooterComponent } from "../../../components/footer/footer.component";
 import { HeaderComponent } from "../../../components/header/header.component";
 
+import { LevelService } from '../../../services/level.service';
+
 @Component({
   selector: 'app-themes',
   imports: [FooterComponent, HeaderComponent,],
@@ -11,6 +13,10 @@ import { HeaderComponent } from "../../../components/header/header.component";
 })
 export class ThemesComponent {
   private router = inject(Router)
+  private levelService = inject(LevelService);
+
+  title: string = '';
+  description: string = '';
 
   PagBack(){
     this.router.navigate(['nivel'])
@@ -34,5 +40,11 @@ export class ThemesComponent {
 
   PagCuriosidades(){
     this.router.navigate(['curiosidades'])
+  }
+
+  async ngOnInit(){
+    const data = await this.levelService.getThemeData(this.levelService.getTheme() as number);
+    this.title = data.title;
+    this.description = data.description;
   }
 }

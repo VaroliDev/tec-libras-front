@@ -9,6 +9,7 @@ import { LevelComponent } from '../../components/level/level.component';
 import { LoadingSectionComponent } from '../../components/loading-section/loading-section.component';
 import { PhaseService } from '../../services/phase.service';
 import { UserService } from '../../services/user.service';
+import { LevelService } from '../../services/level.service';
 
 interface itemLevel {
   level: number;
@@ -24,7 +25,7 @@ interface itemLevel {
 export class InicioComponent {
   constructor(private themeService: ThemeService, private router: Router, private authService: AuthService, private phase: PhaseService) {}
 
-
+  private levelService = inject(LevelService)
   private userService = inject(UserService)
   protected userData = this.userService.getUserInfo()
   
@@ -61,15 +62,14 @@ export class InicioComponent {
   userName: string | null = null;
   isLoading: boolean = false;
   currentFrase: string | undefined
-  first_name = this.userData()!.full_name.split(' ')[0];
+  first_name = this.userData()?.full_name.split(' ')[0];
 
   item:itemLevel[] = []
 
-  ngOnInit(): void {
+  async ngOnInit() {
     this.getCurrentFrase();
     this.authService.isLogged();
     this.first_name = this.userData()!.full_name.split(' ')[0];
-
 
     this.isLoading = true;
     
@@ -79,9 +79,8 @@ export class InicioComponent {
     this.fullName = userData.full_name || '';
     this.userName = userData.user_name || '';
 
-
     //Define a quantidade de niveis que vao aparecer
-    const x = 5;
+    const x = this.levelService.getLevelCount();
 
     //O setTimeout é para simular o carregamento dos niveis
     setTimeout(() => {
