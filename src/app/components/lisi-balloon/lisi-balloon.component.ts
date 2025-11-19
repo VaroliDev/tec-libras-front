@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-lisi-balloon',
@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './lisi-balloon.component.scss'
 })
 export class LisiBalloonComponent {
-
+  @Input() voice: string = '';
 }

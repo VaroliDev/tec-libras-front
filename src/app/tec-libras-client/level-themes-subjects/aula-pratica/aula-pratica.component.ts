@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { HeaderComponent } from '../../../components/header/header.component';
 import { FooterComponent } from '../../../components/footer/footer.component';
 
+import { LevelService } from '../../../services/level.service';
+
 @Component({
   selector: 'app-aula-pratica',
   imports: [HeaderComponent, FooterComponent],
@@ -11,16 +13,52 @@ import { FooterComponent } from '../../../components/footer/footer.component';
 })
 export class AulaPraticaComponent {
   private router = inject(Router);
+  private levelService = inject(LevelService);
 
-  PagInicio(){
-    this.router.navigate(['temas'])
+  protected theme = this.levelService.getTheme();
+  protected title: string = '';
+  protected text: string = '';
+
+  textos: string[] = [];
+  textoIndex: number = 0;
+
+  PagInicio() {
+    this.router.navigate(['temas']);
   }
 
-  PagBack(){
-    this.router.navigate(['demonstracao'])
+  PagBack() {
+    const conteudo = document.getElementById('text');
+    if (!conteudo) return;
+
+    if (this.textoIndex > 0) {
+      this.textoIndex--;
+      conteudo.innerHTML = this.textos[this.textoIndex];
+    }
   }
 
-  PagNext(){
-    this.router.navigate(['questionario'])
+  PagNext() {
+    const conteudo = document.getElementById('text');
+    if (!conteudo) return;
+
+    if (this.textoIndex < this.textos.length - 1) {
+      this.textoIndex++;
+      conteudo.innerHTML = this.textos[this.textoIndex];
+    } else {
+      this.router.navigate(['temas']);
+    }
+  }
+
+  async ngOnInit() {
+    const data = await this.levelService.getThemeData(this.theme as number);
+
+    this.title = data.title;
+    this.text = data.aulaPratica;
+
+    this.textos = this.text.split('<hr/>').map(t => t.trim());
+
+    const conteudo = document.getElementById('text');
+    if (!conteudo) return;
+
+    conteudo.innerHTML = this.textos[this.textoIndex];
   }
 }
