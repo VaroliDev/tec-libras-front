@@ -1,6 +1,6 @@
 import { inject, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { LEVEL_LIST } from '../assets/levels/level-index';
+import { LEVEL_LIST } from '../../assets/levels/level-index';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +20,14 @@ export class LevelService {
   getLevelList(): string[] {
     return LEVEL_LIST.map((_, i) => `level${i + 1}`);
   }
+
+  async getData(id: number) {    
+    return LEVEL_LIST[id]().then(level => level);
+  };
+
+  /*
+  * Funções de Nivel
+  */
 
   setLevel(level: number) {
     this.currentLevel = level;

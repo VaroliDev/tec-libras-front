@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const levelsPath = path.join(__dirname, 'src/app/assets/levels');
+const levelsPath = path.join(__dirname, 'src/assets/levels');
 
 const files = fs
   .readdirSync(levelsPath)

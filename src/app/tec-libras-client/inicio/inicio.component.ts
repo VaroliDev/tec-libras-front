@@ -11,6 +11,8 @@ import { PhaseService } from '../../services/phase.service';
 import { UserService } from '../../services/user.service';
 import { LevelService } from '../../services/level.service';
 
+import { LEVEL_LIST } from '../../../assets/levels/level-index';
+
 interface itemLevel {
   level: number;
   percent: number;
@@ -66,7 +68,7 @@ export class InicioComponent {
 
   item:itemLevel[] = []
 
-  ngOnInit(): void {
+  async ngOnInit() {
     this.getCurrentFrase();
     this.authService.isLogged();
     this.first_name = this.userData()!.full_name.split(' ')[0];
@@ -79,14 +81,8 @@ export class InicioComponent {
     this.fullName = userData.full_name || '';
     this.userName = userData.user_name || '';
 
-    
     //Define a quantidade de niveis que vao aparecer
-    const x = this.levelService.getLevelCount() + 3;
-    /*
-    *
-    * REMOVER O "+ 3" NO CONST X QUANDO TERMINAR
-    * 
-    */
+    const x = this.levelService.getLevelCount();
 
     //O setTimeout é para simular o carregamento dos niveis
     setTimeout(() => {
