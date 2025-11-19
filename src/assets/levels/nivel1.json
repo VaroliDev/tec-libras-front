@@ -4,9 +4,9 @@
         "title": "Introdução à LIBRAS",
         "subtitle": "História e importância da língua de sinais",
         "description": "Uma visão geral sobre o surgimento da LIBRAS, sua importância cultural e reconhecimento oficial no Brasil.",
-        "aula-teorica": "A LIBRAS é a Língua Brasileira de Sinais. Ela foi reconhecida oficialmente em 2002 pela Lei 10.436. A língua possui gramática própria, estrutura visual-espacial e é fundamental para a comunicação da comunidade surda.",
-        "demonstracao": "Demonstração dos sinais de 'OLÁ', 'LIBRAS' e 'COMUNICAÇÃO'.",
-        "aula-pratica": "Pratique os sinais de saudação: 'Olá', 'Bom dia', 'Boa tarde' e 'Boa noite'.",
+        "aulaTeorica": "A LIBRAS é a Língua Brasileira de Sinais. Ela foi reconhecida oficialmente em 2002 pela Lei 10.436.<hr/>A língua possui gramática própria, estrutura visual-espacial e é fundamental para a comunicação da comunidade surda.",
+        "demonstracao": "https://drive.google.com/file/d/1lIcBUHj-rY2U_6Y-NkFim_LhVg-UljjT/preview <hr/> https://img.goodfon.com/wallpaper/big/1/9a/mgsv-mgs5-metal-gear-solid-v.webp",
+        "aulaPratica": "Pratique os sinais de saudação: 'Olá', 'Bom dia', 'Boa tarde' e 'Boa noite'.",
         "questions": {
             "q1": {
                 "question": "O que significa LIBRAS?",
@@ -56,9 +56,9 @@
         "title": "Saudações em LIBRAS",
         "subtitle": "Primeiros sinais essenciais",
         "description": "Aprenda sinais básicos para cumprimentar e iniciar conversas simples.",
-        "aula-teorica": "Saudações são fundamentais para qualquer comunicação. Em LIBRAS, elas são feitas com movimentos manuais e expressões faciais.",
+        "aulaTeorica": "Saudações são fundamentais para qualquer comunicação. Em LIBRAS, elas são feitas com movimentos manuais e expressões faciais.",
         "demonstracao": "Demonstração dos sinais de 'Olá', 'Como você está?' e 'Tudo bem?'",
-        "aula-pratica": "Treinar os sinais com um colega ou espelho, focando em expressões faciais.",
+        "aulaPratica": "Treinar os sinais com um colega ou espelho, focando em expressões faciais.",
         "questions": {
             "q1": {
                 "question": "Qual elemento é essencial na comunicação em LIBRAS?",
@@ -108,9 +108,9 @@
         "title": "Alfabeto Manual",
         "subtitle": "Soletração e comunicação básica",
         "description": "Aprenda o alfabeto manual usado para soletrar nomes, lugares e palavras específicas.",
-        "aula-teorica": "O alfabeto manual é usado para representar letras do português. É muito útil para nomes próprios ou palavras sem sinal correspondente.",
+        "aulaTeorica": "O alfabeto manual é usado para representar letras do português. É muito útil para nomes próprios ou palavras sem sinal correspondente.",
         "demonstracao": "Demonstração do alfabeto de A a Z.",
-        "aula-pratica": "Tente soletrar seu nome e o nome de um amigo.",
+        "aulaPratica": "Tente soletrar seu nome e o nome de um amigo.",
         "questions": {
             "q1": {
                 "question": "Para que serve o alfabeto manual em LIBRAS?",
@@ -160,9 +160,9 @@
         "title": "Expressões Faciais",
         "subtitle": "A emoção na comunicação",
         "description": "As expressões faciais são uma parte essencial da LIBRAS, pois ajudam a dar sentido e emoção aos sinais.",
-        "aula-teorica": "Expressões faciais funcionam como entonação na fala. Elas indicam dúvidas, afirmações, intensidade e emoções.",
+        "aulaTeorica": "Expressões faciais funcionam como entonação na fala. Elas indicam dúvidas, afirmações, intensidade e emoções.",
         "demonstracao": "Demonstração de expressões para perguntas, negação e surpresa.",
-        "aula-pratica": "Tente fazer sinais simples variando a expressão facial.",
+        "aulaPratica": "Tente fazer sinais simples variando a expressão facial.",
         "questions": {
             "q1": {
                 "question": "Em LIBRAS, expressões faciais funcionam como:",
@@ -212,9 +212,9 @@
         "title": "Vocabulário Básico",
         "subtitle": "Objetos e ações do cotidiano",
         "description": "Aprenda sinais simples usados no dia a dia.",
-        "aula-teorica": "Muitas palavras comuns possuem sinais específicos. Aprender esses sinais facilita diálogos simples em LIBRAS.",
+        "aulaTeorica": "Muitas palavras comuns possuem sinais específicos. Aprender esses sinais facilita diálogos simples em LIBRAS.",
         "demonstracao": "Demonstração dos sinais de 'CASA', 'ÁGUA', 'COMER', 'AMIGO'.",
-        "aula-pratica": "Monte frases simples usando esses sinais.",
+        "aulaPratica": "Monte frases simples usando esses sinais.",
         "questions": {
             "q1": {
                 "question": "O sinal de 'água' geralmente envolve:",
