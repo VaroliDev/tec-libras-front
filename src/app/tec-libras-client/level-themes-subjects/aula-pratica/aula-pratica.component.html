@@ -26,6 +26,23 @@
                     <p style=" position: relative; bottom: 10px; margin-left: 20px; font-weight: bold;">80%</p>
                 </div>
 
+                <div class="container videoView">
+                        <button class="btn btn-ativar-cam" (click)="enableCam()">
+                            {{ enableWebcamButtonLabel }}
+                        </button>
+                        <br>
+                        <br>
+                            <div style="position: relative;">
+                            <video #video autoplay playsinline></video>
+                            <canvas #canvas id="output_canvas" width="1280" height="720"></canvas>
+                            <p #gestureOutput class="output"></p>
+                        </div>
+                    </div>
+
+                <br>
+
+                <p>Status: <b class="correct-sign">Correto!</b></p>
+
                 <!--Nome do Tema-->
                 <h2>Pratique o sinal de {{ title }}.</h2>
                 <br>
