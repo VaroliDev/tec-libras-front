@@ -1,41 +1,35 @@
-<div>
-    <div style="position: relative; top: 95px; z-index: 10;  ">
-        <div style="display: flex; justify-content: center; align-items: center;">
-            <svg class="progress-ring" width="100" height="100">
+<div class="card-theme">
+
+    <!-- CÍRCULO DE PROGRESSO -->
+    <div class="progress-wrapper">
+        <div class="d-flex justify-content-center align-items-center">
+            <svg class="progress-ring">
                 <!-- anel de fundo -->
-                <circle class="progress-bg" r="45" cx="50" cy="50"></circle>
+                <circle class="progress-bg"></circle>
 
                 <!-- anel de progresso -->
                 <circle
-                class="progress-bar"
-                r="45"
-                cx="50"
-                cy="50"
-                [attr.stroke-dasharray]="circumference"
-                [attr.stroke-dashoffset]="circumference - (percent / 100 * circumference)"
+                    class="progress-bar"
+                    [attr.stroke-dasharray]="circumference"
+                    [attr.stroke-dashoffset]="circumference - (percent / 100 * circumference)"
                 ></circle>
             </svg>
         </div>
         <div class="progress-text">{{ percent }}%</div>
     </div>
-    
-    
 
+    <!-- CARD PRINCIPAL -->
     <div class="col">
-        <div class="card h-100" style="border: none;">
-            <img src="img/Icone_web.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title" style="line-height: 25px;">Tema</h5>
-                    <p class="card-text">Subtitulo</p>
-                </div>
-                <div class="card-footer">
-                    <small class="text-body-secondary"><a class="btn col-lg-12" (click)="PagNext()">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
-                            <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
-                        </svg></a>
-                    </small>
-                </div>
+        <div (click)="PagNext()" class="card custom-card">
+            
+            <!-- parte roxa -->
+            <div class="top-section" [class]="'top-section'+ levelstyle"></div>
+
+            <div class="card-body">
+                <p class="subtitle">SUBTÍTULO</p>
+                <h4 class="title">Título</h4>
+            </div>
+
         </div>
     </div>
 </div>
-            

@@ -1,3 +1,5 @@
+@import '../../../styles/colors.scss';
+
 :host-context(body.modo-escuro)  {
    .card {
     background-color: #1f1f1f;
@@ -25,41 +27,221 @@
     background-color: #f0f0f0;
 }
 
-/*ANEL DE PROGRESSO*/
+.progress-wrapper {
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 10;
+}
 
-     .progress-ring {
-        position: relative;
-        width: 100px;
-        height: 100px;
-        background-color: #e6e6e6;
-        border-radius: 50%;
-        bottom: 20px;
-        
+/* SVG principal */
+.progress-ring {
+    width: 110px;    /* responsivo no media query */
+    height: 110px;
+    position: relative;
+}
+
+/* círculos do SVG */
+.progress-ring circle {
+    fill: #f0f0f0;
+    stroke-width: 10;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+}
+
+/* círculo de fundo */
+.progress-bg {
+    stroke: #F9F9F9;
+    r: 40;
+    cx: 50;
+    cy: 50;
+}
+
+/* círculo da barra de progresso */
+.progress-bar {
+    stroke: #57C29B;
+    stroke-linecap: round;
+    r: 40;
+    cx: 50;
+    cy: 50;
+}
+
+/* texto (%) */
+.progress-text {
+    position: absolute;
+    top: 34px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: "Rawline Bold", sans-serif;
+    font-size: 22px;
+    color: #333;
+    font-weight: bold;
+}
+
+.card-theme {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 20px 5px;
+}
+
+.custom-card {
+    width: 100%;
+    max-width: 430px;
+    border-radius: 15px;
+    border: none;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* parte roxa superior */
+.top-section1 {
+    height: 50px;
+    background-color: $softpurple;
+}
+
+
+.top-section0 {
+    height: 50px;
+    background-color: $softorange;
+}
+
+/* textos */
+.subtitle {
+    margin: 0;
+    font-size: 11px;
+    font-weight: 700;
+    color: #7a7a7a;
+}
+
+.title {
+    font-family: 'Rawline Bold', sans-serif;
+    margin-top: 5px;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+/* ---------------------- */
+/*     RESPONSIVIDADE     */
+/* ---------------------- */
+@media (min-width: 767px) {
+
+    .progress-ring {
+        width: 80px;
+        height: 80px;
     }
 
-     .progress-ring circle {
-        fill: none;
-        stroke-width: 10;
-        transform: rotate(-90deg);
-        transform-origin: 50% 50%;
+    .progress-ring circle {
+        stroke-width: 8;
+        r: 35;
+        cx: 40;
+        cy: 40;
     }
 
-     .progress-ring .progress-bg {
-        stroke: #F9F9F9;
-        r: 40; 
+    .progress-text {
+        top: 26px;
+        font-size: 16px;
     }
 
-     .progress-ring .progress-bar {
-        stroke: #57C29B;
-        stroke-linecap: round;
-        r: 40;
+    .top-section {
+        height: 180px;
     }
 
-     .progress-text {
-        position: relative;
-        bottom: 84px;
-        text-align: center;
-        font-family: "Rawline Bold", sans-serif;
-        font-size: 18px;
-        color: #333;
+    .card {
+        width: 200px !important;
     }
+}
+
+@media (min-width: 1175px) and (max-width: 1295px) {
+    .card {
+        width: 180px !important;
+        margin: 0 10px;
+    }
+}
+
+@media (min-width: 1100px) and (max-width: 1175px) {
+    .card {
+        width: 170px !important;
+        margin: 0 20px;
+    }
+}
+
+@media (min-width: 985px) and (max-width: 1100px) {
+    .card {
+        width: 150px !important;
+        margin: 0 20px;
+    }
+}
+
+@media (min-width: 860px) and (max-width: 985px) {
+    .card {
+        width: 130px !important;
+        margin: 0 20px;
+    }
+
+    .top-section {
+        height: 130px;
+    }
+}
+
+@media (min-width: 767px) and (max-width: 860px) {
+    .card {
+        width: 115px !important;
+        margin: 0 20px;
+    }
+
+    .top-section {
+        height: 130px;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+
+    .progress-ring {
+        width: 80px;
+        height: 80px;
+    }
+
+    .progress-ring circle {
+        stroke-width: 8;
+        r: 35;
+        cx: 40;
+        cy: 40;
+    }
+
+    .progress-text {
+        top: 26px;
+        font-size: 16px;
+    }
+
+    .top-section {
+        height: 180px;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+
+    .progress-ring {
+        width: 80px;
+        height: 80px;
+    }
+
+    .progress-ring circle {
+        stroke-width: 8;
+        r: 35;
+        cx: 40;
+        cy: 40;
+    }
+
+    .progress-text {
+        top: 26px;
+        font-size: 16px;
+    }
+
+    .top-section {
+        height: 150px;
+    }
+}
+
