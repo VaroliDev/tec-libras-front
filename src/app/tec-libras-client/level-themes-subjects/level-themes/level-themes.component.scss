@@ -1,5 +1,6 @@
 @import '../../../../styles/colors.scss';
 
+
 :host-context(body.modo-escuro)  {
     h2 {
         color: $white;
