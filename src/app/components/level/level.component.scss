@@ -1,4 +1,111 @@
+/*celular*/
+@media (max-width: 575px) {
 .niveis{
+
+    & a {
+        text-decoration: none;
+        color: #292929;
+    }
+
+    & .circulonivel0 {
+        display: flex;
+        align-items: center;
+        background-color: #FF9221;
+        border-radius: 15px;
+        height: 110px;
+        padding: 0 0 0 20px;
+        margin: 0 !important;
+
+        & p {
+            position: static;
+            margin: 0;
+            font-family: "Rawline Bold", sans-serif;
+            font-weight: bolder;
+            font-size: 25px;
+            color: #d44700;
+        }
+    }
+
+    & .circulonivel1 {
+        display: flex;
+        align-items: center;
+        background-color: #BA73FF;
+        border-radius: 15px;
+        height: 110px;
+        padding: 0 0 0 20px;
+         margin: 0 !important;
+
+        & p {
+            position: static;
+            margin: 0;
+            font-family: "Rawline Bold", sans-serif;
+            font-weight: bolder;
+            font-size: 25px;
+            color: #831beb;
+        }
+    }
+}
+
+/*ANEL DE PROGRESSO*/
+    .ring-all {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        margin-right: -30px;
+    }
+
+    .progress-ring {
+        text-align: right;
+        width: 86px;
+        height: 86px;
+        background-color: #e6e6e6;
+        border-radius: 50%;
+    }
+
+     .progress-ring circle {
+        fill: none;
+        stroke-width: 8;
+        transform: rotate(-90deg);
+        transform-origin: 50% 50%;
+    }
+
+     .progress-ring .progress-bg {
+        stroke: #F9F9F9;
+    }
+
+     .progress-ring .progress-bar {
+        stroke: #57C29B;
+        stroke-linecap: round;
+    }
+
+     .progress-text {
+        display: inline-block;
+        position: relative;
+        right: 65px;
+        min-width: 48px; 
+        text-align: center;
+        font-family: "Rawline Bold", sans-serif;
+        font-size: 17px;
+        color: #333;
+    }
+
+    .progress-bar {
+        r: 33;
+        cx: 43;
+        cy: 43;
+    }
+
+    .progress-bg {
+        r: 33;
+        cx: 43;
+        cy: 43;
+    }
+}
+
+/*computador*/
+@media (min-width: 575px) {
+.niveis{
+    margin: 20px;
     margin-left: 15%;
 
     & a {
@@ -45,8 +152,6 @@
     margin-right: 90px !important;
 }
 
-
-
 /*ANEL DE PROGRESSO*/
      .progress-ring {
         position: relative;
@@ -83,18 +188,15 @@
         color: #333;
     }
 
-
-@media (min-width: 700px) and (max-width: 890px) {
-    .niveis .col {
-        margin: 10%;
+    .progress-bar {
+        r: 65;
+        cx: 75;
+        cy: 75;
     }
 
-
-    
-}
-
-@media (min-width: 890px) and (max-width: 1376px) {
-    .niveis .col {
-        margin: 5%;
+    .progress-bg {
+        r: 65;
+        cx: 75;
+        cy: 75;
     }
-}
+} 

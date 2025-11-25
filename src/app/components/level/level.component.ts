@@ -13,7 +13,7 @@ export class LevelComponent implements OnInit {
   @Input() levelstyle: number = this.level % 2;
   private router = inject(Router)
 
-  radius = 65;          // raio do círculo
+  radius = 33;          // raio do círculo
   circumference = 2 * Math.PI * this.radius;
 
   PagNivel(){

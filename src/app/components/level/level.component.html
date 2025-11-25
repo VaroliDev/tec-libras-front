@@ -3,18 +3,19 @@
             <a (click)="PagNivel()">
                 <div [class]="'circulonivel'+ levelstyle">
                     <p>Nível {{ level }}</p>
-                    <svg class="progress-ring" width="150" height="150">
-                        <circle class="progress-bg" r="65" cx="75" cy="75"></circle>
-                        <circle
-                        class="progress-bar"
-                        r="65"
-                        cx="75"
-                        cy="75"
-                        [attr.stroke-dasharray]="circumference"
-                        [attr.stroke-dashoffset]="circumference - (percent / 100 * circumference)"
-                        ></circle>
-                    </svg>
-                    <div class="progress-text">{{ percent }}%</div>
+                    <div class="ring-all">
+                        <svg class="progress-ring" width="150" height="150">
+                            <circle class="progress-bg"></circle>
+                            <circle
+                            class="progress-bar"
+                            
+                            [attr.stroke-dasharray]="circumference"
+                            [attr.stroke-dashoffset]="circumference - (percent / 100 * circumference)"
+                            ></circle>
+                        </svg>
+                        <div class="progress-text"> {{ percent }}%</div>
+                    </div>
+                    
                 </div>
             </a>
         </div>
