@@ -1,8 +1,9 @@
 <app-header-simple></app-header-simple>
+<app-end-header-simple></app-end-header-simple>
 
     <!--CARROSSEL-->
     <header>
-        <div id="carrossel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div id="carrossel" class="carousel slide carousel-fade d-none d-sm-flex" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <a (click)="pagcadastro()"><img src="img/Banner_carrossel1.png" class="d-block" alt="Banner promocional da plataforma Tec Libras. À esquerda, sobre fundo laranja, o texto diz: 'Comunicação acessível. Conheça a Tec Libras – Sua plataforma queridinha para o ensino de Libras!'. Abaixo, um botão preto com o texto 'Comece já' em roxo. À direita, um celular exibe a interface do app com níveis de aprendizado. Ao lado, lista de benefícios: 'Fácil de usar', 'Vídeos, teoria e prática dos sinais', 'Biblioteca de Sinais' e 'Para todas as idades', todos com ícones de verificação verde."></a> 
@@ -21,10 +22,17 @@
             </button>
         </div>
     </header>
+
+    <!--VERSÃO MOBILE-->
+    <div class="bg-mobile d-block d-sm-none">
+        <img 
+        src="img/background-introducao.png" class="bg-mobile d-block d-sm-none" alt="Fundo">
+    </div>
     
-    <br>
-    <br>
-    <br>
+    <br class="d-none d-sm-flex">
+    <br class="d-none d-sm-flex">
+    <br class="d-none d-sm-flex">
+    <br class="d-none d-sm-flex">
    
     <app-footer></app-footer>
 
