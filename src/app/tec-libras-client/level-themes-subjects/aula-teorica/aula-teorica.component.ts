@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { FooterComponent } from "../../../components/footer/footer.component";
 import { HeaderComponent } from "../../../components/header/header.component";
 
+import { LevelService } from '../../../services/level.service';
+
 @Component({
   selector: 'app-aula-teorica',
   imports: [FooterComponent, HeaderComponent],
@@ -11,54 +13,52 @@ import { HeaderComponent } from "../../../components/header/header.component";
 })
 export class AulaTeoricaComponent {
   private router = inject(Router);
+  private levelService = inject(LevelService);
 
-  textos: string[] = [
-    'Bih',
-    'Twin',
-    'Sybau',
-    'Zamn'
-  ];
+  protected theme = this.levelService.getTheme();
+  protected title: string = '';
+  protected text: string = '';
 
+  textos: string[] = [];
   textoIndex: number = 0;
 
-  get currentText(): string {
-    return this.textos[this.textoIndex];
+  PagInicio() {
+    this.router.navigate(['temas']);
   }
 
-  PagInicio(){
-    this.router.navigate(['temas'])
-  }
+  PagBack() {
+    const conteudo = document.getElementById('text');
+    if (!conteudo) return;
 
-  PagBack(){
-    const conteudo = document.getElementById('text')
-    if(!conteudo){
-      return
-    }
     if (this.textoIndex > 0) {
       this.textoIndex--;
-      conteudo.innerText = this.textos[this.textoIndex]
+      conteudo.innerHTML = this.textos[this.textoIndex];
     }
   }
 
-  PagNext(){
-    const conteudo = document.getElementById('text')
-    if(!conteudo){
-      return
-    }
+  PagNext() {
+    const conteudo = document.getElementById('text');
+    if (!conteudo) return;
+
     if (this.textoIndex < this.textos.length - 1) {
       this.textoIndex++;
-      conteudo.innerText = this.textos[this.textoIndex]
+      conteudo.innerHTML = this.textos[this.textoIndex];
     } else {
-      this.router.navigate(['inicio']);
+      this.router.navigate(['temas']);
     }
   }
 
-  ngOnInit(): void {
-    const conteudo = document.getElementById('text')
-    if(!conteudo){
-      return
-    }
+  async ngOnInit() {
+    const data = await this.levelService.getThemeData(this.theme as number);
 
-    conteudo.innerText = this.textos[this.textoIndex]
+    this.title = data.title;
+    this.text = data.aulaTeorica;
+
+    this.textos = this.text.split('<hr/>').map(t => t.trim());
+
+    const conteudo = document.getElementById('text');
+    if (!conteudo) return;
+
+    conteudo.innerHTML = this.textos[this.textoIndex];
   }
 }

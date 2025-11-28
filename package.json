@@ -1,10 +1,12 @@
 {
   "name": "teclibras",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "generate-levels-index": "node generate-level-index.js",
+    "build": "node generate-level-index.js && ng build",
+    "postinstall": "node generate-level-index.js",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
