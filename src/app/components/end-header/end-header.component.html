@@ -1,0 +1,122 @@
+<!--NAVEGADOR-->
+<nav class="sticky-top navbar navbar-expand-lg d-flex d-sm-none" style="padding: 20px;">
+  <div class="container-fluid">
+    <!--logo-->
+    <a (click)="paginicio()" style="margin-right: 18%;">
+      <img id="logo_teclibras" src="img/Logo1TecLibras.svg" alt="Logo escrito Tec Libras Plataforma de Ensino; duas mãos opostas uma a outra; cor laranja">
+    </a>
+
+    <!-- botão hamburguer -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-list"
+          viewBox="0 0 16 16">
+          <path fill-rule="evenodd"
+            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+        </svg>
+      </span>
+    </button>
+
+    <!-- collapse único -->
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+
+      <!-- páginas (lado esquerdo) -->
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item" style="margin-right: 50px;">
+          <a class="nav-link"
+            [ngClass]="{'active': isCurrentPage('/inicio')}"
+            [style.color]="isCurrentPage('/inicio') ? '#9E3FFA' : ''"
+            [style.fontWeight]="isCurrentPage('/inicio') ? 'bold' : ''"
+            (click)="paginicio()">Início</a>
+        </li>
+        <li class="nav-item" style="margin-right:50px;">
+          <a class="nav-link"
+            [ngClass]="{'active': isCurrentPage('/biblioteca-sinais')}"
+            [style.color]="isCurrentPage('/biblioteca-sinais') ? '#9E3FFA' : ''"
+            [style.fontWeight]="isCurrentPage('/biblioteca-sinais') ? 'bold' : ''"
+            (click)="pagbiblioteca()">Biblioteca de Sinais</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"
+            [ngClass]="{'active': isCurrentPage('/comunidade')}"
+            [style.color]="isCurrentPage('/comunidade') ? '#9E3FFA' : ''"
+            [style.fontWeight]="isCurrentPage('/comunidade') ? 'bold' : ''"
+            (click)="pagcomunidade()">Comunidade</a>
+        </li>
+      </ul>
+
+      <!-- opções (lado direito) -->
+      <ul class="navbar-nav ms-auto">
+        <!-- NOTIFICAÇÕES -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+            style="fill: #f86400;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#F86400" class="bi bi-bell-fill"
+              viewBox="0 0 16 16">
+              <path
+                d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2m.995-14.901a1 1 0 1 0-1.99 0A5 5 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901" />
+            </svg>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item disabled" href="#">Visualize suas notificações aqui</a></li>
+          </ul>
+        </li>
+
+        <!-- CONFIGURAÇÕES -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#F86400" class="bi bi-gear-fill"
+              viewBox="0 0 16 16">
+              <path
+                d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z" />
+            </svg>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" style="width: 176.9px;">
+            <!-- ALTERAR TEMA -->
+            <li>
+              <p class="dropdown-item">Alterar Tema</p>
+              <input type="radio" id="modo-claro" name="tema-site" value="modo-claro"
+                (change)="onThemeChange('modo-claro')" [checked]="isCurrentTheme('modo-claro')">
+              <label class="label_modo" for="modo-claro">Claro</label>
+              <br>
+              <input type="radio" id="modo-escuro" name="tema-site" value="modo-escuro"
+                (change)="onThemeChange('modo-escuro')" [checked]="isCurrentTheme('modo-escuro')">
+              <label class="label_modo" for="modo-escuro">Escuro</label>
+              <br>
+              <input type="radio" id="modo-contraste" name="tema-site" value="modo-contraste"
+                (change)="onThemeChange('modo-contraste')" [checked]="isCurrentTheme('modo-contraste')">
+              <label class="label_modo" for="modo-contraste">Alto Contraste</label>
+            </li>
+
+            <li><a class="dropdown-item" (click)="pagconta()">Sua conta</a></li>
+            <li><a class="dropdown-item" (click)="pagsobrenos()">Sobre nós</a></li>
+
+            @if(isLogged){
+              <li><hr class="dropdown-divider"></li>
+              <a class="btn" style="border-radius: 10px; margin: 12px; background-color: #9E3FFA; color: #f9f9f9;" (click)="pagAdmin()">Administrador</a>
+            }
+
+            <li><a class="dropdown-item link-danger" (click)="logout()">Sair 
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 23">
+                <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0z"/>
+                <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
+              </svg></a></li>
+          </ul>
+        </li>
+
+        <!-- FOTO PERFIL -->
+        <a (click)="pagconta()"><img id="foto_perfil" src="img/Icone_web.png" alt="Sua foto de Perfil"></a>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<nav class="navbar navbar-light bg-light fixed-bottom d-flex d-sm-none">
+  <div class="container-fluid justify-content-around">
+    <a class="nav-link" href="#">Home</a>
+    <a class="nav-link" href="#">Sobre</a>
+    <a class="nav-link" href="#">Contato</a>
+  </div>
+</nav>
