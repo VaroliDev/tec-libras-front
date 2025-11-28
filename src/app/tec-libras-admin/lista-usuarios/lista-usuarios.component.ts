@@ -6,14 +6,15 @@ import { UserService } from '../../services/user.service';
 import { HeaderComponent } from '../../components/header/header.component';
 import { FooterComponent } from "../../components/footer/footer.component";
 import { HttpClient } from '@angular/common/http';  // Importar o HttpClient
-import { Modal } from 'bootstrap';  // Importação direta do modal (se você precisar de algo específico)
+import { Modal } from 'bootstrap';
+import { EndHeaderComponent } from "../../components/end-header/end-header.component";  // Importação direta do modal (se você precisar de algo específico)
 
 
 
 @Component({
   selector: 'app-lista-usuarios',
   standalone: true,
-  imports: [FormsModule, HeaderComponent, FooterComponent],
+  imports: [FormsModule, HeaderComponent, FooterComponent, EndHeaderComponent],
   templateUrl: './lista-usuarios.component.html',
   styleUrls: ['./lista-usuarios.component.scss']  // Corrigido para 'styleUrls' ao invés de 'styleUrl'
 })

@@ -6,6 +6,7 @@ import { LoadingSectionComponent } from '../../../components/loading-section/loa
 import { CardLevelThemeComponent } from '../../../components/card-level-theme/card-level-theme.component';
 import { LevelService } from '../../../services/level.service';
 import { consumerPollProducersForChange } from '@angular/core/primitives/signals';
+import { EndHeaderComponent } from "../../../components/end-header/end-header.component";
 
 interface itemLevel {
   level: number;
@@ -16,7 +17,7 @@ interface itemLevel {
 
 @Component({
   selector: 'app-nivel',
-  imports: [FooterComponent, HeaderComponent, LoadingSectionComponent, CardLevelThemeComponent],
+  imports: [FooterComponent, HeaderComponent, LoadingSectionComponent, CardLevelThemeComponent, EndHeaderComponent],
   templateUrl: './level-themes.component.html',
   styleUrl: './level-themes.component.scss'
 })

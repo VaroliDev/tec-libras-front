@@ -4,10 +4,11 @@ import { FooterComponent } from "../../../components/footer/footer.component";
 import { HeaderComponent } from "../../../components/header/header.component";
 
 import { LevelService } from '../../../services/level.service';
+import { EndHeaderComponent } from "../../../components/end-header/end-header.component";
 
 @Component({
   selector: 'app-themes',
-  imports: [FooterComponent, HeaderComponent,],
+  imports: [FooterComponent, HeaderComponent, EndHeaderComponent],
   templateUrl: './themes.component.html',
   styleUrl: './themes.component.scss'
 })

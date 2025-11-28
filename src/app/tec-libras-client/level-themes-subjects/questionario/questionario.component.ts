@@ -4,10 +4,11 @@ import { Router } from '@angular/router';
 import { HeaderComponent } from "../../../components/header/header.component";
 import { FooterComponent } from "../../../components/footer/footer.component";
 import { LevelService } from '../../../services/level.service';
+import { EndHeaderComponent } from "../../../components/end-header/end-header.component";
 
 @Component({
   selector: 'app-questionario',
-  imports: [HeaderComponent, FooterComponent, CommonModule],
+  imports: [HeaderComponent, FooterComponent, CommonModule, EndHeaderComponent],
   templateUrl: './questionario.component.html',
   styleUrl: './questionario.component.scss'
 })
