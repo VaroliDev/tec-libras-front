@@ -78,7 +78,7 @@
         stroke-linecap: round;
     }
 
-     .progress-text {
+    .progress-text {
         display: inline-block;
         position: relative;
         right: 65px;
@@ -87,6 +87,19 @@
         font-family: "Rawline Bold", sans-serif;
         font-size: 17px;
         color: #333;
+    }
+
+    .progress-text.locked-level  {
+        display: inline-block;
+        position: relative;
+        right: 67px;
+        min-width: 48px; 
+        text-align: center;
+        font-family: "Rawline Bold", sans-serif;
+        font-size: 17px;
+        color: #909090;
+        width:30;
+        height:30;
     }
 
     .progress-bar {
@@ -186,6 +199,20 @@
         font-family: "Rawline Bold", sans-serif;
         font-size: 24px;
         color: #333;
+    }
+
+    .progress-text.locked-level  {
+        position: relative;
+        bottom: 120px;
+        left: 73px;
+        font-family: "Rawline Bold", sans-serif;
+        font-size: 24px;
+        color: #909090;
+    }
+
+    .locked-level svg {
+        width: 55px !important;
+        height: 55px !important;
     }
 
     .progress-bar {
