@@ -33,6 +33,15 @@
     top: 12px;
 }
 
+/*imagem de fundo*/
+@media (max-width: 575px) {
+  :host ::ng-deep body {
+  background-image: url('/assets/img/background-introducao.png');
+}
+
+}
+
+
 @media (max-width: 100px) {
     .carousel-inner img {
         width: 100%; /* Imagem ocupa toda a largura do carrossel */

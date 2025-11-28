@@ -4,10 +4,11 @@ import { ThemeService } from '../../services/theme.service';
 import { Router } from '@angular/router';
 import { HeaderSimpleComponent } from "../../components/header-simple/header-simple.component";
 import { FooterComponent } from "../../components/footer/footer.component";
+import { EndHeaderSimpleComponent } from "../../components/end-header-simple/end-header-simple.component";
 
 @Component({
   selector: 'app-introducao',
-  imports: [FormsModule, HeaderSimpleComponent, FooterComponent],
+  imports: [FormsModule, HeaderSimpleComponent, FooterComponent, EndHeaderSimpleComponent],
   templateUrl: './introducao.component.html',
   styleUrl: './introducao.component.scss'
 })
