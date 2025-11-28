@@ -35,20 +35,50 @@ h1 {
 }
 
 .quadrado1 {
-    background-color: $softorange;
-    width: 80px; 
-    border-radius: 8px;
+    margin: 30px 0 0 30px;
+    width: 70px;        /* largura */
+    height: 70px;       /* altura */
+    background: $softorange; /* opcional */
+    border-radius: 10px; /* opcional */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nivel-svg svg {
+    position: relative;
+    right: 3px;
+    bottom: 12px;
+}
+
+.topico-svg svg {
+    position: relative;
+    left: 2px;
+    top: 3px;
+    color: #6e20b7;
+}
+
+.conquistas-svg svg {
+    position: relative;
+    left: 3px;
+    top: 3px;
 }
 
 .quadrado2 {
-    background-color: $purple; 
-    width: 80px; 
-    border-radius: 8px;
+    margin: 30px 0 0 30px;
+    width: 70px;        /* largura */
+    height: 70px;       /* altura */
+    background: $purple; /* opcional */
+    border-radius: 10px; /* opcional */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .desc {
     color: $greydark; 
     font-weight: 700;
+    margin: 25px 0 0 0;
     
     h1 {
         font-family: 'Rawline Bold', sans-serif; 
@@ -63,18 +93,38 @@ h1 {
 .estatisticas {
     background-color: $whitedark; 
     border-radius: 10px;
+    margin: 1px;
+    height: 180px;
 }
 
-.conquistas {
+.conquistas-grid {
     background-color: $whitedark; 
-    border-radius: 10px; 
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* sempre 2 colunas */
+    gap: 10px; /* espaço entre itens */
+    max-height: 420px; /* altura fixa — pode ajustar */
+    overflow-y: auto; /* scroll vertical */
+    padding-right: 5px; /* evita que o scroll cubra imagens */
+    border-radius: 10px;
     padding: 20px;
-    
-    & img {
-        margin: 12px 0;
-        width: 100px; 
+
+    &::-webkit-scrollbar-track {
+        background: transparent; /* fundo */
+        border-radius: 10px;
     }
-    
+
+    &::-webkit-scrollbar-thumb {
+        background: $greylight; /* cor do “botão” */
+        border-radius: 10px;
+    }
+}
+
+/* deixa as imagens bonitas e ajustadas */
+.conquistas-grid img {
+    margin: 10px 0;
+    width: 100px;
+    height: auto;
+    display: block;
 }
 
 :host-context(body.modo-escuro) {
@@ -97,7 +147,7 @@ h1 {
             color: $white; font-weight: bolder;
         }
     }
-    .conquistas {
+    .conquistas-grid {
         background-color: $greydark; 
         border-radius: 10px; 
         padding: 20px;
@@ -130,7 +180,7 @@ h1 {
             color: $ultrawhite; font-weight: bolder;
         }
     }
-    .conquistas {
+    .conquistas-grid {
         background-color: $blacktwo; 
         border-radius: 10px; 
         padding: 20px;
@@ -141,16 +191,91 @@ h1 {
         color: $white;
     }
 }
-@media (max-width: 391px) {
 
+@media (min-width: 320px) and (max-width: 386px) {
+    .estatisticas {
+        background-color: $whitedark; 
+        border-radius: 10px;
+        margin: 5px 5px 15px 5px;
+        height: 480px;
+    }
+
+    .conquistas-grid {
+        background-color: $whitedark; 
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* sempre 2 colunas */
+        gap: 5px; /* espaço entre itens */
+        max-height: 420px; /* altura fixa — pode ajustar */
+        overflow-y: auto; /* scroll vertical */
+        border-radius: 10px;
+        padding: 20px;
+        position: relative;
+        right: 5px;
+        width: 102%;
+
+        &::-webkit-scrollbar-track {
+            background: transparent; /* fundo */
+            border-radius: 10px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: $greylight; /* cor do “botão” */
+            border-radius: 10px;
+        }
+    }
+
+    /* deixa as imagens bonitas e ajustadas */
+    .conquistas-grid img {
+        margin: 10px 0;
+        width: 89px;
+        height: auto;
+        display: block;
+    }
 }
 
-@media (min-width: 392px) and (max-width: 767px){
+@media (min-width: 386px) and (max-width: 767px){
+    .estatisticas {
+        background-color: $whitedark; 
+        border-radius: 10px;
+        margin: 5px 5px 15px 5px;
+        height: 480px;
+    }
 
+    .conquistas-grid {
+        background-color: $whitedark; 
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* sempre 2 colunas */
+        gap: 10px; /* espaço entre itens */
+        max-height: 420px; /* altura fixa — pode ajustar */
+        overflow-y: auto; /* scroll vertical */
+        border-radius: 10px;
+        padding: 20px;
+        position: relative;
+        right: 5px;
+        width: 102%;
+
+        &::-webkit-scrollbar-track {
+            background: transparent; /* fundo */
+            border-radius: 10px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: $greylight; /* cor do “botão” */
+            border-radius: 10px;
+        }
+    }
+
+    /* deixa as imagens bonitas e ajustadas */
+    .conquistas-grid img {
+        margin: 10px 0;
+        width: 120px;
+        height: auto;
+        display: block;
+    }
 }
 
-@media (min-width: 768px) and (max-width: 991px){
-
+@media (min-width: 767px) and (max-width: 991px){
+    
 }
 
 @media (min-width: 992px) and (max-width: 1199px){
