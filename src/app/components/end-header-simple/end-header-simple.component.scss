@@ -1,0 +1,5 @@
+
+/* remove a setinha do coiso do bootstrap */
+.dropdown-toggle::after {
+  display: none !important;
+}
