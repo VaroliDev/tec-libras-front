@@ -26,6 +26,19 @@ export class AulaPraticaComponent implements OnInit {
   protected title: string = '';
   protected text: string = '';
 
+  protected status_class: string = 'incorrect-sign';
+
+  protected current_signal: string = '';
+  protected correct_signal: string = 'letra_a';
+  protected signal: string = '';
+
+  sfx = new Audio('assets/sfx/duolingo-correct.mp3');
+
+  timer: any = null;
+  timerDuration = 5000;
+  timerStart: number = 0;
+
+
   textos: string[] = [];
   textoIndex: number = 0;
 
@@ -36,7 +49,7 @@ export class AulaPraticaComponent implements OnInit {
   gestureRecognizer!: GestureRecognizer;
   runningMode: 'IMAGE' | 'VIDEO' = 'IMAGE';
   webcamRunning = false;
-  enableWebcamButtonLabel = 'ENABLE WEBCAM';
+  enableWebcamButtonLabel = 'Ligar Câmera';
 
   videoHeight = 360;
   videoWidth = 480;
@@ -59,7 +72,7 @@ export class AulaPraticaComponent implements OnInit {
 
     const textContainer = document.getElementById('text');
     if (textContainer) {
-      textContainer.innerHTML = this.textos[this.textoIndex];
+      textContainer.innerHTML = `Pratique o seguinte sinal: ${this.textos[this.textoIndex]}`;
     }
 
     // Carrega modelo de sinais
@@ -123,7 +136,9 @@ export class AulaPraticaComponent implements OnInit {
 
     if (this.textoIndex > 0) {
       this.textoIndex--;
-      conteudo.innerHTML = this.textos[this.textoIndex];
+      conteudo.innerHTML = `Pratique o seguinte sinal: ${this.textos[this.textoIndex]}`
+      this.correct_signal = `letra_${this.textos[this.textoIndex].toLowerCase().replaceAll("'", "")}`;
+      console.log(this.correct_signal);
     }
   }
 
@@ -133,7 +148,9 @@ export class AulaPraticaComponent implements OnInit {
 
     if (this.textoIndex < this.textos.length - 1) {
       this.textoIndex++;
-      conteudo.innerHTML = this.textos[this.textoIndex];
+      conteudo.innerHTML = `Pratique o seguinte sinal: ${this.textos[this.textoIndex]}`
+      this.correct_signal = `letra_${this.textos[this.textoIndex].toLowerCase().replaceAll("'", "")}`;
+      console.log(this.correct_signal);
     } else {
       this.router.navigate(['temas']);
     }
@@ -177,8 +194,8 @@ export class AulaPraticaComponent implements OnInit {
     this.webcamRunning = !this.webcamRunning;
 
     this.enableWebcamButtonLabel = this.webcamRunning
-      ? 'DISABLE PREDICTIONS'
-      : 'ENABLE WEBCAM';
+      ? 'Desligar Câmera'
+      : 'Ligar Câmera';
 
     if (this.webcamRunning) {
       navigator.mediaDevices.getUserMedia({ video: true })
@@ -236,14 +253,62 @@ export class AulaPraticaComponent implements OnInit {
       this.gestureOutputRef.nativeElement.style.display = "block";
       this.gestureOutputRef.nativeElement.style.width = this.videoWidth + "px";
       this.gestureOutputRef.nativeElement.innerText =
-        `GestureRecognizer: ${g.categoryName}\nConfidence: ${(g.score * 100).toFixed(2)}%\nHandedness: ${hand}`;
+        `GestureRecognizer: ${g.categoryName}\n` +
+        `Confidence: ${(g.score * 100).toFixed(2)}%\n` +
+        `Handedness: ${hand}`;
+
+      this.current_signal = g.categoryName;
+
+      // ----------------------------------------------------------
+      // SISTEMA DE VALIDAÇÃO DO SINAL
+      // ----------------------------------------------------------
+      if (this.current_signal.toLowerCase() === this.correct_signal.toLowerCase()) {
+        
+        this.signal = 'Correto!';
+        this.status_class = 'correct-sign';
+
+        if (!this.timer) {
+          console.log("Iniciando timer de 5 segundos…");
+          this.timerStart = Date.now();
+          
+          this.timer = setInterval(() => {
+            const elapsed = Date.now() - this.timerStart;
+
+            if (elapsed >= this.timerDuration) {
+              clearInterval(this.timer);
+              this.timer = null;
+
+              if (this.current_signal.toLowerCase() === this.correct_signal.toLowerCase()) {
+                console.log("Sinal correto mantido por 5 segundos!");
+                this.sfx.play();
+                console.log(window.innerWidth);
+                console.log(screen.width)
+                this.PagNext();
+              }
+            }
+          }, 100);
+        }
+
+      } else {
+        if (this.timer) {
+          console.log("Sinal incorreto — cancelando timer");
+          clearInterval(this.timer);
+          this.timer = null;
+        }
+
+        this.signal = 'Incorreto!';
+        this.status_class = 'incorrect-sign';
+      }
+
     } else {
       this.gestureOutputRef.nativeElement.style.display = "none";
-    }
 
-    if (this.webcamRunning) {
+      if (this.timer) {
+        console.log("Gesto perdido — timer cancelado");
+        clearInterval(this.timer);
+        this.timer = null;
+      }
+    }
       requestAnimationFrame(() => this.predictWebcam());
-    }
   }
-
 }

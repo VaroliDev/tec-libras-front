@@ -14,7 +14,11 @@
                         [attr.stroke-dashoffset]="circumference - (percent / 100 * circumference)"
                         ></circle>
                     </svg>
+                    @if(percent > 0){
                     <div class="progress-text">{{ percent }}%</div>
+                    } @else {
+                        
+                    }
                 </div>
             </a>
         </div>
