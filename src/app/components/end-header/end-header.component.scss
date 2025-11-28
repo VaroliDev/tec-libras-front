@@ -1,0 +1,84 @@
+@import '../../../styles/colors.scss';
+
+:host-context(body.modo-contraste) {
+    .bottom-nav {
+        color: $ultrawhite;
+    }
+
+    .nav-item-link {
+        color: $ultrawhite;
+    }
+
+    .nav-item-link.active {
+        color: $aqua !important;
+    }
+
+    .nav-item-link.active::before {
+        background: $ultrablack;
+        border: 5px solid $ultrablack;    /* cor da borda interna */
+        outline: 10px solid $ultrapurple;   
+    }
+}
+
+.bottom-nav {
+    background-color: $ultrapurple !important;
+    color: $white;
+    padding: 10px 0;
+}
+
+.nav-item-link {
+    color: $softpurple;
+    transition: 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.nav-item-link svg {
+  transition: 0.3s ease;
+  
+}
+
+.nav-item-link.active svg {
+  transform: translateY(-14px);
+}
+
+/* Bolinha atrás do ícone ativo */
+.nav-item-link.active {
+  position: relative;
+}
+
+.nav-item-link.active::before {
+  content: "";
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  background: $purple;
+  border-radius: 50%;
+  top: -32px;
+  z-index: -1;
+  border: 5px solid $purple;    /* cor da borda interna */
+  outline: 10px solid $ultrapurple;   /* cor da borda externa */
+  outline-offset: 0px; 
+}
+
+/* Deixa o dropdown SOBREPOSTO mas SEM mover de lugar */
+.navbar .dropdown-menu {
+  position: absolute !important;
+  z-index: 9999 !important;
+  inset: auto auto auto auto !important; /* reseta deslocamentos */
+  transform: none !important;            /* evita mover para o lado */
+}
+
+
+/* remove a setinha do coiso do bootstrap */
+.dropdown-toggle::after {
+  display: none !important;
+}
+
+#foto_perfil {
+    width: 45px;
+    height: 45px;
+}
