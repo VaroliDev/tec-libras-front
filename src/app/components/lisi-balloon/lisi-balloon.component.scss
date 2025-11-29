@@ -1,117 +1,168 @@
+@import '../../../styles/colors.scss';
+
+/* ------------------ TEMAS ------------------ */
 :host-context(body.modo-escuro)  {
-    & #nome_usuario {
+    #nome_usuario {
         color: #F9F9F9;
     }
 
-    & .balaofala {
+    .balaofala {
         background-color: #f9f9f9; 
         color: #292929;
     }
 
-    & .seta {
+    .seta {
         border-left-color: #f9f9f9;
     }
 }
 
 :host-context(body.modo-contraste)  {
-    & #nome_usuario {
+    #nome_usuario {
         color: #ffffff;
     }
 
-    & .balaofala {
+    .balaofala {
         background-color: #00E6FF; 
         color: #000000;
     }
 
-    & .seta {
+    .seta {
         border-left-color: #00E6FF;
     }
-
 }
-/*Balão de Fala Lisi*/
+
+/* ------------------ BALÃO LISI (DESKTOP) ------------------ */
 .balao_lisi {
     display: flex;
     justify-content: center;
 
-    & img {
+    img {
         width: 200px;
     }
 }
 
 .balaofala {
-    background-color: #292929; 
-    color: #F9F9F9;
+    background-color: $black; 
+    color: $white;
     font-weight: 600;
     font-size: 15px;
-    padding: 39px 50px 50px 50px;
+    padding: 21px 50px 50px 50px;
     margin: 65px 20px 0 0;
     height: 120px;
     width: 280px;
     letter-spacing: 1px;
     border-radius: 10px;
 }
+
 .seta {
     margin-top: 105px;
     margin-left: -21px;
     width: 0;
     height: 0;
     border: 20px solid transparent;
-    border-left-color: #292929;
+    border-left-color: $black;
 }
 
-/*AJUSTE PARA DIFERENTES TAMANHOS DE TELA - RESPONSIVO*/
-
-@media (min-width: 320px) and (max-width: 411px) {
-    /*Balão de Fala Lisi*/
-    .balao_lisi {
-        & img {
-            width: 150px;
-        }
-    }
-    
-    .balaofala {
-        font-size: 12px;
-        padding: 20px 15px 20px 15px;
-        margin: 50px 20px 0 10px;
-        height: 90px;
-        width: 200px;
-        letter-spacing: 1px;
-        border-radius: 10px;
-    }
-    .seta {
-        margin-top: 83px;
-        margin-left: -21px;
-        width: 0;
-        height: 0;
-        border: 20px solid transparent;
-        border-left-color: #292929;
-    }
-    
+/* Scroll do texto */
+.frasebalao::-webkit-scrollbar {
+    width: 4px;
 }
 
-@media (min-width: 412px) and (max-width: 496px) {
-    /*Balão de Fala Lisi*/
+.frasebalao::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.frasebalao::-webkit-scrollbar-thumb {
+    background: rgb(84, 84, 84);
+    border-radius: 10px;
+}
+
+.frasebalao::-webkit-scrollbar-thumb:hover {
+    background: rgba(127, 99, 164, 0.6);
+}
+
+/* ---------- MOBILE ATÉ 575PX ---------- */
+
+@media (max-width: 575px) {
+
     .balao_lisi {
-        & img {
-            width: 150px;
-        }
+        position: relative;      /* necessário para posicionar balão e seta */
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;   /* a Lisi fica como referência */
+        margin-top: 120px;        /* ajuste se quiser descer tudo */
     }
-    
+
+    .balao_lisi img {
+        width: 180px;   /* tamanho da Lisi no mobile */
+        z-index: 1; 
+    }
+
+    /* BALÃO EM CIMA DA CABEÇA */
     .balaofala {
-        font-size: 12px;
-        padding: 28px 20px 20px 20px;
-        margin: 50px 20px 0 10px;
-        height: 90px;
+        position: absolute;
+        bottom: 180px;        /* <<<<< AQUI AJUSTA A ALTURA DO BALÃO */
+        left: 50%;
+        transform: translateX(-50%);
         width: 200px;
-        letter-spacing: 1px;
-        border-radius: 10px;
+        padding: 18px 15px;
+        background-color: $black;
+        color: $white;
+        font-size: 12px;
+        border-radius: 12px;
+        z-index: 10;
     }
+
+    /* SETA PARA BAIXO */
     .seta {
-        margin-top: 83px;
-        margin-left: -21px;
+        position: absolute;
+        bottom: 150px;        /* <<<<< AQUI AJUSTA A ALTURA DA SETA */
+        left: 54%;
+        transform: translateX(-50%);
         width: 0;
         height: 0;
-        border: 20px solid transparent;
-        border-left-color: #292929;
+
+        border-left: 12px solid transparent;
+        border-right: 12px solid transparent;
+        border-top: 12px solid $black; /* seta ↓ */
+
+        z-index: 11;
     }
+
+    .frasebalao {
+        max-height: 87px;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+}
+
+
+/* ------------------ 575px+ (Mantém organização original) ------------------ */
+@media (min-width: 575px) {
+    .frasebalao {
+        max-height: 85px;
+        width: 200px;
+        margin-left: -10px;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+}
+
+/* ------------------ INTERVALOS ESPECÍFICOS (mantive os seus) ------------------ */
+
+@media (min-width: 320px) and (max-width: 450px) {
+    .balao_lisi img { width: 120px; }
+}
+
+@media (min-width: 450px) and (max-width: 480px) {
+    .balao_lisi img { width: 135px; }
+}
+
+@media (min-width: 480px) and (max-width: 500px) {
+    .balao_lisi img { width: 145px; }
+}
+
+@media (min-width: 500px) and (max-width: 575px) {
+    .balao_lisi img { width: 150px; }
 }
