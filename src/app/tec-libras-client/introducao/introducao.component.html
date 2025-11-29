@@ -1,5 +1,5 @@
 <app-header-simple></app-header-simple>
-<app-end-header-simple></app-end-header-simple>
+
 
     <!--CARROSSEL-->
     <header>
@@ -23,18 +23,33 @@
         </div>
     </header>
 
+    
     <!--VERSÃO MOBILE-->
-    <div class="bg-mobile d-block d-sm-none">
-        <img 
-        src="img/background-introducao.png" class="bg-mobile d-block d-sm-none" alt="Fundo">
+    <div class="img-mobile bg-mobile d-block d-sm-none">
+
+        <img class="logobgmobile" src="img/Logobgmobile.png" alt="">
+        <div class="btn-cadastro-login">
+            <div class="d-grid gap-2">
+                <a class="btn btn-entrar-mobile" (click)="paglogin()">ENTRAR</a>
+                <a class="btn btn-cadastrar-mobile" (click)="pagcadastro()">CADASTRAR-SE</a>
+            </div>
+        </div>
+        
+        <img src="img/background-introducao.png" class="bg-mobile d-block d-sm-none" alt="Fundo">
     </div>
+
     
     <br class="d-none d-sm-flex">
     <br class="d-none d-sm-flex">
     <br class="d-none d-sm-flex">
     <br class="d-none d-sm-flex">
+
+
    
     <app-footer></app-footer>
+
+    <app-end-header-simple></app-end-header-simple>
+
 
     <!--PLUGIN VLIBRAS-->
     <div vw class="enabled">

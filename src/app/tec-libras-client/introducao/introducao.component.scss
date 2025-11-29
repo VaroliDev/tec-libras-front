@@ -42,65 +42,147 @@
 }
 
 
+.img-mobile {
+    position: relative;
+    width: 100%;
+    height: 100vh;       /* ocupa a altura total da tela */
+    overflow: hidden;    
+}
+
+.img-mobile img.bg-mobile {
+    width: 100%;
+    height: 100%;         
+    object-fit: cover;    /* preenche sem distorcer */
+    object-position: top center;
+    display: block;
+}
+
+.logobgmobile {
+    position: absolute;
+    top: 22%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    width: 70%;
+
+    
+    animation: pulse 2s infinite;
+}
+
+/* animação */
+@keyframes pulse {
+    0% {
+        transform: translateX(-50%) scale(1);
+    }
+    50% {
+        transform: translateX(-50%) scale(1.05); /* cresce 5% */
+    }
+    100% {
+        transform: translateX(-50%) scale(1);
+    }
+}
+
+.btn-cadastro-login {
+    position: absolute;
+    top: 65%;              
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: grid;
+    gap: 15px;
+}
+
+.btn-entrar-mobile {
+    font-family: 'Rawline Bold', sans-serif;
+    letter-spacing: 1px;
+    background-color: $purple; 
+    color: $white;
+    border-radius: 50px;
+    margin: 0 5px;
+    padding: 15px 90px;
+    font-size: 18px;
+}
+.btn-entrar-mobile:hover {
+    background-color: #6c24b5; 
+    color: #f9f9f9;
+}
+
+.btn-cadastrar-mobile {
+    font-family: 'Rawline Bold', sans-serif;
+    letter-spacing: 1px;
+    background-color: $white; 
+    color: $purple;
+    border-radius: 50px;
+    margin: 0 5px;
+    padding: 15px 20px;
+    font-size: 18px;
+}
+
+.btn-cadastrar-mobile:hover {
+    background-color: #8431d8; 
+    color: #f9f9f9;
+}
+
+
 @media (max-width: 100px) {
     .carousel-inner img {
-        width: 100%; /* Imagem ocupa toda a largura do carrossel */
-        height: 150px; /* Altura fixa para todas as imagens */
-        object-fit: cover; /* Corta as imagens para se ajustarem ao tamanho definido */
-        border-radius: 10px; /* Cantos arredondados */
+        width: 100%; 
+        height: 150px; 
+        object-fit: cover; 
+        border-radius: 10px;
     }
 }
 
 @media (min-width: 100px) and (max-width: 415px) {
     .carousel-inner img {
-        width: 100%; /* Imagem ocupa toda a largura do carrossel */
-        height: 200px; /* Altura fixa para todas as imagens */
-        object-fit: cover; /* Corta as imagens para se ajustarem ao tamanho definido */
-        border-radius: 10px; /* Cantos arredondados */
+        width: 100%; 
+        height: 200px; 
+        object-fit: cover; 
+        border-radius: 10px; 
     }
 }
 
 @media (min-width: 415px) and (max-width: 604px) {
     .carousel-inner img {
-        width: 100%; /* Imagem ocupa toda a largura do carrossel */
-        height: 250px; /* Altura fixa para todas as imagens */
-        object-fit: cover; /* Corta as imagens para se ajustarem ao tamanho definido */
-        border-radius: 10px; /* Cantos arredondados */
+        width: 100%; 
+        height: 250px; 
+        object-fit: cover; 
+        border-radius: 10px; 
     }
 }
 
 @media (min-width: 605px) and (max-width: 800px) {
     .carousel-inner img {
-        width: 100%; /* Imagem ocupa toda a largura do carrossel */
-        height: 350px; /* Altura fixa para todas as imagens */
-        object-fit: cover; /* Corta as imagens para se ajustarem ao tamanho definido */
-        border-radius: 10px; /* Cantos arredondados */
+        width: 100%; 
+        height: 350px; 
+        object-fit: cover;  
+        border-radius: 10px; 
     }
 }
 
 @media (min-width: 801px) and (max-width: 995px) {
     .carousel-inner img {
-        width: 100%; /* Imagem ocupa toda a largura do carrossel */
-        height: 450px; /* Altura fixa para todas as imagens */
-        object-fit: cover; /* Corta as imagens para se ajustarem ao tamanho definido */
-        border-radius: 10px; /* Cantos arredondados */
+        width: 100%; 
+        height: 450px; 
+        object-fit: cover; 
+        border-radius: 10px; 
     }
 }
 
 @media (min-width: 996px) and (max-width: 1180px) {
     .carousel-inner img {
-        width: 100%; /* Imagem ocupa toda a largura do carrossel */
-        height: 550px; /* Altura fixa para todas as imagens */
-        object-fit: cover; /* Corta as imagens para se ajustarem ao tamanho definido */
-        border-radius: 10px; /* Cantos arredondados */
+        width: 100%; 
+        height: 550px; 
+        object-fit: cover; 
+        border-radius: 10px;
     }
 }
 
 @media (min-width: 1181px) {
     .carousel-inner img {
-        width: 100%; /* Imagem ocupa toda a largura do carrossel */
-        height: 650px; /* Altura fixa para todas as imagens */
-        object-fit: cover; /* Corta as imagens para se ajustarem ao tamanho definido */
-        border-radius: 10px; /* Cantos arredondados */
+        width: 100%; 
+        height: 650px; 
+        object-fit: cover; 
+        border-radius: 10px; 
     }
 }

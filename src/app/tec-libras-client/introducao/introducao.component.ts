@@ -26,4 +26,15 @@ export class IntroducaoComponent {
   pagcadastro() {
     this.router.navigate(['/cadastro']); 
   }
+  paglogin() {
+    this.router.navigate(['/login']); 
+  }
+
+  pagintroducao() {
+    this.router.navigate(['/']); 
+  }
+
+  pagsobrenos() {
+    this.router.navigate(['/sobre-nos']); 
+  }
 }
