@@ -25,7 +25,7 @@
                         <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div> 
                     </div>
                     <p style=" position: relative; bottom: 10px; margin-left: 20px; font-weight: bold;">80%</p>
-                </div>
+                </div> 
 
                 <!--Nome do Tema-->
                 <h2>Pratique o sinal de {{ title }}.</h2>
@@ -36,11 +36,24 @@
                 
                 <br>
 
-                <div>(api Media Pipe)</div>
+                <div class="container videoView">
+                        <button class="btn btn-ativar-cam" (click)="enableCam()">
+                            {{ enableWebcamButtonLabel }}
+                        </button>
+                        <br>
+                        <br>
+                            <div style="position: relative;">
+                            <video #video autoplay playsinline></video>
+                            <canvas #canvas id="output_canvas" width="1280" height="720"></canvas>
+                            <p #gestureOutput class="output"></p>
+                        </div>
+                    </div>
 
                 <br>
 
-                <p>Status: <b class="correct-sign">Correto!</b></p>
+                <br>
+
+                <p>Status: <b [class]="status_class">{{ signal }}</b></p>
 
                 <br>
                 

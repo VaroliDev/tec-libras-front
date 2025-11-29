@@ -6,7 +6,8 @@
         "description": "Uma visão geral sobre o surgimento da LIBRAS, sua importância cultural e reconhecimento oficial no Brasil.",
         "aulaTeorica": "A LIBRAS é a Língua Brasileira de Sinais. Ela foi reconhecida oficialmente em 2002 pela Lei 10.436.<hr/>A língua possui gramática própria, estrutura visual-espacial e é fundamental para a comunicação da comunidade surda.",
         "demonstracao": "https://drive.google.com/file/d/1lIcBUHj-rY2U_6Y-NkFim_LhVg-UljjT/preview <hr/> https://img.goodfon.com/wallpaper/big/1/9a/mgsv-mgs5-metal-gear-solid-v.webp",
-        "aulaPratica": "'Olá'<hr/>'Bom dia'<hr/>'Boa tarde'<hr/>'Boa noite'",
+        "aulaPratica": "'A'<hr/>'B'<hr/>'C'<hr/>'D'",
+        "sinal": "alfabeto",
         "questions": {
             "q1": {
                 "question": "O que significa LIBRAS?",
