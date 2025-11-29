@@ -231,6 +231,18 @@ h1 {
         height: auto;
         display: block;
     }
+
+    .btn-edit {
+        background-color: $softpurple; 
+        color: $white; 
+        border-radius: 50px;
+        padding: 10px 70px;
+        font-size: 20px;
+    }
+
+    .img-user {
+        margin-left: 5%;
+    }
 }
 
 @media (min-width: 386px) and (max-width: 767px){
@@ -265,6 +277,10 @@ h1 {
         }
     }
 
+    h5 {
+        margin-left: 5px;
+    }
+
     /* deixa as imagens bonitas e ajustadas */
     .conquistas-grid img {
         margin: 10px 0;
@@ -272,22 +288,52 @@ h1 {
         height: auto;
         display: block;
     }
+
+    .btn-edit {
+        background-color: $softpurple; 
+        color: $white; 
+        border-radius: 50px;
+        padding: 10px 90px;
+        font-size: 20px;
+    }
+
+    .img-user {
+        margin-left: 5%;
+    }
 }
 
 @media (min-width: 767px) and (max-width: 991px){
-    
+    .conquistas-grid img {
+        margin: 20px 50px;
+        width: 200px;
+        height: auto;
+        display: block;
+    }
+
+    .conquistas-grid {
+        gap: 8px;
+    }
 }
 
 @media (min-width: 992px) and (max-width: 1199px){
+    .conquistas-grid img {
+        margin: 10px 0;
+        width: 65px;
+        height: auto;
+        display: block;
+    }
 
+    .conquistas-grid {
+        gap: 8px;
+    }
 }
 
 @media (min-width: 1200px) and (max-width: 1399px){
-    .conquistas {
-        & img {
-            margin: 12px 0;
-            width: 86.5px; 
-        }
+    .conquistas-grid img {
+        margin: 10px 0;
+        width: 75px;
+        height: auto;
+        display: block;
     }
 
     .descAtividade {
