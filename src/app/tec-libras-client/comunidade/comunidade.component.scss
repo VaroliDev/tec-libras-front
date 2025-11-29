@@ -88,3 +88,17 @@ h2 {
     background: linear-gradient(0deg, rgb(49, 66, 245) 0%, #6e7aff 100%);
   }
 }
+
+@media (max-width: 575px)  {
+  .container {
+
+    & h2 {
+      font-size: 30px;
+      margin-top: 80px;
+    }
+    & p {
+      margin: 10px;
+      font-size: 13px;
+    }
+  }
+}
