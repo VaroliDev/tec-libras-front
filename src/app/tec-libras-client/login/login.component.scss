@@ -62,6 +62,25 @@
     border: solid 2px rgb(234, 234, 234);
 }
 
+.container_entrar-mobile {
+    width: 90%;
+    margin: 4%;
+    
+    .form_entrar{
+        flex: 1; 
+        margin: 8% 6%; 
+        border-radius: 5px 0 0 5px;
+
+        & h1 {
+            width: 90%; 
+            font-size: 30px;
+            font-weight: bold; 
+            line-height: 30px; 
+            font-family: 'Rawline Bold', sans-serif ;
+        }
+    }
+}
+
 .form_entrar{
     flex: 1; 
     margin: 8% 6%; 

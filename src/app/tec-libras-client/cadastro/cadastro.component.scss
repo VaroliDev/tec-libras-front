@@ -61,6 +61,33 @@
     border: solid 2px $greylight;
 }
 
+.container_cadastro-mobile {
+    width: 90%;
+    margin: 4%;
+    
+    .form_cadastro{
+    flex: 1; 
+    margin: 8% 6%; 
+    border-radius: 5px 0 0 5px;
+
+    & h1 {
+        width: 90%; 
+        font-weight: bold; 
+        line-height: 30px; 
+        font-size: 30px;
+        font-family: 'Rawline Bold', sans-serif ;
+    }
+
+
+    & p {
+        margin-top: 5px;
+        font-size: 11px ; 
+        color: $greydark ; 
+        font-weight: bold;
+    }
+}
+}
+
 .form_cadastro{
     flex: 1; 
     margin: 8% 6%; 

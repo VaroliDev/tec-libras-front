@@ -123,6 +123,20 @@
     color: #f9f9f9;
 }
 
+nav.sticky-top {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    position: absolute;       /* Tirar do fluxo e ficar sobre a imagem */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10 !important;              /* Garante que fique acima da imagem */
+}
+
+.dropdown-toggle::after {
+  display: none !important;
+}
+
 
 @media (max-width: 100px) {
     .carousel-inner img {

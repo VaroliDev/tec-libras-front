@@ -5,8 +5,8 @@
   <app-loading></app-loading>
 }
 
-    <!--FORM CADASTRO-->
-    <div class="container_cadastro">
+    <!--FORM CADASTRO web-->
+    <div class="container_cadastro d-none d-sm-flex">
       <div class="abs_cadastro"></div>
       <div class="form_cadastro">
         <h1>Seja bem vindo(a)!</h1>
@@ -73,7 +73,79 @@
 
                 
               </div>
-            </div>
+    </div>
+
+    <!--FORM CADASTRO mobile-->
+    <div class="container_cadastro-mobile d-flex d-sm-none">
+      <div class="form_cadastro">
+        <br><br>
+        <h1>Seja bem vindo(a)!</h1>
+        <h6>Pronto(a) para embarcar nesta jornada de conhecimento?</h6>
+        <br><br>
+        <form action="" method="">
+          <label for="">Nome Completo</label>
+          <br>
+            <input class="input_cadastro" type="text" id="" name="full_name"  [(ngModel)]="user.full_name" (ngModelChange)="verificarNomeInvalido()"  required>
+            <br> <br>
+            @if (alertNomeInvalido) {
+              <div class="alert alert-danger" role="alert">
+                Insira seu nome completo.
+              </div>
+            }
+            <label for="">Nome de Usuário</label>
+            <br>
+              <input class="input_cadastro" type="text" maxlength="30" name="user_name" value="" [(ngModel)]="user.user_name" (ngModelChange)="verificarUserInvalido(); verificarUserUso()" required>
+              <p>Não utilize espaços ou caracteres especiais além de “.” ou “_”</p>
+              @if (alertUserUso) {
+                <div class="alert alert-danger" role="alert">
+                  Este nome de usuário já está em uso. Tente outro.
+                </div>
+              }
+              @if (alertUserInvalido) {
+                <div class="alert alert-danger" role="alert">
+                  Este nome de usuário é curto demais ou possui caracteres especiais não permitidos. Tente outro.
+                </div>
+              }
+              <label for="">E-mail</label>
+              <br>
+                <input class="input_cadastro" type="email" id="" name="email" value="" [(ngModel)]="user.email" (ngModelChange)="verificarEmailInvalido(); verificarEmailUso()" required>
+                <br><br>
+                @if (alertEmailUso) {
+                  <div class="alert alert-danger" role="alert">
+                    Este e-mail já está em uso. Tente outro.
+                  </div>
+                }
+                @if (alertEmailInvalido) {
+                  <div class="alert alert-danger" role="alert">
+                    Este e-mail é inválido. Verifique as informações ou tente outro.
+                  </div>
+                }
+                <label for="">Senha</label>
+                <br>
+                  <input class="input_cadastro" type="password" id="" name="password" value="" [(ngModel)]="user.password" (ngModelChange)="verificarSenhaInvalida()"  required>
+                  <br> <br>
+                  @if (alertSenhaInvalida) {
+                    <div class="alert alert-danger" role="alert">
+                      Esta senha é muito curta. Dica: senhas maiores são mais seguras!
+                    </div>
+                  }
+
+                  <div style=" text-align: center;">
+                    <br>
+                    <a class="help_entrar" (click)="paglogin()">Já possuo uma conta</a>
+                    <br><br>
+                  </div>
+                  <br>
+
+                  <button class="btn btn-cadastro" (click)="cadastrar()" style="width: 100%; font-weight: bold;">Cadastrar-se</button>
+                  <br>
+                </form>
+
+                <div style="margin-top: 15px;"><app-google-signin></app-google-signin></div>
+
+                
+              </div>
+    </div>
 
             <br><br><br>
 
