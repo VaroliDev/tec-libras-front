@@ -17,6 +17,8 @@ import { DemonstracoesComponent } from './tec-libras-client/level-themes-subject
 import { QuestionarioComponent } from './tec-libras-client/level-themes-subjects/questionario/questionario.component';
 import { CuriosidadesComponent } from './tec-libras-client/level-themes-subjects/curiosidades/curiosidades.component';
 import { AdminPageComponent } from './tec-libras-admin/admin-page/admin-page.component';
+import { TermosCondicoesComponent } from './tec-libras-client/termos-condicoes/termos-condicoes.component';
+import { CentralAjudaComponent } from './tec-libras-client/central-ajuda/central-ajuda.component';
 
 export const routes: Routes = [
     {
@@ -108,6 +110,16 @@ export const routes: Routes = [
     {
         path: 'conteudo',
         component: CadastroDeConteudoComponent
+    },
+
+    {
+        path: 'termos-condicoes',
+        component: TermosCondicoesComponent
+    },
+
+    {
+        path: 'central-ajuda',
+        component: CentralAjudaComponent
     }
    
 ];
