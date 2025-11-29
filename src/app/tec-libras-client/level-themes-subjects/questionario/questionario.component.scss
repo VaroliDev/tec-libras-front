@@ -108,6 +108,17 @@
     background-color: #d24d00;
 }
 
+.btn-voltar {
+    border: 3px solid $ultraorange;
+    color: $ultraorange;
+    font-family: 'Rawline Bold'; 
+    border-radius: 50PX;
+}
+
+.btn-voltar:hover {
+    background-color: #d24d00;
+}
+
 .option {
     background-color: #cccccc;
     color: $blacktwo;
