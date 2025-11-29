@@ -5,6 +5,13 @@
     background-color: #1f1f1f;
     color: #F9F9F9;
    }
+
+   .card .card-body {
+    min-height: 150px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    }
 }
 
 :host-context(body.modo-contraste)  {
@@ -12,6 +19,12 @@
         background-color: #0b0b0b;
         color: #ffffff;
 
+    }
+    .card .card-body {
+    min-height: 150px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     }
 }
 
@@ -122,6 +135,13 @@
     font-size: 20px;
     font-weight: 800;
 }
+
+.card .card-body {
+    min-height: 150px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    }
 
 /* ---------------------- */
 /*     RESPONSIVIDADE     */

@@ -1,6 +1,8 @@
 import { inject, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { LEVEL_LIST } from '../../assets/levels/level-index';
+import { LEVEL_LIST } from '../../assets/levels/level-index'
+import { HttpClient } from '@angular/common/http';
+import { API_URL } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -8,9 +10,18 @@ import { LEVEL_LIST } from '../../assets/levels/level-index';
 export class LevelService {
   private currentLevel: number | null = null;
   private currentTheme: number | null = null;
+  private ProgressData: any = null;
+
   private router = inject(Router);
+
+  http = inject(HttpClient)
+  API_URL = API_URL
   
   constructor() {}
+
+  /*
+  * Funções Universais
+  */
 
   //Retorna a quantidade de níveis
   getLevelCount(): number {
@@ -25,6 +36,14 @@ export class LevelService {
   async getData(id: number) {    
     return LEVEL_LIST[id-1]().then(level => level);
   };
+
+  getProgress(userId: number) {
+    return this.http.post(`${this.API_URL}/progress/view`, userId);
+  }
+
+  createProgress(progress: any) {
+    return this.http.post(`${this.API_URL}/progress`, progress);
+  }
 
   /*
   * Funções de Nivel
@@ -60,5 +79,16 @@ export class LevelService {
 
   getThemeData(themeId: number){
     return LEVEL_LIST[this.getLevel() as number - 1]().then(theme => (theme as any)[`tema${themeId}`]);
+  }
+
+  /*
+  * Funções de Progresso
+  */
+
+  getProgressData(user_id: number) {
+    this.getProgress(user_id).subscribe((data: any) => {
+      this.ProgressData = data;
+      console.log('Progress Data:', this.ProgressData);
+    });
   }
 }

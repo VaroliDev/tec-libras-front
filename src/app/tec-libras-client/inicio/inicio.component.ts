@@ -11,6 +11,7 @@ import { PhaseService } from '../../services/phase.service';
 import { UserService } from '../../services/user.service';
 import { LevelService } from '../../services/level.service';
 import { EndHeaderComponent } from "../../components/end-header/end-header.component";
+import { user } from '@angular/fire/auth';
 
 interface itemLevel {
   level: number;
@@ -70,7 +71,7 @@ export class InicioComponent {
   async ngOnInit() {
     this.getCurrentFrase();
     this.authService.isLogged();
-    this.first_name = this.userData()!.full_name.split(' ')[0];
+    this.first_name = this.userData()?.first_name;
 
     this.isLoading = true;
     
@@ -79,6 +80,8 @@ export class InicioComponent {
     this.firstName = userData.first_name || '';
     this.fullName = userData.full_name || '';
     this.userName = userData.user_name || '';
+
+    console.log('teste\n', this.levelService.getProgressData(userData.id));
 
     //Define a quantidade de niveis que vao aparecer
     const x = this.levelService.getLevelCount();
