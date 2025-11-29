@@ -10,6 +10,7 @@ import { LoadingSectionComponent } from '../../components/loading-section/loadin
 import { PhaseService } from '../../services/phase.service';
 import { UserService } from '../../services/user.service';
 import { LevelService } from '../../services/level.service';
+import { EndHeaderComponent } from "../../components/end-header/end-header.component";
 
 interface itemLevel {
   level: number;
@@ -18,7 +19,7 @@ interface itemLevel {
 
 @Component({
   selector: 'app-inicio',
-  imports: [FormsModule, HeaderComponent, FooterComponent, LevelComponent, LoadingSectionComponent] ,
+  imports: [FormsModule, HeaderComponent, FooterComponent, LevelComponent, LoadingSectionComponent, EndHeaderComponent] ,
   templateUrl: './inicio.component.html',
   styleUrl: './inicio.component.scss'
 })

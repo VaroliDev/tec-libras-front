@@ -7,10 +7,11 @@ import { HeaderComponent } from "../../components/header/header.component";
 import { FooterComponent } from "../../components/footer/footer.component";
 import { SinalComponent } from "../../components/sinal/sinal.component";
 import { AuthService } from '../../services/auth.service';
+import { EndHeaderComponent } from "../../components/end-header/end-header.component";
 
 @Component({
   selector: 'app-biblioteca-sinais',
-  imports: [FormsModule, CommonModule, HeaderComponent, FooterComponent, SinalComponent],
+  imports: [FormsModule, CommonModule, HeaderComponent, FooterComponent, SinalComponent, EndHeaderComponent],
   templateUrl: './biblioteca-sinais.component.html',
   styleUrl: './biblioteca-sinais.component.scss'
 })

@@ -4,6 +4,7 @@ import { HeaderComponent } from '../../../components/header/header.component';
 import { FooterComponent } from '../../../components/footer/footer.component';
 
 import { LevelService } from '../../../services/level.service';
+import { EndHeaderComponent } from "../../../components/end-header/end-header.component";
 
 import {
   GestureRecognizer,
@@ -13,7 +14,7 @@ import {
 
 @Component({
   selector: 'app-aula-pratica',
-  imports: [HeaderComponent, FooterComponent],
+  imports: [HeaderComponent, FooterComponent, EndHeaderComponent],
   templateUrl: './aula-pratica.component.html',
   styleUrl: './aula-pratica.component.scss'
 })

@@ -1,11 +1,11 @@
-<app-header-simple></app-header-simple>
+<app-end-header-simple></app-end-header-simple>
 
 @if(isLoading){
   <app-loading></app-loading>
 }
 
-    <!--FORM ENTRAR-->
-    <div class="container_entrar">
+    <!--FORM ENTRAR web-->
+    <div class="container_entrar d-none d-sm-flex">
       <div class="form_entrar">
         <h1>Que bom te ver novamente!</h1>
         <br><br>
@@ -41,7 +41,53 @@
                   </form>
                 </div>
                 <div class="abs_entrar"></div>
-              </div>
+    </div>
+
+    <!--FORM ENTRAR mobile-->
+    <div class="container_entrar-mobile d-flex d-sm-none">
+      <div class="form_entrar">
+        <br>
+        <br>
+        <h1>Que bom te ver novamente!</h1>
+        <br>
+        <br><br>
+        <form action="" method="">
+          <label for="">Nome de usuário ou e-mail</label>
+          <br>
+            <input class="input_entrar" type="text" id="" name="user_name" value=""  [(ngModel)]="user.user_name">
+            <br><br><br>
+            <label for="">Senha</label>
+            <br>
+              <input class="input_entrar" type="password" id="" name="password" value=""  [(ngModel)]="user.password">
+              <br>
+                <div style=" text-align: end;">
+                  <a class="help_senha" href="">Esqueci minha senha</a>
+                </div>
+
+                <br>
+                  @if (alertCredenciaisInvalidas) {
+                    <div class="alert alert-danger" role="alert">
+                      Nome de usuário, e-mail ou senha incorretos. Verifique as informações inseridas e tente novamente.
+                    </div>
+                  }
+
+                  <div style=" text-align: center;">
+                    <br>
+                      <a class="help_cadastro" (click)="pagcadastro()">Não possuo uma conta ainda</a>
+                      <br>
+                      <br>
+                    </div>
+                  <br>
+                  <br>
+                    <button class="btn btn-entrar "(click)="login()" style="width: 100%; font-weight: bold;"> ENTRAR</button>
+                    <br>
+
+                    <div style="margin-top: 15px;"><app-google-signin></app-google-signin></div>
+                    
+                  </form>
+                </div>
+                
+    </div>
 
               <br><br><br>
 

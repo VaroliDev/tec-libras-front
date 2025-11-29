@@ -1,52 +1,54 @@
+@import '../../../styles/colors.scss';
+
 :host-context(body.modo-escuro) {
     & .container_entrar {
-        background-color: #181818;
+        background-color: $blacktwo;
         border: solid 2px rgb(31, 31, 31);
     }
 
     & .input_entrar {
-        background-color: #181818; 
-        color: #f9f9f9;
+        background-color: $blacktwo; 
+        color: $white;
     }
     
     & .input_entrar:focus {
-        background-color: #2f2f2f;
-        color: #f9f9f9;
+        background-color: $greydark;
+        color: $white;
     }
 
     & .alert-danger {
         background-color: #cb4a4a;
-        color: #f9f9f9;
+        color: $white;
         border-color: #e37575;
     } 
 }
 
 :host-context(body.modo-contraste) {
     & .container_entrar {
-        background-color: #000000;
-        border: solid 2px rgb(0, 255, 221);
+        background-color: $ultrablack;
+        border: solid 2px $aqua;
     }
 
     & .input_entrar {
-        background-color: #000000; 
-        color: #ffffff;
-        border-bottom: solid 2px aqua;
+        background-color: $ultrablack; 
+        color: $ultrawhite;
+        border-bottom: solid 2px $aqua;
     }
     
     & .input_entrar:focus {
-        background-color: #0d0d0d;
-        color: #ffffff;
-        border-bottom: solid 2px aqua;
-        caret-color: aqua;
+        background-color: $blacktwo;
+        color: $ultrawhite;
+        border-bottom: solid 2px $aqua;
+        caret-color: $aqua;
     }
 
     & .help_senha {
-        color: aqua;
+        color: $aqua;
     }
 
     & .alert-danger {
         background-color: #ffcc00;
-        color: #000000;
+        color: $ultrablack;
         border-color: #e37575;
     } 
 }
@@ -58,6 +60,25 @@
     flex-wrap: wrap; 
     border-radius: 5px; 
     border: solid 2px rgb(234, 234, 234);
+}
+
+.container_entrar-mobile {
+    width: 90%;
+    margin: 4%;
+    
+    .form_entrar{
+        flex: 1; 
+        margin: 8% 6%; 
+        border-radius: 5px 0 0 5px;
+
+        & h1 {
+            width: 90%; 
+            font-size: 30px;
+            font-weight: bold; 
+            line-height: 30px; 
+            font-family: 'Rawline Bold', sans-serif ;
+        }
+    }
 }
 
 .form_entrar{
@@ -74,35 +95,35 @@
 }
 
 .input_entrar {
-    background-color: #f9f9f9; 
+    background-color: $white; 
     width: 100%; 
     border: none; 
-    border-bottom: solid 2px #F86400;
+    border-bottom: solid 2px $ultraorange;
 }
 
 .input_entrar:focus {
-    border-color: #F86400;
-    background-color: #eeddff;
+    border-color: $ultraorange;
+    background-color: $whitedark;
     outline: none;
-    caret-color: #F86400;
+    caret-color: $ultraorange;
     border-radius: 10px 10px 0 0;
 }
 
 .btn-entrar {
-    background-color: #9E3FFA; 
-    color: #f9f9f9;
+    background-color: $ultrapurple; 
+    color: $white;
     border-radius: 50px;
     margin: 0 5px;
     padding: 8px 20px;
 }
 .btn-entrar:hover {
     background-color: #7927cb; 
-    color: #f9f9f9;
+    color: $white;
 }
 
 .help_cadastro {
     font-size: 15px ; 
-    color: #F86400; 
+    color: $ultraorange; 
     font-weight: bold;
     cursor: pointer;
 }
@@ -118,7 +139,7 @@
     padding: 10px;
     flex: 1; 
     padding: 10px;
-    background: #F86400;
+    background: $ultraorange;
     background: linear-gradient(0deg, rgba(248, 100, 0, 1) 0%,  rgba(123, 39, 205, 1) 100%); 
     border-radius: 5px 0 0 5px;
     border-radius: 0 5px 5px 0;

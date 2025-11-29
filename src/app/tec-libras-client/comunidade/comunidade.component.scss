@@ -1,8 +1,10 @@
+@import '../../../styles/colors.scss';
+
 /*TITULO DA PÁGINA*/
 h2 {
   font-family: "Rawline Bold", sans-serif;
   text-align: center;
-  color: #292929;
+  color: $black;
   margin-top: 50px;
   font-weight: 700;
 }
@@ -11,7 +13,7 @@ h2 {
 .abs {
   flex: 1; 
   padding: 10px;
-  background: #7B27CD;
+  background: $ultrapurple;
   background: linear-gradient(0deg, rgba(123, 39, 205, 1) 0%, rgba(248, 100, 0, 1) 100%); 
   border-radius: 5px;
 }
@@ -25,7 +27,7 @@ h2 {
   margin: 5% 5%;
   padding: 4%;
   text-decoration: none;
-  color: #f9f9f9;
+  color: $white;
   font-weight: 700;
   font-size: 110%;
 
@@ -56,18 +58,18 @@ h2 {
 
 :host-context(body.modo-escuro) {
   h2 {
-    color: #f9f9f9;
+    color: $white;
   }
 }
 
 :host-context(body.modo-contraste) {
   h2 {
-    color: #ffffff;
+    color: $ultrawhite;
   }
 
   .btn-social {
-    border: solid 2px aqua;
-    color: #000000;
+    border: solid 2px $aqua;
+    color: $ultrablack;
   }
 
   .btn-whats {
@@ -79,7 +81,7 @@ h2 {
   }
 
   .btn-x {
-    background: linear-gradient(0deg, #858585 0%, #ffffff 100%); 
+    background: linear-gradient(0deg, #858585 0%, $ultrawhite 100%); 
   }
 
   .btn-discord {

@@ -8,6 +8,7 @@ import { GoogleSigninComponent } from '../../components/google-signin/google-sig
 import { HeaderSimpleComponent } from "../../components/header-simple/header-simple.component";
 import { FooterComponent } from "../../components/footer/footer.component";
 import { LoadingComponent } from '../../components/loading/loading.component';
+import { EndHeaderSimpleComponent } from "../../components/end-header-simple/end-header-simple.component";
 
 interface LoginResponse {
   token: string;
@@ -20,7 +21,7 @@ interface LoginResponse {
 
 @Component({
   selector: 'app-cadastro',
-  imports: [FormsModule, GoogleSigninComponent, HeaderSimpleComponent, FooterComponent, LoadingComponent],   
+  imports: [FormsModule, GoogleSigninComponent, HeaderSimpleComponent, FooterComponent, LoadingComponent, EndHeaderSimpleComponent],   
   templateUrl: './cadastro.component.html',
   styleUrls: ['./cadastro.component.scss']
 })

@@ -1,56 +1,88 @@
+@import '../../../styles/colors.scss';
+
 h1 {
     font-family: 'Rawline Bold', sans-serif;
 }
 
 .username {
-    color: #707070;
+    color: $greydark;
 }
 
 .points {
-    color: #707070;
+    color: $greydark;
 }
 
 .progress {
     height: 6px; 
     border-radius: 10px; 
-    background-color: #e0e0e0;
+    background-color: $greylight;
 
     & .progress-bar {
         width: 80%; 
-        background-color: #3AC1A8;
+        background-color: $greenlight;
     }
 }
 
 .btn-edit {
-    background-color: #B95EFF; 
-    color: #f9f9f9; 
+    background-color: $softpurple; 
+    color: $white; 
     border-radius: 20px;
 }
 
 .btn-save {
-    background-color: #F77E00 ;
-    color: #f9f9f9;
+    background-color: $softorange ;
+    color: $white;
 }
 
 .quadrado1 {
-    background-color: #F77E00;
-    width: 80px; 
-    border-radius: 8px;
+    margin: 30px 0 0 30px;
+    width: 70px;        /* largura */
+    height: 70px;       /* altura */
+    background: $softorange; /* opcional */
+    border-radius: 10px; /* opcional */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nivel-svg svg {
+    position: relative;
+    right: 3px;
+    bottom: 12px;
+}
+
+.topico-svg svg {
+    position: relative;
+    left: 2px;
+    top: 3px;
+    color: #6e20b7;
+}
+
+.conquistas-svg svg {
+    position: relative;
+    left: 3px;
+    top: 3px;
 }
 
 .quadrado2 {
-    background-color: #9E3FFA; 
-    width: 80px; 
-    border-radius: 8px;
+    margin: 30px 0 0 30px;
+    width: 70px;        /* largura */
+    height: 70px;       /* altura */
+    background: $purple; /* opcional */
+    border-radius: 10px; /* opcional */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .desc {
-    color: #707070; 
+    color: $greydark; 
     font-weight: 700;
+    margin: 25px 0 0 0;
     
     h1 {
         font-family: 'Rawline Bold', sans-serif; 
-        color: #292929; font-weight: bolder;
+        color: $black; font-weight: bolder;
     }
 }
 
@@ -59,51 +91,71 @@ h1 {
 }
 
 .estatisticas {
-    background-color: #f1f1f1; 
+    background-color: $whitedark; 
     border-radius: 10px;
+    margin: 1px;
+    height: 180px;
 }
 
-.conquistas {
-    background-color: #f1f1f1; 
-    border-radius: 10px; 
+.conquistas-grid {
+    background-color: $whitedark; 
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* sempre 2 colunas */
+    gap: 10px; /* espaço entre itens */
+    max-height: 420px; /* altura fixa — pode ajustar */
+    overflow-y: auto; /* scroll vertical */
+    padding-right: 5px; /* evita que o scroll cubra imagens */
+    border-radius: 10px;
     padding: 20px;
-    
-    & img {
-        margin: 12px 0;
-        width: 100px; 
+
+    &::-webkit-scrollbar-track {
+        background: transparent; /* fundo */
+        border-radius: 10px;
     }
-    
+
+    &::-webkit-scrollbar-thumb {
+        background: $greylight; /* cor do “botão” */
+        border-radius: 10px;
+    }
+}
+
+/* deixa as imagens bonitas e ajustadas */
+.conquistas-grid img {
+    margin: 10px 0;
+    width: 100px;
+    height: auto;
+    display: block;
 }
 
 :host-context(body.modo-escuro) {
     .username {
-        color: #c3c3c3;
+        color: $greylight;
     }
     .points {
-        color: #c3c3c3;
+        color: $greylight;
     }
     .estatisticas {
-        background-color: #333333; 
+        background-color: $greydark; 
         border-radius: 10px;
     }
     .desc {
-        color: #c3c3c3; 
+        color: $greylight; 
         font-weight: 700;
 
         h1 {
             font-family: 'Rawline Bold', sans-serif; 
-            color: #f9f9f9; font-weight: bolder;
+            color: $white; font-weight: bolder;
         }
     }
-    .conquistas {
-        background-color: #333333; 
+    .conquistas-grid {
+        background-color: $greydark; 
         border-radius: 10px; 
         padding: 20px;
     }
 
     .modal-content {
-        background-color: #111111;
-        color: #f9f9f9;
+        background-color: $blacktwo;
+        color: $white;
     }
 
      
@@ -111,44 +163,119 @@ h1 {
 
 :host-context(body.modo-contraste) {
     .username {
-        color: #ffffff;
+        color: $ultrawhite;
     }
     .points {
-        color: #ffffff;
+        color: $ultrawhite;
     }
     .estatisticas {
-        background-color: #111111; 
+        background-color: $blacktwo; 
         border-radius: 10px;
     }
     .desc {
-        color: #ffffff; 
+        color: $ultrawhite; 
         font-weight: 700;
         h1 {
             font-family: 'Rawline Bold', sans-serif; 
-            color: #ffffff; font-weight: bolder;
+            color: $ultrawhite; font-weight: bolder;
         }
     }
-    .conquistas {
-        background-color: #111111; 
+    .conquistas-grid {
+        background-color: $blacktwo; 
         border-radius: 10px; 
         padding: 20px;
     }
 
     .modal-content {
-        background-color: #0b0b0b;  
-        color: #f9f9f9;
+        background-color: $blacktwo;  
+        color: $white;
     }
 }
-@media (max-width: 391px) {
 
+@media (min-width: 320px) and (max-width: 386px) {
+    .estatisticas {
+        background-color: $whitedark; 
+        border-radius: 10px;
+        margin: 5px 5px 15px 5px;
+        height: 480px;
+    }
+
+    .conquistas-grid {
+        background-color: $whitedark; 
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* sempre 2 colunas */
+        gap: 5px; /* espaço entre itens */
+        max-height: 420px; /* altura fixa — pode ajustar */
+        overflow-y: auto; /* scroll vertical */
+        border-radius: 10px;
+        padding: 20px;
+        position: relative;
+        right: 5px;
+        width: 102%;
+
+        &::-webkit-scrollbar-track {
+            background: transparent; /* fundo */
+            border-radius: 10px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: $greylight; /* cor do “botão” */
+            border-radius: 10px;
+        }
+    }
+
+    /* deixa as imagens bonitas e ajustadas */
+    .conquistas-grid img {
+        margin: 10px 0;
+        width: 89px;
+        height: auto;
+        display: block;
+    }
 }
 
-@media (min-width: 392px) and (max-width: 767px){
+@media (min-width: 386px) and (max-width: 767px){
+    .estatisticas {
+        background-color: $whitedark; 
+        border-radius: 10px;
+        margin: 5px 5px 15px 5px;
+        height: 480px;
+    }
 
+    .conquistas-grid {
+        background-color: $whitedark; 
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* sempre 2 colunas */
+        gap: 10px; /* espaço entre itens */
+        max-height: 420px; /* altura fixa — pode ajustar */
+        overflow-y: auto; /* scroll vertical */
+        border-radius: 10px;
+        padding: 20px;
+        position: relative;
+        right: 5px;
+        width: 102%;
+
+        &::-webkit-scrollbar-track {
+            background: transparent; /* fundo */
+            border-radius: 10px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: $greylight; /* cor do “botão” */
+            border-radius: 10px;
+        }
+    }
+
+    /* deixa as imagens bonitas e ajustadas */
+    .conquistas-grid img {
+        margin: 10px 0;
+        width: 120px;
+        height: auto;
+        display: block;
+    }
 }
 
-@media (min-width: 768px) and (max-width: 991px){
-
+@media (min-width: 767px) and (max-width: 991px){
+    
 }
 
 @media (min-width: 992px) and (max-width: 1199px){

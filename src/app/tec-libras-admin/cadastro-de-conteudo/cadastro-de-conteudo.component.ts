@@ -4,11 +4,12 @@ import { CommonModule } from '@angular/common'
 import { HeaderComponent } from "../../components/header/header.component";
 import { FooterComponent } from "../../components/footer/footer.component";
 import { Router } from '@angular/router';
+import { EndHeaderComponent } from "../../components/end-header/end-header.component";
 
 @Component({
   selector: 'app-cadastro-de-conteudo',
   standalone: true, // 
-  imports: [CommonModule, ReactiveFormsModule, HeaderComponent, FooterComponent], 
+  imports: [CommonModule, ReactiveFormsModule, HeaderComponent, FooterComponent, EndHeaderComponent], 
   templateUrl: './cadastro-de-conteudo.component.html',
   styleUrl: './cadastro-de-conteudo.component.scss'
 })

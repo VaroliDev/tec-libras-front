@@ -1,42 +1,45 @@
+@import '../../../styles/colors.scss';
+
+
 :host-context(body.modo-escuro)  {
     & #nome_usuario {
-        color: #F9F9F9;
+        color: $white;
     }
 
     & .balaofala {
-        background-color: #f9f9f9; 
-        color: #292929;
+        background-color: $white; 
+        color: $black;
     }
 
     & .seta {
-        border-left-color: #f9f9f9;
+        border-left-color: $white;
     }
 }
 
 :host-context(body.modo-contraste)  {
     & #nome_usuario {
-        color: #ffffff;
+        color: $ultrawhite;
     }
 
     & .balaofala {
-        background-color: #00E6FF; 
-        color: #000000;
+        background-color: $aqua; 
+        color: $ultrablack;
     }
 
     & .seta {
-        border-left-color: #00E6FF;
+        border-left-color: $aqua;
     }
 
     & .niveis {
         & .circulonivel1 {
             & p {
-                color: #00E6FF;
+                color: $aqua;
             }
             
         }
         & .circulonivel2 {
             & p {
-                color: #00E6FF;
+                color: $aqua;
             }
             
         }
@@ -48,7 +51,7 @@
 #nome_usuario {
     font-family: "Rawline Bold", sans-serif;
     text-align: center;
-    color: #292929;
+    color: $black;
     margin-top: 50px;
     font-weight: 700;
 }
@@ -64,8 +67,8 @@
 }
 
 .balaofala {
-    background-color: #292929; 
-    color: #F9F9F9;
+    background-color: $black; 
+    color: $white;
     font-weight: 600;
     font-size: 15px;
     padding: 21px 50px 50px 50px;
@@ -75,20 +78,163 @@
     letter-spacing: 1px;
     border-radius: 10px;
 }
+
+.frasebalao::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .frasebalao::-webkit-scrollbar-track {
+    background: transparent;   /* deixa discreto */
+  }
+
+  .frasebalao::-webkit-scrollbar-thumb {
+    background: rgb(84, 84, 84); /* roxo suave */
+    border-radius: 10px;
+  }
+
+  .frasebalao::-webkit-scrollbar-thumb:hover {
+    background: rgba(127, 99, 164, 0.6);
+  }
+
+
 .seta {
     margin-top: 105px;
     margin-left: -21px;
     width: 0;
     height: 0;
     border: 20px solid transparent;
-    border-left-color: #292929;
+    border-left-color: $black;
 }
 
 /*AJUSTE PARA DIFERENTES TAMANHOS DE TELA - RESPONSIVO*/
 
-@media (min-width: 320px) and (max-width: 411px) {
+@media (min-width: 320px) and (max-width: 450px) {
     /*Balão de Fala Lisi*/
     .balao_lisi {
+        width: 85%;
+        & img {
+            width: 120px;
+        }
+    }
+    
+    .balaofala {
+        font-size: 10px;
+        padding: 20px 15px 20px 15px;
+        margin: 30px 20px 0 10px;
+        height: 90px;
+        width: 200px;
+        letter-spacing: 1px;
+        border-radius: 10px;     /* só aparece se precisar */
+    }
+    
+    .seta {
+        margin-top: 60px;
+        margin-left: -21px;
+        width: 0;
+        height: 0;
+        border: 20px solid transparent;
+        border-left-color: $black;
+    }
+
+    #nome_usuario {
+        font-size: 35px;
+        text-align: left;
+        margin-left: 11%;
+    }
+
+    .frasebalao {
+        max-height: 65px;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+}
+
+@media (min-width: 450px) and (max-width: 480px) {
+    /*Balão de Fala Lisi*/
+    .balao_lisi {
+        width: 85%;
+        & img {
+            width: 135px;
+        }
+    }
+    
+    .balaofala {
+        font-size: 10px;
+        padding: 20px 15px 20px 15px;
+        margin: 40px 20px 0 10px;
+        height: 90px;
+        width: 200px;
+        letter-spacing: 1px;
+        border-radius: 10px;     /* só aparece se precisar */
+    }
+    
+    .seta {
+        margin-top: 65px;
+        margin-left: -21px;
+        width: 0;
+        height: 0;
+        border: 20px solid transparent;
+        border-left-color: $black;
+    }
+
+    #nome_usuario {
+        font-size: 40px;
+        text-align: left;
+        margin-left: 10%;
+    }
+
+    .frasebalao {
+        max-height: 65px;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 500px) {
+    /*Balão de Fala Lisi*/
+    .balao_lisi {
+        width: 90%;
+        & img {
+            width: 145px;
+        }
+    }
+    
+    .balaofala {
+        font-size: 12px;
+        padding: 20px 15px 20px 15px;
+        margin: 40px 20px 0 10px;
+        height: 90px;
+        width: 200px;
+        letter-spacing: 1px;
+        border-radius: 10px;     /* só aparece se precisar */
+    }
+    
+    .seta {
+        margin-top: 65px;
+        margin-left: -21px;
+        width: 0;
+        height: 0;
+        border: 20px solid transparent;
+        border-left-color: $black;
+    }
+
+    #nome_usuario {
+        font-size: 42px;
+        text-align: left;
+        margin-left: 10%;
+    }
+
+    .frasebalao {
+        max-height: 65px;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+}
+
+@media (min-width: 500px) and (max-width: 575px) {
+    /*Balão de Fala Lisi*/
+    .balao_lisi {
+        width: 100%;
         & img {
             width: 150px;
         }
@@ -97,46 +243,41 @@
     .balaofala {
         font-size: 12px;
         padding: 20px 15px 20px 15px;
-        margin: 50px 20px 0 10px;
+        margin: 40px 20px 0 10px;
         height: 90px;
         width: 200px;
         letter-spacing: 1px;
-        border-radius: 10px;
+        border-radius: 10px;     /* só aparece se precisar */
     }
+    
     .seta {
-        margin-top: 83px;
+        margin-top: 65px;
         margin-left: -21px;
         width: 0;
         height: 0;
         border: 20px solid transparent;
-        border-left-color: #292929;
+        border-left-color: $black;
     }
-    
+
+    #nome_usuario {
+        font-size: 42px;
+        text-align: left;
+        margin-left: 10%;
+    }
+
+    .frasebalao {
+        max-height: 65px;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
 }
 
-@media (min-width: 412px) and (max-width: 496px) {
-    /*Balão de Fala Lisi*/
-    .balao_lisi {
-        & img {
-            width: 150px;
-        }
-    }
-    
-    .balaofala {
-        font-size: 12px;
-        padding: 28px 20px 20px 20px;
-        margin: 50px 20px 0 10px;
-        height: 90px;
+@media (min-width: 575px) {
+    .frasebalao {
+        max-height: 85px;
         width: 200px;
-        letter-spacing: 1px;
-        border-radius: 10px;
-    }
-    .seta {
-        margin-top: 83px;
-        margin-left: -21px;
-        width: 0;
-        height: 0;
-        border: 20px solid transparent;
-        border-left-color: #292929;
+        margin-left: -10px;
+        overflow-y: auto;
+        overflow-x: hidden;
     }
 }

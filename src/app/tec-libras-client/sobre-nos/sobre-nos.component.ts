@@ -5,10 +5,11 @@ import { Router } from '@angular/router';
 import { FooterComponent } from "../../components/footer/footer.component";
 import { HeaderComponent } from "../../components/header/header.component";
 import { HeaderSimpleComponent } from "../../components/header-simple/header-simple.component";
+import { EndHeaderComponent } from "../../components/end-header/end-header.component";
 
 @Component({
   selector: 'app-sobre-nos',
-  imports: [FormsModule, HeaderComponent, HeaderSimpleComponent,FooterComponent],
+  imports: [FormsModule, HeaderComponent, HeaderSimpleComponent, FooterComponent, EndHeaderComponent],
   templateUrl: './sobre-nos.component.html',
   styleUrl: './sobre-nos.component.scss'
 })

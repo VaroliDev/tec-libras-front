@@ -5,10 +5,11 @@ import { FooterComponent } from "../../../components/footer/footer.component";
 import { LisiBalloonComponent } from '../../../components/lisi-balloon/lisi-balloon.component';
 
 import { LevelService } from '../../../services/level.service';
+import { EndHeaderComponent } from "../../../components/end-header/end-header.component";
 
 @Component({
   selector: 'app-curiosidades',
-  imports: [HeaderComponent, FooterComponent, LisiBalloonComponent],
+  imports: [HeaderComponent, FooterComponent, LisiBalloonComponent, EndHeaderComponent],
   templateUrl: './curiosidades.component.html',
   styleUrl: './curiosidades.component.scss',
   standalone: true

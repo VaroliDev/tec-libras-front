@@ -8,11 +8,12 @@ import { AuthService } from '../../services/auth.service';
 import { LoadingComponent } from '../../components/loading/loading.component';
 import { UserService } from '../../services/user.service';
 import { HttpClient } from '@angular/common/http';
+import { EndHeaderComponent } from "../../components/end-header/end-header.component";
 
 @Component({
   selector: 'app-conta',
   standalone: true, 
-  imports: [FormsModule, HeaderComponent, FooterComponent, LoadingComponent],
+  imports: [FormsModule, HeaderComponent, FooterComponent, LoadingComponent, EndHeaderComponent],
   templateUrl: './conta.component.html',
   styleUrls: ['./conta.component.scss']
 })

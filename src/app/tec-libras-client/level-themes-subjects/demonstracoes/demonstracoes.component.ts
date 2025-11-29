@@ -6,10 +6,11 @@ import { LoadingSectionComponent } from '../../../components/loading-section/loa
 
 import { LevelService } from '../../../services/level.service';
 import { SafePipe } from '../../../pipes/safe.pipe';
+import { EndHeaderComponent } from "../../../components/end-header/end-header.component";
 
 @Component({
   selector: 'app-demonstracoes',
-  imports: [HeaderComponent, FooterComponent, LoadingSectionComponent, SafePipe],
+  imports: [HeaderComponent, FooterComponent, LoadingSectionComponent, SafePipe, EndHeaderComponent],
   templateUrl: './demonstracoes.component.html',
   styleUrl: './demonstracoes.component.scss'
 })
