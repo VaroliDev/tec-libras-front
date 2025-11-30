@@ -38,11 +38,11 @@ export class LevelService {
   };
 
   getProgress(userId: number) {
-    return this.http.post(`${this.API_URL}/progress/view`, userId);
+    return this.http.post(`${this.API_URL}/user/progress/view`, {user_id  : userId});
   }
 
   createProgress(progress: any) {
-    return this.http.post(`${this.API_URL}/progress`, progress);
+    return this.http.post(`${this.API_URL}/user/progress`, progress);
   }
 
   /*

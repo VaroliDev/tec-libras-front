@@ -81,8 +81,6 @@ export class InicioComponent {
     this.fullName = userData.full_name || '';
     this.userName = userData.user_name || '';
 
-    console.log('teste\n', this.levelService.getProgressData(userData.id));
-
     //Define a quantidade de niveis que vao aparecer
     const x = this.levelService.getLevelCount();
 
