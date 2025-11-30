@@ -8,6 +8,13 @@
   align-items: center;
   background: rgba(0,0,0,0.5);
   z-index: 9999;
+  opacity: 0;
+  animation: fadeIn 0.25s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 .btnclose {
@@ -18,10 +25,12 @@
 
 .custom-alert-box {
   background-color: #fff;
-  width: 20%;
+  width: 90%;          // ocupa quase toda a largura em telas pequenas
+  max-width: 400px;    // limite em telas maiores
   padding: 30px;
   border-radius: 10px;
   text-align: center;
+  box-sizing: border-box;
 }
 
 img {
@@ -30,7 +39,7 @@ img {
 }
 
 h6 {
-  margin: 10px;
+  margin: 15px 10px 25px 10px;
   
 }
 

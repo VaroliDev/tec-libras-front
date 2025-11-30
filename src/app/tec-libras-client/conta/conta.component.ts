@@ -89,11 +89,11 @@ export class ContaComponent implements AfterViewInit {
           first_name: this.userData()!.full_name.split(' ')[0]
         });
 
-        this.alert.open('Usuário <b>atualizado</b> com sucesso!', 'success');
+        this.alert.open('<h3><b>Informações atualizadas!</b></h3> <p>As informações de sua conta foram atualizadas com sucesso.</p>', 'success');
 
       },
       error: (err) => {
-        this.alert.open('Erro ao atualizar usuário', 'error');
+        this.alert.open('<h3><b>Erro ao atualizar!</b></h3> <p>As informações de sua conta não foram atualizadas. Tente novamente.</p>', 'error');
       }
     });
   }
