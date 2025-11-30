@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { LEVEL_LIST } from '../../assets/levels/level-index'
 import { HttpClient } from '@angular/common/http';
 import { API_URL } from '../../environments/environment';
+import { Observable, filter, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -85,39 +86,48 @@ export class LevelService {
   * Funções de Progresso
   */
 
-  getProgressData(user_id: number) {
-    this.getProgress(user_id).subscribe((data: any) => {
-      this.ProgressData = this.formatProgressData(data.progresso);
-      console.log(this.ProgressData);
-      return this.ProgressData;
+  getProgressData(user_id: number): Promise<any> {
+    return new Promise((resolve, reject) => {
+      this.getProgress(user_id).subscribe({
+        next: (data: any) => {
+          this.ProgressData = this.formatProgressData(data.progresso);
+          resolve(this.ProgressData);
+        },
+        error: (error) => {
+          reject(error);
+        }
+      });
     });
+  }
+
+  getFormattedData() {
+    return this.ProgressData;
   }
 
   formatProgressData(progressList: any[]) {
   const formatted: any[] = [];
 
-  progressList.forEach((item) => {
-    // 1. Procurar o nível
-    let level = formatted.find(l => l.level_id === item.level_id);
+  progressList.forEach((item: any) => {
+    let level = formatted.find((l: any) => l.level_id === item.level_id);
     if (!level) {
       level = {
         level_id: item.level_id,
-        subjects: []
+        subjects: [],
+        percentage: 0
       };
       formatted.push(level);
     }
 
-    // 2. Procurar o subject dentro do nível
     let subject = level.subjects.find((s: any) => s.subject_id === item.subject_id);
     if (!subject) {
       subject = {
         subject_id: item.subject_id,
-        topics: []
+        topics: [],
+        percentage: 0
       };
       level.subjects.push(subject);
     }
 
-    // 3. Procurar o tópico dentro do subject
     let topic = subject.topics.find((t: any) => t.topic_id === item.topic_id);
     if (!topic) {
       topic = {
@@ -129,6 +139,23 @@ export class LevelService {
       };
       subject.topics.push(topic);
     }
+  });
+
+  formatted.forEach((level: any) => {
+    let levelCompleted = 0;
+
+    level.subjects.forEach((subject: any) => {
+      const totalTopics = 5;
+      const completedTopics = subject.topics.filter((t: any) => t.is_completed).length;
+
+      subject.percentage = Math.round((completedTopics / totalTopics) * 100);
+
+      levelCompleted += completedTopics;
+    });
+
+    const totalTopicsLevel = 25;
+
+    level.percentage = Math.round((levelCompleted / totalTopicsLevel) * 100);
   });
 
   return formatted;

@@ -11,6 +11,7 @@ import { LevelService } from '../../services/level.service';
 })
 export class LevelComponent implements OnInit {
   private LevelService = inject(LevelService);
+  private progress: any;
 
   @Input() level: number = 1;    
   @Input() percent: number = 70; 
@@ -25,17 +26,18 @@ export class LevelComponent implements OnInit {
     this.router.navigate(['nivel']);
   }
 
+
   ngOnInit(): void {
-    // define o raio baseado no tamanho da tela
-    const isSmallScreen = window.innerWidth < 575; // você escolhe o valor
+    
+
+    const isSmallScreen = window.innerWidth < 575;
 
     if (isSmallScreen) {
-      this.radius = 33;   // tela pequena
+      this.radius = 33;
     } else {
-      this.radius = 65;   // tela grande
+      this.radius = 65; 
     }
 
-    // recalcula o circumference
     this.circumference = 2 * Math.PI * this.radius;
   }
 }

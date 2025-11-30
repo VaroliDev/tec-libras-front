@@ -11,7 +11,6 @@ import { PhaseService } from '../../services/phase.service';
 import { UserService } from '../../services/user.service';
 import { LevelService } from '../../services/level.service';
 import { EndHeaderComponent } from "../../components/end-header/end-header.component";
-import { user } from '@angular/fire/auth';
 
 interface itemLevel {
   level: number;
@@ -81,20 +80,23 @@ export class InicioComponent {
     this.fullName = userData.full_name || '';
     this.userName = userData.user_name || '';
 
-    this.levelService.getProgressData(userData.id);
+    // Aguarde os dados serem carregados
+    try {
+      const progressData = await this.levelService.getProgressData(userData.id);
+      
+      const x = this.levelService.getLevelCount();
 
-    //Define a quantidade de niveis que vao aparecer
-    const x = this.levelService.getLevelCount();
-
-    //O setTimeout é para simular o carregamento dos niveis
       for(let i=1; i<=x; i++){
         this.item.push({
           level: i,
-          percent: Math.floor(Math.random() * 11) * 10
+          percent: progressData[i - 1]?.percentage || 0
         });
       }
-      
+    } catch (error) {
+      console.error('Erro ao carregar progresso:', error);
+    } finally {
       this.isLoading = false;
+    }
   }
 
   getCurrentFrase(): string {
