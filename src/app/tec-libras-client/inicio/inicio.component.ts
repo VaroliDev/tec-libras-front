@@ -90,9 +90,30 @@ export class InicioComponent {
       const totalLevels = this.levelService.getLevelCount();
 
       for(let i = 1; i <= totalLevels; i++){
+        const levelProgress = progressData[i - 1]?.percentage || 0;
+        const isUnlocked = unlockedLevelIds.includes(i);
+
+        // Verifica se o nível está 100% completo e o próximo não está desbloqueado
+        if (levelProgress === 100 && i < totalLevels && !unlockedLevelIds.includes(i + 1)) {
+          try {
+            // Desbloqueia o próximo nível
+            await this.levelService.unlockLevel({
+              user_id: userData.id,
+              level_id: i + 1
+            }).toPromise();
+
+            console.log(`Nível ${i + 1} desbloqueado automaticamente!`);
+            
+            // Adiciona o novo nível desbloqueado ao array
+            unlockedLevelIds.push(i + 1);
+          } catch (error) {
+            console.error(`Erro ao desbloquear nível ${i + 1}:`, error);
+          }
+        }
+
         this.item.push({
           level: i,
-          percent: progressData[i - 1]?.percentage || 0,
+          percent: levelProgress,
           unlocked: unlockedLevelIds.includes(i)
         });
       }
