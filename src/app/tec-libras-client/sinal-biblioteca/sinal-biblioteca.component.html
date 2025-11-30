@@ -1,0 +1,59 @@
+<app-header></app-header>
+<app-end-header></app-end-header>
+
+<div class="container">
+    <br>
+    <!--Botões de Voltar e Avançar-->
+    <div class="card card-subject">
+        <div class="card-body">
+            <!--seta para voltar (add link)-->
+            <div style="display: flex;">
+                <a class="back-arrow" (click)="PagInicio()"> < </a>
+                <div>
+                    <h6 class="card-subtitle mb-2">Biblioteca de Sinais</h6>
+                    <h5 class="card-title"> Conhecendo um Sinal </h5>
+                </div>
+            </div>
+
+            <br>
+
+            <!--Conteúdo-->
+            <div class="container" style="max-width: 98%;">
+                
+                <h2>Nome do Sinal</h2> 
+
+                <!--Video da demonstração -->
+                <div class="video-demonstracao ratio ratio-16x9 mx-auto p-2">
+                    @if(isLoading) {
+                        <app-loading-section style="margin-top: 25%;"></app-loading-section>
+                    }
+
+                    <iframe
+                        [src]="url | safe"
+                        width="40"
+                        height="60"
+                        allow="autoplay; encrypted-media"
+                        allowfullscreen
+                        frameborder="0" style="border-radius: 10px;"> 
+                    </iframe>
+                </div>
+
+                <p> <strong>Descrição:</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas nobis nam aut quis commodi inventore, eveniet vero. Eligendi ipsam, perspiciatis inventore beatae molestiae dolorem, libero placeat dignissimos est, sunt similique!</p>
+
+                <p> <strong>Principais utilizações:</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas nobis nam aut quis commodi inventore, eveniet vero. Eligendi ipsam, perspiciatis inventore beatae molestiae dolorem, libero placeat dignissimos est, sunt similique!</p>
+
+                <p> <strong>Tema:</strong> Lorem ipsum </p>
+
+                <br>
+                
+
+            </div>
+        </div>
+    </div>
+
+
+    <br>
+    <br>
+</div>
+
+<app-footer></app-footer>
