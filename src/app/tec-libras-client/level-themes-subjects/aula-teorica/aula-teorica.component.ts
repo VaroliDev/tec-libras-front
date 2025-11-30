@@ -45,6 +45,7 @@ export class AulaTeoricaComponent {
       this.textoIndex++;
       conteudo.innerHTML = this.textos[this.textoIndex];
     } else {
+      this.levelService.registerProgress(1);
       this.router.navigate(['temas']);
     }
   }
