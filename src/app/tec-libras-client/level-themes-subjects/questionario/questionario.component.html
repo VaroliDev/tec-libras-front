@@ -47,6 +47,7 @@
                     <div class="options">
                         <button class="option" 
                                 *ngFor="let opt of optionKeys"
+                                [ngClass]="getOptionClass(opt)"
                                 (click)="selectOption(opt)">
                             {{ currentQuestion?.options[opt] }}
                         </button>
@@ -55,16 +56,6 @@
                     <br>
 
                     <p>Acertos: {{ correctCount }} | Erros: {{ wrongCount }}</p>
-                </div>
-
-                <br>
-                
-                <!--Botão de Avançar-->
-                <div class="d-flex gap-3 mt-3">
-                    <!-- Botão Voltar -->
-                    <a class="btn btn-voltar flex-fill" (click)="prevQuestion()"> Voltar </a>
-                    <!-- Botão Avançar -->
-                    <a class="btn btn-avancar flex-fill" (click)="nextQuestion()"> Avançar </a>
                 </div>
 
                 <br>

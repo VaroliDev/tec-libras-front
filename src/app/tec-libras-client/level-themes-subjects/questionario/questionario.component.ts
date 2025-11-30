@@ -30,6 +30,8 @@ export class QuestionarioComponent {
   correctCount: number = 0;
   wrongCount: number = 0;
   answered: boolean = false;
+  
+  selectedOption: string | null = null;
 
   PagInicio(){
     this.router.navigate(['temas']);
@@ -48,6 +50,7 @@ export class QuestionarioComponent {
   selectOption(optionKey: string) {
     if (this.answered) return;
     this.answered = true;
+    this.selectedOption = optionKey;
 
     const correct = this.currentQuestion.answer;
 
@@ -56,6 +59,31 @@ export class QuestionarioComponent {
     } else {
       this.wrongCount++;
     }
+
+    // Avança automaticamente após 1 segundo
+    setTimeout(() => {
+      this.nextQuestion();
+    }, 1000);
+  }
+
+  getOptionClass(optionKey: string): string {
+    if (!this.answered) {
+      return '';
+    }
+
+    const correctAnswer = this.currentQuestion.answer;
+
+    // Se esta é a resposta correta, sempre mostra verde
+    if (optionKey === correctAnswer) {
+      return 'option-correct';
+    }
+
+    // Se esta foi a opção selecionada e está errada, mostra vermelho
+    if (optionKey === this.selectedOption && optionKey !== correctAnswer) {
+      return 'option-wrong';
+    }
+
+    return '';
   }
 
   prevQuestion() {
@@ -64,6 +92,7 @@ export class QuestionarioComponent {
       this.updateProgress();
       this.currentQuestion = this.questionsArray[this.questionIndex];
       this.answered = false;
+      this.selectedOption = null;
     } else {
       this.router.navigate(['temas']);
     }
@@ -75,11 +104,13 @@ export class QuestionarioComponent {
       this.updateProgress();
       this.currentQuestion = this.questionsArray[this.questionIndex];
       this.answered = false;
+      this.selectedOption = null;
     } else {
       if(this.correctCount !== this.questionsArray.length){
         this.questionIndex = 0;
         this.currentQuestion = this.questionsArray[this.questionIndex];
         this.answered = false;
+        this.selectedOption = null;
         this.correctCount = 0;
         this.wrongCount = 0;
         this.updateProgress();

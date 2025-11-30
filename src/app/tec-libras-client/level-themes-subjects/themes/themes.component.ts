@@ -1,11 +1,12 @@
-import { Component, inject } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, inject, OnInit } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 import { FooterComponent } from "../../../components/footer/footer.component";
 import { HeaderComponent } from "../../../components/header/header.component";
 import { LevelService } from '../../../services/level.service';
 import { UserService } from '../../../services/user.service';
 import { EndHeaderComponent } from "../../../components/end-header/end-header.component";
 import { CommonModule } from '@angular/common';
+import { filter } from 'rxjs/operators';
 
 interface TopicStatus {
   teorica: boolean;
@@ -21,7 +22,7 @@ interface TopicStatus {
   templateUrl: './themes.component.html',
   styleUrl: './themes.component.scss'
 })
-export class ThemesComponent {
+export class ThemesComponent implements OnInit {
   private router = inject(Router)
   private levelService = inject(LevelService);
   private userService = inject(UserService);
@@ -37,6 +38,24 @@ export class ThemesComponent {
     questionario: false,
     curiosidades: false
   };
+
+  // Ordem dos tópicos
+  private topicOrder: (keyof TopicStatus)[] = [
+    'teorica',
+    'demonstracao',
+    'pratica',
+    'questionario',
+    'curiosidades'
+  ];
+
+  constructor() {
+    // Escuta mudanças de rota para recarregar os dados
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(() => {
+        this.loadTopicsProgress();
+      });
+  }
 
   PagBack(){
     this.router.navigate(['nivel'])
@@ -60,6 +79,55 @@ export class ThemesComponent {
 
   PagCuriosidades(){
     this.router.navigate(['curiosidades'])
+  }
+
+  /**
+   * Manipula o clique em um tópico
+   * Previne navegação se o tópico estiver bloqueado
+   */
+  handleTopicClick(topic: keyof TopicStatus, event: Event) {
+    if (this.isTopicLocked(topic)) {
+      event.preventDefault();
+      event.stopPropagation();
+      return;
+    }
+
+    // Navega para a página correspondente
+    switch(topic) {
+      case 'teorica':
+        this.PagTeorica();
+        break;
+      case 'demonstracao':
+        this.PagDemonstracao();
+        break;
+      case 'pratica':
+        this.PagPratica();
+        break;
+      case 'questionario':
+        this.PagQuestionario();
+        break;
+      case 'curiosidades':
+        this.PagCuriosidades();
+        break;
+    }
+  }
+
+  /**
+   * Verifica se um tópico está bloqueado
+   * Um tópico está bloqueado se o tópico anterior não foi completado
+   * O primeiro tópico (teorica) nunca está bloqueado
+   */
+  isTopicLocked(topic: keyof TopicStatus): boolean {
+    const currentIndex = this.topicOrder.indexOf(topic);
+    
+    // O primeiro tópico nunca está bloqueado
+    if (currentIndex === 0) {
+      return false;
+    }
+    
+    // Verifica se o tópico anterior foi completado
+    const previousTopic = this.topicOrder[currentIndex - 1];
+    return !this.topicsCompleted[previousTopic];
   }
 
   async ngOnInit(){

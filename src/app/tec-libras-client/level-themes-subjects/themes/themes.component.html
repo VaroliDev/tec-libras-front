@@ -10,7 +10,9 @@
         <!--Cards dos tópicos dos temas-->
 
         <!--AULA TEÓRICA-->
-        <a class="card-tema" (click)="PagTeorica()">
+        <a class="card-tema" 
+           [class.locked]="isTopicLocked('teorica')"
+           (click)="handleTopicClick('teorica', $event)">
             <div class="card">
                 <div class="card-body">
                     <div>
@@ -18,12 +20,17 @@
                         <h4 class="card-title">Explorando o Tema</h4>
                     </div>
                     <img *ngIf="topicsCompleted.teorica" src="img/concluido.png" alt="Concluído">
+                    <svg *ngIf="isTopicLocked('teorica')" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="CurrentColor" class="bi bi-lock-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8 0a4 4 0 0 1 4 4v2.05a2.5 2.5 0 0 1 2 2.45v5a2.5 2.5 0 0 1-2.5 2.5h-7A2.5 2.5 0 0 1 2 13.5v-5a2.5 2.5 0 0 1 2-2.45V4a4 4 0 0 1 4-4m0 1a3 3 0 0 0-3 3v2h6V4a3 3 0 0 0-3-3"/>
+                    </svg>
                 </div>
             </div>
         </a>
 
         <!--DEMONSTRAÇÕES-->
-        <a class="card-tema" (click)="PagDemonstracao()">
+        <a class="card-tema" 
+           [class.locked]="isTopicLocked('demonstracao')"
+           (click)="!isTopicLocked('demonstracao') && PagDemonstracao()">
             <div class="card">
                 <div class="card-body">
                     <div>
@@ -31,13 +38,18 @@
                         <h4 class="card-title">Como faz?</h4>
                     </div>
                     <img *ngIf="topicsCompleted.demonstracao" src="img/concluido.png" alt="Concluído">
+                    <svg *ngIf="isTopicLocked('demonstracao')" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="CurrentColor" class="bi bi-lock-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8 0a4 4 0 0 1 4 4v2.05a2.5 2.5 0 0 1 2 2.45v5a2.5 2.5 0 0 1-2.5 2.5h-7A2.5 2.5 0 0 1 2 13.5v-5a2.5 2.5 0 0 1 2-2.45V4a4 4 0 0 1 4-4m0 1a3 3 0 0 0-3 3v2h6V4a3 3 0 0 0-3-3"/>
+                    </svg>
                 </div>
 
             </div>
         </a>
 
         <!--AULA PRÁTICA-->
-        <a class="card-tema" (click)="PagPratica()">
+        <a class="card-tema" 
+           [class.locked]="isTopicLocked('pratica')"
+           (click)="!isTopicLocked('pratica') && PagPratica()">
             <div class="card">
                 <div class="card-body">
                     <div>
@@ -45,12 +57,17 @@
                         <h4 class="card-title">Vamos praticar!</h4>
                     </div>
                     <img *ngIf="topicsCompleted.pratica" src="img/concluido.png" alt="Concluído">
+                    <svg *ngIf="isTopicLocked('pratica')" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="CurrentColor" class="bi bi-lock-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8 0a4 4 0 0 1 4 4v2.05a2.5 2.5 0 0 1 2 2.45v5a2.5 2.5 0 0 1-2.5 2.5h-7A2.5 2.5 0 0 1 2 13.5v-5a2.5 2.5 0 0 1 2-2.45V4a4 4 0 0 1 4-4m0 1a3 3 0 0 0-3 3v2h6V4a3 3 0 0 0-3-3"/>
+                    </svg>
                 </div>
             </div>
         </a>
 
         <!--QUIZ-->
-        <a class="card-tema" (click)="PagQuestionario()">
+        <a class="card-tema" 
+           [class.locked]="isTopicLocked('questionario')"
+           (click)="!isTopicLocked('questionario') && PagQuestionario()">
             <div class="card">
                 <div class="card-body">
                     <div>
@@ -58,12 +75,17 @@
                         <h4 class="card-title">Teste seus conhecimentos</h4>
                     </div>
                     <img *ngIf="topicsCompleted.questionario" src="img/concluido.png" alt="Concluído">
+                    <svg *ngIf="isTopicLocked('questionario')" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="CurrentColor" class="bi bi-lock-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8 0a4 4 0 0 1 4 4v2.05a2.5 2.5 0 0 1 2 2.45v5a2.5 2.5 0 0 1-2.5 2.5h-7A2.5 2.5 0 0 1 2 13.5v-5a2.5 2.5 0 0 1 2-2.45V4a4 4 0 0 1 4-4m0 1a3 3 0 0 0-3 3v2h6V4a3 3 0 0 0-3-3"/>
+                    </svg>
                 </div>
             </div>
         </a>
 
         <!--CURIOSIDADES-->
-        <a class="card-tema" (click)="PagCuriosidades()">
+        <a class="card-tema" 
+           [class.locked]="isTopicLocked('curiosidades')"
+           (click)="!isTopicLocked('curiosidades') && PagCuriosidades()">
             <div class="card">
                 <div class="card-body">
                     <div>
@@ -71,6 +93,9 @@
                         <h4 class="card-title">Sabia dessa?</h4>
                     </div>
                     <img *ngIf="topicsCompleted.curiosidades" src="img/concluido.png" alt="Concluído">
+                    <svg *ngIf="isTopicLocked('curiosidades')" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="CurrentColor" class="bi bi-lock-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8 0a4 4 0 0 1 4 4v2.05a2.5 2.5 0 0 1 2 2.45v5a2.5 2.5 0 0 1-2.5 2.5h-7A2.5 2.5 0 0 1 2 13.5v-5a2.5 2.5 0 0 1 2-2.45V4a4 4 0 0 1 4-4m0 1a3 3 0 0 0-3 3v2h6V4a3 3 0 0 0-3-3"/>
+                    </svg>
                 </div>
             </div>
         </a>

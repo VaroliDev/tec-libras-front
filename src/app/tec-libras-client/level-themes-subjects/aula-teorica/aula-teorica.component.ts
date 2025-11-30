@@ -53,7 +53,7 @@ export class AulaTeoricaComponent {
       conteudo.innerHTML = this.textos[this.textoIndex];
     } else {
       // Última página - marca como completo
-      await this.completeLesson();
+      await this.levelService.registerProgress(1);
       this.router.navigate(['temas']);
     }
   }
@@ -61,30 +61,6 @@ export class AulaTeoricaComponent {
   // Atualiza o progresso visual
   updateProgress() {
     this.levelProgress = Math.round(((this.textoIndex + 1) / this.textos.length) * 100);
-  }
-
-  // Marca a aula como completa no banco de dados
-  async completeLesson() {
-    try {
-      const userDataString = localStorage.getItem('token');
-      this.userData = JSON.parse(userDataString || '{}');
-
-      const progressData = {
-        user_id: this.userData.id,
-        level_id: this.level,
-        subject_id: this.theme,
-        topic_id: 1,
-        is_completed: true
-      };
-
-      await this.levelService.createProgress(1).toPromise();
-
-      
-      await this.levelService.getProgressData(this.userData.id);
-
-    } catch (error) {
-      console.error('Erro ao salvar progresso:', error);
-    }
   }
 
   async ngOnInit() {
