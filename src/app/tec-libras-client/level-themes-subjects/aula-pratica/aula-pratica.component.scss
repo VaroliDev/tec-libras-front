@@ -141,3 +141,82 @@ bottom: 10px;
 .btn-avancar:hover {
     background-color: #d24d00;
 }
+
+
+/* CONTAINER DO VÍDEO */
+.videocontainer {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 50% ;
+}
+
+/* VÍDEO ESPALHADO E RESPONSIVO */
+.videocontainer video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    transform: scaleX(-1); /* espelha o vídeo, tire se não quiser */
+}
+
+/* CANVAS EXATAMENTE POR CIMA DO VÍDEO */
+#output_canvas {
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    width: 450px !important;
+    height: 350px !important;
+    pointer-events: none;
+    transform: scaleX(-1); /* espelha os pontos também */
+    z-index: 2;  /* fica acima do vídeo */
+}
+
+@media (max-width: 768px) {
+  .videocontainer {
+    margin: 5%;
+    max-width: 90%;     /* ocupar 90% da largura da viewport */
+    aspect-ratio: 3 / 4; /* faz o container ficar vertical 3:4 */
+    overflow: hidden;
+  }
+
+  .videocontainer video,
+  #output_canvas {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+  }
+
+  #output_canvas {
+    margin-bottom: 20px;
+    width: 8%;
+    height: 8%;
+  }
+}
+
+@media (min-width: 1400px) {
+    .videocontainer {
+    margin-left: 28% ;
+}
+}
+
+@media (min-width: 1200px) and (max-width: 1400px) {
+    .videocontainer {
+    margin-left: 23% ;
+}
+}
+
+@media (min-width: 990px) and (max-width: 1200px) {
+    .videocontainer {
+    margin-left: 18% ;
+}
+}
+
+@media (min-width: 768px) and (max-width: 990px) {
+    .videocontainer {
+    margin-left: 5% ;
+}
+}

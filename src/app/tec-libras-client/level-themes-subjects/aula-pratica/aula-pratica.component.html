@@ -18,7 +18,7 @@
             <br>
 
             <!--Conteúdo-->
-            <div class="container" style="max-width: 98%;">
+            <div class="container" style="max-width: 95%;">
                 <!--barra de progresso-->
                 <div style="display: flex;">
                     <div class="progress" style="width: 98%;">
@@ -28,13 +28,9 @@
                 </div> 
 
                 <!--Nome do Tema-->
-                <h2>Pratique o sinal de {{ title }}.</h2>
+                <h2 id="text">{{ text }}</h2>
                 <br>
 
-                <!--conteúdo-->
-                <p id="text">{{ text }}</p>
-                
-                <br>
 
                 <div class="container videoView">
                         <button class="btn btn-ativar-cam" (click)="enableCam()">
@@ -42,12 +38,14 @@
                         </button>
                         <br>
                         <br>
-                            <div style="position: relative;">
+                        <div class="videocontainer" style="position: relative;">
                             <video #video autoplay playsinline></video>
                             <canvas #canvas id="output_canvas" width="1280" height="720"></canvas>
-                            <p #gestureOutput class="output"></p>
+                            
                         </div>
-                    </div>
+
+                        <p #gestureOutput class="output"></p>
+                </div>
 
                 <br>
 

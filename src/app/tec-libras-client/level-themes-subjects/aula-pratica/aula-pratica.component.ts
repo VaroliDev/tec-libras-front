@@ -2,9 +2,9 @@ import { Component, inject, OnInit, ElementRef, ViewChild } from '@angular/core'
 import { Router } from '@angular/router';
 import { HeaderComponent } from '../../../components/header/header.component';
 import { FooterComponent } from '../../../components/footer/footer.component';
-
 import { LevelService } from '../../../services/level.service';
 import { EndHeaderComponent } from "../../../components/end-header/end-header.component";
+
 
 import {
   GestureRecognizer,
@@ -73,7 +73,7 @@ export class AulaPraticaComponent implements OnInit {
 
     const textContainer = document.getElementById('text');
     if (textContainer) {
-      textContainer.innerHTML = `Pratique o seguinte sinal: ${this.textos[this.textoIndex]}`;
+      textContainer.innerHTML = `Pratique o sinal: ${this.textos[this.textoIndex]}`;
     }
 
     // Carrega modelo de sinais
@@ -241,9 +241,9 @@ export class AulaPraticaComponent implements OnInit {
         drawingUtils.drawConnectors(
           landmarks,
           GestureRecognizer.HAND_CONNECTIONS,
-          { color: "#00FF00", lineWidth: 5 }
+          { color: "#ff6d1fff", lineWidth: 5 }
         );
-        drawingUtils.drawLandmarks(landmarks, { color: "#FF0000", lineWidth: 2 });
+        drawingUtils.drawLandmarks(landmarks, { color: "#7c16eaff", lineWidth: 2 });
       }
     }
 
