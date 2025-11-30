@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { LEVEL_LIST } from '../../assets/levels/level-index'
 import { HttpClient } from '@angular/common/http';
 import { API_URL } from '../../environments/environment';
-import { Observable, filter, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +11,7 @@ export class LevelService {
   private currentLevel: number | null = null;
   private currentTheme: number | null = null;
   private ProgressData: any = null;
+  private unlockedLevels: any = null;
 
   private router = inject(Router);
 
@@ -44,6 +44,14 @@ export class LevelService {
 
   createProgress(progress: any) {
     return this.http.post(`${this.API_URL}/user/progress`, progress);
+  }
+
+  getUnlockedLevels(userId: number) {
+    return this.http.post(`${this.API_URL}/user/level/unlocks`, {user_id  : userId});
+  }
+
+  unlockLevel(data: any) {
+    return this.http.post(`${this.API_URL}/user/level/unlock`, data);
   }
 
   /*
@@ -160,4 +168,40 @@ export class LevelService {
 
   return formatted;
 }
+
+  getUnlockedLevelsData(user_id: number): Promise<number[]> {
+    return new Promise((resolve, reject) => {
+      this.getUnlockedLevels(user_id).subscribe({
+        next: (data: any) => {
+          const unlocks = data.niveis || data.desbloqueios || [];
+          const unlockedLevelIds = unlocks.map((nivel: any) => nivel.level_id);
+          this.unlockedLevels = unlockedLevelIds;
+          resolve(unlockedLevelIds);
+        },
+        error: (error) => {
+          reject(error);
+        }
+      });
+    });
+  }
+
+  getLevelProgress(levelId: number): number {
+    if (!this.ProgressData) return 0;
+    const level = this.ProgressData.find((l: any) => l.level_id === levelId);
+    return level?.percentage || 0;
+  }
+
+  // Retorna o progresso de todos os subjects de um nível
+  getLevelSubjectsProgress(levelId: number): any[] {
+    if (!this.ProgressData) return [];
+    const level = this.ProgressData.find((l: any) => l.level_id === levelId);
+    return level?.subjects || [];
+  }
+
+  // Retorna o progresso de um subject específico
+  getSubjectProgress(levelId: number, subjectId: number): number {
+    const subjects = this.getLevelSubjectsProgress(levelId);
+    const subject = subjects.find((s: any) => s.subject_id === subjectId);
+    return subject?.percentage || 0;
+  }
 }

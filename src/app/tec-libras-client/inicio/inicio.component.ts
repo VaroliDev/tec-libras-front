@@ -15,6 +15,7 @@ import { EndHeaderComponent } from "../../components/end-header/end-header.compo
 interface itemLevel {
   level: number;
   percent: number;
+  unlocked: boolean;
 }
 
 @Component({
@@ -80,20 +81,24 @@ export class InicioComponent {
     this.fullName = userData.full_name || '';
     this.userName = userData.user_name || '';
 
-    // Aguarde os dados serem carregados
     try {
-      const progressData = await this.levelService.getProgressData(userData.id);
+      const [progressData, unlockedLevelIds] = await Promise.all([
+        this.levelService.getProgressData(userData.id),
+        this.levelService.getUnlockedLevelsData(userData.id)
+      ]);
       
-      const x = this.levelService.getLevelCount();
+      const totalLevels = this.levelService.getLevelCount();
 
-      for(let i=1; i<=x; i++){
+      for(let i = 1; i <= totalLevels; i++){
         this.item.push({
           level: i,
-          percent: progressData[i - 1]?.percentage || 0
+          percent: progressData[i - 1]?.percentage || 0,
+          unlocked: unlockedLevelIds.includes(i)
         });
       }
+      
     } catch (error) {
-      console.error('Erro ao carregar progresso:', error);
+      console.error('Erro ao carregar dados:', error);
     } finally {
       this.isLoading = false;
     }

@@ -5,7 +5,7 @@ import { HeaderComponent } from "../../../components/header/header.component";
 import { LoadingSectionComponent } from '../../../components/loading-section/loading-section.component';
 import { CardLevelThemeComponent } from '../../../components/card-level-theme/card-level-theme.component';
 import { LevelService } from '../../../services/level.service';
-import { consumerPollProducersForChange } from '@angular/core/primitives/signals';
+import { UserService } from '../../../services/user.service';
 import { EndHeaderComponent } from "../../../components/end-header/end-header.component";
 
 interface itemLevel {
@@ -25,8 +25,11 @@ interface itemLevel {
 export class LevelThemesComponent { 
   private router = inject(Router)
   private levelService = inject(LevelService);
+  private userService = inject(UserService);
 
   protected level_id = this.levelService.getLevel();
+  protected userData = this.userService.getUserInfo();
+  protected levelProgress: number = 0;
   
   PagBack(){
     this.router.navigate(['inicio'])
@@ -36,24 +39,47 @@ export class LevelThemesComponent {
   isLoading: boolean = false;
 
   async ngOnInit() {
-    const data_level = await this.levelService.getData(this.level_id as number);
-
     this.isLoading = true;
-    
-    //O setTimeout é para simular o carregamento dos niveis
-    setTimeout(() => {
-      for(let i=1; i<=5; i++){
-        const tema = (data_level as any)[`tema${i}`];
 
+    try {
+      // Carrega os dados do nível
+      const data_level = await this.levelService.getData(this.level_id as number);
+      
+      // Carrega o progresso do usuário
+      const userDataString = localStorage.getItem('token');
+      const userData = JSON.parse(userDataString || '{}');
+      
+      // Garante que o progresso está carregado
+      await this.levelService.getProgressData(userData.id);
+      
+      // Obtém o progresso geral do nível
+      this.levelProgress = this.levelService.getLevelProgress(this.level_id as number);
+      
+      // Obtém o progresso dos subjects
+      const subjectsProgress = this.levelService.getLevelSubjectsProgress(this.level_id as number);
+      
+      console.log('Progresso do nível:', this.levelProgress);
+      console.log('Progresso dos subjects:', subjectsProgress);
+
+      // Monta os cards dos temas com progresso real
+      for(let i = 1; i <= 5; i++){
+        const tema = (data_level as any)[`tema${i}`];
+        
+        // Busca o progresso real do subject (tema)
+        const subjectProgress = subjectsProgress.find((s: any) => s.subject_id === i);
+        
         this.item.push({
           level: i,
           title: tema.title,
           subtitle: tema.subtitle,
-          percent: Math.floor(Math.random() * 11) * 10
+          percent: subjectProgress?.percentage || 0 // Progresso real ou 0
         });
       }
+      
+    } catch (error) {
+      console.error('Erro ao carregar dados do nível:', error);
+    } finally {
       this.isLoading = false;
-
-    },800);
+    }
   }
 }

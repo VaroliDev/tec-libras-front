@@ -16,6 +16,7 @@ export class LevelComponent implements OnInit {
   @Input() level: number = 1;    
   @Input() percent: number = 70; 
   @Input() levelstyle: number = this.level % 2;
+  @Input() unlocked: boolean = false;
   private router = inject(Router);
 
   radius = 33;          
