@@ -1,5 +1,29 @@
 @import '../../../styles/colors.scss';
 
+.pagination .page-item .page-link {
+    color: $ultraorange; 
+    border-color: $ultraorange; 
+    background-color: $white;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: $ultraorange; 
+    border-color: $ultraorange;     
+    color: #fff;              
+}
+
+.pagination .page-item .page-link:hover {
+    background-color: $softorange; 
+    border-color: $softorange;
+    color: #fff;
+}
+
+.pagination .page-item.disabled .page-link {
+    color: $greydark;            
+    pointer-events: none;
+}
+
+
 :host-context(body.modo-escuro) {
     & h2 {
         color: $white;
