@@ -7,6 +7,7 @@ import { FooterComponent } from '../../components/footer/footer.component';
 import { AuthService } from '../../services/auth.service';
 import { LoadingComponent } from '../../components/loading/loading.component';
 import { UserService } from '../../services/user.service';
+import { LevelService } from '../../services/level.service';
 import { HttpClient } from '@angular/common/http';
 import { EndHeaderComponent } from "../../components/end-header/end-header.component";
 import { AlertComponent } from '../../components/alert/alert.component';
@@ -23,13 +24,20 @@ import { AlertComponent } from '../../components/alert/alert.component';
 export class ContaComponent implements AfterViewInit {
 
   constructor(
-    private themeService: ThemeService, private router: Router, private authService: AuthService, private http: HttpClient
+    private themeService: ThemeService, 
+    private router: Router, 
+    private authService: AuthService, 
+    private http: HttpClient
   ) {}
 
   private userService = inject(UserService);
+  private levelService = inject(LevelService);
   protected userData = this.userService.getUserInfo();
 
-  @ViewChild('alert') alert!: AlertComponent; // ViewChild para o alert reutilizável
+  protected levelStatistic: number = 0;
+  protected topicStatistic: number = 0;
+
+  @ViewChild('alert') alert!: AlertComponent;
 
   firstName: string | null = null;
   fullName: string | null = null;
@@ -47,7 +55,7 @@ export class ContaComponent implements AfterViewInit {
   ngAfterViewInit(): void {
   }
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
     this.authService.isLogged();
     this.isLoading = true;
 
@@ -55,7 +63,66 @@ export class ContaComponent implements AfterViewInit {
     this.full_name = this.userData()!.full_name;
     this.user_name = this.userData()!.user_name;
     this.email = this.userData()!.email;
+
+    // Carrega as estatísticas
+    await this.loadStatistics();
+
     this.isLoading = false;
+  }
+
+  async loadStatistics(): Promise<void> {
+    try {
+      const userId = this.userData()!.id;
+
+      // Carrega o progresso do usuário
+      const progressData = await this.levelService.getProgressData(userId);
+
+      // Calcula o nível atual (último nível com progresso > 0)
+      this.levelStatistic = this.calculateCurrentLevel(progressData);
+
+      // Conta quantos tópicos foram concluídos
+      this.topicStatistic = this.countCompletedTopics(progressData);
+
+    } catch (error) {
+      console.error('Erro ao carregar estatísticas:', error);
+    }
+  }
+
+  // Calcula qual é o nível atual do usuário
+  calculateCurrentLevel(progressData: any[]): number {
+    if (!progressData || progressData.length === 0) return 1;
+
+    // Encontra o último nível com progresso maior que 0
+    let currentLevel = 1;
+    
+    for (let i = 0; i < progressData.length; i++) {
+      if (progressData[i].percentage > 0) {
+        currentLevel = progressData[i].level_id;
+      }
+    }
+
+    return currentLevel;
+  }
+
+  // Conta quantos tópicos foram concluídos no total
+  countCompletedTopics(progressData: any[]): number {
+    if (!progressData || progressData.length === 0) return 0;
+
+    let completedCount = 0;
+
+    progressData.forEach((level: any) => {
+      if (level.subjects && level.subjects.length > 0) {
+        level.subjects.forEach((subject: any) => {
+          if (subject.topics && subject.topics.length > 0) {
+            // Conta apenas os tópicos com is_completed = true
+            const completed = subject.topics.filter((topic: any) => topic.is_completed === true);
+            completedCount += completed.length;
+          }
+        });
+      }
+    });
+
+    return completedCount;
   }
 
   onThemeChange(theme: string): void {

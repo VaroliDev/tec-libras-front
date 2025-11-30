@@ -22,10 +22,17 @@
                 <!--barra de progresso-->
                 <div style="display: flex;">
                     <div class="progress" style="width: 98%;">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div> 
+                        <div class="progress-bar" 
+                             role="progressbar" 
+                             [attr.aria-valuenow]="levelProgress" 
+                             aria-valuemin="0" 
+                             aria-valuemax="100"
+                             [style.width.%]="levelProgress"></div> 
                     </div>
-                    <p style=" position: relative; bottom: 10px; margin-left: 20px; font-weight: bold;">80%</p>
-                </div> 
+                    <p style="position: relative; bottom: 10px; margin-left: 20px; font-weight: bold;">
+                        {{ levelProgress }}%
+                    </p>
+                </div>
 
                 <!--Nome do Tema-->
                 <h2 id="text">{{ text }}</h2>

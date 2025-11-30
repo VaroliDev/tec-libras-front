@@ -23,6 +23,8 @@ export class QuestionarioComponent {
   currentQuestion: any = null;
   questionIndex: number = 0;
 
+  levelProgress: number = 0;
+
   optionKeys = ['a', 'b', 'c', 'd'];
 
   correctCount: number = 0;
@@ -39,6 +41,8 @@ export class QuestionarioComponent {
 
     this.questionsArray = Object.values(data.questions);
     this.currentQuestion = this.questionsArray[this.questionIndex];
+
+    this.updateProgress();
   }
 
   selectOption(optionKey: string) {
@@ -57,6 +61,7 @@ export class QuestionarioComponent {
   prevQuestion() {
     if (this.questionIndex > 0) {
       this.questionIndex--;
+      this.updateProgress();
       this.currentQuestion = this.questionsArray[this.questionIndex];
       this.answered = false;
     } else {
@@ -67,19 +72,25 @@ export class QuestionarioComponent {
   nextQuestion() {
     if (this.questionIndex < this.questionsArray.length - 1) {
       this.questionIndex++;
+      this.updateProgress();
       this.currentQuestion = this.questionsArray[this.questionIndex];
       this.answered = false;
     } else {
-      if(this.correctCount !== 4){
+      if(this.correctCount !== this.questionsArray.length){
         this.questionIndex = 0;
         this.currentQuestion = this.questionsArray[this.questionIndex];
         this.answered = false;
         this.correctCount = 0;
         this.wrongCount = 0;
+        this.updateProgress();
         return;
       }
       this.levelService.registerProgress(4);
       this.router.navigate(['temas']);
     }
+  }
+
+  updateProgress() {
+    this.levelProgress = Math.round(((this.questionIndex + 1) / this.questionsArray.length) * 100);
   }
 }

@@ -1,5 +1,21 @@
 @import '../../../styles/colors.scss';
 
+.container-lisi {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 9999;
+  overflow-y: auto;
+  padding: 20px;
+}
+
 img {
     width: 260px;
     margin: 0;
@@ -11,23 +27,29 @@ h3 {
     text-transform: uppercase;
     font-family: 'Rawline Bold', sans-serif;
     font-size: 35px;
+    color: white;
+    margin-top: 30px;
 }
 
 p {
     margin: 5%;
     text-align: justify;
-}
-
-.container-lisi {
-  display: flex;
-  position: relative;
-  bottom: 30px;
-  flex-direction: column; 
-  align-items: center;    
+    color: white;
+    max-width: 800px;
 }
 
 .stars {
   display: flex;
   gap: 4px; 
-  color: $greylight;
+  color: goldenrod;
+  margin: 20px 0;
+}
+
+.btn {
+  transition: 0.5 ease-in-out;
+  border: 3px solid $ultraorange;
+  background-color: #c13a3a00;
+  color: $ultraorange;
+  font-family: 'Rawline Bold';
+  border-radius: 50PX;
 }
