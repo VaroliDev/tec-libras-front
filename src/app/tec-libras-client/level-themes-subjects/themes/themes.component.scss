@@ -54,6 +54,19 @@ bottom: 2.5px;
 
 }
 
+.card-body {
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between;
+}
+
+.card-body img {
+    position: relative; 
+    left: 20px;
+    bottom: 2px;
+    width: 50px;
+}
+
 .card-tema {
     text-decoration: none;
     margin: 10px;
@@ -84,5 +97,43 @@ bottom: 2.5px;
 @media (max-width: 767px) {
      .container {
         max-width: 90%;
+    }
+}
+
+@media (min-width: 370px) and (max-width: 470px ) {
+    .card-subtitle {
+        position: relative;
+        right: 20px;
+        font-size: 14px;
+    }
+    .card-title {
+        position: relative;
+        right: 20px;
+        font-size: 20px;
+    }
+    .card-body img {
+        position: relative; 
+        left: 30px;
+        bottom: 2px;
+        width: 40px;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 370px ) {
+    .card-subtitle {
+        position: relative;
+        right: 20px;
+        font-size: 12px;
+    }
+    .card-title {
+        position: relative;
+        right: 20px;
+        font-size: 15px;
+    }
+    .card-body img {
+        position: relative; 
+        left: 30px;
+        bottom: 2px;
+        width: 40px;
     }
 }
