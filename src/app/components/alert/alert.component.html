@@ -1,0 +1,8 @@
+<div *ngIf="show" class="custom-alert" [ngClass]="type">
+    <div class="custom-alert-box">
+        <span class="closebtn" (click)="close()">&times;</span>
+        <img src="img/concluido.png" alt="">
+        <h6>{{ message }}</h6>
+    </div>
+  
+</div>
