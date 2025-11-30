@@ -1,8 +1,14 @@
 <div *ngIf="show" class="custom-alert" [ngClass]="type">
     <div class="custom-alert-box">
-        <span class="closebtn" (click)="close()">&times;</span>
-        <img src="img/concluido.png" alt="">
+
+        <img [src]="type === 'success' ? 'img/concluido.png' : 'img/erro.png'" alt="alert-image">
+        
+        <br>
+
         <h6>{{ message }}</h6>
+
+        <div class="d-grid gap-2">
+            <button class="closebtn btn btnclose" (click)="close()">Concluído</button>
+        </div>
     </div>
-  
 </div>

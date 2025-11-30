@@ -20,6 +20,6 @@ export class AlertComponent {
     this.message = message;
     this.type = type;
     this.show = true;
-    setTimeout(() => this.close(), 3000);
+    setTimeout(() => this.close(), 10000);
   }
 }
