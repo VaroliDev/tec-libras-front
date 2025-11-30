@@ -81,21 +81,20 @@ export class InicioComponent {
     this.fullName = userData.full_name || '';
     this.userName = userData.user_name || '';
 
+    this.levelService.getProgressData(userData.id);
+
     //Define a quantidade de niveis que vao aparecer
     const x = this.levelService.getLevelCount();
 
     //O setTimeout é para simular o carregamento dos niveis
-    setTimeout(() => {
-
       for(let i=1; i<=x; i++){
         this.item.push({
           level: i,
           percent: Math.floor(Math.random() * 11) * 10
         });
       }
+      
       this.isLoading = false;
-
-    },800);
   }
 
   getCurrentFrase(): string {
