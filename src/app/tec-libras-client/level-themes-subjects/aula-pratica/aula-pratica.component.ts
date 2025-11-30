@@ -153,6 +153,7 @@ export class AulaPraticaComponent implements OnInit {
       this.correct_signal = `letra_${this.textos[this.textoIndex].toLowerCase().replaceAll("'", "")}`;
       console.log(this.correct_signal);
     } else {
+      this.levelService.registerProgress(3);
       this.router.navigate(['temas']);
     }
   }

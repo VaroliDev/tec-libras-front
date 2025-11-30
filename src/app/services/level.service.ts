@@ -204,4 +204,31 @@ export class LevelService {
     const subject = subjects.find((s: any) => s.subject_id === subjectId);
     return subject?.percentage || 0;
   }
+
+  registerProgress(topicId: number) {
+    const userDataString = localStorage.getItem('token');
+    const userData = JSON.parse(userDataString || '{}');
+
+    const user_id = userData.id;
+    const level_id = this.getLevel();
+    const subject_id = this.getTheme();
+    const topic_id = topicId;
+
+    const progress = {
+      user_id: user_id,
+      level_id: level_id,
+      subject_id: subject_id,
+      topic_id: topic_id,
+      is_completed: true
+    };
+
+    this.createProgress(progress).subscribe({
+      next: (response) => {
+        console.log('Progresso registrado com sucesso:', response);
+      },
+      error: (error) => {
+        console.error('Erro ao registrar progresso:', error);
+      }
+    });
+  }
 }

@@ -78,6 +78,7 @@ export class QuestionarioComponent {
         this.wrongCount = 0;
         return;
       }
+      this.levelService.registerProgress(4);
       this.router.navigate(['temas']);
     }
   }

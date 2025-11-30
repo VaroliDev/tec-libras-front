@@ -57,9 +57,6 @@ export class LevelThemesComponent {
       
       // Obtém o progresso dos subjects
       const subjectsProgress = this.levelService.getLevelSubjectsProgress(this.level_id as number);
-      
-      console.log('Progresso do nível:', this.levelProgress);
-      console.log('Progresso dos subjects:', subjectsProgress);
 
       // Monta os cards dos temas com progresso real
       for(let i = 1; i <= 5; i++){
