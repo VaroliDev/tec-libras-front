@@ -16,7 +16,7 @@
             }
             <!--LINKS DOS NÍVEIS-->
             @for (n of item; track n.level) {
-                <app-level [level]="n.level" [percent]="n.percent" [levelstyle]="n.level % 2"></app-level> 
+                <app-level [level]="n.level" [percent]="n.percent" [levelstyle]="n.level % 2" [unlocked]="n.unlocked"></app-level> 
                 <br>    
             }   
         </div>

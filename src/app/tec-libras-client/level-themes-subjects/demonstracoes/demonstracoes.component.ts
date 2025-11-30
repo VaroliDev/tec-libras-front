@@ -42,6 +42,7 @@ export class DemonstracoesComponent {
       this.urlIndex++;
       this.url = this.urls[this.urlIndex];
     } else {
+      this.levelService.registerProgress(2);
       this.router.navigate(['temas']);
     }
   }

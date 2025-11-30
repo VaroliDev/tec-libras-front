@@ -26,10 +26,11 @@ export class CuriosidadesComponent {
   }
 
   PagBack(){
-    this.router.navigate(['questionario'])
+    this.router.navigate(['temas'])
   }
 
   PagNext(){
+    this.levelService.registerProgress(5);
     this.router.navigate(['inicio'])
   }
 

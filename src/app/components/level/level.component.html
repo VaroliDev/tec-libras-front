@@ -1,6 +1,6 @@
 <div class="niveis" >
         <div class="col" [id]="'nivel' + level">
-            @if(percent > 0){
+            @if(unlocked){
             <a (click)="PagNivel()">
                 <div [class]="'circulonivel'+ levelstyle">
                     <p>Nível {{ level }}</p>
