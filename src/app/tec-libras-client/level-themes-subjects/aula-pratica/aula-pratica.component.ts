@@ -33,6 +33,8 @@ export class AulaPraticaComponent implements OnInit {
   protected correct_signal: string = 'letra_a';
   protected signal: string = '';
 
+  levelProgress: number = 0;
+
   sfx = new Audio('assets/sfx/duolingo-correct.mp3');
 
   timer: any = null;
@@ -85,6 +87,12 @@ export class AulaPraticaComponent implements OnInit {
     }
 
     await this.createGestureRecognizer(modelPath);
+
+    this.updateProgress();
+  }
+
+  updateProgress() {
+    this.levelProgress = Math.round(((this.textoIndex + 1) / this.textos.length) * 100);
   }
 
   // ---------------------------------------------------------
@@ -137,6 +145,7 @@ export class AulaPraticaComponent implements OnInit {
 
     if (this.textoIndex > 0) {
       this.textoIndex--;
+      this.updateProgress();
       conteudo.innerHTML = `Pratique o seguinte sinal: ${this.textos[this.textoIndex]}`
       this.correct_signal = `letra_${this.textos[this.textoIndex].toLowerCase().replaceAll("'", "")}`;
       console.log(this.correct_signal);
@@ -149,6 +158,7 @@ export class AulaPraticaComponent implements OnInit {
 
     if (this.textoIndex < this.textos.length - 1) {
       this.textoIndex++;
+      this.updateProgress();
       conteudo.innerHTML = `Pratique o seguinte sinal: ${this.textos[this.textoIndex]}`
       this.correct_signal = `letra_${this.textos[this.textoIndex].toLowerCase().replaceAll("'", "")}`;
       console.log(this.correct_signal);

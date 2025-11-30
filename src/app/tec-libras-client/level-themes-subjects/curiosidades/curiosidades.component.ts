@@ -3,13 +3,14 @@ import { Router } from '@angular/router';
 import { HeaderComponent } from "../../../components/header/header.component";
 import { FooterComponent } from "../../../components/footer/footer.component";
 import { LisiBalloonComponent } from '../../../components/lisi-balloon/lisi-balloon.component';
+import { LisiFeedbackComponent } from '../../../components/lisi-feedback/lisi-feedback.component';
 
 import { LevelService } from '../../../services/level.service';
 import { EndHeaderComponent } from "../../../components/end-header/end-header.component";
 
 @Component({
   selector: 'app-curiosidades',
-  imports: [HeaderComponent, FooterComponent, LisiBalloonComponent, EndHeaderComponent],
+  imports: [HeaderComponent, FooterComponent, LisiBalloonComponent, EndHeaderComponent, LisiFeedbackComponent],
   templateUrl: './curiosidades.component.html',
   styleUrl: './curiosidades.component.scss',
   standalone: true
@@ -21,6 +22,8 @@ export class CuriosidadesComponent {
   protected theme = this.levelService.getTheme();
   protected curiosidade: string = '';
 
+  protected finished: boolean = false
+
   PagInicio(){
     this.router.navigate(['temas'])
   }
@@ -30,8 +33,8 @@ export class CuriosidadesComponent {
   }
 
   PagNext(){
+    this.finished = true
     this.levelService.registerProgress(5);
-    this.router.navigate(['inicio'])
   }
 
   async ngOnInit(){

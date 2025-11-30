@@ -17,7 +17,7 @@
                         <h6 class="card-subtitle mb-2 text-body-secondary">Aula Teórica</h6>
                         <h4 class="card-title">Explorando o Tema</h4>
                     </div>
-                    <img src="img/concluido.png" alt="">
+                    <img *ngIf="topicsCompleted.teorica" src="img/concluido.png" alt="Concluído">
                 </div>
             </div>
         </a>
@@ -30,7 +30,7 @@
                         <h6 class="card-subtitle mb-2 text-body-secondary">Demonstrações</h6>
                         <h4 class="card-title">Como faz?</h4>
                     </div>
-                    <img src="img/concluido.png" alt="">
+                    <img *ngIf="topicsCompleted.demonstracao" src="img/concluido.png" alt="Concluído">
                 </div>
 
             </div>
@@ -44,7 +44,7 @@
                         <h6 class="card-subtitle mb-2 text-body-secondary">Aula Prática</h6>
                         <h4 class="card-title">Vamos praticar!</h4>
                     </div>
-                    <img src="img/concluido.png" alt="">
+                    <img *ngIf="topicsCompleted.pratica" src="img/concluido.png" alt="Concluído">
                 </div>
             </div>
         </a>
@@ -57,7 +57,7 @@
                         <h6 class="card-subtitle mb-2 text-body-secondary">Questionário</h6>
                         <h4 class="card-title">Teste seus conhecimentos</h4>
                     </div>
-                    <img src="img/concluido.png" alt="">
+                    <img *ngIf="topicsCompleted.questionario" src="img/concluido.png" alt="Concluído">
                 </div>
             </div>
         </a>
@@ -70,7 +70,7 @@
                         <h6 class="card-subtitle mb-2 text-body-secondary">Curiosidades</h6>
                         <h4 class="card-title">Sabia dessa?</h4>
                     </div>
-                    <img src="img/concluido.png" alt="">
+                    <img *ngIf="topicsCompleted.curiosidades" src="img/concluido.png" alt="Concluído">
                 </div>
             </div>
         </a>

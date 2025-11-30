@@ -29,7 +29,7 @@ export class InicioComponent {
 
   private levelService = inject(LevelService)
   private userService = inject(UserService)
-  protected userData = this.userService.getUserInfo()
+  protected userData = this.userService.getUserInfo();
   
   onThemeChange(theme: string): void {
     this.themeService.applyTheme(theme);
@@ -91,7 +91,6 @@ export class InicioComponent {
 
       for(let i = 1; i <= totalLevels; i++){
         const levelProgress = progressData[i - 1]?.percentage || 0;
-        const isUnlocked = unlockedLevelIds.includes(i);
 
         // Verifica se o nível está 100% completo e o próximo não está desbloqueado
         if (levelProgress === 100 && i < totalLevels && !unlockedLevelIds.includes(i + 1)) {
@@ -101,8 +100,6 @@ export class InicioComponent {
               user_id: userData.id,
               level_id: i + 1
             }).toPromise();
-
-            console.log(`Nível ${i + 1} desbloqueado automaticamente!`);
             
             // Adiciona o novo nível desbloqueado ao array
             unlockedLevelIds.push(i + 1);

@@ -2,26 +2,31 @@ import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { FooterComponent } from "../../../components/footer/footer.component";
 import { HeaderComponent } from "../../../components/header/header.component";
-
+import { CommonModule } from '@angular/common';
 import { EndHeaderComponent } from '../../../components/end-header/end-header.component';
 import { LevelService } from '../../../services/level.service';
+import { UserService } from '../../../services/user.service';
 
 @Component({
   selector: 'app-aula-teorica',
-  imports: [FooterComponent, HeaderComponent, EndHeaderComponent],
+  imports: [FooterComponent, HeaderComponent, EndHeaderComponent, CommonModule],
   templateUrl: './aula-teorica.component.html',
   styleUrl: './aula-teorica.component.scss'
 })
 export class AulaTeoricaComponent {
   private router = inject(Router);
   private levelService = inject(LevelService);
+  private userService = inject(UserService);
 
   protected theme = this.levelService.getTheme();
+  protected level = this.levelService.getLevel();
   protected title: string = '';
   protected text: string = '';
+  protected levelProgress: number = 0;
 
   textos: string[] = [];
   textoIndex: number = 0;
+  userData: any;
 
   PagInicio() {
     this.router.navigate(['temas']);
@@ -33,20 +38,52 @@ export class AulaTeoricaComponent {
 
     if (this.textoIndex > 0) {
       this.textoIndex--;
+      this.updateProgress(); // Use o método para atualizar
       conteudo.innerHTML = this.textos[this.textoIndex];
     }
   }
 
-  PagNext() {
+  async PagNext() {
     const conteudo = document.getElementById('text');
     if (!conteudo) return;
 
     if (this.textoIndex < this.textos.length - 1) {
       this.textoIndex++;
+      this.updateProgress(); // Use o método para atualizar
       conteudo.innerHTML = this.textos[this.textoIndex];
     } else {
-      this.levelService.registerProgress(1);
+      // Última página - marca como completo
+      await this.completeLesson();
       this.router.navigate(['temas']);
+    }
+  }
+
+  // Atualiza o progresso visual
+  updateProgress() {
+    this.levelProgress = Math.round(((this.textoIndex + 1) / this.textos.length) * 100);
+  }
+
+  // Marca a aula como completa no banco de dados
+  async completeLesson() {
+    try {
+      const userDataString = localStorage.getItem('token');
+      this.userData = JSON.parse(userDataString || '{}');
+
+      const progressData = {
+        user_id: this.userData.id,
+        level_id: this.level,
+        subject_id: this.theme,
+        topic_id: 1,
+        is_completed: true
+      };
+
+      await this.levelService.createProgress(1).toPromise();
+
+      
+      await this.levelService.getProgressData(this.userData.id);
+
+    } catch (error) {
+      console.error('Erro ao salvar progresso:', error);
     }
   }
 
@@ -62,5 +99,12 @@ export class AulaTeoricaComponent {
     if (!conteudo) return;
 
     conteudo.innerHTML = this.textos[this.textoIndex];
+    
+    // Inicializa o progresso
+    this.updateProgress();
+
+    // Carrega dados do usuário
+    const userDataString = localStorage.getItem('token');
+    this.userData = JSON.parse(userDataString || '{}');
   }
 }
