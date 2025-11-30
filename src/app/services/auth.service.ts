@@ -44,7 +44,7 @@ export class AuthService {
   logout(): Promise<void> {
     return signOut(this.auth).then(() => {
       localStorage.removeItem('token');
-      this.router.navigate(['/login']);
+      this.router.navigate(['/']);
     });
   }
   // Retorna o nome do usuário do token armazenado (se necessário)
