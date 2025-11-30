@@ -19,6 +19,7 @@ import { CuriosidadesComponent } from './tec-libras-client/level-themes-subjects
 import { AdminPageComponent } from './tec-libras-admin/admin-page/admin-page.component';
 import { TermosCondicoesComponent } from './tec-libras-client/termos-condicoes/termos-condicoes.component';
 import { CentralAjudaComponent } from './tec-libras-client/central-ajuda/central-ajuda.component';
+import { SinalBibliotecaComponent } from './tec-libras-client/sinal-biblioteca/sinal-biblioteca.component';
 
 export const routes: Routes = [
     {
@@ -120,6 +121,11 @@ export const routes: Routes = [
     {
         path: 'central-ajuda',
         component: CentralAjudaComponent
+    },
+
+    {
+        path: 'sinal-biblioteca',
+        component: SinalBibliotecaComponent
     }
    
 ];
