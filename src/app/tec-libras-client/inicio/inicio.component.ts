@@ -63,15 +63,13 @@ export class InicioComponent {
   fullName: string | null = null;
   userName: string | null = null;
   isLoading: boolean = false;
-  currentFrase: string | undefined
-  first_name = this.userData()?.full_name.split(' ')[0];
+  currentFrase: string | undefined;
 
   item:itemLevel[] = []
 
   async ngOnInit() {
     this.getCurrentFrase();
     this.authService.isLogged();
-    this.first_name = this.userData()?.first_name;
 
     this.isLoading = true;
     

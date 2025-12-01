@@ -53,12 +53,6 @@ export class CadastroComponent {
     this.router.navigate(['/']); 
   }
 
-  ngOnInit(): void {
-    if(this.authService.isLogged()){
-      this.router.navigateByUrl('/inicio');
-    }
-  }
-
   user = {
     id: '',
     full_name: '',

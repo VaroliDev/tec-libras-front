@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Auth, signOut, signInWithPopup, GoogleAuthProvider } from '@angular/fire/auth';
 import { UserService } from './user.service';
-//import { generate } from 'generate-password-ts';
 import { firstValueFrom } from 'rxjs';
 
 @Injectable({
