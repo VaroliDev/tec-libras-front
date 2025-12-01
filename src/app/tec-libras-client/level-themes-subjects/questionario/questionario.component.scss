@@ -20,9 +20,20 @@
     }
     
     .option {
-        background-color: $greydark;
+        background-color: $softblack !important;
         color: $white;
     }
+
+    .progress {
+    height: 6px; 
+    border-radius: 10px; 
+    background-color: $softblack;
+
+    & .progress-bar {
+        width: 80%; 
+        background-color: $greenlight;
+    }
+}
 }
 
 :host-context(body.modo-contraste)  {
@@ -45,11 +56,22 @@
     }
     
     .option {
-        background-color: $ultrablack;
+        background-color: $ultrablack !important;
         border: 2px solid $aqua;
         color: $ultrawhite;
         font-weight: bolder;
     }
+
+    .progress {
+    height: 6px; 
+    border-radius: 10px; 
+    background-color: $black;
+
+    & .progress-bar {
+        width: 80%; 
+        background-color: $aqua;
+    }
+}
 }
 
 .back-arrow {
@@ -128,6 +150,7 @@
     transition: background-color 0.3s, color 0.3s;
     cursor: pointer;
 }
+
 
 .option:hover:not(.option-correct):not(.option-wrong) {
     background-color: #b3b3b3;
