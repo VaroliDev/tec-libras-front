@@ -16,6 +16,14 @@ interface TopicStatus {
   curiosidades: boolean;
 }
 
+interface TopicExists {
+  teorica: boolean;
+  demonstracao: boolean;
+  pratica: boolean;
+  questionario: boolean;
+  curiosidades: boolean;
+}
+
 @Component({
   selector: 'app-themes',
   imports: [FooterComponent, HeaderComponent, EndHeaderComponent, CommonModule],
@@ -32,6 +40,15 @@ export class ThemesComponent implements OnInit {
   
   // Status de conclusão dos tópicos
   topicsCompleted: TopicStatus = {
+    teorica: false,
+    demonstracao: false,
+    pratica: false,
+    questionario: false,
+    curiosidades: false
+  };
+
+  // Verifica se o tópico existe no JSON
+  topicsExists: TopicExists = {
     teorica: false,
     demonstracao: false,
     pratica: false,
@@ -115,19 +132,67 @@ export class ThemesComponent implements OnInit {
   /**
    * Verifica se um tópico está bloqueado
    * Um tópico está bloqueado se o tópico anterior não foi completado
-   * O primeiro tópico (teorica) nunca está bloqueado
+   * O primeiro tópico disponível nunca está bloqueado
    */
   isTopicLocked(topic: keyof TopicStatus): boolean {
-    const currentIndex = this.topicOrder.indexOf(topic);
+    // Filtra apenas os tópicos que existem
+    const availableTopics = this.topicOrder.filter(t => this.topicsExists[t]);
+    const currentIndex = availableTopics.indexOf(topic);
     
-    // O primeiro tópico nunca está bloqueado
+    // O primeiro tópico disponível nunca está bloqueado
     if (currentIndex === 0) {
       return false;
     }
     
     // Verifica se o tópico anterior foi completado
-    const previousTopic = this.topicOrder[currentIndex - 1];
+    const previousTopic = availableTopics[currentIndex - 1];
     return !this.topicsCompleted[previousTopic];
+  }
+
+  /**
+   * Verifica se o tópico possui dados no JSON
+   */
+  private checkTopicData(data: any): void {
+  // Verifica teoria (campo: aulaTeorica)
+  this.topicsExists.teorica = !!(data.aulaTeorica && data.aulaTeorica.trim());
+  
+  // Verifica demonstrações (campo: demonstracao)
+  this.topicsExists.demonstracao = !!(data.demonstracao && data.demonstracao.trim());
+  
+  // Verifica prática (campo: aulaPratica)
+  this.topicsExists.pratica = !!(data.aulaPratica && data.aulaPratica.trim());
+  
+  // Verifica questionário (campo: questions)
+  this.topicsExists.questionario = !!(data.questions && Object.keys(data.questions).length > 0);
+  
+  // Verifica curiosidades (campo: curiosidade)
+  this.topicsExists.curiosidades = !!(data.curiosidade && data.curiosidade.trim());
+
+  console.log('Tópicos existentes:', this.topicsExists);
+}
+
+  /**
+   * Registra automaticamente o progresso dos tópicos que não existem
+   */
+  private async autoCompleteNonExistentTopics(): Promise<void> {
+    const topicIds: Record<keyof TopicExists, number> = {
+      teorica: 1,
+      demonstracao: 2,
+      pratica: 3,
+      questionario: 4,
+      curiosidades: 5
+    };
+
+    for (const [topic, topicId] of Object.entries(topicIds)) {
+      const topicKey = topic as keyof TopicExists;
+      
+      // Se o tópico não existe e não está marcado como completo, registra o progresso
+      if (!this.topicsExists[topicKey] && !this.topicsCompleted[topicKey]) {
+        console.log(`Registrando progresso automático para ${topic} (ID: ${topicId})`);
+        await this.levelService.registerProgress(topicId);
+        this.topicsCompleted[topicKey] = true;
+      }
+    }
   }
 
   async ngOnInit(){
@@ -135,8 +200,14 @@ export class ThemesComponent implements OnInit {
     this.title = data.title;
     this.description = data.description;
 
+    // Verifica quais tópicos existem no JSON
+    this.checkTopicData(data);
+
     // Carrega o progresso dos tópicos
     await this.loadTopicsProgress();
+
+    // Registra automaticamente os tópicos que não existem
+    await this.autoCompleteNonExistentTopics();
   }
 
   async loadTopicsProgress() {
