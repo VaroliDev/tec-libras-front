@@ -7,6 +7,8 @@
         "aula-teorica": "",
         "demonstracao": "",
         "aula-pratica": "",
+        "sinal": "",
+        "sinal_order": "",
         "questions": {
             "q1": {
                 "question": "",
