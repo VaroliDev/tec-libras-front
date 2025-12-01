@@ -1,5 +1,30 @@
 @import '../../../styles/colors.scss';
 
+
+:host-context(body.modo-escuro) {
+   .custom-alert-box {
+  background-color: $softblack;
+  width: 90%;          // ocupa quase toda a largura em telas pequenas
+  max-width: 400px;    // limite em telas maiores
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  box-sizing: border-box;
+}
+}
+
+:host-context(body.modo-contraste) {
+   .custom-alert-box {
+  background-color: $black;
+  width: 90%;          // ocupa quase toda a largura em telas pequenas
+  max-width: 400px;    // limite em telas maiores
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  box-sizing: border-box;
+}
+}
+
 .custom-alert {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
