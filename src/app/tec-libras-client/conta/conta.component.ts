@@ -11,6 +11,7 @@ import { LevelService } from '../../services/level.service';
 import { HttpClient } from '@angular/common/http';
 import { EndHeaderComponent } from "../../components/end-header/end-header.component";
 import { AlertComponent } from '../../components/alert/alert.component';
+import { AchievementService } from '../../services/achievement.service';
 
 @Component({
   selector: 'app-conta',
@@ -27,7 +28,8 @@ export class ContaComponent implements AfterViewInit {
     private themeService: ThemeService, 
     private router: Router, 
     private authService: AuthService, 
-    private http: HttpClient
+    private http: HttpClient,
+    private achievementService: AchievementService
   ) {}
 
   private userService = inject(UserService);
@@ -36,6 +38,8 @@ export class ContaComponent implements AfterViewInit {
 
   protected levelStatistic: number = 0;
   protected topicStatistic: number = 0;
+  protected achievementStatistic: number = 0;
+  protected achievementsTitles: string[] = [];
 
   @ViewChild('alert') alert!: AlertComponent;
 
@@ -82,6 +86,14 @@ export class ContaComponent implements AfterViewInit {
 
       // Conta quantos tópicos foram concluídos
       this.topicStatistic = this.countCompletedTopics(progressData);
+
+      this.achievementService.getAchievementsData(userId).subscribe({
+        next: (data) => {
+          this.achievementStatistic = data.count;
+          this.achievementsTitles = data.titles;
+        },
+        error: (err) => console.error('Erro:', err)
+      });
 
     } catch (error) {
       console.error('Erro ao carregar estatísticas:', error);

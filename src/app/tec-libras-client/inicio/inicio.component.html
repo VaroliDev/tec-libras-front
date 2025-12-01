@@ -1,7 +1,7 @@
     <app-header></app-header> <!--Importa o Header na pasta "components"-->
     <app-end-header></app-end-header>
     <!--NOME USUÁRIO-->
-    <h2 id="nome_usuario">Olá, {{ first_name }}!</h2>
+    <h2 id="nome_usuario">Olá, {{ userData()?.first_name }}!</h2>
     <!--BALÃO DE FALA LISI-->
     <div class="container balao_lisi">
         <div class="balaofala"><p class="frasebalao">{{ currentFrase }}</p></div>
