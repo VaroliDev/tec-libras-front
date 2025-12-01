@@ -106,7 +106,7 @@ export class QuestionarioComponent {
       this.answered = false;
       this.selectedOption = null;
     } else {
-      if(this.correctCount !== this.questionsArray.length){
+      if(this.correctCount < 3){
         this.questionIndex = 0;
         this.currentQuestion = this.questionsArray[this.questionIndex];
         this.answered = false;
