@@ -114,6 +114,7 @@ export class QuestionarioComponent {
         this.correctCount = 0;
         this.wrongCount = 0;
         this.updateProgress();
+        this.router.navigate(['temas'])
         return;
       }
       this.levelService.registerProgress(4);
