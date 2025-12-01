@@ -38,7 +38,7 @@ export class AulaPraticaComponent implements OnInit {
   sfx = new Audio('assets/sfx/correct.mp3');
 
   timer: any = null;
-  timerDuration = 5000;
+  timerDuration = 3000;
   timerStart: number = 0;
 
 
@@ -166,6 +166,11 @@ export class AulaPraticaComponent implements OnInit {
       this.levelService.registerProgress(3);
       this.router.navigate(['temas']);
     }
+  }
+
+  skip(){
+    this.levelService.registerProgress(3);
+    this.router.navigate(['temas']);
   }
 
   // ---------------------------------------------------------

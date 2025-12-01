@@ -23,6 +23,7 @@ export class CuriosidadesComponent {
   protected curiosidade: string = '';
 
   protected finished: boolean = false
+  protected redict: string = 'temas'
 
   PagInicio(){
     this.router.navigate(['temas'])

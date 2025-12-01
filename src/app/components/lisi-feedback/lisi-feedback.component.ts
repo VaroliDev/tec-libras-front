@@ -1,4 +1,4 @@
-import { Component, inject, Input } from '@angular/core';
+import { Component, inject, input, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 
@@ -11,10 +11,11 @@ import { Router } from '@angular/router';
 export class LisiFeedbackComponent {
   private router = inject(Router);
   @Input() title: string = '';
+  @Input() destination: string = ''; 
 
   stars = Array(5);
 
-  fechar(){
-    this.router.navigate(['inicio'])
+  fechar(destination: string){
+    this.router.navigate([`${destination}`])
   }
 }
