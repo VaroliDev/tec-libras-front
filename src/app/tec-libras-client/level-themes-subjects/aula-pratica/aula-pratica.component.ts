@@ -35,7 +35,7 @@ export class AulaPraticaComponent implements OnInit {
 
   levelProgress: number = 0;
 
-  sfx = new Audio('assets/sfx/duolingo-correct.mp3');
+  sfx = new Audio('assets/sfx/correct.mp3');
 
   timer: any = null;
   timerDuration = 5000;
