@@ -10,11 +10,22 @@ import { Router } from '@angular/router';
 })
 export class LisiFeedbackComponent {
   private router = inject(Router);
+  @Input() type: 'success' | 'error' | 'warning' = 'success';
   @Input() title: string = '';
+  @Input() message: string = '';
 
+  show: boolean = false;
   stars = Array(5);
 
-  fechar(){
-    this.router.navigate(['inicio'])
+  close() { 
+    this.router.navigate(['inicio']); 
+  }
+
+  open(title: string, message: string, type: 'success' | 'error' | 'warning' = 'success') {
+    this.title = title;
+    this.message = message;
+    this.type = type;
+    this.show = true;
+    
   }
 }
