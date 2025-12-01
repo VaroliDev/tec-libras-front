@@ -81,61 +81,6 @@
     background: rgba(127, 99, 164, 0.6);
 }
 
-/* ---------- MOBILE ATÉ 575PX ---------- */
-
-@media (max-width: 575px) {
-
-    .balao_lisi {
-        position: relative;      /* necessário para posicionar balão e seta */
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: flex-end;   /* a Lisi fica como referência */
-        margin-top: 120px;        /* ajuste se quiser descer tudo */
-    }
-
-    .balao_lisi img {
-        width: 180px;   /* tamanho da Lisi no mobile */
-        z-index: 1; 
-    }
-
-    /* BALÃO EM CIMA DA CABEÇA */
-    .balaofala {
-        position: absolute;
-        bottom: 180px;        /* <<<<< AQUI AJUSTA A ALTURA DO BALÃO */
-        left: 50%;
-        transform: translateX(-50%);
-        width: 200px;
-        padding: 18px 15px;
-        background-color: $black;
-        color: $white;
-        font-size: 12px;
-        border-radius: 12px;
-        z-index: 10;
-    }
-
-    /* SETA PARA BAIXO */
-    .seta {
-        position: absolute;
-        bottom: 150px;        /* <<<<< AQUI AJUSTA A ALTURA DA SETA */
-        left: 54%;
-        transform: translateX(-50%);
-        width: 0;
-        height: 0;
-
-        border-left: 12px solid transparent;
-        border-right: 12px solid transparent;
-        border-top: 12px solid $black; /* seta ↓ */
-
-        z-index: 11;
-    }
-
-    .frasebalao {
-        max-height: 87px;
-        overflow-y: auto;
-        overflow-x: hidden;
-    }
-}
 
 
 /* ------------------ 575px+ (Mantém organização original) ------------------ */
@@ -149,20 +94,104 @@
     }
 }
 
-/* ------------------ INTERVALOS ESPECÍFICOS (mantive os seus) ------------------ */
-
+/* ------------------ INTERVALOS ESPECÍFICOS ------------------ */
 @media (min-width: 320px) and (max-width: 450px) {
-    .balao_lisi img { width: 120px; }
+    .balao_lisi {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        margin-top: 120px;
+    }
+
+    .balao_lisi img {
+        z-index: 1;
+        position: relative;
+        right: 10px;
+        top: 30px;
+        width: 200px;
+    }
+
+    .balaofala {
+        position: absolute;
+        bottom: 250px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 200px;
+        padding: 18px 15px;
+        background-color: $black;
+        color: $white;
+        font-size: 12px;
+        border-radius: 12px;
+        z-index: 10;
+    }
+
+    .seta {
+        position: relative;
+        bottom: 211px;
+        left: 111px;
+        width: 0;
+        height: 0;
+        border: 20px solid transparent;
+        border-left-color: $black;
+        transform: rotate(90deg); 
+    }
+
+    .frasebalao {
+        max-height: 87px;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
 }
 
-@media (min-width: 450px) and (max-width: 480px) {
-    .balao_lisi img { width: 135px; }
-}
+@media (min-width: 450px) and (max-width: 575px) {
+    
+    .balao_lisi {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        margin-top: 120px;
+    }
 
-@media (min-width: 480px) and (max-width: 500px) {
-    .balao_lisi img { width: 145px; }
-}
+    .balao_lisi img {
+        z-index: 1;
+        position: relative;
+        right: 10px;
+        top: 30px;
+        width: 250px;
+    }
 
-@media (min-width: 500px) and (max-width: 575px) {
-    .balao_lisi img { width: 150px; }
+    .balaofala {
+        position: absolute;
+        bottom: 300px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 200px;
+        padding: 18px 15px;
+        background-color: $black;
+        color: $white;
+        font-size: 12px;
+        border-radius: 12px;
+        z-index: 10;
+    }
+
+    .seta {
+        position: relative;
+        bottom: 262px;
+        left: 135px;
+        width: 0;
+        height: 0;
+        border: 20px solid transparent;
+        border-left-color: $black;
+        transform: rotate(90deg); 
+    }
+
+    .frasebalao {
+        max-height: 87px;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
 }

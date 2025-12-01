@@ -1,9 +1,6 @@
 <app-header></app-header>
 <app-end-header></app-end-header>
 
-@if (finished) {
-    <app-lisi-feedback [destination]="redict"></app-lisi-feedback>
-}
 
 <div class="container">
     <br>
@@ -44,5 +41,7 @@
     <br>
     <br>
 </div>
+
+<app-lisi-feedback #alert></app-lisi-feedback>
 
 <app-footer></app-footer>

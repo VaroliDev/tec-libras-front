@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ViewChild, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HeaderComponent } from "../../../components/header/header.component";
 import { FooterComponent } from "../../../components/footer/footer.component";
@@ -25,6 +25,10 @@ export class CuriosidadesComponent {
   protected finished: boolean = false
   protected redict: string = 'temas'
 
+  @ViewChild('alert') alert!: LisiFeedbackComponent;
+
+
+
   PagInicio(){
     this.router.navigate(['temas'])
   }
@@ -34,8 +38,9 @@ export class CuriosidadesComponent {
   }
 
   PagNext(){
-    this.finished = true
     this.levelService.registerProgress(5);
+    this.alert.open('Você é demais!', 'Parabéns, você concluiu o último tópico! Pronto(a) para iniciar uma nova fase?', 'success');
+
   }
 
   async ngOnInit(){
