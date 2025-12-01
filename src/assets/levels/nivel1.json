@@ -1,263 +1,332 @@
 {
     "nivel": 1,
     "tema1": {
-        "title": "Introdução à LIBRAS",
-        "subtitle": "História e importância da língua de sinais",
-        "description": "Uma visão geral sobre o surgimento da LIBRAS, sua importância cultural e reconhecimento oficial no Brasil.",
-        "aulaTeorica": "A LIBRAS é a Língua Brasileira de Sinais. Ela foi reconhecida oficialmente em 2002 pela Lei 10.436.<hr/>A língua possui gramática própria, estrutura visual-espacial e é fundamental para a comunicação da comunidade surda.",
-        "demonstracao": "https://drive.google.com/file/d/1lIcBUHj-rY2U_6Y-NkFim_LhVg-UljjT/preview <hr/> https://img.goodfon.com/wallpaper/big/1/9a/mgsv-mgs5-metal-gear-solid-v.webp",
-        "aulaPratica": "'A'<hr/>'B'<hr/>'C'<hr/>'D'",
-        "sinal": "alfabeto",
+        "title": "Introdução e História",
+        "subtitle": "Apresentação da plataforma/Introdução e História da Libras",
+        "description": " Nesta lição, o aluno terá uma visão geral da plataforma e será introduzido à Libras, sua história, importância e papel social.",
+        "aulaTeorica": " <h2>Introdução à plataforma </h2> O aluno aprenderá a navegar pela plataforma digital, acessando conteúdos, vídeos, materiais de apoio e questionários. A familiarização com o ambiente virtual é essencial para garantir autonomia nos estudos e aproveitar todos os recursos disponíveis. <hr/> <h2> História da Libras </h2> A Língua Brasileira de Sinais começou a se desenvolver a partir da chegada de Ernest Huet, em 1857, que trouxe influências da Língua de Sinais Francesa. Nesse mesmo ano foi fundada a primeira escola para surdos no Brasil. O reconhecimento oficial da Libras como meio legal de comunicação aconteceu com a Lei 10.436/2002 e o Decreto 5.626/2005, marcos fundamentais na valorização da comunidade surda. <hr/> <h2>Importância social</h2>  A Libras é mais que uma língua: ela representa inclusão, cidadania e identidade cultural surda. Seu uso fortalece o direito à comunicação,ao acesso à educação e à participação plena da comunidade surda na sociedade",
+        "demonstracao": "https://drive.google.com/file/d/1N0OuTVfyACwq6TkweIzLPF3siSQqfVbG/preview?usp=drive_link<hr/>https://drive.google.com/file/d/1gS__o72Q68a_ehENd3_UIqTcFgnqJmQ0/preview?usp=drive_link<hr/>https://drive.google.com/file/d/1N0zp4m6SK9BcQI3kwHnewD3YbEWRl-BT/preview?usp=drive_link<hr/>https://drive.google.com/file/d/1jx67GQ0oJYxFzlbsp8SC5EMtKYmw6ZRW/preview?usp=drive_link<hr/>https://drive.google.com/file/d/13wdLOeyIdlLmMqvC32zZlPXm-qYU2Tcl/preview?usp=drive_link<hr/>https://drive.google.com/file/d/1KVqfTCm4bfI7buBXoE7ozmgpssz2gFL2/preview?usp=drive_link<hr/>https://drive.google.com/file/d/1CzJrFA3nmpC7i9zicvEPOG3W4hVimgQs/preview?usp=drive_link<hr/>https://drive.google.com/file/d/18yJu3eh_SMAh-BqNzULo3F47743yfA44/preview?usp=drive_link<hr/>https://drive.google.com/file/d/1S2LZZQS5VInzmSBsjapWT58W_gC5jO6o/preview?usp=drive_link<hr/>https://drive.google.com/file/d/1us6BGjMAleevun52fgLH0RAHz1UbqNhI/preview?usp=drive_link<hr/>https://drive.google.com/file/d/1Dy90XX8XafLLbMlPenPVT0OiXTWYpL7u/preview?usp=drive_link<hr/>https://drive.google.com/file/d/1mdyrLS3AnL9XQ9pwYK_3GjK-ipnVfiGd/preview?usp=drive_link<hr/>https://drive.google.com/file/d/1x_ntMplPtGqIkyv_4EGyfTb3Ik_eq3OE/preview?usp=drive_link<hr/>https://drive.google.com/file/d/16GfesuqmJsgfItM7Hz_pvxX7T55Uh-kU/preview?usp=drive_link<hr/>https://drive.google.com/file/d/1i2WE2XqbBzYNFpvsoaiH4QDy-0Ex-s9z/preview?usp=drive_link<hr/>https://drive.google.com/file/d/1vOEQ-w7iiWCeEY5me35xQacezQ_YyrQi/preview?usp=drive_link<hr/>https://drive.google.com/file/d/1Lg1RNCXFY7_nok3R3VK-UkcJsDyUGSvG/preview?usp=drive_link<hr/>https://drive.google.com/file/d/1-05SgRlQ0FwPBDxL7eLCqbdlJaicM4Nn/preview?usp=drive_link<hr/>https://drive.google.com/file/d/14gDfPLr9ygWJ_eCL58UonTdQn-uZ1D6n/preview?usp=drive_link<hr/>https://drive.google.com/file/d/14f-3rlfkdivadezvvpI1spfkDHWaap6P/preview?usp=drive_link<hr/>https://drive.google.com/file/d/1Omcg1gcm2ZrXXvc9ZR2VTUntAEVj-2-L/preview?usp=drive_link<hr/>https://drive.google.com/file/d/1BYt6XmoVArVS8sJleXBBQhG91uRiSkDG/preview?usp=drive_link<hr/>https://drive.google.com/file/d/1eZyZ8VVKXPdu8rtbxVkyJyMGDKpmzTzh/preview?usp=drive_link<hr/>https://drive.google.com/file/d/162BTQVcE02g7lB9c3acr_vjcAdQRyyxa/preview?usp=drive_link<hr/>https://drive.google.com/file/d/1y2-xZ_EWYeLWI8oSxzHABITZDSytmF6y/preview?usp=drive_link<hr/>https://drive.google.com/file/d/1TmpxaxXTp4T68la5kOhUHeD-6b_RcC9S/preview?usp=drive_link",
+        "aulaPratica": "Número 0 <hr/> Número 1 <hr/> Número 2 <hr/> Número 3 <hr/> Número 4 <hr/> Número 5 <hr/> Número 6 <hr/> Número 7 <hr/> Número 8 <hr/> Número 9 <hr/> Número 10",
+        "sinal": "numero_0 <hr/> numero_1 <hr/> numero_2 <hr/> numero_3 <hr/> numero_4 <hr/> numero_5 <hr/> numero_6 <hr/> numero_7 <hr/> numero_8 <hr/> numero_9 <hr/> numero_10",
         "questions": {
             "q1": {
-                "question": "O que significa LIBRAS?",
+                "question": "Quem trouxe influências da Língua de Sinais Francesa para o Brasil?",
                 "options": {
-                    "a": "Linguagem Internacional de Sinais",
-                    "b": "Língua Brasileira de Sinais",
-                    "c": "Língua Básica de Sons",
-                    "d": "Linguagem Brasileira Sonora"
-                },
-                "answer": "b"
-            },
-            "q2": {
-                "question": "Em que ano a LIBRAS foi reconhecida oficialmente no Brasil?",
-                "options": {
-                    "a": "1994",
-                    "b": "2000",
-                    "c": "2002",
-                    "d": "2010"
+                    "a": "Dom Pedro II",
+                    "b": "Cecília Meireles",
+                    "c": "Ernest Huet",
+                    "d": "Rui Barbosa"
                 },
                 "answer": "c"
             },
-            "q3": {
-                "question": "A LIBRAS é uma língua:",
+            "q2": {
+                "question": "Em que ano a Libras foi reconhecida oficialmente como meio de comunicação?",
                 "options": {
-                    "a": "Visual e espacial",
-                    "b": "Apenas sonora",
-                    "c": "Sem gramática",
-                    "d": "Universal"
+                    "a": "2002",
+                    "b": "1995",
+                    "c": "2010",
+                    "d": "1857"
                 },
                 "answer": "a"
             },
-            "q4": {
-                "question": "Qual é a importância da LIBRAS?",
+            "q3": {
+                "question": "Por que a Libras é considerada uma ferramenta de inclusão social?",
                 "options": {
-                    "a": "Facilitar comunicação com estrangeiros",
-                    "b": "Substituir o português",
-                    "c": "Garantir comunicação e inclusão da comunidade surda",
-                    "d": "Ser usada apenas em escolas"
+                    "a": "Porque substitui totalmente a Língua Portuguesa",
+                    "b": "Porque é igual em todos os países",
+                    "c": "Porque não precisa de expressões faciais",
+                    "d": "Porque permite comunicação e cidadania da comunidade surda"
+                },
+                "answer": "d"
+            },
+            "q4": {
+                "question": "A Libras é universal?",
+                "options": {
+                    "a": "Sim, é a mesma em todo o mundo",
+                    "b": "Não, cada país possui sua própria língua de sinais",
+                    "c": "Apenas nos países de língua portuguesa",
+                    "d": "Só varia entre regiões do Brasil"
+                },
+                "answer": "b"
+            },
+            "q5": {
+                "question": "Por que a comunidade surda considera a Libras parte da sua identidade cultural?",
+                "options": {
+                    "a": "Porque é obrigatória por lei",
+                    "b": "Porque é derivada do português",
+                    "c": "Porque expressa valores, história e cultura da comunidade surda",
+                    "d": "Porque é ensinada apenas em escolas especiais"
                 },
                 "answer": "c"
             }
         },
-        "curiosidade": "Ao contrário do que muitos pensam, LIBRAS não é universal — cada país possui sua própria língua de sinais."
+
+        "curiosidade": "- A Libras não é universal: cada país tem sua própria língua de sinais.<hr/>- A comunidade surda brasileira considera Libras parte da sua identidade cultural.<hr/>- Muitos sinais de Libras têm origem em expressões visuais do dia a dia."
     },
 
     "tema2": {
-        "title": "Saudações em LIBRAS",
-        "subtitle": "Primeiros sinais essenciais",
-        "description": "Aprenda sinais básicos para cumprimentar e iniciar conversas simples.",
-        "aulaTeorica": "Saudações são fundamentais para qualquer comunicação. Em LIBRAS, elas são feitas com movimentos manuais e expressões faciais.",
-        "demonstracao": "Demonstração dos sinais de 'Olá', 'Como você está?' e 'Tudo bem?'",
-        "aulaPratica": "Treinar os sinais com um colega ou espelho, focando em expressões faciais.",
+        "title": "Alfabeto Manual",
+        "subtitle": "Introdução ao Alfabeto Manual em Libras",
+        "description": "Aqui o aluno aprenderá o Alfabeto Manual em Libras, utilizado para soletrar nomes próprios, palavras desconhecidas ou termos sem sinal específico.",
+        "aulaTeorica": "<h2><strong>Importância do alfabeto manual</strong></h2>O alfabeto manual é uma ferramenta básica de comunicação. Ele permite que pessoas surdas e ouvintes soletram palavras novas, nomes próprios ou termos que ainda não possuem sinais estabelecidos. <hr/>  <h2><strong>Características do alfabeto manual</strong></h2> O alfabeto manual representa as 26 letras do português por meio de sinais feitos apenas com uma mão. É necessário manter clareza nos movimentos para não confundir letras semelhantes.<hr/><h2><strong>Dicas para a prática</strong></h2>Durante a datilologia, é importante manter a mão visível, realizar os movimentos de forma clara e manter o contato visual com o interlocutor para garantir compreensão.</ul>",
+        "demonstracao": "",
+        "aulaPratica": "",
+        "sinal": "",
+
         "questions": {
             "q1": {
-                "question": "Qual elemento é essencial na comunicação em LIBRAS?",
+                "question": "Em quais situações é mais comum utilizar o alfabeto manual em Libras?",
                 "options": {
-                    "a": "Volume da voz",
-                    "b": "Expressões faciais",
-                    "c": "Acentuação",
-                    "d": "Desenhos com a mão"
+                    "a": "Para expressar emoções",
+                    "b": "Para indicar números",
+                    "c": "Para soletrar nomes e palavras sem sinal",
+                    "d": "Para substituir gestos faciais"
                 },
-                "answer": "b"
+                "answer": "c"
             },
             "q2": {
-                "question": "O sinal de 'Olá' é feito:",
+                "question": "Quantas letras compõem o alfabeto manual em Libras?",
                 "options": {
-                    "a": "Movendo a cabeça",
-                    "b": "Tocando os ombros",
-                    "c": "Balançando uma das mãos",
-                    "d": "Usando as duas mãos simultaneamente"
+                    "a": "24",
+                    "b": "25",
+                    "c": "26",
+                    "d": "30"
                 },
                 "answer": "c"
             },
             "q3": {
-                "question": "As saudações em LIBRAS dependem de:",
+                "question": "Por que é importante manter a mão visível e firme ao soletrar?",
                 "options": {
-                    "a": "Dialetos sonoros",
-                    "b": "Movimentos labiais complexos",
-                    "c": "Movimentos manuais e expressões",
-                    "d": "Som emitido simultaneamente"
+                    "a": "Para decorar a palavra",
+                    "b": "Para esconder a boca",
+                    "c": "Para fazer mais rápido",
+                    "d": "Para garantir clareza e compreensão do interlocutor"
                 },
-                "answer": "c"
+                "answer": "d"
             },
             "q4": {
-                "question": "Para praticar LIBRAS, é importante:",
+                "question": "Cite um exemplo de uso do alfabeto manual junto com sinais.",
                 "options": {
-                    "a": "Ouvir músicas",
-                    "b": "Treinar frente ao espelho",
-                    "c": "Escrever textos longos",
-                    "d": "Falar mais alto"
+                    "a": "Indicar números ordinais",
+                    "b": "Soletrar um nome próprio dentro de uma frase sinalizada",
+                    "c": "Traduzir textos em voz alta",
+                    "d": "Fazer expressões faciais"
                 },
                 "answer": "b"
+            },
+            "q5": {
+                "question": "Por que alguns sinais do alfabeto lembram as letras escritas?",
+                "options": {
+                    "a": "Para facilitar a memorização e associação",
+                    "b": "Para dificultar a aprendizagem",
+                    "c": "Por coincidência visual",
+                    "d": "Porque foram copiados do inglês"
+                },
+                "answer": "a"
             }
         },
-        "curiosidade": "A expressão facial pode mudar completamente o significado de um sinal em LIBRAS."
+
+        "curiosidade": "- É comum misturar sinais e datilologia na mesma conversa.<hr/>- Pessoas surdas usam o alfabeto manual para soletrar palavras estrangeiras.<hr/>- Alguns sinais lembram a letra escrita, facilitando a memorização."
     },
 
     "tema3": {
-        "title": "Alfabeto Manual",
-        "subtitle": "Soletração e comunicação básica",
-        "description": "Aprenda o alfabeto manual usado para soletrar nomes, lugares e palavras específicas.",
-        "aulaTeorica": "O alfabeto manual é usado para representar letras do português. É muito útil para nomes próprios ou palavras sem sinal correspondente.",
-        "demonstracao": "Demonstração do alfabeto de A a Z.",
-        "aulaPratica": "Tente soletrar seu nome e o nome de um amigo.",
+        "title": "Datilologia",
+        "subtitle": "Introdução à Datilologia em Libras",
+        "description": "A datilologia é o ato de soletrar palavras usando o alfabeto manual. Muito usada para nomes próprios, siglas e palavras sem sinal correspondente.",
+
+        "aulaTeorica": "<h2><strong>Definição</strong></h2>Datilologia é a técnica de soletrar palavras usando os sinais manuais do alfabeto. Ela é essencial para introduzir termos novos e facilitar a compreensão em situações formais.<hr/><h2><strong>Principais usos</strong></h2> A datilologia é empregada para representar nomes próprios, siglas, marcas e termos técnicos. É uma prática comum no dia a dia das comunidades surdas.<hr/><h2><strong>Boas práticas</strong></h2> Ao utilizar a datilologia, deve-se prezar pela clareza e ritmo adequado, com pausas quando necessário. As expressões faciais ajudam a contextualizar e dar sentido ao que está sendo soletrado.</ul>",
+
+        "demonstracao": "",
+        "aulaPratica": "",
+        "sinal": "",
+
         "questions": {
             "q1": {
-                "question": "Para que serve o alfabeto manual em LIBRAS?",
+                "question": "O que significa datilologia em Libras?",
                 "options": {
-                    "a": "Para representar sons",
-                    "b": "Para soletrar palavras sem sinal",
-                    "c": "Para substituir frases longas",
-                    "d": "Para formar sinais complexos"
+                "a": "Falar com voz alta",
+                "b": "Soletrar palavras usando o alfabeto manual",
+                "c": "Fazer gestos faciais",
+                "d": "Escrever no ar"
                 },
                 "answer": "b"
             },
             "q2": {
-                "question": "O alfabeto manual é:",
+                "question": "Em quais situações a datilologia é mais usada?",
                 "options": {
-                    "a": "Igual ao alfabeto inglês",
-                    "b": "Feito com duas mãos sempre",
-                    "c": "Uma representação visual das letras",
-                    "d": "Uma forma de escrita"
-                },
-                "answer": "c"
-            },
-            "q3": {
-                "question": "Quando usar o alfabeto manual?",
-                "options": {
-                    "a": "Para palavras sem sinal conhecido",
-                    "b": "Para frases longas",
-                    "c": "Para expressões faciais",
-                    "d": "Para sinais universais"
+                "a": "Para nomes próprios, siglas e palavras sem sinal",
+                "b": "Para indicar emoções",
+                "c": "Para cumprimentos formais",
+                "d": "Para expressar números cardinais"
                 },
                 "answer": "a"
             },
-            "q4": {
-                "question": "Qual dica ajuda a soletrar melhor?",
+            "q3": {
+                "question": "Qual a importância da clareza ao soletrar?",
                 "options": {
-                    "a": "Fazer sinais muito rápidos",
-                    "b": "Olhar para as mãos apenas",
-                    "c": "Manter ritmo constante e claro",
-                    "d": "Usar ambas as mãos"
+                "a": "Para deixar a conversa mais longa",
+                "b": "Para substituir expressões faciais",
+                "c": "Para evitar o uso do Português",
+                "d": "Para que o interlocutor compreenda a palavra corretamente"
+                },
+                "answer": "d"
+            },
+            "q4": {
+                "question": "Como a datilologia ajuda no aprendizado da Libras?",
+                "options": {
+                "a": "Facilita a leitura labial",
+                "b": "Ensina gramática portuguesa",
+                "c": "Permite aprender novas palavras e fixar vocabulário",
+                "d": "Reduz a necessidade de prática"
+                },
+                "answer": "c"
+            },
+            "q5": {
+                "question": "Por que pessoas surdas misturam sinais e datilologia em conversas?",
+                "options": {
+                "a": "Para confundir ouvintes",
+                "b": "Porque não conhecem todos os sinais",
+                "c": "Para complementar palavras sem sinal específico",
+                "d": "Para evitar expressões faciais"
                 },
                 "answer": "c"
             }
         },
-        "curiosidade": "Apesar de representar o português, o alfabeto manual é usado por várias línguas de sinais do mundo."
+
+        "curiosidade": "- A datilologia ajuda a aprender novas palavras em Libras.<hr/>- Muitos surdos misturam sinais e datilologia naturalmente.<hr/>- Quanto mais prática, mais fluente se torna a comunicação."
     },
 
     "tema4": {
-        "title": "Expressões Faciais",
-        "subtitle": "A emoção na comunicação",
-        "description": "As expressões faciais são uma parte essencial da LIBRAS, pois ajudam a dar sentido e emoção aos sinais.",
-        "aulaTeorica": "Expressões faciais funcionam como entonação na fala. Elas indicam dúvidas, afirmações, intensidade e emoções.",
-        "demonstracao": "Demonstração de expressões para perguntas, negação e surpresa.",
-        "aulaPratica": "Tente fazer sinais simples variando a expressão facial.",
-        "questions": {
-            "q1": {
-                "question": "Em LIBRAS, expressões faciais funcionam como:",
-                "options": {
-                    "a": "Pontuação e entonação",
-                    "b": "Sons vocais",
-                    "c": "Movimento corporal exagerado",
-                    "d": "Tradução literal"
-                },
-                "answer": "a"
-            },
-            "q2": {
-                "question": "Qual expressão é comum em perguntas?",
-                "options": {
-                    "a": "Olhos fechados",
-                    "b": "Sobrancelhas levantadas",
-                    "c": "Boca fechada",
-                    "d": "Cabeça imóvel"
-                },
-                "answer": "b"
-            },
-            "q3": {
-                "question": "Expressões faciais ajudam a:",
-                "options": {
-                    "a": "Deixar o sinal mais bonito",
-                    "b": "Dar sentido ao sinal",
-                    "c": "Fazer mais barulho",
-                    "d": "Evitar sinais manuais"
-                },
-                "answer": "b"
-            },
-            "q4": {
-                "question": "Sem expressões, um sinal pode:",
-                "options": {
-                    "a": "Perder o significado",
-                    "b": "Se tornar universal",
-                    "c": "Ficar sonoro",
-                    "d": "Criar um novo gesto"
-                },
-                "answer": "a"
-            }
-        },
-        "curiosidade": "Na LIBRAS, a expressão facial não é opcional — ela faz parte da gramática."
-    },
+        "title": "Nome/Sinal de batismo",
+        "subtitle": "Introdução ao Sinal de Batismo em Libras",
+        "description": "O sinal de batismo é uma forma única de identificar cada pessoa dentro da comunidade surda. Cada indivíduo recebe um sinal específico.",
 
-    "tema5": {
-        "title": "Vocabulário Básico",
-        "subtitle": "Objetos e ações do cotidiano",
-        "description": "Aprenda sinais simples usados no dia a dia.",
-        "aulaTeorica": "Muitas palavras comuns possuem sinais específicos. Aprender esses sinais facilita diálogos simples em LIBRAS.",
-        "demonstracao": "Demonstração dos sinais de 'CASA', 'ÁGUA', 'COMER', 'AMIGO'.",
-        "aulaPratica": "Monte frases simples usando esses sinais.",
+        "aulaTeorica": "<h2><strong>O que é o sinal de batismo</strong></h2> O sinal de batismo é um gesto simbólico e único atribuído pela comunidade surda para identificar uma pessoa. Esse sinal pode estar relacionado a características físicas ou traços de personalidade.<hr/><h2><strong>Função social</strong></h2>Além de facilitar a comunicação, o sinal de batismo fortalece o sentimento de pertencimento à comunidade surda e contribui para a construção da identidade cultural.<hr/><h2><strong>Características</strong></h2>Os sinais podem mudar ao longo da vida, dependendo de novas experiências ou mudanças na pessoa. É desrespeitoso criar um sinal para si mesmo sem a participação da comunidade surda.</ul>",
+
+        "demonstracao": "",
+        "aulaPratica": "",
+        "sinal": "",
+
         "questions": {
             "q1": {
-                "question": "O sinal de 'água' geralmente envolve:",
+                "question": "O que é o sinal de batismo em Libras?",
                 "options": {
-                    "a": "A mão perto da boca",
-                    "b": "As duas mãos na cabeça",
-                    "c": "Um movimento nos pés",
-                    "d": "Um toque no peito"
+                "a": "Um nome escrito em português",
+                "b": "Uma tradução literal do nome",
+                "c": "Um sinal único que identifica a pessoa",
+                "d": "Um gesto universal para todos"
                 },
-                "answer": "a"
+                "answer": "c"
             },
             "q2": {
-                "question": "O vocabulário básico serve para:",
+                "question": "Quem concede o sinal de batismo?",
                 "options": {
-                    "a": "Aprender sinais raros",
-                    "b": "Compor frases do dia a dia",
-                    "c": "Comunicação avançada",
-                    "d": "Substituir o alfabeto manual"
+                "a": "O próprio indivíduo",
+                "b": "A família ou amigos ouvintes",
+                "c": "O governo",
+                "d": "A comunidade surda"
                 },
-                "answer": "b"
+                "answer": "d"
             },
             "q3": {
-                "question": "Qual palavra normalmente tem sinal próprio?",
+                "question": "De que forma o sinal de batismo reforça a identidade cultural?",
                 "options": {
-                    "a": "Palavras técnicas complexas",
-                    "b": "Objetos comuns e ações do dia",
-                    "c": "Termos científicos",
-                    "d": "Nomes estrangeiros"
+                "a": "Porque é obrigatório por lei",
+                "b": "Porque integra a pessoa à cultura e valores da comunidade surda",
+                "c": "Porque substitui o português",
+                "d": "Porque é sempre baseado na profissão"
                 },
                 "answer": "b"
             },
             "q4": {
-                "question": "Para montar frases simples, é recomendado:",
+                "question": "Por que é desrespeitoso inventar seu próprio sinal?",
                 "options": {
-                    "a": "Evitar expressões faciais",
-                    "b": "Usar sinais básicos com clareza",
-                    "c": "Soletrar tudo",
-                    "d": "Usar sinais longos"
+                "a": "Porque dificulta a escrita",
+                "b": "Porque fere regras gramaticais",
+                "c": "Porque ignora a participação da comunidade surda",
+                "d": "Porque não é reconhecido por lei"
                 },
-                "answer": "b"
+                "answer": "c"
+            },
+            "q5": {
+                "question": "Como o sinal de batismo pode mudar ao longo da vida?",
+                "options": {
+                "a": "Nunca muda, é fixo",
+                "b": "Só muda por decisão do governo",
+                "c": "Muda a cada aniversário",
+                "d": "Pode mudar por novas características ou situações marcantes"
+                },
+                "answer": "d"
             }
         },
-        "curiosidade": "Alguns sinais variam entre regiões do Brasil, formando 'dialetos' dentro da LIBRAS."
+
+        "curiosidade": "- O sinal de batismo pode mudar ao longo da vida.<hr/>- Muitas vezes faz referência à infância da pessoa.<hr/>- É desrespeito inventar o próprio sinal sem a comunidade."
+    },  
+    "tema5": {
+        "title": "Números cardinais, ordinais e de quantidade",
+        "subtitle": "Expressão de números em Libras",
+        "description": "Nesta lição, o aluno aprenderá a expressar números em Libras: cardinais, ordinais e quantidades.",
+
+        "aulaTeorica": "<h2><strong>Números cardinais</strong></h2>São utilizados para contar objetos, pessoas ou situações. Representam quantidades básicas e podem ser feitos com uma ou duas mãos, dependendo do número.<hr/><h2><strong>Números ordinais</strong></h2>Indicam a ordem ou posição de algo em uma sequência, como 1º, 2º e 3º. O movimento dos dedos e a expressão facial ajudam a diferenciar os ordinais dos cardinais.<hr/><h2><strong>Expressões de quantidade</strong></h2> Sinais como 'muito', 'pouco' e 'nenhum' são reforçados pelas expressões faciais, transmitindo claramente a ideia da quantidade mencionada.</ul>",
+
+        "demonstracao": "…",
+        "aulaPratica": "",
+        "sinal": "",
+
+        "questions": {
+            "q1": {
+                "question": "Qual a diferença entre números cardinais e ordinais em Libras?",
+                "options": {
+                "a": "Cardinal indica ordem, ordinal indica quantidade",
+                "b": "Cardinal indica quantidade, ordinal indica ordem",
+                "c": "Ambos indicam a mesma coisa",
+                "d": "Cardinal é sempre feito com as duas mãos"
+                },
+                "answer": "b"
+            },
+            "q2": {
+                "question": "Dê um exemplo de expressão de quantidade em Libras.",
+                "options": {
+                "a": "Muito",
+                "b": "Segundo",
+                "c": "Primeiro",
+                "d": "Várias"
+                },
+                "answer": "a"
+            },
+            "q3": {
+                "question": "Por que as expressões faciais são importantes para quantidades?",
+                "options": {
+                "a": "Porque substituem os sinais manuais",
+                "b": "Porque são opcionais e decorativas",
+                "c": "Porque reforçam o sentido de muito, pouco ou nenhum",
+                "d": "Porque indicam a ordem numérica"
+                },
+                "answer": "c"
+            },
+            "q4": {
+                "question": "Como diferenciar cardinais e ordinais no movimento dos dedos?",
+                "options": {
+                "a": "Não existe diferença",
+                "b": "A posição e o movimento mudam para indicar ordem ou quantidade",
+                "c": "Apenas a expressão facial muda",
+                "d": "Usa-se sempre as duas mãos para ordinais"
+                },
+                "answer": "b"
+            },
+            "q5": {
+                "question": "Por que alguns números são feitos com uma mão e outros com duas?",
+                "options": {
+                "a": "Por preferência pessoal",
+                "b": "Para dificultar a aprendizagem",
+                "c": "Para permitir clareza e representar números maiores",
+                "d": "Porque todos os números pares exigem duas mãos"
+                },
+                "answer": "c"
+            }
+        },
+
+        "curiosidade": "- Alguns números em Libras são feitos com uma mão, outros com duas.<hr/>- A posição dos dedos diferencia cardinais de ordinais.<hr/>- Expressões faciais são fundamentais para dar sentido à quantidade."
     }
 }
+

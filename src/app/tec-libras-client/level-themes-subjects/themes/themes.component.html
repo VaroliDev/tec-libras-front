@@ -11,6 +11,7 @@
 
         <!--AULA TEÓRICA-->
         <a class="card-tema" 
+           *ngIf="topicsExists.teorica"
            [class.locked]="isTopicLocked('teorica')"
            (click)="handleTopicClick('teorica', $event)">
             <div class="card">
@@ -29,6 +30,7 @@
 
         <!--DEMONSTRAÇÕES-->
         <a class="card-tema" 
+           *ngIf="topicsExists.demonstracao"
            [class.locked]="isTopicLocked('demonstracao')"
            (click)="!isTopicLocked('demonstracao') && PagDemonstracao()">
             <div class="card">
@@ -48,6 +50,7 @@
 
         <!--AULA PRÁTICA-->
         <a class="card-tema" 
+           *ngIf="topicsExists.pratica"
            [class.locked]="isTopicLocked('pratica')"
            (click)="!isTopicLocked('pratica') && PagPratica()">
             <div class="card">
@@ -66,6 +69,7 @@
 
         <!--QUIZ-->
         <a class="card-tema" 
+           *ngIf="topicsExists.questionario"
            [class.locked]="isTopicLocked('questionario')"
            (click)="!isTopicLocked('questionario') && PagQuestionario()">
             <div class="card">
@@ -84,6 +88,7 @@
 
         <!--CURIOSIDADES-->
         <a class="card-tema" 
+           *ngIf="topicsExists.curiosidades"
            [class.locked]="isTopicLocked('curiosidades')"
            (click)="!isTopicLocked('curiosidades') && PagCuriosidades()">
             <div class="card">
