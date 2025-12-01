@@ -1,54 +1,197 @@
 {
-    "nivel": 2,
-    "tema1": {
-        "title": "",
-        "subtitle": "",
-        "description": "",
-        "aula-teorica": "",
+"nivel": 2,
+"tema1": {
+    "title": "Pronomes em Libras",
+    "subtitle": "Uso de pronomes e deixis na Libras",
+    "description": "Nesta lição, o aluno aprenderá como indicar pessoas usando o espaço ao redor. Os pronomes em Libras não aparecem como palavras, mas como apontamentos e direções das mãos, tornando a comunicação clara e natural.",
+    "aulaTeorica": "<ul><li><strong>A importância dos pronomes</strong></li>Os pronomes ajudam a indicar quem está envolvido na conversa. Na Libras, eles são expressos por apontamentos no espaço, chamados deixis, facilitando a compreensão e tornando a comunicação natural.<hr/><li><strong>Como usar os pronomes</strong></li> Eu: aponta para si mesmo.<hr/> Você: aponta para o interlocutor.<hr/> Ele/Ela: aponta para onde a pessoa está no espaço.<hr/> Plural: mover a mão indicando mais de uma pessoa.<hr/><li><strong>Dicas para praticar</strong></li>Observe as expressões faciais. Pratique com colegas usando diferentes posições no espaço.<hr/><li><strong>Exemplos na vida real</strong></li> “Ele é meu amigo.” “Eu gosto desse livro, e você?”</ul>",
+    "demonstracao": "",
+    "aulaPratica": "",
+    "sinal": "",
+    "questions": {
+        "q1": {
+        "question": "O que são pronomes na Libras?",
+        "options": { "a": "Palavras escritas como no português", "b": "Apontamentos no espaço que indicam pessoas", "c": "Gestos aleatórios sem significado", "d": "Sons específicos da Libras" },
+        "answer": "b"
+        },
+        "q2": {
+        "question": "Qual é a função da deixis na Libras?",
+        "options": { "a": "Representar objetos", "b": "Indicar tempo verbal", "c": "Apontar para pessoas ou objetos no espaço", "d": "Mudar o gênero do pronome" },
+        "answer": "c"
+        },
+        "q3": {
+        "question": "Como se indica “eu” na Libras?",
+        "options": { "a": "Apontando para outra pessoa", "b": "Movendo as mãos em círculo", "c": "Movendo as mãos para cima", "d": "Apontando para si mesmo" },
+        "answer": "d"
+        },
+        "q4": {
+        "question": "Como o plural é indicado nos pronomes da Libras?",
+        "options": { "a": "Com gesto repetido", "b": "Movendo a mão abrangendo mais de uma pessoa", "c": "Mudando a cor da roupa", "d": "Alterando o tom de voz" },
+        "answer": "b"
+        },
+        "q5": {
+        "question": "Por que os pronomes são importantes?",
+        "options": { "a": "Permitem coesão e referência clara na conversa", "b": "Tornam a comunicação mais confusa", "c": "Substituem verbos", "d": "Não têm função" },
+        "answer": "a"
+        }
+        },
+    "curiosidade": "- O espaço em frente ao sinalizador funciona como um 'mapa' para indicar pessoas.<hr/>- Não existem palavras separadas para pronomes; tudo depende do apontamento.<hr/>- O mesmo gesto pode ter sentidos diferentes dependendo do contexto."
+    },
+
+
+    "tema2": {
+        "title": "Adjetivos em Libras",
+        "subtitle": "Uso e intensidade dos adjetivos",
+        "description": "Nesta lição, o aluno aprenderá como descrever pessoas, objetos e situações usando adjetivos na Libras, explorando expressões faciais, intensidade e combinações de sinais.",
+        "aulaTeorica": "<ul><li><strong>A importância dos adjetivos</strong></li><hr/> Adjetivos descrevem qualidades e características. Na Libras, não mudam para gênero ou número, mas sua intensidade varia conforme o movimento e expressão facial.<hr/><li><strong>Como usar adjetivos</strong></li><hr/> Movimentos maiores indicam intensidade. Expressões faciais passam nuances.<hr/> Combinações de sinais formam novos significados: HOMEM + BONITO.<hr/><li><strong>Dicas para praticar</strong></li><hr/> Exagere movimentos para perceber diferenças. Pratique sinais como grande, pequeno, alto, baixo.<hr/><li><strong>Exemplos na vida real</strong></li><hr/> “O bolo está doce.” “O cachorro é grande e brincalhão.”</ul>",
         "demonstracao": "",
-        "aula-pratica": "",
+        "aulaPratica": "",
+        "sinal": "",
         "questions": {
             "q1": {
-                "question": "",
-                "options": {
-                    "a": "",
-                    "b": "",
-                    "c": "",
-                    "d": ""
-                },
-                "answer": ""
+            "question": "Como os adjetivos funcionam na Libras?",
+            "options": { "a": "Não mudam de forma e são combinados com expressões faciais", "b": "Mudam de gênero e número", "c": "São sinais apenas para cores", "d": "São sempre verbos" },
+            "answer": "a"
             },
             "q2": {
-                "question": "",
-                "options": {
-                    "a": "",
-                    "b": "",
-                    "c": "",
-                    "d": ""
-                },
-                "answer": ""
+            "question": "Como indicar intensidade de um adjetivo?",
+            "options": { "a": "Alterando as pernas", "b": "Com movimento e expressão facial", "c": "Repetindo o pronome", "d": "Acelerando o verbo" },
+            "answer": "b"
             },
             "q3": {
-                "question": "",
-                "options": {
-                    "a": "",
-                    "b": "",
-                    "c": "",
-                    "d": ""
-                },
-                "answer": ""
+            "question": "É possível formar novos significados com adjetivos?",
+            "options": { "a": "Apenas na fala", "b": "Não, são fixos", "c": "Somente em situações formais", "d": "Sim, combinando sinais" },
+            "answer": "d"
             },
             "q4": {
-                "question": "",
-                "options": {
-                    "a": "",
-                    "b": "",
-                    "c": "",
-                    "d": ""
-                },
-                "answer": ""
+            "question": "Por que expressões faciais são importantes nos adjetivos?",
+            "options": { "a": "Não têm função", "b": "Apenas enfeitam", "c": "Indicam intensidade ou qualidade", "d": "Substituem pronomes" },
+            "answer": "c"
+            },
+            "q5": {
+            "question": "Qual é exemplo de adjetivo composto?",
+            "options": { "a": "HOMEM + BONITO", "b": "EU + VOCÊ", "c": "HOJE + AMANHÃ", "d": "TCHAU + OI" },
+            "answer": "a"
             }
         },
-        "curiosidade": ""
+        "curiosidade": "- Um mesmo adjetivo serve para masculino e feminino.<hr/>- Expressões faciais podem mudar totalmente o sentido.<hr/>- Adjetivos compostos permitem descrições mais precisas."
+        },
+
+
+    "tema3": {
+        "title": "Verbos em Libras",
+        "subtitle": "Verbos simples, de concordância e classificadores",
+        "description": "Nesta lição, o aluno aprenderá como os verbos funcionam na Libras, como mudam no espaço para indicar quem faz e quem recebe a ação, e como classificadores representam formas e movimentos.",
+        "aulaTeorica": "<ul><li><strong>A importância dos verbos</strong></li><hr/> Verbos representam ações e estados. Alguns mudam direção e posição para indicar sujeito e objeto.<hr/><li><strong>Como usar os verbos</strong></li><hr/> Verbos simples: sem concordância.<hr/> Verbos de concordância: ajustam direção conforme sujeito/objeto.<hr/> Classificadores: representam formas e movimentos.<hr/><li><strong>Dicas para praticar</strong></li><hr/> Treine movimentos no espaço. Observe expressões faciais. Combine verbos e pronomes.<hr/><li><strong>Exemplos na vida real</strong></li><hr/> “Eu vejo você.” “Ela entrega o presente para ele.”</ul>",
+        "demonstracao": "",
+        "aulaPratica": "",
+        "sinal": "",
+        "questions": {
+            "q1": {
+            "question": "Quais são os tipos de verbos em Libras?",
+            "options": { "a": "Simples, de concordância e classificadores", "b": "Masculinos e femininos", "c": "Singular e plural", "d": "Adjetivos e advérbios" },
+            "answer": "a"
+            },
+            "q2": {
+            "question": "O que diferencia verbos simples dos de concordância?",
+            "options": { "a": "O simples não se move; o de concordância muda no espaço", "b": "O simples é longo", "c": "O de concordância é repetido", "d": "O simples é usado só no passado" },
+            "answer": "a"
+            },
+            "q3": {
+            "question": "Como funcionam classificadores verbais?",
+            "options": { "a": "Representam formas e movimentos", "b": "Indicam plural dos pronomes", "c": "Alteram intensidade dos adjetivos", "d": "Substituem advérbios" },
+            "answer": "a"
+            },
+            "q4": {
+            "question": "Como a direção do movimento indica sujeito e objeto?",
+            "options": { "a": "Movendo para cima e baixo", "b": "Ajustando espaço entre mãos", "c": "Movendo o verbo na direção do objeto ou sujeito", "d": "Fazendo círculos" },
+            "answer": "c"
+            },
+            "q5": {
+            "question": "Por que verbos espaciais tornam a comunicação visual?",
+            "options": { "a": "Substituem adjetivos", "b": "Mostram ações no espaço de forma clara", "c": "São lentos", "d": "Não usam expressões faciais" },
+            "answer": "b"
+            }
+            },
+        "curiosidade": "- Verbos podem se mover para indicar quem faz e quem recebe a ação.<hr/>- Classificadores podem representar pessoas, objetos ou animais.<hr/>- A posição das mãos pode mudar totalmente o sentido do verbo."
+    },
+
+
+    "tema4": {
+        "title": "Advérbios em Libras",
+        "subtitle": "Expressão de tempo, modo e lugar",
+        "description": "Nesta lição, o aluno aprenderá como expressar quando, onde e como algo acontece usando sinais manuais, expressões faciais e movimentos do corpo.",
+        "aulaTeorica": "<ul><li><strong>A importância dos advérbios</strong></li><hr/> Advérbios indicam tempo, modo e lugar e completam o sentido das frases.<hr/><li><strong>Como usar advérbios</strong></li><hr/> Alguns têm sinais específicos (HOJE, ONTEM, AMANHÃ).<hr/> Outros dependem de movimentos e expressões faciais para intensidade e modo.<hr/> Combinação de sinais manuais e não manuais é essencial.<hr/><li><strong>Dicas para praticar</strong></li><hr/> Varie movimento e velocidade. Use advérbios para detalhar ações.<hr/><li><strong>Exemplos</strong></li><hr/> “Eu estudo HOJE.” “Ela fala RÁPIDO.”</ul>",
+        "demonstracao": "",
+        "aulaPratica": "",
+        "sinal": "",
+        "questions": {
+            "q1": {
+            "question": "O que os advérbios indicam?",
+            "options": { "a": "Apenas cores", "b": "Tempo, modo e lugar", "c": "Quem está falando", "d": "Somente objetos" },
+            "answer": "b"
+            },
+            "q2": {
+            "question": "Como são representados advérbios de tempo?",
+            "options": { "a": "Com sinais específicos ou expressões faciais", "b": "Com movimentos circulares", "c": "Mudando posição dos pronomes", "d": "Mudando gênero do verbo" },
+            "answer": "a"
+            },
+            "q3": {
+            "question": "Como expressões faciais ajudam nos advérbios?",
+            "options": { "a": "Não ajudam", "b": "Apenas decoram", "c": "Substituem pronomes", "d": "Complementam intensidade ou modo" },
+            "answer": "d"
+            },
+            "q4": {
+            "question": "É possível alterar o sentido de um advérbio com movimento?",
+            "options": { "a": "Sim, prolongando ou repetindo o sinal", "b": "Não", "c": "Apenas em verbos", "d": "Apenas em pronomes" },
+            "answer": "a"
+            },
+            "q5": {
+            "question": "Por que advérbios tornam a comunicação mais completa?",
+            "options": { "a": "Indicam tempo, modo e lugar", "b": "Substituem verbos", "c": "São mais longos", "d": "Não usam expressões faciais" },
+            "answer": "a"
+            }
+        },
+        "curiosidade": "- Advérbios podem ser manuais ou não manuais.<hr/>- Repetir ou prolongar movimento indica intensidade.<hr/>- Expressão facial é essencial para advérbios como rápido ou devagar."
+    },
+
+
+    "tema5": {
+        "title": "Saudações, despedidas e interações em Libras",
+        "subtitle": "Comunicação inicial e encerramento de conversas",
+        "description": "Nesta lição, o aluno aprenderá como cumprimentar, interagir e se despedir na Libras usando sinais, expressões faciais e contato visual.",
+        "aulaTeorica": "<ul><li><strong>A importância das interações</strong></li><hr/> Saudações e despedidas tornam a comunicação clara e educada. Expressões faciais transmitem emoção.<hr/><li><strong>Como usar cumprimentos e despedidas</strong></li><hr/> Oi / Tudo bem? com sorriso e contato visual.<hr/> Tchau com gesto de encerramento.<hr/> Expressões faciais mostram intenção.<hr/><li><strong>Dicas para praticar</strong></li><hr/> Observe contexto. Pratique com colegas.<hr/><li><strong>Exemplos</strong></li><hr/> “Oi! Como você está?” “Tchau! Até amanhã.”</ul>",
+        "demonstracao": "",
+        "aulaPratica": "",
+        "sinal": "",
+        "questions": {
+            "q1": {
+            "question": "Quais sinais são usados para cumprimentar alguém?",
+            "options": { "a": "HOJE e ONTEM", "b": "BONITO e GRANDE", "c": "OI e TUDO BEM?", "d": "EU e VOCÊ" },
+            "answer": "c"
+            },
+            "q2": {
+            "question": "Como se despede alguém na Libras?",
+            "options": { "a": "Tchau com gesto de encerramento", "b": "Oi apontando para si", "c": "HOJE com expressão facial", "d": "BONITO com movimento rápido" },
+            "answer": "a"
+            },
+            "q3": {
+            "question": "Por que o contato visual é importante?",
+            "options": { "a": "Não é importante", "b": "Substitui verbos", "c": "Mantém atenção e clareza", "d": "Apenas decora" },
+            "answer": "c"
+            },
+            "q4": {
+            "question": "Como expressões faciais ajudam nas saudações?",
+            "options": { "a": "Apenas enfeitam", "b": "Transmitem emoções e intenções", "c": "Substituem advérbios", "d": "Não têm função" },
+            "answer": "b"
+            },
+            "q5": {
+            "question": "Como adaptar a saudação ao contexto?",
+            "options": { "a": "Usando sinais apropriados para situação e formalidade", "b": "Sempre com o mesmo gesto", "c": "Variando só velocidade", "d": "Mudando advérbios" },
+            "answer": "a"
+            }
+        },
+        "curiosidade": "- Um sorriso muda a intenção da saudação.<hr/>- Alguns cumprimentos variam regionalmente.<hr/>- Gestos de despedida ajudam a encerrar a interação de forma clara."
     }
+
 }
