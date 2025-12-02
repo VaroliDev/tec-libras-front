@@ -70,7 +70,7 @@
         "description": "Aqui o aluno aprenderá o Alfabeto Manual em Libras, utilizado para soletrar nomes próprios, palavras desconhecidas ou termos sem sinal específico.",
         "aulaTeorica": "<h2><strong>Importância do alfabeto manual</strong></h2>O alfabeto manual é uma ferramenta básica de comunicação. Ele permite que pessoas surdas e ouvintes soletram palavras novas, nomes próprios ou termos que ainda não possuem sinais estabelecidos. <hr/>  <h2><strong>Características do alfabeto manual</strong></h2> O alfabeto manual representa as 26 letras do português por meio de sinais feitos apenas com uma mão. É necessário manter clareza nos movimentos para não confundir letras semelhantes.<hr/><h2><strong>Dicas para a prática</strong></h2>Durante a datilologia, é importante manter a mão visível, realizar os movimentos de forma clara e manter o contato visual com o interlocutor para garantir compreensão.</ul>",
         "demonstracao": "https://drive.google.com/file/d/1N0OuTVfyACwq6TkweIzLPF3siSQqfVbG/preview",
-        "aulaPratica": "Letra A<hr/>Letra I<hr/>Letra I<hr/>Letra V",
+        "aulaPratica": "Letra A<hr/>Letra I<hr/>Letra O<hr/>Letra V",
         "sinal_order": "letra_A<hr/>letra_I<hr/>letra_O<hr/>letra_V",
 
         "questions": {
