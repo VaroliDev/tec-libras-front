@@ -84,8 +84,9 @@
         "description": "Nesta lição, o aluno aprenderá como os verbos funcionam na Libras, como mudam no espaço para indicar quem faz e quem recebe a ação, e como classificadores representam formas e movimentos.",
         "aulaTeorica": "<ul><li><strong>A importância dos verbos</strong></li><hr/> Verbos representam ações e estados. Alguns mudam direção e posição para indicar sujeito e objeto.<hr/><li><strong>Como usar os verbos</strong></li><hr/> Verbos simples: sem concordância.<hr/> Verbos de concordância: ajustam direção conforme sujeito/objeto.<hr/> Classificadores: representam formas e movimentos.<hr/><li><strong>Dicas para praticar</strong></li><hr/> Treine movimentos no espaço. Observe expressões faciais. Combine verbos e pronomes.<hr/><li><strong>Exemplos na vida real</strong></li><hr/> “Eu vejo você.” “Ela entrega o presente para ele.”</ul>",
         "demonstracao": "",
-        "aulaPratica": "",
+        "aula-pratica": "",
         "sinal": "",
+        "sinal_order": "",
         "questions": {
             "q1": {
             "question": "Quais são os tipos de verbos em Libras?",

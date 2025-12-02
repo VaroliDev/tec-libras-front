@@ -97,4 +97,10 @@ export class LoginComponent {
     };
     localStorage.setItem('token', JSON.stringify(userData));
   }
+
+  ngOnInit(): void {
+    if(this.authService.isLogged()){
+      this.router.navigateByUrl('/inicio');
+    }
+  }
 }
