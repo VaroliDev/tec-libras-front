@@ -3,6 +3,14 @@ import {
   GestureRecognizer,
   FilesetResolver
 } from '@mediapipe/tasks-vision';
+const HAND_CONNECTIONS = [
+  [0, 1], [1, 2], [2, 3], [3, 4],        // dedão
+  [0, 5], [5, 6], [6, 7], [7, 8],        // indicador
+  [5, 9], [9, 10], [10, 11], [11, 12],   // dedo médio
+  [9, 13], [13, 14], [14, 15], [15, 16], // anelar
+  [13, 17], [17, 18], [18, 19], [19, 20],// mínimo
+  [0, 17]                                // palma
+];
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +21,7 @@ export class MediaPipeService {
   private runningMode: 'IMAGE' | 'VIDEO' = 'IMAGE';
   private lastVideoTime = -1;
   private results: any;
+  
 
   constructor() {}
 
@@ -104,6 +113,39 @@ export class MediaPipeService {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     // Não desenha landmarks (removido para melhor performance)
+    // ========================================
+// DESENHAR LINHAS DAS MÃOS
+// ========================================
+if (this.results?.landmarks) {
+  this.results.landmarks.forEach((landmarks: any) => {
+    HAND_CONNECTIONS.forEach(([start, end]) => {
+      const p1 = landmarks[start];
+      const p2 = landmarks[end];
+
+      ctx.beginPath();
+      ctx.moveTo(p1.x * canvas.width, p1.y * canvas.height);
+      ctx.lineTo(p2.x * canvas.width, p2.y * canvas.height);
+      ctx.lineWidth = 3;
+      ctx.strokeStyle = 'purple';
+      ctx.stroke();
+    });
+  });
+}
+
+// ========================================
+// DESENHAR PONTOS DAS MÃOS
+// ========================================
+if (this.results?.landmarks) {
+  this.results.landmarks.forEach((landmarks: any) => {
+    landmarks.forEach((p: any) => {
+      ctx.beginPath();
+      ctx.arc(p.x * canvas.width, p.y * canvas.height, 5, 0, 2 * Math.PI);
+      ctx.fillStyle = "orange";
+      ctx.fill();
+    });
+  });
+}
+
 
     // Retorna resultado do gesto
     if (this.results?.gestures?.length > 0) {
