@@ -84,12 +84,16 @@ h3 {
 }
 
 
+/* estrela preenchida */
 .star-filled {
-  color: gold !important;
+  color: #FFD700 !important;  // amarelo
+  fill: #FFD700 !important;
 }
 
+/* estrela vazia */
 .star-empty {
-  color: #d3d3d3 !important;
+  color: #C0C0C0 !important;  // cinza claro
+  fill: #C0C0C0 !important;
 }
 
 .alert-card {

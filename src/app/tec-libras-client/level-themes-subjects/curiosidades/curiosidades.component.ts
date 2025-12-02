@@ -48,8 +48,13 @@ export class CuriosidadesComponent {
       this.curiosidadeAtual = this.curiosidades[this.indiceAtual];
     } else {
       this.levelService.registerProgress(5);
-      this.alert.open('Você é demais!', 'Parabéns, você concluiu o último tópico! Pronto(a) para iniciar uma nova fase?', 'success');
+      this.alert.open('Você é demais!', 'Parabéns, você concluiu o último tópico! Pronto(a) para iniciar uma nova fase?', 'success', 5);
+      
     }
+  }
+
+  close(){
+    this.router.navigate(['temas']);
   }
 
   async ngOnInit(){

@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, inject, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -17,10 +17,19 @@ export class LisiFeedbackComponent {
 
   @Output() closed = new EventEmitter<void>();
 
+  // controla abrir/fechar
   show: boolean = false;
 
-  stars = Array.from({ length: 5 });
+  // gera 5 estrelas
+  stars = Array(5).fill(0);
 
+  // Fecha o alert
+  close() {
+    this.show = false;
+    this.closed.emit();
+  }
+
+  // Abre o alert
   open(
     title: string,
     message: string,
@@ -32,11 +41,6 @@ export class LisiFeedbackComponent {
     this.type = type;
     this.score = score;
     this.show = true;
-  }
-
-  close() {
-    this.show = false;
-    this.closed.emit();
   }
 
   getStarClass(index: number): string {

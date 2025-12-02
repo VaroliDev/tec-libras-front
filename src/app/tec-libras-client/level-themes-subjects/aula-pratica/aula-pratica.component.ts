@@ -5,10 +5,11 @@ import { FooterComponent } from '../../../components/footer/footer.component';
 import { EndHeaderComponent } from "../../../components/end-header/end-header.component";
 import { LevelService } from '../../../services/level.service';
 import { MediaPipeService } from '../../../services/mediapipe.service';
+import { LisiFeedbackComponent } from '../../../components/lisi-feedback/lisi-feedback.component';
 
 @Component({
   selector: 'app-aula-pratica',
-  imports: [HeaderComponent, FooterComponent, EndHeaderComponent],
+  imports: [HeaderComponent, FooterComponent, EndHeaderComponent, LisiFeedbackComponent],
   templateUrl: './aula-pratica.component.html',
   styleUrl: './aula-pratica.component.scss'
 })
@@ -30,6 +31,8 @@ export class AulaPraticaComponent implements OnInit {
   protected status_class: string = 'incorrect-sign';
   protected signal: string = '';
   protected levelProgress: number = 0;
+
+  @ViewChild('alert') alert!: LisiFeedbackComponent;
 
   // Configuração de vídeo
   protected videoHeight = 360;
@@ -127,11 +130,20 @@ export class AulaPraticaComponent implements OnInit {
       this.updateCorrectSignal();
     } else {
       this.completeLesson();
+      this.alert.open('Você é demais!', 'Parabéns, você concluiu a aula prática de ${this.title}! Avance para o questionário e teste suas habilidades!', 'success', 5);
+      
     }
   }
 
+  close(){
+    this.router.navigate(['temas']);
+  }
+
   skip(): void {
+    this.alert.open('Tudo bem!', 'Que pena que você não conseguiu realizar a aula prática de ${this.title}!. Mas você pode avançar para o questionário e testar suas habilidades!', 'success', 5);
+      
     this.completeLesson();
+    
   }
 
   private completeLesson(): void {
