@@ -143,7 +143,7 @@ export class AulaPraticaComponent implements OnInit {
       this.updateCorrectSignal();
     } else {
       this.completeLesson();
-      this.alert.open('Você é demais!', `Parabéns, você concluiu a aula prática de ${this.title}! Avance para o questionário e teste suas habilidades!`, 'success', 5);
+      this.alert.open('Você é demais!', `Parabéns, você concluiu a aula prática! Avance para o questionário e teste suas habilidades!`, 'success', 5);
       
     }
   }
