@@ -7,7 +7,7 @@
         "aulaTeorica": " <h2>Introdução à plataforma </h2> O aluno aprenderá a navegar pela plataforma digital, acessando conteúdos, vídeos, materiais de apoio e questionários. A familiarização com o ambiente virtual é essencial para garantir autonomia nos estudos e aproveitar todos os recursos disponíveis. <hr/> <h2> História da Libras </h2> A Língua Brasileira de Sinais começou a se desenvolver a partir da chegada de Ernest Huet, em 1857, que trouxe influências da Língua de Sinais Francesa. Nesse mesmo ano foi fundada a primeira escola para surdos no Brasil. O reconhecimento oficial da Libras como meio legal de comunicação aconteceu com a Lei 10.436/2002 e o Decreto 5.626/2005, marcos fundamentais na valorização da comunidade surda. <hr/> <h2>Importância social</h2>  A Libras é mais que uma língua: ela representa inclusão, cidadania e identidade cultural surda. Seu uso fortalece o direito à comunicação,ao acesso à educação e à participação plena da comunidade surda na sociedade",
         "demonstracao": "",
         "aulaPratica": "",
-        "sinal": "",
+        "sinal_order": "",
         "questions": {
             "q1": {
                 "question": "Quem trouxe influências da Língua de Sinais Francesa para o Brasil?",
@@ -70,8 +70,8 @@
         "description": "Aqui o aluno aprenderá o Alfabeto Manual em Libras, utilizado para soletrar nomes próprios, palavras desconhecidas ou termos sem sinal específico.",
         "aulaTeorica": "<h2><strong>Importância do alfabeto manual</strong></h2>O alfabeto manual é uma ferramenta básica de comunicação. Ele permite que pessoas surdas e ouvintes soletram palavras novas, nomes próprios ou termos que ainda não possuem sinais estabelecidos. <hr/>  <h2><strong>Características do alfabeto manual</strong></h2> O alfabeto manual representa as 26 letras do português por meio de sinais feitos apenas com uma mão. É necessário manter clareza nos movimentos para não confundir letras semelhantes.<hr/><h2><strong>Dicas para a prática</strong></h2>Durante a datilologia, é importante manter a mão visível, realizar os movimentos de forma clara e manter o contato visual com o interlocutor para garantir compreensão.</ul>",
         "demonstracao": "https://drive.google.com/file/d/1N0OuTVfyACwq6TkweIzLPF3siSQqfVbG/preview",
-        "aulaPratica": "Letra A<hr/>Letra I<hr/>Letra O<hr/>Letra V",
-        "sinal": "letra_A<hr/>letra_I<hr/>letra_O<hr/>letra_V",
+        "aulaPratica": "Letra A<hr/>Letra I<hr/>Letra I<hr/>Letra V",
+        "sinal_order": "letra_A<hr/>letra_I<hr/>letra_O<hr/>letra_V",
 
         "questions": {
             "q1": {
@@ -138,7 +138,7 @@
 
         "demonstracao": "https://drive.google.com/file/d/1zpOqt5Wr0zi96ji3VW4GRsmzWyGC6Qv0/preview <hr/> https://drive.google.com/file/d/17_56w3Qy71u5H1MDMtDaOVTTrEV4VKk5/preview",
         "aulaPratica": "",
-        "sinal": "",
+        "sinal_order": "",
 
         "questions": {
             "q1": {
@@ -205,7 +205,7 @@
 
         "demonstracao": "",
         "aulaPratica": "",
-        "sinal": "",
+        "sinal_order": "",
 
         "questions": {
             "q1": {
@@ -271,7 +271,7 @@
 
         "demonstracao": "https://drive.google.com/file/d/1Y4sHd9K7_fy5h2SmYndY0n7KC9EiwWTV/preview<hr/>https://drive.google.com/file/d/1FofQPjfzPFBcrzbtg83UynhznwvwG48E/preview<hr/>https://drive.google.com/file/d/1cfIggzNXEJxtZBPz2EKMDtOEXq14OXqr/preview<hr/>https://drive.google.com/file/d/1Iyi9qkPN_XdjP3dPFd5aU2OwAOjQevRI/preview",
         "aulaPratica": "Número 0 <hr/> Número 1 <hr/> Número 2 <hr/> Número 3 <hr/> Número 4 <hr/> Número 5 <hr/> Número 6 <hr/> Número 7 <hr/> Número 8 <hr/> Número 9 <hr/> Número 10",
-        "sinal": "numero_0 <hr/> numero_1 <hr/> numero_2 <hr/> numero_3 <hr/> numero_4 <hr/> numero_5 <hr/> numero_6 <hr/> numero_7 <hr/> numero_8 <hr/> numero_9 <hr/> numero_10",
+        "sinal_order": "numero_0 <hr/> numero_1 <hr/> numero_2 <hr/> numero_3 <hr/> numero_4 <hr/> numero_5 <hr/> numero_6 <hr/> numero_7 <hr/> numero_8 <hr/> numero_9 <hr/> numero_10",
 
         "questions": {
             "q1": {

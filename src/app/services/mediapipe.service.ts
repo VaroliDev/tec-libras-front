@@ -127,7 +127,7 @@ export class MediaPipeService {
   }
 
   getModelPath(modelName: string): string {
-    return `assets/models/${modelName}.task`;
+    return `assets/models/alfabeto.task`;
   }
 
   reset(): void {
