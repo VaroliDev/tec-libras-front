@@ -1,16 +1,16 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { HeaderComponent } from "../../../components/header/header.component";
 import { FooterComponent } from "../../../components/footer/footer.component";
 import { LoadingSectionComponent } from '../../../components/loading-section/loading-section.component';
-
+import { LisiFeedbackComponent } from '../../../components/lisi-feedback/lisi-feedback.component';
 import { LevelService } from '../../../services/level.service';
 import { SafePipe } from '../../../pipes/safe.pipe';
 import { EndHeaderComponent } from "../../../components/end-header/end-header.component";
 
 @Component({
   selector: 'app-demonstracoes',
-  imports: [HeaderComponent, FooterComponent, LoadingSectionComponent, SafePipe, EndHeaderComponent],
+  imports: [HeaderComponent, FooterComponent, LoadingSectionComponent, SafePipe, EndHeaderComponent, LisiFeedbackComponent],
   templateUrl: './demonstracoes.component.html',
   styleUrl: './demonstracoes.component.scss'
 })
@@ -20,6 +20,8 @@ export class DemonstracoesComponent {
   protected theme = this.levelService.getTheme();
 
   protected url: string = '';
+
+  @ViewChild('alert') alert!: LisiFeedbackComponent;
 
   isLoading: boolean = false;
 
@@ -43,8 +45,13 @@ export class DemonstracoesComponent {
       this.url = this.urls[this.urlIndex];
     } else {
       this.levelService.registerProgress(2);
-      this.router.navigate(['temas']);
+      this.alert.open('Eba!', 'Você acaba de concluir a etapa de demonstrações.', 'success', 5);
+      
     }
+  }
+
+  close(){
+    this.router.navigate(['temas']);
   }
 
   async ngOnInit() {

@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { FooterComponent } from "../../../components/footer/footer.component";
 import { HeaderComponent } from "../../../components/header/header.component";
@@ -6,10 +6,11 @@ import { CommonModule } from '@angular/common';
 import { EndHeaderComponent } from '../../../components/end-header/end-header.component';
 import { LevelService } from '../../../services/level.service';
 import { UserService } from '../../../services/user.service';
+import { LisiFeedbackComponent } from '../../../components/lisi-feedback/lisi-feedback.component';
 
 @Component({
   selector: 'app-aula-teorica',
-  imports: [FooterComponent, HeaderComponent, EndHeaderComponent, CommonModule],
+  imports: [FooterComponent, HeaderComponent, EndHeaderComponent, CommonModule, LisiFeedbackComponent],
   templateUrl: './aula-teorica.component.html',
   styleUrl: './aula-teorica.component.scss'
 })
@@ -23,6 +24,8 @@ export class AulaTeoricaComponent {
   protected title: string = '';
   protected text: string = '';
   protected levelProgress: number = 0;
+
+  @ViewChild('alert') alert!: LisiFeedbackComponent;
 
   textos: string[] = [];
   textoIndex: number = 0;
@@ -54,13 +57,18 @@ export class AulaTeoricaComponent {
     } else {
       // Última página - marca como completo
       await this.levelService.registerProgress(1);
-      this.router.navigate(['temas']);
+      this.alert.open('Parabéns!', 'Você finalizou a primeira etapa deste tema.', 'success', 5);
+      
     }
   }
 
   // Atualiza o progresso visual
   updateProgress() {
     this.levelProgress = Math.round(((this.textoIndex + 1) / this.textos.length) * 100);
+  }
+
+  close(){
+    this.router.navigate(['temas']);
   }
 
   async ngOnInit() {
