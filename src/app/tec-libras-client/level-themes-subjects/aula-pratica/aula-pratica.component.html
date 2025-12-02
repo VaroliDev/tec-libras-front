@@ -36,13 +36,19 @@
 
                 <!--Nome do Tema-->
                 <h2 id="text">{{ text }}</h2>
+
                 <br>
 
-
-                <div class="container videoView">
+                <div class="d-grid gap-2 col-6 mx-auto" style="width: 80%;">
                         <button class="btn btn-ativar-cam" (click)="enableCam()">
                             {{ enableWebcamButtonLabel }}
                         </button>
+                        <p><a class="btn btn-skip" (click)="skip()">Não consigo utilizar a câmera agora</a></p>
+                    </div>
+
+                <div class="container videoView">
+                        <br>
+                        <p>Ao realizar o sinal, aguarde 3 segundos para a confirmação</p>
                         <br>
                         <br>
                         <div class="videocontainer" style="position: relative;">
@@ -60,9 +66,8 @@
 
                 <p>Status: <b [class]="status_class">{{ signal }}</b></p>
 
-                <p>Ao realizar o sinal, aguarde 3 segundo para ser contabilizado</p>
 
-                <p><a (click)="skip()">não consigo utilizar a câmera agora</a></p>
+                
 
                 <br>
 

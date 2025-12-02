@@ -142,6 +142,19 @@ bottom: 10px;
     background-color: #d24d00;
 }
 
+.btn-ativar-cam {
+    background-color: $ultrapurple;
+    color: $white;
+    width: 100%;
+    border-radius: 50px;
+}
+
+.btn-skip {
+    background-color: $softpurple;
+    color: $white;
+    width: 100%;
+    border-radius: 50px;
+}
 
 /* CONTAINER DO VÍDEO */
 .videocontainer {

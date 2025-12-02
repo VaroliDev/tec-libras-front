@@ -150,13 +150,11 @@ export class AulaPraticaComponent implements OnInit {
 
   close(){
     this.router.navigate(['temas']);
+    this.completeLesson();
   }
 
   skip(): void {
-    this.alert.open('Tudo bem!', `Que pena que você não conseguiu realizar a aula prática de ${this.title}!. Mas você pode avançar para o questionário e testar suas habilidades!`, 'success', 5);
-      
-    this.completeLesson();
-    
+    this.alert.open('Tudo bem!', `Você pode realizar a aula prática de ${this.title} quando puder!`, 'success', 5);
   }
 
   private completeLesson(): void {
