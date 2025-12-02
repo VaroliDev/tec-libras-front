@@ -42,6 +42,7 @@ export class AulaPraticaComponent implements OnInit {
 
   // Controle de textos e sinais
   protected textos: string[] = [];
+  protected sinaisOrder: string[] = []; // NOVO: Array com a ordem dos sinais
   protected textoIndex: number = 0;
   protected current_signal: string = '';
   protected correct_signal: string = 'letra_a';
@@ -68,6 +69,11 @@ export class AulaPraticaComponent implements OnInit {
     this.title = data.title;
     this.text = data.aulaPratica;
     this.textos = this.text.split('<hr/>').map(t => t.trim());
+
+    // NOVO: Carrega a ordem dos sinais do JSON
+    if (data.sinal_order) {
+      this.sinaisOrder = data.sinal_order.split('<hr/>').map((s: string) => s.trim());
+    }
 
     this.updateTextDisplay();
     this.updateCorrectSignal();
@@ -103,7 +109,14 @@ export class AulaPraticaComponent implements OnInit {
   }
 
   private updateCorrectSignal(): void {
-    this.correct_signal = `letra_${this.textos[this.textoIndex].toLowerCase().replaceAll("'", "")}`;
+    // MODIFICADO: Usa o array sinaisOrder em vez de gerar o nome
+    if (this.sinaisOrder.length > 0 && this.textoIndex < this.sinaisOrder.length) {
+      this.correct_signal = this.sinaisOrder[this.textoIndex];
+    } else {
+      // Fallback caso o sinal_order não esteja disponível
+      this.correct_signal = `letra_${this.textos[this.textoIndex].toLowerCase().replaceAll("'", "")}`;
+    }
+    
     console.log('Sinal correto:', this.correct_signal);
   }
 
@@ -130,7 +143,7 @@ export class AulaPraticaComponent implements OnInit {
       this.updateCorrectSignal();
     } else {
       this.completeLesson();
-      this.alert.open('Você é demais!', 'Parabéns, você concluiu a aula prática de ${this.title}! Avance para o questionário e teste suas habilidades!', 'success', 5);
+      this.alert.open('Você é demais!', `Parabéns, você concluiu a aula prática de ${this.title}! Avance para o questionário e teste suas habilidades!`, 'success', 5);
       
     }
   }
@@ -140,7 +153,7 @@ export class AulaPraticaComponent implements OnInit {
   }
 
   skip(): void {
-    this.alert.open('Tudo bem!', 'Que pena que você não conseguiu realizar a aula prática de ${this.title}!. Mas você pode avançar para o questionário e testar suas habilidades!', 'success', 5);
+    this.alert.open('Tudo bem!', `Que pena que você não conseguiu realizar a aula prática de ${this.title}!. Mas você pode avançar para o questionário e testar suas habilidades!`, 'success', 5);
       
     this.completeLesson();
     
