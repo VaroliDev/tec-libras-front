@@ -142,7 +142,7 @@ export class AulaPraticaComponent implements OnInit {
       this.updateTextDisplay();
       this.updateCorrectSignal();
     } else {
-      this.completeLesson();
+    
       this.alert.open('Você é demais!', `Parabéns, você concluiu a aula prática! Avance para o questionário e teste suas habilidades!`, 'success', 5);
       
     }
@@ -255,10 +255,7 @@ export class AulaPraticaComponent implements OnInit {
     const output = this.gestureOutputRef.nativeElement;
     output.style.display = "block";
     output.style.width = this.videoWidth + "px";
-    output.innerText =
-      `Gesto: ${result.gesture}\n` +
-      `Confiança: ${result.confidence.toFixed(2)}%\n` +
-      `Mão: ${result.hand}`;
+    
 
     this.current_signal = result.gesture;
   }
