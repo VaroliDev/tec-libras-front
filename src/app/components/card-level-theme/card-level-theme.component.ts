@@ -24,7 +24,7 @@ export class CardLevelThemeComponent {
   @Input() percent: number = 70;   // Progresso em %
   @Input() levelstyle: number = this.level % 2;
 
-  radius = 35;          // raio do círculo
+  radius = 30;          // raio do círculo
   circumference = 2 * Math.PI * this.radius;
 
   ngOnInit(): void {}
