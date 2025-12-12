@@ -21,13 +21,13 @@ h2 {
 }
 
 .progress {
-    height: 6px; 
-    border-radius: 10px; 
-    background-color: $whitedark;
+    height: 6px !important; 
+    border-radius: 10px !important; 
+    background-color: $whitedark !important;
 
     & .progress-bar {
-        width: 80%; 
-        background-color: $greenlight;
+        width: 80% !important; 
+        background-color: $greenlight !important;
     }
 }
 
