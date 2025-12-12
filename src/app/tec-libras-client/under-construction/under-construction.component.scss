@@ -1,0 +1,67 @@
+/* Container principal */
+.container {
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+}
+
+/* Imagem do mascote */
+.container img {
+  max-width: 320px;
+  width: 100%;
+  height: auto;
+  animation: float 3s ease-in-out infinite;
+  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.3));
+  margin-bottom: 50px;
+}
+
+/* Texto principal */
+.container p {
+  font-size: 1.75rem;
+  color: #e0e0e0;
+  text-align: center;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0;
+}
+
+.container p b {
+  color: #ff6b00;
+  font-size: 2rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .container {
+    padding: 60px 20px;
+  }
+
+  .container img {
+    max-width: 250px;
+  }
+
+  .container p {
+    font-size: 1.4rem;
+  }
+
+  .container p b {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container img {
+    max-width: 200px;
+  }
+
+  .container p {
+    font-size: 1.2rem;
+  }
+
+  .container p b {
+    font-size: 1.4rem;
+  }
+}
