@@ -3,18 +3,27 @@
     <!-- CÍRCULO DE PROGRESSO -->
     <div class="progress-wrapper">
         <div class="d-flex justify-content-center align-items-center">
-            <svg class="progress-ring">
+            <svg class="progress-ring" viewBox="0 0 100 100">
+
                 <!-- anel de fundo -->
-                <circle class="progress-bg"></circle>
+                <circle
+                    class="progress-bg"
+                    vector-effect="non-scaling-stroke">
+                </circle>
 
                 <!-- anel de progresso -->
                 <circle
                     class="progress-bar"
+                    r="40"
+                    cx="50"
+                    cy="50"
+                    vector-effect="non-scaling-stroke"
                     [attr.stroke-dasharray]="circumference"
                     [attr.stroke-dashoffset]="circumference - (percent / 100 * circumference)"
                 ></circle>
             </svg>
         </div>
+
         <div class="progress-text">{{ percent }}%</div>
     </div>
 
@@ -32,4 +41,5 @@
 
         </div>
     </div>
+
 </div>

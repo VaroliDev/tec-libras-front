@@ -41,6 +41,7 @@
     width: 110px;    /* responsivo no media query */
     height: 110px;
     position: relative;
+    left: 10%;
 }
 
 /* círculos do SVG */
@@ -71,8 +72,8 @@
 /* texto (%) */
 .progress-text {
     position: absolute;
-    top: 34px;
-    left: 50%;
+    
+    left: 55%;
     transform: translateX(-50%);
     font-family: "Rawline Bold", sans-serif;
     font-size: 22px;
@@ -148,7 +149,8 @@
     }
 
     .progress-text {
-        top: 26px;
+        top: 35px;
+        left: 40px;
         font-size: 16px;
     }
 
@@ -233,7 +235,8 @@
     }
 
     .progress-text {
-        top: 26px;
+        top: 35px;
+        left: 40px;
         font-size: 16px;
     }
 
@@ -257,7 +260,8 @@
     }
 
     .progress-text {
-        top: 26px;
+        top: 35px;
+        left: 40px;
         font-size: 16px;
     }
 
@@ -274,4 +278,6 @@
     }
 
 }
+
+
 
