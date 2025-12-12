@@ -21,7 +21,7 @@ export class CardLevelThemeComponent {
   @Input() level: number = 1;     // Número do nível
   @Input() title: string = "Tema"; // Título do tema
   @Input() subtitle: string = "Subtítulo"; // Subtítulo do tema
-  @Input() percent!: number;   // Progresso em %
+  @Input() percent: number = 70;   // Progresso em %
   @Input() levelstyle: number = this.level % 2;
 
   radius = 30;          // raio do círculo
