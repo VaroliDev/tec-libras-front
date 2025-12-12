@@ -22,6 +22,8 @@ export class BibliotecaSinaisComponent {
     private authService: AuthService
   ) {}
 
+  construction: boolean = true;
+
   onThemeChange(theme: string): void {
     this.themeService.applyTheme(theme);
   }
