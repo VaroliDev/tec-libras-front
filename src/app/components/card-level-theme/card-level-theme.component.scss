@@ -281,3 +281,16 @@
 
 
 
+/* Ajustes EXCLUSIVOS para Safari/iPhone */
+@supports (-webkit-touch-callout: none) {
+
+    .progress-text {
+        top: 28px !important;  /* sobe o texto */
+        left: 48% !important;  /* corrige o desalinhamento horizontal do iOS */
+    }
+
+    .progress-ring {
+        margin-left: -5px; /* centraliza a bolinha no iPhone */
+    }
+}
+
