@@ -5,17 +5,13 @@
                 <div [class]="'circulonivel'+ levelstyle">
                     <p>Nível {{ level }}</p>
                     <div class="ring-all">
-                        <svg class="progress-ring" width="150" height="150" viewBox="0 0 100 100">
-
-                            <circle class="progress-bg" r="45" cx="50" cy="50"></circle>
+                        <svg class="progress-ring" width="150" height="150">
+                            <circle class="progress-bg"></circle>
                             <circle
                             class="progress-bar"
-                           r="40"
-                    cx="50"
-                    cy="50"
-                    vector-effect="non-scaling-stroke"
-                    [attr.stroke-dasharray]="circumference"
-                    [attr.stroke-dashoffset]="percent === 0 ? circumference : (circumference - (percent/100 * circumference))"
+                            
+                            [attr.stroke-dasharray]="circumference"
+                            [attr.stroke-dashoffset]="circumference - (percent / 100 * circumference)"
                             ></circle>
                         </svg>
                             <div class="progress-text"> {{ percent }}%</div>
