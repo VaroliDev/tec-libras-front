@@ -42,6 +42,10 @@ export class LevelThemesComponent {
     this.isLoading = true;
 
     try {
+      if(this.level_id == null || this.level_id > 2){
+        this.router.navigate(['construcao']);
+      }
+
       // Carrega os dados do nível
       const data_level = await this.levelService.getData(this.level_id as number);
       

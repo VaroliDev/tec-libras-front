@@ -20,6 +20,7 @@ import { AdminPageComponent } from './tec-libras-admin/admin-page/admin-page.com
 import { TermosCondicoesComponent } from './tec-libras-client/termos-condicoes/termos-condicoes.component';
 import { CentralAjudaComponent } from './tec-libras-client/central-ajuda/central-ajuda.component';
 import { SinalBibliotecaComponent } from './tec-libras-client/sinal-biblioteca/sinal-biblioteca.component';
+import { UnderConstructionComponent } from './tec-libras-client/under-construction/under-construction.component';
 
 export const routes: Routes = [
     {
@@ -106,6 +107,10 @@ export const routes: Routes = [
     {
         path: 'curiosidades',
         component: CuriosidadesComponent
+    },
+    {
+        path: 'construcao',
+        component: UnderConstructionComponent
     },
 
     {
