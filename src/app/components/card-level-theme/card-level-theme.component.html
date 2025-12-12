@@ -19,7 +19,8 @@
                     cy="50"
                     vector-effect="non-scaling-stroke"
                     [attr.stroke-dasharray]="circumference"
-                    [attr.stroke-dashoffset]="circumference - ((percent || 0) / 100 * circumference)"
+                    [attr.stroke-dashoffset]="percent === 0 ? circumference : (circumference - (percent/100 * circumference))"
+
                 ></circle>
             </svg>
         </div>

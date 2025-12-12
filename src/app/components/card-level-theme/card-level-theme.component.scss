@@ -61,7 +61,7 @@
 }
 
 /* círculo da barra de progresso */
-.progress-bar {
+.progress-bar {fill: none !important;
     stroke: #57C29B;
     stroke-linecap: round;
     r: 40;
